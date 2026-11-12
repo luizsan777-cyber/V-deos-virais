@@ -1,0 +1,131 @@
+{
+  "titulo": "E se a 3ª Guerra Mundial começasse hoje? EUA x China e o Brasil",
+  "motor": "remotion",
+  "modo": "2d",
+  "estilo": "crise-global-cartoon-2d",
+  "perfil": "documentario",
+  "voz": {
+    "motor": "kokoro",
+    "voz": "pm_alex"
+  },
+  "musica": {
+    "humor": "suspense",
+    "volume_db": -25
+  },
+  "legenda": "impacto",
+  "fontes": [
+    "Simulação fictícia e condicional: não corresponde a notícia de guerra real.",
+    "https://www.sipri.org/yearbook (dados de contexto sobre arsenais nucleares; não prever uso)",
+    "https://comtradeplus.un.org/ (comércio internacional)",
+    "https://www.wto.org/ (relações comerciais e cadeias globais)",
+    "https://www.unctad.org/ (transporte marítimo e comércio global)"
+  ],
+  "referencia_edicao": {
+    "nome": "E_se_Jesus_voltasse_hoje_2D_FINAL.mp4",
+    "google_drive": "https://drive.google.com/file/d/1vAihjGdpYkrk5l1RK5OVkS3pK6bnUQol/view?usp=drivesdk",
+    "uso": "referência visual da linguagem 2D, notificações e celulares; nunca usar como filmagem de acontecimento real",
+    "status": "video original armazenado em Google Drive; ainda nao incluido como blob MP4 no GitHub"
+  },
+  "avisos": [
+    "SIMULAÇÃO FICTÍCIA",
+    "Não é notícia real",
+    "Cenário hipotético, não previsão"
+  ],
+  "personagens": [
+    "LEO_CIDADAO",
+    "JORNALISTA",
+    "TRABALHADORA_PORTO",
+    "FAMILIA_BR"
+  ],
+  "falas": [
+    {
+      "id": "gancho",
+      "texto": "Você acorda, pega o celular... e recebe um alerta: Estados Unidos e China entraram em guerra. Parece filme, né? Mas o que aconteceria com a gente?"
+    },
+    {
+      "id": "taiwan",
+      "texto": "Imagina que uma crise perto de Taiwan saia do controle. Navios militares se aproximam, ameaças aumentam e o mundo acompanha cada movimento."
+    },
+    {
+      "id": "ataques",
+      "texto": "Aí começam os confrontos. Drones cruzam o céu, defesas tentam interceptar ataques e cada explosão aumenta o medo de uma guerra maior."
+    },
+    {
+      "id": "internet",
+      "texto": "Só que a batalha também chega à internet. Serviços falham, dados supostamente vazam e vídeos antigos circulam como se fossem de hoje. Nem tudo é verdade."
+    },
+    {
+      "id": "mundo",
+      "texto": "Japão e Coreia do Sul entram em alerta. Na Europa, governos discutem como reagir. E mercados do planeta inteiro ficam nervosos."
+    },
+    {
+      "id": "cadeias",
+      "texto": "Navios alteram rotas, fábricas atrasam entregas e peças de eletrônicos podem faltar. Uma guerra no Pacífico bagunçaria muito mais que o Pacífico."
+    },
+    {
+      "id": "brasil",
+      "texto": "E o Brasil? Mesmo longe dos combates, sentiríamos o impacto. Dólar, combustível e produtos importados poderiam subir de preço."
+    },
+    {
+      "id": "comercio",
+      "texto": "Tem mais: a China compra muitos produtos brasileiros. Se o comércio travasse, agronegócio, mineração, portos e empregos poderiam ser atingidos."
+    },
+    {
+      "id": "diplomacia",
+      "texto": "Mas atenção: isso não quer dizer que o Brasil entraria automaticamente na guerra. Nosso caminho dependeria de decisões políticas e diplomáticas."
+    },
+    {
+      "id": "escalada",
+      "texto": "O pior cenário seria uma escalada envolvendo outros países e até armas nucleares. Não é inevitável. Justamente por isso, negociar seria urgente."
+    },
+    {
+      "id": "final",
+      "texto": "E sabe qual poderia ser o primeiro sinal dessa guerra na sua rotina? Não uma explosão... mas uma notificação no celular e os preços mudando depois."
+    }
+  ],
+  "destaques": [
+    "guerra",
+    "China",
+    "Estados",
+    "Drones",
+    "internet",
+    "falta",
+    "Brasil",
+    "dólar",
+    "comércio",
+    "nucleares",
+    "notificação",
+    "preços"
+  ],
+  "sfx": [
+    {
+      "som": "notificacao",
+      "em": "t:0.25"
+    },
+    {
+      "som": "impacto",
+      "em": "palavra:guerra"
+    },
+    {
+      "som": "whoosh",
+      "em": "palavra:Taiwan"
+    },
+    {
+      "som": "alarme",
+      "em": "palavra:confrontos"
+    },
+    {
+      "som": "digital",
+      "em": "palavra:internet"
+    },
+    {
+      "som": "pop",
+      "em": "palavra:Brasil"
+    },
+    {
+      "som": "desce",
+      "em": "palavra:preços"
+    }
+  ],
+  "fim_s": 1.2
+}
