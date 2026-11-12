@@ -40,3 +40,17 @@ Vozes inglesas e de Portugal **são recusadas pelo código** (`voz.py` só aceit
 - O roteiro original precisa de um modelo de linguagem: é escrito pelo Claude nesta sessão (o Actions só renderiza).
 - Tempo das palavras nas legendas é estimado por sílabas + pausas detectadas (precisão típica ~0,1 s).
   Alinhamento forçado com Whisper pode ser adicionado no Actions.
+
+## 5. Teste real dos motores no GitHub Actions (12/11/2026, runner ubuntu-latest, CPU)
+
+Workflow "Amostras de voz", execução nº 1 — release `amostras-voz-1`. Mesma frase de ~10 s:
+
+| motor | voz | gerou? | tempo de geração | duração do áudio | observação |
+|---|---|---|---|---|---|
+| kokoro | pm_alex / pm_santa / pf_dora | ✅ | 4 s | 10,5 s | rápido, offline |
+| piper | pt_BR-faber-medium | ✅ | 0,4 s | 9,8 s | o mais rápido |
+| edge | Antonio / Francisca / Thalita | ✅ | 4–13 s | 10–11 s | serviço online da Microsoft (não oficial) |
+| chatterbox | sem referência | ✅ | 98 s (+34 s carregando) | 9,8 s | ~10× mais lento que tempo real; ideal com voz de referência brasileira |
+| qwen3 | locutor padrão "Ryan" | ✅ | 96 s (+40 s carregando) | **16,2 s** | ficou 60 % mais longo que os outros (pausas/ritmo lento) — precisa de ajuste |
+
+Qualidade de pronúncia/sotaque: **precisa ser avaliada de ouvido pelo usuário** (as amostras foram enviadas).
