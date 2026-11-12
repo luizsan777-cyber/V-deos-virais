@@ -41,7 +41,7 @@ Entrada: tema e genero, duracao (padrao 70 s), estilo (2D/3D/explicativo ou esco
 - Leia `references/ESPECIFICACAO_SKILL_CLAUDE_CODE.md` para o contrato de plano, camera, som, render e verificacao.
 - Leia `../cartoon-audio-short/SKILL.md` para o motor 2D.
 - Antes de executar o kit, rode `python scripts/bootstrap_cartoon.py` e `python scripts/check_environment.py` da raiz do repositorio.
-- O ZIP desta versao contem scripts de exemplo, mas nao contem `mix.py`, `toon.ts` nem Three.js vendorizado citados nas instrucoes. Nao considerar o motor automaticamente funcional.
+- O ZIP nao traz `mix.py`, `toon.ts` nem Three.js; esses complementos estao em `../cartoon-audio-short/kit-extra/` e o bootstrap os aplica. Motor validado em 12/11/2026 com `projetos/teste-cartoon-vigia` (MP4 8 s, QA aprovado). Fluxo: `"motor": "cartoon"` no projeto.json (ver skill `video-viral`).
 - Projetos anteriores e voz no Windows sao uma fonte separada; importar depois, com cuidado e sem publicar gravacoes.
 
 ## Seguranca

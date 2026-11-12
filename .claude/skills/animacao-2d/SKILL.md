@@ -51,8 +51,9 @@ Exemplo completo e testado: `projetos/teste-corpo-brilha/Video.tsx`.
 - Cenas diferentes: `<Sequence from durationInFrames>` com transição (Flash curto ou whoosh + movimento).
 - Conferir nos stills: rosto visível e grande, texto não cobre rosto, contraste do personagem com o fundo.
 
-## Opcao complementar: cartoon-audio-short
+## Opção complementar: motor cartoon (cartoon-audio-short)
 
-Existe outra skill 2D original em `../cartoon-audio-short/SKILL.md` com o ZIP em `../cartoon-audio-short/kit-source/`. Ela usa personagens desenhados em cards, camera e render por codigo.
-
-**Nao substitua automaticamente** o kit Remotion deste repositorio: compare a qualidade das cenas no mesmo roteiro. Para uso opcional, rode `python scripts/bootstrap_cartoon.py`, veja as faltas de dependencias e teste 5–8 segundos. O kit e parcial; nao e um gerador de MP4 garantido.
+Integrado ao pipeline e validado (ver seção "Motor 2D cartoon" na skill `video-viral` e o exemplo
+`projetos/teste-cartoon-vigia/`). Use quando o visual "cards cartoon em mundo 3D com tinta" combinar com a
+história (épocas antigas, vilarejos, pontes). **Não substitui** este kit SVG: compare no mesmo roteiro e varie
+entre vídeos.

@@ -72,13 +72,21 @@ saida/<slug>.mp4, saida/<slug>_qa.jpg, saida/<slug>_qa.json   — não versionad
 
 Exemplos completos e testados: `projetos/teste-corpo-brilha/` (2D) e `projetos/teste-3d-terra/` (3D).
 
-## Motor 2D adicional vindo do Drive (integracao 2026-11-12)
+## Motor 2D "cartoon" (skill cartoon-audio-short) — integrado e validado em 12/11/2026
 
-A skill `cartoon-audio-short` esta em `../cartoon-audio-short/SKILL.md`. Seu kit original esta em `../cartoon-audio-short/kit-source/cartoon-short-kit.zip`.
+Segundo motor visual, **complementar** ao Remotion (que continua sendo o compositor final). Visual: personagens
+cartoon em cards desenhados num mundo 3D com tinta, profundidade de campo e câmeras deslizando.
 
-- Para criar uma historia 2D, **prefira o motor Remotion ja existente** quando ele atender a qualidade. Considere o kit 2D como motor complementar, nao substituicao automatica.
-- Para preparar o kit, execute a partir da raiz `python scripts/bootstrap_cartoon.py` e depois `python scripts/check_environment.py`.
-- O ZIP fornecido no Drive **nao contem** os arquivos vendorizados de Three.js, o `toon.ts` nem o `mix.py` citados na documentacao. Corrija/obtenha licitamente e valide antes de tentar renderizar.
-- Mantenha a narracao **pt-BR informal e natural**, conforme `voz-ptbr`; voz local/clonada do Windows nao fica automaticamente na nuvem.
-- **Nunca declare que o motor novo gera MP4** ate o proprio ambiente validar uma previa de 5 a 8 segundos com voz, movimento e arquivo final.
-- Nao interrompa outras renderizacoes nem sobrescreva componentes aprovados da engine.
+- Ative com `"motor": "cartoon"` no `projeto.json` e escreva `projetos/<slug>/cartoon/story.js` (plano de
+  tomadas no formato do kit; importe `TEMPOS` de `./tempos.js` para sincronizar com a narração pt-BR).
+  Exemplo validado: `projetos/teste-cartoon-vigia/` (8 s, QA aprovado).
+- `Video.tsx` do projeto = `<QuadrosCartoon/>` + `<Legendas/>` (+ TextoPop etc.). Ajuste o `y` da legenda por
+  tomada para não cobrir rostos (os personagens do kit são grandes no quadro).
+- Preparar uma vez por container: `python scripts/bootstrap_cartoon.py` e `python scripts/check_environment.py`
+  (precisa dizer `BLOQUEIOS: nenhum`).
+- Desempenho: ~4–7 s por quadro em CPU (8 s de vídeo ≈ 20 min). Vídeos longos: GitHub Actions.
+- O mundo pronto do kit é a ponte romana/vilarejo; outro cenário exige escrever um `main.js` próprio em
+  `cartoon/main.js` (seção "world") — avalie se o motor Remotion não atende melhor antes.
+- Regras do kit que **não** valem aqui: narração em inglês e "sem legendas". Aqui: narração pt-BR (Kokoro) e
+  legendas pt-BR. Mix padrão = ducking do projeto; a regra do kit (música a 50 % da voz) é opcional: `"mix": "nivel50"`.
+- Não interrompa renderizações em andamento; o render de quadros retoma de onde parou (`RESUME`).

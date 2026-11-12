@@ -30,3 +30,16 @@ Este repositorio foi encontrado **publico**. Se quiser guardar materiais privado
 ## Fontes dos arquivos
 - Skill e kit: https://drive.google.com/drive/folders/1frRlFTSyGrIHnSJYz5djqq7sgDHZKcng
 - Projeto original: documentos e especificacao recuperados da biblioteca do usuario.
+
+## Estado em 12/11/2026 — integração concluída e validada
+
+- `python scripts/bootstrap_cartoon.py`: extrai o ZIP (14 arquivos) e aplica `kit-extra/` (three.js r160 e
+  `toon.ts` vendorizados com licenças MIT, `tools/mix.py` escrito conforme a regra de níveis da skill).
+  Corrigida a checagem de link simbólico (precedência de operador fazia o teste nunca disparar).
+- `python scripts/check_environment.py`: agora checa as dependências reais dos dois motores → `BLOQUEIOS: nenhum`.
+- `ferramentas/cartoon.py` + `produzir.py` (`"motor": "cartoon"`): voz Kokoro pt-BR → `tempos.js` → quadros do kit
+  (Playwright/Chromium, WebGL por software, ~4–7 s/quadro) → Remotion (legendas pt-BR) → mux → QA.
+- Teste: `projetos/teste-cartoon-vigia` — 8,0 s, 1080x1920, 30 fps, H.264/AAC, -14,7 LUFS, sem quadros pretos ou
+  congelados (`saida/teste-cartoon-vigia_qa.json`).
+- Limitações: só o mundo "ponte romana" do kit está pronto; outros cenários exigem `cartoon/main.js` próprio.
+  O `tools/timing.py` do kit é para inglês (Whisper `base.en`) e não é usado: os tempos vêm do `voz.py`.

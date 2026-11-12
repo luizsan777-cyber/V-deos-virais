@@ -65,12 +65,10 @@ Código deste repositório: ainda sem licença definida (escolha a sua). Remotio
 Trilhas e efeitos sonoros são sintetizados em código (originais). Fontes: OFL (via @fontsource).
 Análise completa dos repositórios de referência em `docs/ANALISE.md`.
 
-## Skill 2D adicional: cartoon-audio-short (Drive)
+## Motor 2D adicional: cartoon-audio-short (skill do Drive)
 
-Foi adicionada a skill original do Drive em `.claude/skills/cartoon-audio-short/SKILL.md` e o ZIP de origem em `.claude/skills/cartoon-audio-short/kit-source/cartoon-short-kit.zip`.
-
-Para inspecionar e extrair: `python scripts/bootstrap_cartoon.py`; para verificar dependencias: `python scripts/check_environment.py`. O kit original **nao contem todas as dependencias** citadas na documentacao. Este motor **ainda nao foi validado** neste repositorio.
-
-A antiga especificacao da Viral Video Engine foi arquivada em `.claude/skills/viral-video-engine/references/`; a skill `video-viral` continua sendo o **fluxo principal** do repositorio.
-
-**Aviso:** este repositorio e publico. Nao versionar arquivos de voz pessoais ou credenciais.
+Integrado ao pipeline em 12/11/2026 e validado com um MP4 de teste (`projetos/teste-cartoon-vigia`, QA aprovado).
+Use `"motor": "cartoon"` no `projeto.json`: o kit desenha os quadros (three.js + personagens em cards) e o
+Remotion aplica as legendas pt-BR e exporta. Preparação: `python scripts/bootstrap_cartoon.py` e
+`python scripts/check_environment.py`. As peças que faltavam no ZIP (three.js r160, `toon.ts`, `mix.py`) estão em
+`.claude/skills/cartoon-audio-short/kit-extra/` (MIT) e são aplicadas pelo bootstrap sem alterar o ZIP.
