@@ -76,12 +76,14 @@ export type PersonagemProps = {
   olhosAbertos?: number; // 0..1 (piscar)
   boca?: number; // lip-sync 0..1
   brilhoCorpo?: number; // aura/brilho (ex.: corpo que brilha)
+  itemD?: React.ReactNode; // objeto segurado na mão direita (celular, papel…), desenhado na posição da mão
+  itemE?: React.ReactNode; // idem, mão esquerda. Coordenadas do item: origem no centro da mão, unidades do personagem
   opacidade?: number;
 };
 
 export const Personagem: React.FC<PersonagemProps> = ({
   id, x, y, escala = 1, dir = 1, visual: v, estilo: E = ESTILOS_PERSONAGEM.conto, pose = POSE_BASE,
-  expr = EXPRESSOES.neutro, olhosAbertos = 1, boca = 0, brilhoCorpo = 0, opacidade = 1,
+  expr = EXPRESSOES.neutro, olhosAbertos = 1, boca = 0, brilhoCorpo = 0, opacidade = 1, itemD, itemE,
 }) => {
   const pr = PROPORCOES[v.corpo ?? "medio"];
   const L = E.linha;
@@ -379,6 +381,10 @@ export const Personagem: React.FC<PersonagemProps> = ({
         </g>
       )}
       {mao(b, s, tipo, `${k}h`)}
+      {(s > 0 ? itemD : itemE) && (
+        // desfaz o espelhamento (dir = -1) para textos/telas não aparecerem invertidos
+        <g transform={`translate(${b.M[0]} ${b.M[1]}) scale(${dir} 1)`}>{s > 0 ? itemD : itemE}</g>
+      )}
     </g>
   );
 

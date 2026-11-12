@@ -272,8 +272,11 @@ def tempos_palavras(texto: str, audio: np.ndarray, t0: float) -> list[dict]:
             segs.append((ini, sil[k][0]))
             ini = sil[k][1]
         else:
-            segs.append((ini, prev))
-            ini = prev
+            # sem silêncio adequado: corta na posição prevista, mas nunca antes do início do trecho
+            minimo = dur * sum(peso(w) for w in g) / tot * 0.8
+            corte = min(max(prev, ini + minimo), dur - 0.05)
+            segs.append((ini, corte))
+            ini = corte
     segs.append((ini, dur))
     res = []
     for g, (a0, a1) in zip(grupos, segs):
@@ -359,7 +362,12 @@ def gerar(projeto_dir: Path) -> dict:
     destaques = {limpar(d) for d in proj.get("destaques", [])}
     for i, fala in enumerate(proj["falas"]):
         texto_tts = normalizar(fala.get("tts", fala["texto"]))
+        vel0 = getattr(motor, "vel", None)
+        if "velocidade" in fala and vel0 is not None:  # ritmo próprio desta fala (ex.: trecho mais sério)
+            motor.vel = fala["velocidade"]
         a = aparar(motor.falar(texto_tts))
+        if vel0 is not None:
+            motor.vel = vel0
         a = limitar_pausas(a, perfil.get("pausa_max_interna", 0.32))
         pw = tempos_palavras(fala["texto"], a, t)
         for p in pw:

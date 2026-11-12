@@ -26,12 +26,14 @@ export const Camera: React.FC<{
   forcaTremor?: number;
   mao?: number; // câmera na mão (0..1)
   mundo?: [number, number];
+  inicio?: number; // frame global em que a tomada começa: chaves e tremores ficam em tempo LOCAL da tomada
   children: React.ReactNode;
-}> = ({ chaves, deriva = 0.6, tremores = [], forcaTremor = 22, mao = 0, mundo = [1080, 1920], children }) => {
-  const f = useCurrentFrame();
+}> = ({ chaves, deriva = 0.6, tremores = [], forcaTremor = 22, mao = 0, mundo = [1080, 1920], inicio = 0, children }) => {
+  const f = useCurrentFrame() - inicio;
   const { width, height, fps } = useVideoConfig();
   const c = camEm(f, chaves);
-  const z = c.z * (1 + (deriva / 100) * (f / fps));
+  // deriva conta a partir da 1ª chave da tomada (não do início do vídeo), para tomadas longas no meio do vídeo
+  const z = c.z * (1 + (deriva / 100) * (Math.max(0, f - chaves[0][0]) / fps));
   let [tx, ty] = [0, 0];
   for (const em of tremores) {
     const [a, b] = tremor(f, em, forcaTremor);

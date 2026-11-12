@@ -64,3 +64,32 @@ python ferramentas/produzir.py projetos/terceira-guerra-mundial
 - [ ] Legendas corretas, sem erros de acentuação e sem cobrir rostos
 - [ ] MP4 decodificado até último frame e áudio revisado
 - [ ] `qa.json` sem problemas críticos e quadro de contato revisado
+
+
+---
+
+## Implementação (12/11/2026) — o que foi feito de fato
+
+**Referência do Drive:** o arquivo `E_se_Jesus_voltasse_hoje_2D_FINAL.mp4` existe no Drive do usuário (41 MB), mas a
+única via de acesso disponível devolve o arquivo inteiro como texto base64 dentro da conversa (inviável nesse
+tamanho), e o container não alcança o Drive. **Nenhuma análise visual do vídeo foi feita.** A linguagem de celulares
+(tela de bloqueio com hora, notificações empilhadas que caem com "pop", vibração, close na mão, tela que reflete
+cenas) foi criada a partir da descrição do pedido.
+
+**Arquivos:** `Video.tsx` (orquestra 11 cenas, legenda por cena, tarja), `cenasA.tsx` (1–4), `cenasB.tsx` (5–8),
+`cenasC.tsx` (9–11), `pecas.tsx` (celulares, notificações, navios/drones genéricos, cargueiro, porto, fábrica, chips,
+posto, mercado, cidades, radar, servidores, bandeira estilizada), `elenco.tsx` (Leo, jornalista, trabalhadora,
+militares, cidadãos de 3 regiões, diplomatas — definidos uma vez).
+
+**Kit (extensões compatíveis):** `Personagem` aceita `itemD/itemE` (objeto na mão); pose `olhandoCelular`;
+`Globo.tsx` + `geo.ts` (globo ortográfico com destaque de EUA, China, Taiwan, Japão, Coreia do Sul, Europa, Brasil,
+alertas, rotas e rótulos); `Camera` aceita `inicio` (chaves em tempo local da tomada) e a deriva passou a contar da
+1ª chave; `voz.py` aceita `velocidade` por fala e corrige ordem de palavras sem silêncio; `audio.py` ganhou
+vibracao, notificacao, drone, alarme, radar, buzina, cidade, ondas, guindaste, estatica, trilha `tensao` e
+`musica.automacao` (volume por cena: mais baixa na diplomacia e no trecho nuclear).
+
+**Cuidados de conteúdo:** tarja "SIMULAÇÃO FICTÍCIA" em todas as cenas; notificações marcadas como simulação;
+Taiwan explicado como ponto de partida *desta* simulação; ataques só como drones genéricos, linha de luz e clarões
+distantes (sem alvos, trajetórias ou procedimentos); vazamento como "suposto, sem confirmação"; nenhum valor
+inventado de dólar/combustível ("R$ ?", "pressão de alta" ilustrativa); dado real com fonte: ~28,7% das exportações
+brasileiras de 2025 foram para a China (MDIC/Secex); risco nuclear como aviso, sem explosão; final com "não é previsão".

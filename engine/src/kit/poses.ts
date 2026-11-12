@@ -145,3 +145,13 @@ export const poseEm = (f: number, seq: [number, (f: number) => Pose][], trans = 
   }
   return atual;
 };
+
+/** Segurando o celular na frente do peito/rosto (use com <Personagem itemD={<celular/>}>). */
+export const olhandoCelular = (f: number, seed = 1, altura = 0.35): Pose => {
+  // altura 0 = celular na altura do peito (rosto livre); 1 = celular na frente do rosto
+  const p = parado(f, seed);
+  return {
+    ...p, bracoD: [40 - 14 * altura, 112 + 38 * altura], frenteD: true, maoD: "aberta",
+    bracoE: [14 + wobble(f, seed, 0.4) * 2, 18], olhar: [0.25, 0.75], cabecaIncl: 7 + wobble(f, seed + 4, 0.3) * 2,
+  };
+};

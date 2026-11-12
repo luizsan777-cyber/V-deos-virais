@@ -6,19 +6,70 @@
   "perfil": "documentario",
   "voz": {
     "motor": "kokoro",
-    "voz": "pm_alex"
+    "voz": "pm_alex",
+    "velocidade": 1.06
   },
   "musica": {
-    "humor": "suspense",
-    "volume_db": -25
+    "humor": "tensao",
+    "volume_db": -23,
+    "automacao": [
+      {
+        "em": "t:0",
+        "db": -8
+      },
+      {
+        "em": "gancho:fim",
+        "db": -3
+      },
+      {
+        "em": "palavra:Imagina",
+        "db": 0
+      },
+      {
+        "em": "diplomacia",
+        "db": -1
+      },
+      {
+        "em": "palavra:atenção",
+        "db": -8
+      },
+      {
+        "em": "diplomacia:fim",
+        "db": -6
+      },
+      {
+        "em": "escalada",
+        "db": -3
+      },
+      {
+        "em": "palavra:nucleares",
+        "db": -9
+      },
+      {
+        "em": "palavra:negociar",
+        "db": -7
+      },
+      {
+        "em": "final",
+        "db": -5
+      },
+      {
+        "em": "final:fim",
+        "db": -4
+      },
+      {
+        "em": "final:fim+3",
+        "db": -20
+      }
+    ]
   },
   "legenda": "impacto",
   "fontes": [
-    "Simulação fictícia e condicional: não corresponde a notícia de guerra real.",
-    "https://www.sipri.org/yearbook (dados de contexto sobre arsenais nucleares; não prever uso)",
-    "https://comtradeplus.un.org/ (comércio internacional)",
-    "https://www.wto.org/ (relações comerciais e cadeias globais)",
-    "https://www.unctad.org/ (transporte marítimo e comércio global)"
+    "Simulação fictícia e condicional: não corresponde a notícia real nem a previsão.",
+    "MDIC/Secex — balança comercial 2025: China foi o principal destino das exportações brasileiras (~28,7%). https://balanca.economia.gov.br/balanca/publicacoes_dados_consolidados/pg.html",
+    "Banco Central do Brasil — comércio Brasil, EUA e China (RPM jun/2025, box). https://www.bcb.gov.br/content/ri/inflationreport/202506/rpm202506b4i.pdf",
+    "CFR Global Conflict Tracker — Confrontation over Taiwan (contexto). https://www.cfr.org/global-conflict-tracker/conflict/confrontation-over-taiwan",
+    "OMC — comércio e cadeias globais. https://www.wto.org/"
   ],
   "referencia_edicao": {
     "nome": "E_se_Jesus_voltasse_hoje_2D_FINAL.mp4",
@@ -40,92 +91,344 @@
   "falas": [
     {
       "id": "gancho",
-      "texto": "Você acorda, pega o celular... e recebe um alerta: Estados Unidos e China entraram em guerra. Parece filme, né? Mas o que aconteceria com a gente?"
+      "texto": "Você acorda, pega o celular... e recebe um alerta: Estados Unidos e China entraram em guerra. Parece filme, né? Mas o que aconteceria com a gente?",
+      "pausa": 0.4
     },
     {
       "id": "taiwan",
-      "texto": "Imagina que uma crise perto de Taiwan saia do controle. Navios militares se aproximam, ameaças aumentam e o mundo acompanha cada movimento."
+      "texto": "Imagina que uma crise perto de Taiwan saia do controle. Navios militares se aproximam, ameaças aumentam e o mundo acompanha cada movimento.",
+      "pausa": 0.4
     },
     {
       "id": "ataques",
-      "texto": "Aí começam os confrontos. Drones cruzam o céu, defesas tentam interceptar ataques e cada explosão aumenta o medo de uma guerra maior."
+      "texto": "Aí começam os confrontos. Drones cruzam o céu, defesas tentam interceptar ataques e cada explosão aumenta o medo de uma guerra maior.",
+      "pausa": 0.4
     },
     {
       "id": "internet",
-      "texto": "Só que a batalha também chega à internet. Serviços falham, dados supostamente vazam e vídeos antigos circulam como se fossem de hoje. Nem tudo é verdade."
+      "texto": "Só que a batalha também chega à internet. Serviços falham, dados supostamente vazam e vídeos antigos circulam como se fossem de hoje. Nem tudo é verdade.",
+      "pausa": 0.4
     },
     {
       "id": "mundo",
-      "texto": "Japão e Coreia do Sul entram em alerta. Na Europa, governos discutem como reagir. E mercados do planeta inteiro ficam nervosos."
+      "texto": "Japão e Coreia do Sul entram em alerta. Na Europa, governos discutem como reagir. E mercados do planeta inteiro ficam nervosos.",
+      "pausa": 0.4
     },
     {
       "id": "cadeias",
-      "texto": "Navios alteram rotas, fábricas atrasam entregas e peças de eletrônicos podem faltar. Uma guerra no Pacífico bagunçaria muito mais que o Pacífico."
+      "texto": "Navios alteram rotas, fábricas atrasam entregas e peças de eletrônicos podem faltar. Uma guerra no Pacífico bagunçaria muito mais que o Pacífico.",
+      "pausa": 0.4
     },
     {
       "id": "brasil",
-      "texto": "E o Brasil? Mesmo longe dos combates, sentiríamos o impacto. Dólar, combustível e produtos importados poderiam subir de preço."
+      "texto": "E o Brasil? Mesmo longe dos combates, sentiríamos o impacto. Dólar, combustível e produtos importados poderiam subir de preço.",
+      "pausa": 0.4
     },
     {
       "id": "comercio",
-      "texto": "Tem mais: a China compra muitos produtos brasileiros. Se o comércio travasse, agronegócio, mineração, portos e empregos poderiam ser atingidos."
+      "texto": "Tem mais: a China compra muitos produtos brasileiros. Se o comércio travasse, agronegócio, mineração, portos e empregos poderiam ser atingidos.",
+      "pausa": 0.4
     },
     {
       "id": "diplomacia",
-      "texto": "Mas atenção: isso não quer dizer que o Brasil entraria automaticamente na guerra. Nosso caminho dependeria de decisões políticas e diplomáticas."
+      "texto": "Mas atenção: isso não quer dizer que o Brasil entraria automaticamente na guerra. Nosso caminho dependeria de decisões políticas e diplomáticas.",
+      "velocidade": 1.04,
+      "pausa": 0.4
     },
     {
       "id": "escalada",
-      "texto": "O pior cenário seria uma escalada envolvendo outros países e até armas nucleares. Não é inevitável. Justamente por isso, negociar seria urgente."
+      "texto": "O pior cenário seria uma escalada envolvendo outros países e até armas nucleares. Não é inevitável. Justamente por isso, negociar seria urgente.",
+      "velocidade": 0.98,
+      "pausa": 0.5
     },
     {
       "id": "final",
-      "texto": "E sabe qual poderia ser o primeiro sinal dessa guerra na sua rotina? Não uma explosão... mas uma notificação no celular e os preços mudando depois."
+      "texto": "E sabe qual poderia ser o primeiro sinal dessa guerra na sua rotina? Não uma explosão... mas uma notificação no celular e os preços mudando depois.",
+      "pausa": 0.4
     }
   ],
   "destaques": [
     "guerra",
     "China",
-    "Estados",
+    "Taiwan",
     "Drones",
     "internet",
-    "falta",
+    "verdade",
+    "Japão",
+    "Europa",
+    "mercados",
+    "rotas",
+    "faltar",
     "Brasil",
-    "dólar",
-    "comércio",
+    "Dólar",
+    "combustível",
+    "exportações",
+    "agronegócio",
+    "mineração",
+    "empregos",
+    "automaticamente",
+    "diplomáticas",
     "nucleares",
+    "inevitável",
+    "negociar",
     "notificação",
     "preços"
   ],
   "sfx": [
     {
-      "som": "ding",
-      "em": "t:0.25"
+      "som": "vibracao",
+      "em": "t:0.1"
+    },
+    {
+      "som": "vibracao",
+      "em": "t:0.95"
+    },
+    {
+      "som": "notificacao",
+      "em": "palavra:alerta"
+    },
+    {
+      "som": "notificacao",
+      "em": "palavra:China",
+      "vol": -3
     },
     {
       "som": "impacto",
-      "em": "palavra:guerra"
+      "em": "palavra:guerra",
+      "vol": -3
     },
     {
       "som": "whoosh",
+      "em": "palavra:Parece-0.15"
+    },
+    {
+      "som": "whoosh",
+      "em": "palavra:Mas-0.15",
+      "vol": -4
+    },
+    {
+      "som": "whoosh",
+      "em": "taiwan-0.2"
+    },
+    {
+      "som": "radar",
       "em": "palavra:Taiwan"
     },
     {
-      "som": "riser",
-      "em": "palavra:confrontos"
+      "som": "buzina",
+      "em": "palavra:Navios",
+      "vol": -4
+    },
+    {
+      "som": "ondas",
+      "em": "palavra:aproximam",
+      "vol": -6
+    },
+    {
+      "som": "notificacao",
+      "em": "palavra:mundo",
+      "vol": -5
+    },
+    {
+      "som": "alarme",
+      "em": "palavra:confrontos",
+      "vol": -5
+    },
+    {
+      "som": "drone",
+      "em": "palavra:Drones-0.3"
+    },
+    {
+      "som": "drone",
+      "em": "palavra:céu",
+      "vol": -4
+    },
+    {
+      "som": "swoosh_sobe",
+      "em": "palavra:interceptar-0.2",
+      "vol": -3
+    },
+    {
+      "som": "impacto",
+      "em": "palavra:explosão-0.1",
+      "vol": -8
+    },
+    {
+      "som": "trovao",
+      "em": "palavra:medo",
+      "vol": -12
+    },
+    {
+      "som": "radar",
+      "em": "palavra:maior-0.4",
+      "vol": -4
     },
     {
       "som": "glitch",
       "em": "palavra:internet"
     },
     {
+      "som": "estatica",
+      "em": "palavra:falham"
+    },
+    {
+      "som": "notificacao",
+      "em": "palavra:vazam",
+      "vol": -4
+    },
+    {
+      "som": "whoosh",
+      "em": "palavra:circulam",
+      "vol": -4
+    },
+    {
       "som": "pop",
-      "em": "palavra:Brasil"
+      "em": "palavra:hoje"
     },
     {
       "som": "desce",
-      "em": "palavra:preços"
+      "em": "palavra:verdade",
+      "vol": -4
+    },
+    {
+      "som": "radar",
+      "em": "palavra:Japão",
+      "vol": -4
+    },
+    {
+      "som": "ding",
+      "em": "palavra:Europa",
+      "vol": -6
+    },
+    {
+      "som": "desce",
+      "em": "palavra:nervosos",
+      "vol": -4
+    },
+    {
+      "som": "buzina",
+      "em": "cadeias-0.1",
+      "vol": -5
+    },
+    {
+      "som": "clique",
+      "em": "palavra:atrasam"
+    },
+    {
+      "som": "pop",
+      "em": "palavra:faltar"
+    },
+    {
+      "som": "whoosh",
+      "em": "palavra:bagunçaria"
+    },
+    {
+      "som": "whoosh",
+      "em": "brasil-0.15"
+    },
+    {
+      "som": "cidade",
+      "em": "palavra:Mesmo",
+      "vol": -8
+    },
+    {
+      "som": "pop",
+      "em": "palavra:Dólar"
+    },
+    {
+      "som": "pop",
+      "em": "palavra:combustível"
+    },
+    {
+      "som": "pop",
+      "em": "palavra:importados"
+    },
+    {
+      "som": "desce",
+      "em": "palavra:preço",
+      "vol": -4
+    },
+    {
+      "som": "whoosh",
+      "em": "comercio-0.15"
+    },
+    {
+      "som": "guindaste",
+      "em": "palavra:Se-0.2",
+      "vol": -6
+    },
+    {
+      "som": "impacto",
+      "em": "palavra:travasse",
+      "vol": -9
+    },
+    {
+      "som": "pop",
+      "em": "palavra:agronegócio"
+    },
+    {
+      "som": "pop",
+      "em": "palavra:mineração"
+    },
+    {
+      "som": "pop",
+      "em": "palavra:portos"
+    },
+    {
+      "som": "pop",
+      "em": "palavra:empregos"
+    },
+    {
+      "som": "ding",
+      "em": "palavra:atenção",
+      "vol": -4
+    },
+    {
+      "som": "whoosh",
+      "em": "palavra:Nosso",
+      "vol": -6
+    },
+    {
+      "som": "coracao",
+      "em": "palavra:escalada"
+    },
+    {
+      "som": "coracao",
+      "em": "palavra:países"
+    },
+    {
+      "som": "alarme",
+      "em": "palavra:nucleares-0.2",
+      "vol": -10
+    },
+    {
+      "som": "brilho",
+      "em": "palavra:inevitável"
+    },
+    {
+      "som": "ding",
+      "em": "palavra:negociar",
+      "vol": -4
+    },
+    {
+      "som": "notificacao",
+      "em": "palavra:notificação"
+    },
+    {
+      "som": "vibracao",
+      "em": "palavra:notificação",
+      "vol": -6
+    },
+    {
+      "som": "desce",
+      "em": "palavra:mudando",
+      "vol": -6
+    },
+    {
+      "som": "notificacao",
+      "em": "final:fim+2.6",
+      "vol": -6
     }
   ],
-  "fim_s": 1.2
+  "fim_s": 3.2
 }

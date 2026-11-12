@@ -209,6 +209,100 @@ def sfx_swoosh_sobe(d=0.6):
     return norm(x, 0.6)
 
 
+def sfx_vibracao(d=0.9):
+    """celular vibrando em cima da mesa: dois zumbidos curtos."""
+    out = np.zeros(int(d * SR), np.float32)
+    for o in (0.0, 0.45):
+        dd = 0.32
+        tt = t_(dd)
+        z = np.sign(seno(155, dd)) * 0.6 + seno(310, dd) * 0.3
+        z *= (0.55 + 0.45 * np.sign(seno(32, dd)))  # chocalho na madeira
+        z *= np.minimum(1, np.minimum(tt / 0.01, (dd - tt) / 0.02))
+        i = int(o * SR)
+        out[i:i + len(z)] += lp_rapido(z.astype(np.float32), 1800)[: len(out) - i]
+    return norm(out, 0.7)
+
+
+def sfx_notificacao(d=0.8):
+    """notificação genérica de app: dois tons ascendentes."""
+    out = np.zeros(int(d * SR), np.float32)
+    for o, fq in ((0.0, 1318.5), (0.11, 1975.5)):
+        dd = d - o
+        tt = t_(dd)
+        z = (seno(fq, dd) + 0.3 * seno(fq * 2, dd)) * env(len(tt), 0.003, 0.25, 4)
+        i = int(o * SR)
+        out[i:i + len(z)] += z[: len(out) - i]
+    return norm(reverb(out, 0.5, 0.15), 0.5)
+
+
+def sfx_drone(d=2.6):
+    """drone passando: zumbido de hélices com efeito Doppler (sobe e desce)."""
+    t = t_(d)
+    k = np.sin(np.pi * t / d)
+    f0 = 180 * (1 + 0.06 * np.tanh((d / 2 - t) * 3))
+    z = saw(f0, d) * 0.5 + saw(f0 * 2.01, d) * 0.3 + lp_rapido(ruido(d), 900) * 0.4
+    z *= (0.8 + 0.2 * seno(38, d))
+    return norm(lp_rapido(z * k ** 1.5, 2600), 0.6)
+
+
+def sfx_alarme(d=1.8):
+    """alarme de bordo genérico: dois tons alternados."""
+    t = t_(d)
+    fq = np.where((t * 2.5) % 1 < 0.5, 880, 660)
+    z = np.sign(seno(fq, d)) * 0.4 + seno(fq, d) * 0.4
+    z *= np.minimum(1, np.minimum(t / 0.02, (d - t) / 0.1))
+    return norm(reverb(lp_rapido(z.astype(np.float32), 3000), 0.8, 0.2), 0.45)
+
+
+def sfx_radar(d=1.4):
+    """ping de radar/sonar."""
+    t = t_(d)
+    z = seno(1200, d) * env(len(t), 0.002, 0.6, 5)
+    return norm(reverb(z, 1.6, 0.45, 5000), 0.45)
+
+
+def sfx_buzina(d=2.2):
+    """buzina grave de navio."""
+    t = t_(d)
+    z = saw(98, d) + saw(147, d) * 0.6 + saw(98.6, d) * 0.5
+    z = lp_rapido(z, 700) * np.minimum(1, np.minimum(t / 0.08, (d - t) / 0.4))
+    return norm(reverb(z, 1.8, 0.3, 2500), 0.6)
+
+
+def sfx_cidade(d=4.0):
+    """ambiente de cidade: trânsito distante + uma buzina curta."""
+    t = t_(d)
+    z = bp_rapido(ruido(d), 350, 0.8) * (0.7 + 0.3 * np.sin(2 * np.pi * 0.2 * t))
+    hb = int(1.6 * SR)
+    hd = 0.35
+    h = (np.sign(seno(440, hd)) + np.sign(seno(554, hd))) * 0.12 * np.minimum(1, (hd - t_(hd)) / 0.05)
+    z[hb:hb + len(h)] += lp_rapido(h.astype(np.float32), 2500)
+    return norm(z * np.minimum(1, np.minimum(t / 0.5, (d - t) / 0.8)), 0.45)
+
+
+def sfx_ondas(d=3.5):
+    """ondas batendo no casco."""
+    t = t_(d)
+    sw = (0.5 + 0.5 * np.sin(2 * np.pi * 0.6 * t - 1.5)) ** 2
+    z = lp_rapido(ruido(d), 1400) * sw
+    return norm(z * np.minimum(1, np.minimum(t / 0.3, (d - t) / 0.6)), 0.5)
+
+
+def sfx_guindaste(d=1.6):
+    """bipes de ré de máquina portuária + motor."""
+    t = t_(d)
+    bip = seno(1000, d) * ((t * 2.2) % 1 < 0.45) * 0.35
+    motor = lp_rapido(saw(55, d), 300) * 0.5
+    return norm((bip + motor) * np.minimum(1, np.minimum(t / 0.1, (d - t) / 0.2)), 0.45)
+
+
+def sfx_estatica(d=0.6):
+    """estática / falha de conexão."""
+    t = t_(d)
+    z = hp_rapido(ruido(d), 2000) * (np.abs(np.sin(2 * np.pi * 13 * t)) > 0.3)
+    return norm(z * np.minimum(1, (d - t) / 0.1), 0.4)
+
+
 SFX = {k[4:]: v for k, v in globals().items() if k.startswith("sfx_")}
 
 
@@ -221,6 +315,7 @@ ESCALAS = {
     "epico": ([0, 2, 3, 7, 8], 45, 90),
     "biblico": ([0, 2, 3, 5, 7, 9], 50, 70),
     "alegre": ([0, 2, 4, 5, 7, 9], 60, 120),
+    "tensao": ([0, 2, 3, 7, 8], 45, 96),
 }
 
 
@@ -261,7 +356,7 @@ def musica(humor: str, dur: float) -> np.ndarray:
     out = np.zeros(n, np.float32)
     # progressão de 4 acordes (graus da escala)
     progs = {"curioso": [0, 3, 4, 2], "ciencia": [0, 4, 3, 2], "suspense": [0, 0, 1, 0], "terror": [0, 1, 0, 2],
-             "epico": [0, 3, 4, 1], "biblico": [0, 3, 1, 4], "alegre": [0, 3, 4, 2]}[humor if humor in ESCALAS else "curioso"]
+             "epico": [0, 3, 4, 1], "biblico": [0, 3, 1, 4], "alegre": [0, 3, 4, 2], "tensao": [0, 0, 3, 4]}[humor if humor in ESCALAS else "curioso"]
     compasso = beat * 4
     i = 0
     while i * compasso < dur + 1:
@@ -286,6 +381,19 @@ def musica(humor: str, dur: float) -> np.ndarray:
                 out[o:o + len(h)] += h[: max(0, n - o)]
             if k % 4 == 0:
                 kk = kick() * (0.55 if humor == "epico" else 0.35)
+                out[o:o + len(kk)] += kk[: max(0, n - o)]
+            k += 1
+    if humor == "tensao":
+        # ostinato grave em semicolcheias + bumbo a cada tempo: tensão constante, sem melodia que brigue com a voz
+        k = 0
+        while k * beat / 4 < dur:
+            g = progs[int(k * beat / 4 / compasso) % 4]
+            m = raiz - 12 + escala[g % len(escala)] + (12 if k % 8 == 6 else 0)
+            s = lp_rapido(pluck(m, 0.22), 900) * (0.30 if k % 4 == 0 else 0.18)
+            o = int(k * beat / 4 * SR)
+            out[o:o + len(s)] += s[: max(0, n - o)]
+            if k % 4 == 0:
+                kk = kick() * 0.4
                 out[o:o + len(kk)] += kk[: max(0, n - o)]
             k += 1
     if humor in ("terror", "suspense"):
@@ -346,6 +454,16 @@ def gerar(projeto_dir: Path) -> Path:
         ffmpeg("-i", str(bruto), "-af", f"loudnorm=I=-14:TP=-1.5:LRA=20:linear=true,apad,atrim=0:{dur}", "-ar", str(SR), "-ac", "2", str(b / "mix.wav"))
         print(f"[audio] mix 'nivel50' (regra do kit cartoon) em {b / 'mix.wav'}")
         return b / "mix.wav"
+
+    if cfg_m.get("automacao"):
+        # automação: [{"em": ref de tempo (fala, palavra:x, t:s), "db": ganho}] interpolado linearmente
+        sys.path.insert(0, str(Path(__file__).parent))
+        from voz import resolver_ref
+        pts = sorted((resolver_ref(a["em"], tempos["falas"], tempos["palavras"]), a["db"]) for a in cfg_m["automacao"])
+        mus, srm = sf.read(b / "musica.wav", dtype="float32")
+        tt = np.arange(len(mus)) / srm
+        ganho = 10 ** (np.interp(tt, [p[0] for p in pts], [p[1] for p in pts]) / 20)
+        sf.write(b / "musica.wav", (mus.T * ganho).T if mus.ndim > 1 else mus * ganho, srm)
 
     vol_m = cfg_m.get("volume_db", -22)
     vol_sfx = proj.get("sfx_volume_db", -9)
