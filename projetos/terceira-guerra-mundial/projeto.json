@@ -99,7 +99,7 @@
   ],
   "sfx": [
     {
-      "som": "notificacao",
+      "som": "ding",
       "em": "t:0.25"
     },
     {
@@ -111,11 +111,11 @@
       "em": "palavra:Taiwan"
     },
     {
-      "som": "alarme",
+      "som": "riser",
       "em": "palavra:confrontos"
     },
     {
-      "som": "digital",
+      "som": "glitch",
       "em": "palavra:internet"
     },
     {
