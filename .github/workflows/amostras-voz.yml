@@ -9,6 +9,12 @@ on:
       perfil:
         description: "Perfil de narração (ciencia, suspense, terror, historia, biblico, engenharia, curiosidades, documentario)"
         default: "ciencia"
+  push:
+    paths:
+      - "ferramentas/voz.py"
+      - "ferramentas/perfis.json"
+      - "ferramentas/amostras_voz.py"
+      - ".github/workflows/amostras-voz.yml"
 
 permissions:
   contents: write
@@ -44,7 +50,7 @@ jobs:
         continue-on-error: true
         run: |
           REF=""; [ -f vozes/referencia.mp3 ] && REF="--referencia vozes/referencia.mp3"
-          python ferramentas/amostras_voz.py amostras --motores ${{ matrix.motor }} --perfil ${{ github.event.inputs.perfil }} $REF
+          python ferramentas/amostras_voz.py amostras --motores ${{ matrix.motor }} --perfil ${{ github.event.inputs.perfil || 'ciencia' }} $REF
           mv amostras/RELATORIO.md amostras/RELATORIO-${{ matrix.motor }}.md
       - uses: actions/upload-artifact@v4
         if: always()
@@ -70,4 +76,4 @@ jobs:
           { echo "Ouça cada arquivo e escolha o motor. Relatórios:"; echo; cat todas/RELATORIO-*.md 2>/dev/null | grep -v "^| motor\|^|---" ; } > notas.md
           cat notas.md >> "$GITHUB_STEP_SUMMARY"
           tag="amostras-voz-${{ github.run_number }}"
-          gh release create "$tag" todas/*.mp3 --repo "${{ github.repository }}" --title "🎙️ Amostras de voz pt-BR (${{ github.event.inputs.perfil }})" --notes-file notas.md --target "${{ github.sha }}"
+          gh release create "$tag" todas/*.mp3 --repo "${{ github.repository }}" --title "🎙️ Amostras de voz pt-BR (${{ github.event.inputs.perfil || 'ciencia' }})" --notes-file notas.md --target "${{ github.sha }}"
