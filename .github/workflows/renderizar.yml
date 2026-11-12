@@ -19,6 +19,7 @@ on:
     paths:
       - "projetos/**/projeto.json"
       - "projetos/**/Video.tsx"
+      - "projetos/**/cartoon/*.js"
 
 permissions:
   contents: write
@@ -100,6 +101,17 @@ jobs:
           if [ "$M" = "qwen3" ]; then
             pip install -q torch torchaudio --index-url https://download.pytorch.org/whl/cpu
             pip install -q qwen-tts
+          fi
+
+      - name: Motor cartoon (skill cartoon-audio-short), só se o projeto usar
+        run: |
+          MV=$(python -c "import json;print(json.load(open('projetos/${{ matrix.projeto }}/projeto.json')).get('motor','remotion'))")
+          echo "Motor visual: $MV"
+          if [ "$MV" = "cartoon" ]; then
+            python scripts/bootstrap_cartoon.py
+            npm i -g playwright@1.63.0 > /dev/null
+            npx -y playwright@1.63.0 install --with-deps chromium > /dev/null
+            python scripts/check_environment.py
           fi
 
       - name: Voz personalizada (do secret, nunca do repositório)

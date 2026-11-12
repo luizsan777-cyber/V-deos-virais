@@ -1,0 +1,24 @@
+{
+  "titulo": "O vigia que nunca piscava",
+  "motor": "cartoon",
+  "modo": "2d",
+  "estilo": "cartoon-cards-mundo-3d (kit cartoon-audio-short)",
+  "perfil": "curiosidades",
+  "voz": { "motor": "kokoro", "voz": "pm_alex" },
+  "musica": { "humor": "alegre", "volume_db": -24 },
+  "legenda": "impacto",
+  "fontes": ["Ficção original (conto de humor), não é fato histórico."],
+  "falas": [
+    { "id": "gancho", "texto": "O vigia da ponte jurava que ninguém passava sem ele ver." },
+    { "id": "pisca", "texto": "Aí ele piscou..." },
+    { "id": "final", "texto": "e a cidade inteira atravessou!" }
+  ],
+  "destaques": ["ninguém", "piscou", "cidade", "inteira"],
+  "sfx": [
+    { "som": "pop", "em": "palavra:ninguém" },
+    { "som": "ding", "em": "palavra:piscou" },
+    { "som": "whoosh", "em": "final-0.1" },
+    { "som": "desce", "em": "palavra:atravessou+0.3" }
+  ],
+  "fim_s": 1.25
+}

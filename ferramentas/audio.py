@@ -336,6 +336,17 @@ def gerar(projeto_dir: Path) -> Path:
     else:
         sf.write(b / "musica.wav", musica(humor, dur), SR)
 
+    if proj.get("mix") == "nivel50":
+        # regra da skill cartoon-audio-short: música e SFX a 50 % (-6 dB) do RMS da voz, sem ducking;
+        # depois só ganho linear até -14 LUFS (sem compressão)
+        kit_mix = Path(__file__).resolve().parent.parent / ".claude/skills/cartoon-audio-short/kit/tools/mix.py"
+        bruto = b / "mix_raw.wav"
+        subprocess.run([sys.executable, str(kit_mix), str(b / "narracao.wav"), str(b / "musica.wav"), str(b / "sfx.wav"),
+                        "--saida", str(bruto)], check=True)
+        ffmpeg("-i", str(bruto), "-af", f"loudnorm=I=-14:TP=-1.5:LRA=20:linear=true,apad,atrim=0:{dur}", "-ar", str(SR), "-ac", "2", str(b / "mix.wav"))
+        print(f"[audio] mix 'nivel50' (regra do kit cartoon) em {b / 'mix.wav'}")
+        return b / "mix.wav"
+
     vol_m = cfg_m.get("volume_db", -22)
     vol_sfx = proj.get("sfx_volume_db", -9)
     # voz tratada: passa-alta, presença, compressão leve; trilha com ducking pela voz

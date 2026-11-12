@@ -9,6 +9,9 @@ import zipfile
 ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT / ".claude/skills/cartoon-audio-short/kit-source/cartoon-short-kit.zip"
 TARGET = ROOT / ".claude/skills/cartoon-audio-short/kit"
+# Complementos versionados (o kit extraído é ignorado pelo git): three.js r160 e toon.ts vendorizados (MIT)
+# e tools/mix.py, que o ZIP original não traz. Só são ADICIONADOS; nada do ZIP é alterado.
+EXTRA = ROOT / ".claude/skills/cartoon-audio-short/kit-extra"
 REQUIRED = [
     "engine/main.js", "engine/roman.js", "engine/motion.js",
     "tools/timing.py", "tools/render.mjs", "tools/setup.sh",
@@ -40,7 +43,7 @@ def main() -> int:
             parts = p.parts[1:] if p.parts and p.parts[0] == "cartoon-short-kit" else p.parts
             if not parts:
                 continue
-            if (item.external_attr >> 16) & stat.S_IFMT((item.external_attr >> 16)) == stat.S_IFLNK:
+            if stat.S_ISLNK(item.external_attr >> 16):
                 raise RuntimeError("ZIP contem link simbolico; revise manualmente")
             destination = TARGET.joinpath(*parts)
             if item.is_dir():
@@ -57,10 +60,27 @@ def main() -> int:
                     destination.write_bytes(payload)
             count += 1
     print(f"{'Seriam extraidos' if args.dry_run else 'Extraidos'} {count} arquivos em {TARGET}")
+    extras = 0
+    if EXTRA.is_dir() and not args.dry_run:
+        for src in sorted(p for p in EXTRA.rglob("*") if p.is_file()):
+            dst = TARGET / src.relative_to(EXTRA)
+            if dst.exists():
+                if dst.read_bytes() != src.read_bytes():
+                    raise FileExistsError(f"Recusando sobrescrever com kit-extra: {dst}")
+                continue
+            dst.parent.mkdir(parents=True, exist_ok=True)
+            dst.write_bytes(src.read_bytes())
+            extras += 1
+        print(f"Complementos de kit-extra aplicados: {extras} novos")
     for path in REQUIRED:
         print(f"{'OK' if (TARGET / path).exists() else 'PENDENTE'}: {path}" if not args.dry_run else f"Esperado: {path}")
-    print("ATENCAO: o kit original nao traz, pelo menos: " + ", ".join(MISSING_FROM_SUPPLIED_ARCHIVE))
-    print("Nao execute o renderizador antes de resolver e testar as dependencias adicionais.")
+    for path in MISSING_FROM_SUPPLIED_ARCHIVE + ["vendor/toon.ts", "vendor/three.module.js"]:
+        alvo = TARGET / path
+        if path == "engine/toonbase.js":  # gerado por tools/setup.sh a partir de vendor/toon.ts
+            alvo = TARGET / "vendor/toon.ts"
+        if path == "engine/three.module.js":
+            alvo = TARGET / "vendor/three.module.js"
+        print(f"{'OK' if alvo.exists() else 'FALTA'}: {path}" + ("" if alvo == TARGET / path else f" (via {alvo.relative_to(TARGET)})"))
     return 0
 
 if __name__ == "__main__":
