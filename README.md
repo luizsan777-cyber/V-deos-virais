@@ -64,3 +64,13 @@ Detalhes e voz personalizada: `.claude/skills/voz-ptbr/SKILL.md`.
 Código deste repositório: ainda sem licença definida (escolha a sua). Remotion tem licença própria (grátis para pessoa física e empresas até 3 pessoas).
 Trilhas e efeitos sonoros são sintetizados em código (originais). Fontes: OFL (via @fontsource).
 Análise completa dos repositórios de referência em `docs/ANALISE.md`.
+
+## Skill 2D adicional: cartoon-audio-short (Drive)
+
+Foi adicionada a skill original do Drive em `.claude/skills/cartoon-audio-short/SKILL.md` e o ZIP de origem em `.claude/skills/cartoon-audio-short/kit-source/cartoon-short-kit.zip`.
+
+Para inspecionar e extrair: `python scripts/bootstrap_cartoon.py`; para verificar dependencias: `python scripts/check_environment.py`. O kit original **nao contem todas as dependencias** citadas na documentacao. Este motor **ainda nao foi validado** neste repositorio.
+
+A antiga especificacao da Viral Video Engine foi arquivada em `.claude/skills/viral-video-engine/references/`; a skill `video-viral` continua sendo o **fluxo principal** do repositorio.
+
+**Aviso:** este repositorio e publico. Nao versionar arquivos de voz pessoais ou credenciais.
