@@ -71,3 +71,14 @@ saida/<slug>.mp4, saida/<slug>_qa.jpg, saida/<slug>_qa.json   — não versionad
 ```
 
 Exemplos completos e testados: `projetos/teste-corpo-brilha/` (2D) e `projetos/teste-3d-terra/` (3D).
+
+## Motor 2D adicional vindo do Drive (integracao 2026-11-12)
+
+A skill `cartoon-audio-short` esta em `../cartoon-audio-short/SKILL.md`. Seu kit original esta em `../cartoon-audio-short/kit-source/cartoon-short-kit.zip`.
+
+- Para criar uma historia 2D, **prefira o motor Remotion ja existente** quando ele atender a qualidade. Considere o kit 2D como motor complementar, nao substituicao automatica.
+- Para preparar o kit, execute a partir da raiz `python scripts/bootstrap_cartoon.py` e depois `python scripts/check_environment.py`.
+- O ZIP fornecido no Drive **nao contem** os arquivos vendorizados de Three.js, o `toon.ts` nem o `mix.py` citados na documentacao. Corrija/obtenha licitamente e valide antes de tentar renderizar.
+- Mantenha a narracao **pt-BR informal e natural**, conforme `voz-ptbr`; voz local/clonada do Windows nao fica automaticamente na nuvem.
+- **Nunca declare que o motor novo gera MP4** ate o proprio ambiente validar uma previa de 5 a 8 segundos com voz, movimento e arquivo final.
+- Nao interrompa outras renderizacoes nem sobrescreva componentes aprovados da engine.
