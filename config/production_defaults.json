@@ -1,0 +1,30 @@
+{
+  "default_locale": "pt-BR",
+  "tone": "informal_natural",
+  "hook_seconds": 3,
+  "default_duration_seconds": 70,
+  "output": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "container": "mp4",
+    "video_codec": "h264",
+    "audio_codec": "aac"
+  },
+  "profile": "auto_by_series",
+  "modes": [
+    "2d",
+    "3d_stylized",
+    "explanatory"
+  ],
+  "voice": {
+    "provider": "detect_installed",
+    "original_voice_local_only": true,
+    "do_not_upload_private_samples": true
+  },
+  "production": {
+    "preview_seconds": 8,
+    "require_proof_mp4": true,
+    "no_paid_api_without_approval": true
+  }
+}
