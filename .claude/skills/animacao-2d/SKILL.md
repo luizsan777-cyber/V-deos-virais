@@ -50,3 +50,9 @@ Exemplo completo e testado: `projetos/teste-corpo-brilha/Video.tsx`.
 - Algo muda a cada 2–4 s. Câmera nunca parada (deriva padrão 0.6 %/s já ativa).
 - Cenas diferentes: `<Sequence from durationInFrames>` com transição (Flash curto ou whoosh + movimento).
 - Conferir nos stills: rosto visível e grande, texto não cobre rosto, contraste do personagem com o fundo.
+
+## Opcao complementar: cartoon-audio-short
+
+Existe outra skill 2D original em `../cartoon-audio-short/SKILL.md` com o ZIP em `../cartoon-audio-short/kit-source/`. Ela usa personagens desenhados em cards, camera e render por codigo.
+
+**Nao substitua automaticamente** o kit Remotion deste repositorio: compare a qualidade das cenas no mesmo roteiro. Para uso opcional, rode `python scripts/bootstrap_cartoon.py`, veja as faltas de dependencias e teste 5–8 segundos. O kit e parcial; nao e um gerador de MP4 garantido.
