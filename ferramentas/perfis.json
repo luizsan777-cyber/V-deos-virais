@@ -51,9 +51,9 @@
   "curiosidades": {
     "descricao": "Descontraído, divertido e surpreendente",
     "velocidade": 1.1, "pausa_entre_falas": 0.12, "pausa_max_interna": 0.26,
-    "instrucao": "Brasileira descontraída e divertida, contando uma curiosidade surpreendente com humor leve e um toque de ironia.",
+    "instrucao": "Brasileiro descontraído e divertido, contando uma curiosidade surpreendente com humor leve e um toque de ironia.",
     "expressividade": 0.7,
-    "vozes": {"kokoro": "pf_dora", "edge": "pt-BR-FranciscaNeural", "piper": "pt_BR-faber-medium", "qwen3": "Vivian"},
+    "vozes": {"kokoro": "pm_alex", "edge": "pt-BR-AntonioNeural", "piper": "pt_BR-faber-medium", "qwen3": "Vivian"},
     "musica": "curioso"
   },
   "documentario": {

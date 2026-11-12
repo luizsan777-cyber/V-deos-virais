@@ -7,6 +7,11 @@ description: Narração em português brasileiro do Viral Video Engine — escol
 
 Script: `python3 ferramentas/voz.py projetos/<slug>` (chamado também por `produzir.py`).
 
+## Escolha do usuário (12/11/2026)
+
+**Padrão: Kokoro com voz masculina** — `pm_alex` (ciência, curiosidades, engenharia, documentário) e
+`pm_santa` (terror, suspense, história, bíblico). Só use `pf_dora` ou outro motor se o usuário pedir.
+
 ## Motores
 
 | motor | onde roda | observação |
