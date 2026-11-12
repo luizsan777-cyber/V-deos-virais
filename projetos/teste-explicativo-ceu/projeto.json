@@ -1,0 +1,25 @@
+{
+  "titulo": "Por que o céu é azul?",
+  "modo": "explicativo",
+  "estilo": "quadro-giz",
+  "perfil": "curiosidades",
+  "voz": { "motor": "kokoro", "voz": "pf_dora" },
+  "musica": { "humor": "alegre", "volume_db": -25 },
+  "legenda": "moderno",
+  "fontes": [
+    "Espalhamento de Rayleigh: intensidade proporcional a 1/λ⁴ — (700 nm / 450 nm)⁴ ≈ 5,9 (Encyclopaedia Britannica, 'Rayleigh scattering')"
+  ],
+  "falas": [
+    { "id": "gancho", "texto": "Sabe por que o céu é azul?" },
+    { "id": "sol", "texto": "A luz do Sol chega com todas as cores misturadas." },
+    { "id": "ar", "texto": "Só que o ar espalha muito mais o azul. Quase seis vezes mais que o vermelho!" }
+  ],
+  "destaques": ["azul", "todas", "cores", "seis"],
+  "sfx": [
+    { "som": "pop", "em": "gancho" },
+    { "som": "whoosh", "em": "sol-0.1" },
+    { "som": "magia", "em": "palavra:espalha" },
+    { "som": "ding", "em": "palavra:seis" }
+  ],
+  "fim_s": 0.5
+}

@@ -1,0 +1,3 @@
+story-animator 6bff528fded9753c30c56a90ac71926e5baf559f
+claude-animated-shorts e3b817b6afc6cd413466d43f11ba31209e034bbf
+claude-video-studio 8be28db576a6a0e8d9c9750eefc4fa2ccec06429

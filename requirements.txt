@@ -1,0 +1,4 @@
+# Núcleo (roda em qualquer lugar, CPU, offline após baixar o modelo Kokoro do GitHub)
+numpy>=1.26
+soundfile>=0.12
+kokoro-onnx==0.6.1

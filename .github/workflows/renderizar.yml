@@ -1,0 +1,132 @@
+name: Renderizar vídeo
+
+# Renderiza projetos/<slug> em MP4 1080x1920 30 fps e publica:
+#  - como Release (link direto para baixar no celular: aba "Releases" do repositório)
+#  - como artefato da execução (zip, guardado 14 dias)
+# Dispara sozinho quando projeto.json ou Video.tsx de um projeto muda, ou manualmente (Actions → Run workflow).
+
+on:
+  workflow_dispatch:
+    inputs:
+      projeto:
+        description: "Nome da pasta em projetos/ (ex.: teste-corpo-brilha)"
+        required: true
+      motor_voz:
+        description: "Motor de voz (vazio = o do projeto.json): kokoro | piper | edge | chatterbox | qwen3"
+        required: false
+        default: ""
+  push:
+    paths:
+      - "projetos/**/projeto.json"
+      - "projetos/**/Video.tsx"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: render-${{ github.ref }}-${{ github.event.inputs.projeto || 'push' }}
+  cancel-in-progress: false
+
+jobs:
+  listar:
+    runs-on: ubuntu-latest
+    outputs:
+      projetos: ${{ steps.p.outputs.projetos }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+      - id: p
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            lista="${{ github.event.inputs.projeto }}"
+          else
+            lista=$(git diff --name-only HEAD~1 HEAD -- projetos 2>/dev/null | cut -d/ -f2 | sort -u | tr '\n' ' ')
+          fi
+          json=$(for s in $lista; do [ -f "projetos/$s/projeto.json" ] && [ -f "projetos/$s/Video.tsx" ] && printf '"%s",' "$s"; done)
+          echo "projetos=[${json%,}]" >> "$GITHUB_OUTPUT"
+          echo "Projetos: [${json%,}]"
+
+  render:
+    needs: listar
+    if: needs.listar.outputs.projetos != '[]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    strategy:
+      fail-fast: false
+      max-parallel: 2
+      matrix:
+        projeto: ${{ fromJson(needs.listar.outputs.projetos) }}
+    env:
+      VOZ_MOTOR: ${{ github.event.inputs.motor_voz }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: engine/package-lock.json
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: ffmpeg e fontes do sistema
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg fonts-noto-color-emoji > /dev/null
+
+      - name: Cache de modelos de voz e navegador
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cache/viral-engine
+            ~/.cache/huggingface
+          key: modelos-${{ hashFiles('ferramentas/voz.py') }}
+
+      - name: Dependências
+        run: |
+          pip install -q -r requirements.txt -r requirements-vozes-extra.txt
+          cd engine && npm ci --no-audit --no-fund && npx remotion browser ensure
+
+      - name: Motores de voz pesados (só se escolhidos)
+        run: |
+          M="${VOZ_MOTOR:-$(python -c "import json;print(json.load(open('projetos/${{ matrix.projeto }}/projeto.json')).get('voz',{}).get('motor','kokoro'))")}"
+          echo "Motor: $M"
+          if [ "$M" = "chatterbox" ]; then
+            pip install -q torch==2.6.0 torchaudio==2.6.0 --index-url https://download.pytorch.org/whl/cpu
+            pip install -q chatterbox-tts
+          fi
+          if [ "$M" = "qwen3" ]; then
+            pip install -q torch torchaudio --index-url https://download.pytorch.org/whl/cpu
+            pip install -q qwen-tts
+          fi
+
+      - name: Voz personalizada (do secret, nunca do repositório)
+        env:
+          VOZ_REF: ${{ secrets.VOZ_REFERENCIA_B64 }}
+        run: |
+          if [ -n "$VOZ_REF" ]; then mkdir -p vozes && echo "$VOZ_REF" | base64 -d > vozes/referencia.mp3 && echo "referência carregada"; fi
+
+      - name: Produzir (voz → áudio → render → mux → QA)
+        run: python ferramentas/produzir.py projetos/${{ matrix.projeto }}
+
+      - name: Artefato
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: video-${{ matrix.projeto }}
+          path: |
+            saida/${{ matrix.projeto }}*
+          retention-days: 14
+
+      - name: Release (download direto pelo celular)
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          s="${{ matrix.projeto }}"
+          tag="video-$s-${{ github.run_number }}"
+          titulo=$(python -c "import json;print(json.load(open('projetos/$s/projeto.json'))['titulo'])")
+          { echo "**$titulo**"; echo; echo "Baixe o arquivo \`$s.mp4\` abaixo (toque nele no celular)."; echo; echo '```json'; cat "saida/${s}_qa.json"; echo '```'; } > notas.md
+          gh release create "$tag" "saida/$s.mp4" "saida/${s}_qa.jpg" --title "🎬 $titulo" --notes-file notas.md --target "${{ github.sha }}"
+          echo "### ✅ [$titulo](https://github.com/${{ github.repository }}/releases/tag/$tag)" >> "$GITHUB_STEP_SUMMARY"

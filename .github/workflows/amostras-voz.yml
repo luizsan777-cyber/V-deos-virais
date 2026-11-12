@@ -1,0 +1,73 @@
+name: Amostras de voz
+
+# Gera a mesma frase em cada motor de voz pt-BR (cada um num job separado, para não haver conflito de
+# dependências) e publica um Release com os MP3 + relatório. Serve para escolher o motor de ouvido.
+
+on:
+  workflow_dispatch:
+    inputs:
+      perfil:
+        description: "Perfil de narração (ciencia, suspense, terror, historia, biblico, engenharia, curiosidades, documentario)"
+        default: "ciencia"
+
+permissions:
+  contents: write
+
+jobs:
+  amostra:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    strategy:
+      fail-fast: false
+      matrix:
+        motor: [kokoro, piper, edge, chatterbox, qwen3]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg > /dev/null
+      - name: Dependências do motor
+        run: |
+          pip install -q -r requirements.txt
+          case "${{ matrix.motor }}" in
+            piper|edge) pip install -q -r requirements-vozes-extra.txt ;;
+            chatterbox) pip install -q torch==2.6.0 torchaudio==2.6.0 --index-url https://download.pytorch.org/whl/cpu && pip install -q chatterbox-tts ;;
+            qwen3) pip install -q torch torchaudio --index-url https://download.pytorch.org/whl/cpu && pip install -q qwen-tts ;;
+          esac
+      - name: Voz personalizada (secret opcional)
+        env:
+          VOZ_REF: ${{ secrets.VOZ_REFERENCIA_B64 }}
+        run: |
+          if [ -n "$VOZ_REF" ]; then mkdir -p vozes && echo "$VOZ_REF" | base64 -d > vozes/referencia.mp3; fi
+      - name: Gerar amostra
+        continue-on-error: true
+        run: |
+          REF=""; [ -f vozes/referencia.mp3 ] && REF="--referencia vozes/referencia.mp3"
+          python ferramentas/amostras_voz.py amostras --motores ${{ matrix.motor }} --perfil ${{ github.event.inputs.perfil }} $REF
+          mv amostras/RELATORIO.md amostras/RELATORIO-${{ matrix.motor }}.md
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: amostra-${{ matrix.motor }}
+          path: amostras/
+          if-no-files-found: ignore
+
+  publicar:
+    needs: amostra
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          path: todas
+          merge-multiple: true
+      - name: Release com as amostras
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          ls -la todas
+          { echo "Ouça cada arquivo e escolha o motor. Relatórios:"; echo; cat todas/RELATORIO-*.md 2>/dev/null | grep -v "^| motor\|^|---" ; } > notas.md
+          cat notas.md >> "$GITHUB_STEP_SUMMARY"
+          tag="amostras-voz-${{ github.run_number }}"
+          gh release create "$tag" todas/*.mp3 --repo "${{ github.repository }}" --title "🎙️ Amostras de voz pt-BR (${{ github.event.inputs.perfil }})" --notes-file notas.md --target "${{ github.sha }}"

@@ -1,0 +1,67 @@
+{
+  "_info": "Perfis de narração pt-BR. 'velocidade' multiplica a fala do motor; pausas em segundos entre falas. 'instrucao' é usada por motores que aceitam direção de estilo (Qwen3-TTS). 'expressividade' é usada pelo Chatterbox. 'vozes' lista a voz preferida por motor.",
+  "ciencia": {
+    "descricao": "Curioso, empolgado e explicativo",
+    "velocidade": 1.08, "pausa_entre_falas": 0.14, "pausa_max_interna": 0.28,
+    "instrucao": "Fale como um brasileiro jovem, empolgado e curioso, contando uma descoberta incrível para um amigo. Ritmo rápido, entonação animada, sem soar formal.",
+    "expressividade": 0.6,
+    "vozes": {"kokoro": "pm_alex", "edge": "pt-BR-AntonioNeural", "piper": "pt_BR-faber-medium", "qwen3": "Ryan"},
+    "musica": "curioso"
+  },
+  "suspense": {
+    "descricao": "Misterioso, com tensão crescente",
+    "velocidade": 0.98, "pausa_entre_falas": 0.24, "pausa_max_interna": 0.4,
+    "instrucao": "Voz brasileira grave e misteriosa, falando baixo e com tensão crescente, como quem conta um segredo perigoso.",
+    "expressividade": 0.55,
+    "vozes": {"kokoro": "pm_santa", "edge": "pt-BR-AntonioNeural", "piper": "pt_BR-faber-medium", "qwen3": "Ryan"},
+    "musica": "suspense"
+  },
+  "terror": {
+    "descricao": "Atmosfera sombria, voz envolvente",
+    "velocidade": 0.95, "pausa_entre_falas": 0.28, "pausa_max_interna": 0.45,
+    "instrucao": "Narrador brasileiro de história de terror: voz sombria, sussurrada em alguns momentos, envolvente e arrepiante, sem exagero teatral.",
+    "expressividade": 0.65,
+    "vozes": {"kokoro": "pm_santa", "edge": "pt-BR-AntonioNeural", "piper": "pt_BR-faber-medium", "qwen3": "Ryan"},
+    "musica": "terror"
+  },
+  "historia": {
+    "descricao": "Narrador marcante e cinematográfico",
+    "velocidade": 1.0, "pausa_entre_falas": 0.2, "pausa_max_interna": 0.35,
+    "instrucao": "Narrador brasileiro cinematográfico, voz firme e marcante, como trailer de filme épico, mas natural.",
+    "expressividade": 0.6,
+    "vozes": {"kokoro": "pm_santa", "edge": "pt-BR-AntonioNeural", "piper": "pt_BR-faber-medium", "qwen3": "Ryan"},
+    "musica": "epico"
+  },
+  "biblico": {
+    "descricao": "Respeitoso, sereno e emocionante",
+    "velocidade": 0.97, "pausa_entre_falas": 0.24, "pausa_max_interna": 0.4,
+    "instrucao": "Narrador brasileiro sereno e respeitoso, contando uma história bíblica com emoção e reverência, sem gírias.",
+    "expressividade": 0.5,
+    "vozes": {"kokoro": "pm_santa", "edge": "pt-BR-AntonioNeural", "piper": "pt_BR-faber-medium", "qwen3": "Ryan"},
+    "musica": "biblico"
+  },
+  "engenharia": {
+    "descricao": "Claro, interessante e objetivo",
+    "velocidade": 1.06, "pausa_entre_falas": 0.14, "pausa_max_interna": 0.28,
+    "instrucao": "Brasileiro explicando engenharia de forma clara, direta e interessante, com leve entusiasmo.",
+    "expressividade": 0.5,
+    "vozes": {"kokoro": "pm_alex", "edge": "pt-BR-AntonioNeural", "piper": "pt_BR-faber-medium", "qwen3": "Ryan"},
+    "musica": "ciencia"
+  },
+  "curiosidades": {
+    "descricao": "Descontraído, divertido e surpreendente",
+    "velocidade": 1.1, "pausa_entre_falas": 0.12, "pausa_max_interna": 0.26,
+    "instrucao": "Brasileira descontraída e divertida, contando uma curiosidade surpreendente com humor leve e um toque de ironia.",
+    "expressividade": 0.7,
+    "vozes": {"kokoro": "pf_dora", "edge": "pt-BR-FranciscaNeural", "piper": "pt_BR-faber-medium", "qwen3": "Vivian"},
+    "musica": "curioso"
+  },
+  "documentario": {
+    "descricao": "Natural, seguro e expressivo",
+    "velocidade": 1.02, "pausa_entre_falas": 0.18, "pausa_max_interna": 0.32,
+    "instrucao": "Narrador brasileiro de documentário: natural, seguro e expressivo, conversado, sem formalidade excessiva.",
+    "expressividade": 0.5,
+    "vozes": {"kokoro": "pm_alex", "edge": "pt-BR-AntonioNeural", "piper": "pt_BR-faber-medium", "qwen3": "Ryan"},
+    "musica": "ciencia"
+  }
+}

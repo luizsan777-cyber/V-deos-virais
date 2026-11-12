@@ -1,0 +1,9 @@
+node_modules/
+projetos/*/build/
+saida/
+amostras/
+vozes/
+engine/src/projeto.gen.ts
+__pycache__/
+*.pyc
+.DS_Store

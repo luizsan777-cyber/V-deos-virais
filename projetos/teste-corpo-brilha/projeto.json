@@ -1,0 +1,66 @@
+{
+  "titulo": "Seu corpo brilha no escuro",
+  "modo": "2d",
+  "estilo": "noite-conto",
+  "perfil": "ciencia",
+  "voz": {
+    "motor": "kokoro",
+    "voz": "pm_alex"
+  },
+  "musica": {
+    "humor": "curioso",
+    "volume_db": -24
+  },
+  "legenda": "impacto",
+  "fontes": [
+    "Kobayashi M., Kikuchi D., Okamura H. (2009). Imaging of Ultraweak Spontaneous Photon Emission from Human Body Displaying Diurnal Rhythm. PLoS ONE 4(7): e6256. doi:10.1371/journal.pone.0006256"
+  ],
+  "falas": [
+    {
+      "id": "gancho",
+      "texto": "Seu corpo brilha no escuro. Sério!"
+    },
+    {
+      "id": "revelacao",
+      "texto": "Só que essa luz é mil vezes mais fraca do que o seu olho consegue ver."
+    },
+    {
+      "id": "fecho",
+      "texto": "Tipo um vaga-lume... bem tímido."
+    }
+  ],
+  "destaques": [
+    "brilha",
+    "escuro",
+    "mil",
+    "fraca",
+    "vaga-lume"
+  ],
+  "sfx": [
+    {
+      "som": "clique",
+      "em": "t:0.12"
+    },
+    {
+      "som": "magia",
+      "em": "palavra:brilha-0.05"
+    },
+    {
+      "som": "whoosh",
+      "em": "palavra:sério-0.12"
+    },
+    {
+      "som": "pop",
+      "em": "palavra:mil"
+    },
+    {
+      "som": "desce",
+      "em": "palavra:fraca"
+    },
+    {
+      "som": "brilho",
+      "em": "palavra:vaga-lume"
+    }
+  ],
+  "fim_s": 0.45
+}

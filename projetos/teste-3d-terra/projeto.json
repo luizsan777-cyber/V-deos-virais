@@ -1,0 +1,24 @@
+{
+  "titulo": "E se a Terra parasse de girar?",
+  "modo": "3d",
+  "estilo": "ciencia-cartoon-3d",
+  "perfil": "ciencia",
+  "voz": { "motor": "kokoro", "voz": "pm_alex" },
+  "musica": { "humor": "epico", "volume_db": -24 },
+  "legenda": "moderno",
+  "fontes": [
+    "NASA / velocidade de rotação no equador ≈ 1.670 km/h (circunferência equatorial 40.075 km / 23,93 h)"
+  ],
+  "falas": [
+    { "id": "gancho", "texto": "E se a Terra parasse de girar agora?" },
+    { "id": "efeito", "texto": "Cara, tudo que não tá preso no chão ia sair voando a 1.670 km/h!" }
+  ],
+  "destaques": ["parasse", "girar", "voando", "1670", "kmh"],
+  "sfx": [
+    { "som": "riser", "em": "gancho-0.2" },
+    { "som": "impacto", "em": "palavra:parasse" },
+    { "som": "whoosh", "em": "palavra:voando-0.1" },
+    { "som": "vento", "em": "palavra:voando" }
+  ],
+  "fim_s": 0.5
+}
