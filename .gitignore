@@ -7,3 +7,23 @@ engine/src/projeto.gen.ts
 __pycache__/
 *.pyc
 .DS_Store
+
+# Materiais privados e credenciais
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+secrets/
+credentials/
+assets/voz/
+voice_samples/
+private_audio/
+# Audios e videos brutos ou gerados: publicar apenas por release intencional
+*.wav
+*.mp3
+*.mp4
+*.mov
+*.webm
+# Kit 2D extraido pode ser reconstruido do ZIP de origem
+.claude/skills/cartoon-audio-short/kit/
