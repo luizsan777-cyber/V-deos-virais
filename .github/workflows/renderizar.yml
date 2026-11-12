@@ -41,7 +41,7 @@ jobs:
           if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
             lista="${{ github.event.inputs.projeto }}"
           else
-            lista=$(git diff --name-only HEAD~1 HEAD -- projetos 2>/dev/null | cut -d/ -f2 | sort -u | tr '\n' ' ')
+            lista=$(git diff-tree --no-commit-id --name-only -r --root HEAD -- projetos | cut -d/ -f2 | sort -u | tr '\n' ' ')
           fi
           json=$(for s in $lista; do [ -f "projetos/$s/projeto.json" ] && [ -f "projetos/$s/Video.tsx" ] && printf '"%s",' "$s"; done)
           echo "projetos=[${json%,}]" >> "$GITHUB_OUTPUT"
