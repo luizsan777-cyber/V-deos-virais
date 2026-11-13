@@ -1,0 +1,488 @@
+{
+  "titulo": "E se ninguém mais pudesse morrer?",
+  "id_producao": "video_03_imortalidade",
+  "motor": "remotion",
+  "modo": "2d",
+  "estilo": "cidade-2d-tempo (dourado/verde → laranja suave → azul-frio/lilás), hipótese fictícia",
+  "perfil": "curiosidades",
+  "voz": {
+    "motor": "kokoro",
+    "voz": "pm_santa",
+    "velocidade": 1.0
+  },
+  "musica": {
+    "humor": "curioso",
+    "volume_db": -25,
+    "automacao": [
+      {
+        "em": "t:0",
+        "db": 0
+      },
+      {
+        "em": "c03_sofrer",
+        "db": -3
+      },
+      {
+        "em": "c05_nascimentos",
+        "db": 0
+      },
+      {
+        "em": "c06_recursos",
+        "db": 1
+      },
+      {
+        "em": "c09_conflitos",
+        "db": -4
+      },
+      {
+        "em": "c10_seculos",
+        "db": -3
+      },
+      {
+        "em": "c11_dilema",
+        "db": -5
+      },
+      {
+        "em": "c12_pergunta:fim+2.6",
+        "db": -16
+      }
+    ]
+  },
+  "legenda": "impacto",
+  "fontes": [
+    "Hipótese FICTÍCIA (\"E se...?\"): nenhuma afirmação é previsão ou estatística; consequências dependem de premissas demográficas e sociais."
+  ],
+  "destaques": [
+    "morrer",
+    "presente",
+    "notícia",
+    "sofrer",
+    "séculos",
+    "envelhecimento",
+    "crianças",
+    "gerações",
+    "recursos",
+    "medicina",
+    "leis",
+    "conflitos",
+    "centenas",
+    "oportunidade",
+    "sofrimento",
+    "sempre"
+  ],
+  "falas": [
+    {
+      "id": "c01_impossivel",
+      "texto": "Imagina se, a partir de hoje, ninguém mais pudesse morrer. Parece o maior presente da humanidade, né?",
+      "pausa": 0.55
+    },
+    {
+      "id": "c02_noticia",
+      "texto": "Em poucas horas, a notícia se espalharia pelo planeta. Famílias comemorariam, governos investigariam e os hospitais ficariam em alerta.",
+      "pausa": 0.55
+    },
+    {
+      "id": "c03_sofrer",
+      "texto": "Mas não morrer é diferente de não sofrer. Doenças, acidentes e ferimentos poderiam continuar acontecendo normalmente.",
+      "pausa": 0.55
+    },
+    {
+      "id": "c04_envelhecer",
+      "texto": "Se o envelhecimento continuasse, milhões de pessoas poderiam viver durante séculos, acumulando limitações que antes não precisariam enfrentar para sempre.",
+      "pausa": 0.55
+    },
+    {
+      "id": "c05_nascimentos",
+      "texto": "E enquanto ninguém partisse, novas crianças continuariam nascendo. Com o passar das gerações, a população poderia crescer enormemente.",
+      "pausa": 0.55
+    },
+    {
+      "id": "c06_recursos",
+      "texto": "Dependendo dos nascimentos e dos recursos disponíveis, faltariam moradias, alimentos e espaço. As cidades precisariam ser completamente reorganizadas.",
+      "pausa": 0.55
+    },
+    {
+      "id": "c07_medicina",
+      "texto": "A medicina também mudaria. Sem a morte, salvar vidas teria outro significado: aliviar sofrimento e preservar a saúde por muito mais tempo.",
+      "pausa": 0.55
+    },
+    {
+      "id": "c08_regras",
+      "texto": "Governos teriam de rever aposentadorias, trabalho, leis e distribuição de recursos. Tudo foi pensado para uma vida com duração limitada.",
+      "pausa": 0.55
+    },
+    {
+      "id": "c09_conflitos",
+      "texto": "E a imortalidade não acabaria automaticamente com a violência. Conflitos e injustiças poderiam se tornar ainda mais difíceis de resolver.",
+      "pausa": 0.55
+    },
+    {
+      "id": "c10_seculos",
+      "texto": "Agora pensa em viver centenas de anos. Você veria cidades desaparecerem, tecnologias mudarem e o mundo se transformar inúmeras vezes.",
+      "pausa": 0.55
+    },
+    {
+      "id": "c11_dilema",
+      "texto": "Para alguns, seria uma oportunidade incrível. Para outros, viver sem poder escolher um fim talvez se transformasse em sofrimento.",
+      "pausa": 0.55
+    },
+    {
+      "id": "c12_pergunta",
+      "texto": "No começo, todo mundo comemoraria. Mas depois de séculos, será que viver para sempre ainda pareceria um presente?",
+      "pausa": 0.55
+    }
+  ],
+  "sfx": [
+    {
+      "som": "clique",
+      "em": "t:0.20",
+      "vol": -12
+    },
+    {
+      "som": "clique",
+      "em": "t:1.05",
+      "vol": -12
+    },
+    {
+      "som": "clique",
+      "em": "t:1.90",
+      "vol": -12
+    },
+    {
+      "som": "clique",
+      "em": "t:2.75",
+      "vol": -12
+    },
+    {
+      "som": "clique",
+      "em": "t:3.60",
+      "vol": -12
+    },
+    {
+      "som": "clique",
+      "em": "t:4.45",
+      "vol": -12
+    },
+    {
+      "som": "clique",
+      "em": "t:5.30",
+      "vol": -12
+    },
+    {
+      "som": "brilho",
+      "em": "palavra:morrer",
+      "vol": -10
+    },
+    {
+      "som": "magia",
+      "em": "palavra:presente",
+      "vol": -10
+    },
+    {
+      "som": "whoosh",
+      "em": "c02_noticia-0.25",
+      "vol": -10
+    },
+    {
+      "som": "notificacao",
+      "em": "palavra:notícia",
+      "vol": -14
+    },
+    {
+      "som": "notificacao",
+      "em": "palavra:planeta",
+      "vol": -16
+    },
+    {
+      "som": "cidade",
+      "em": "palavra:Famílias-0.2",
+      "vol": -18
+    },
+    {
+      "som": "papel",
+      "em": "palavra:governos",
+      "vol": -12
+    },
+    {
+      "som": "alarme",
+      "em": "palavra:alerta-0.3",
+      "vol": -22
+    },
+    {
+      "som": "whoosh",
+      "em": "c03_sofrer-0.25",
+      "vol": -10
+    },
+    {
+      "som": "cidade",
+      "em": "c03_sofrer",
+      "vol": -16
+    },
+    {
+      "som": "swoosh_sobe",
+      "em": "palavra:Doenças-0.3",
+      "vol": -12
+    },
+    {
+      "som": "whoosh",
+      "em": "c04_envelhecer-0.25",
+      "vol": -10
+    },
+    {
+      "som": "clique",
+      "em": "c04_envelhecer+0.60",
+      "vol": -14
+    },
+    {
+      "som": "clique",
+      "em": "c04_envelhecer+1.50",
+      "vol": -14
+    },
+    {
+      "som": "clique",
+      "em": "c04_envelhecer+2.30",
+      "vol": -14
+    },
+    {
+      "som": "clique",
+      "em": "c04_envelhecer+3.00",
+      "vol": -14
+    },
+    {
+      "som": "clique",
+      "em": "c04_envelhecer+3.60",
+      "vol": -14
+    },
+    {
+      "som": "clique",
+      "em": "c04_envelhecer+4.10",
+      "vol": -14
+    },
+    {
+      "som": "clique",
+      "em": "c04_envelhecer+4.55",
+      "vol": -14
+    },
+    {
+      "som": "clique",
+      "em": "c04_envelhecer+4.95",
+      "vol": -14
+    },
+    {
+      "som": "clique",
+      "em": "c04_envelhecer+5.30",
+      "vol": -14
+    },
+    {
+      "som": "clique",
+      "em": "c04_envelhecer+5.60",
+      "vol": -14
+    },
+    {
+      "som": "clique",
+      "em": "c04_envelhecer+5.90",
+      "vol": -14
+    },
+    {
+      "som": "clique",
+      "em": "c04_envelhecer+6.15",
+      "vol": -14
+    },
+    {
+      "som": "clique",
+      "em": "c04_envelhecer+6.40",
+      "vol": -14
+    },
+    {
+      "som": "clique",
+      "em": "c04_envelhecer+6.62",
+      "vol": -14
+    },
+    {
+      "som": "clique",
+      "em": "c04_envelhecer+6.84",
+      "vol": -14
+    },
+    {
+      "som": "clique",
+      "em": "c04_envelhecer+7.05",
+      "vol": -14
+    },
+    {
+      "som": "clique",
+      "em": "c04_envelhecer+7.25",
+      "vol": -14
+    },
+    {
+      "som": "clique",
+      "em": "c04_envelhecer+7.45",
+      "vol": -14
+    },
+    {
+      "som": "clique",
+      "em": "c04_envelhecer+7.65",
+      "vol": -14
+    },
+    {
+      "som": "clique",
+      "em": "c04_envelhecer+7.85",
+      "vol": -14
+    },
+    {
+      "som": "clique",
+      "em": "c04_envelhecer+8.05",
+      "vol": -14
+    },
+    {
+      "som": "clique",
+      "em": "c04_envelhecer+8.25",
+      "vol": -14
+    },
+    {
+      "som": "clique",
+      "em": "c04_envelhecer+8.45",
+      "vol": -14
+    },
+    {
+      "som": "swoosh_sobe",
+      "em": "c05_nascimentos-0.25",
+      "vol": -12
+    },
+    {
+      "som": "cidade",
+      "em": "palavra:gerações",
+      "vol": -16
+    },
+    {
+      "som": "pop",
+      "em": "palavra:gerações",
+      "vol": -8
+    },
+    {
+      "som": "whoosh",
+      "em": "c06_recursos-0.25",
+      "vol": -10
+    },
+    {
+      "som": "cidade",
+      "em": "c06_recursos",
+      "vol": -14
+    },
+    {
+      "som": "guindaste",
+      "em": "palavra:moradias",
+      "vol": -14
+    },
+    {
+      "som": "buzina",
+      "em": "palavra:espaço",
+      "vol": -20
+    },
+    {
+      "som": "whoosh",
+      "em": "c07_medicina-0.25",
+      "vol": -10
+    },
+    {
+      "som": "swoosh_sobe",
+      "em": "palavra:Sem",
+      "vol": -14
+    },
+    {
+      "som": "ding",
+      "em": "palavra:aliviar",
+      "vol": -14
+    },
+    {
+      "som": "papel",
+      "em": "c08_regras-0.1",
+      "vol": -10
+    },
+    {
+      "som": "papel",
+      "em": "palavra:leis",
+      "vol": -12
+    },
+    {
+      "som": "carimbo",
+      "em": "palavra:recursos",
+      "vol": -16
+    },
+    {
+      "som": "papel",
+      "em": "palavra:Tudo",
+      "vol": -12
+    },
+    {
+      "som": "whoosh",
+      "em": "c09_conflitos-0.25",
+      "vol": -10
+    },
+    {
+      "som": "cidade",
+      "em": "c09_conflitos",
+      "vol": -14
+    },
+    {
+      "som": "papel",
+      "em": "palavra:injustiças",
+      "vol": -12
+    },
+    {
+      "som": "vento",
+      "em": "c10_seculos-0.2",
+      "vol": -14
+    },
+    {
+      "som": "clique",
+      "em": "palavra:centenas",
+      "vol": -14
+    },
+    {
+      "som": "clique",
+      "em": "palavra:cidades",
+      "vol": -14
+    },
+    {
+      "som": "clique",
+      "em": "palavra:tecnologias",
+      "vol": -14
+    },
+    {
+      "som": "clique",
+      "em": "palavra:mundo",
+      "vol": -14
+    },
+    {
+      "som": "whoosh",
+      "em": "c11_dilema-0.25",
+      "vol": -12
+    },
+    {
+      "som": "magia",
+      "em": "palavra:oportunidade",
+      "vol": -12
+    },
+    {
+      "som": "vento",
+      "em": "palavra:outros",
+      "vol": -12
+    },
+    {
+      "som": "whoosh",
+      "em": "c12_pergunta-0.3",
+      "vol": -12
+    },
+    {
+      "som": "vento",
+      "em": "palavra:séculos",
+      "vol": -14
+    },
+    {
+      "som": "brilho",
+      "em": "c12_pergunta:fim+0.2",
+      "vol": -10
+    }
+  ],
+  "fim_s": 2.8
+}

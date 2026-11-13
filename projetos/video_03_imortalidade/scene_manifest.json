@@ -1,0 +1,112 @@
+{
+  "id_producao": "video_03_imortalidade",
+  "roteiro": "pacote_3_videos_codex/VIDEO_03_IMORTALIDADE.md",
+  "natureza": "hipótese FICTÍCIA",
+  "personagens": [
+    "protagonista (im03-prot-*, pele morena média, cabelo castanho → branco, camisa azul royal, calça grafite, tênis claros)",
+    "médica jaleco verde-água (im03-medica)",
+    "enfermeiro",
+    "família (2 adultos + criança)",
+    "representantes, figurantes próprios do episódio"
+  ],
+  "voz": "kokoro pm_santa 1,0 (natural)",
+  "duracao_s": 107.3,
+  "cenas": [
+    {
+      "scene_id": "01",
+      "fala_id": "c01_impossivel",
+      "inicio_s": 0,
+      "fim_s": 6.55,
+      "locucao_exata": "Imagina se, a partir de hoje, ninguém mais pudesse morrer. Parece o maior presente da humanidade, né?",
+      "visual": "Monitor com batimento ativo (push-in) → paciente respirando no leito e médica de jaleco verde-água que vira, se espanta e aponta; enfermeiro entra surpreso; janelas do planeta com o mesmo fenômeno; 'E SE NINGUÉM MAIS MORRESSE?'."
+    },
+    {
+      "scene_id": "02",
+      "fala_id": "c02_noticia",
+      "inicio_s": 6.55,
+      "fim_s": 15.38,
+      "locucao_exata": "Em poucas horas, a notícia se espalharia pelo planeta. Famílias comemorariam, governos investigariam e os hospitais ficariam em alerta.",
+      "visual": "Mapa-múndi ilustrativo com linhas de notícia → travelling por portas: sala da família comemorando (TV 'NINGUÉM MAIS MORRE'), redação com apresentadora e técnico, gabinete com representantes apontando documentos, corredor do hospital com maca e equipe em alerta."
+    },
+    {
+      "scene_id": "03",
+      "fala_id": "c03_sofrer",
+      "inicio_s": 15.38,
+      "fim_s": 23.52,
+      "locucao_exata": "Mas não morrer é diferente de não sofrer. Doenças, acidentes e ferimentos poderiam continuar acontecendo normalmente.",
+      "visual": "Protagonista (camisa azul royal) caminha pela calçada, desacelera e olha as pessoas esperando no hospital; porta abre → corredor com cadeira de rodas, médica com prontuário, paciente com transparência anatômica simples; ele segue até o espelho do corredor."
+    },
+    {
+      "scene_id": "04",
+      "fala_id": "c04_envelhecer",
+      "inicio_s": 23.52,
+      "fim_s": 33.36,
+      "locucao_exata": "Se o envelhecimento continuasse, milhões de pessoas poderiam viver durante séculos, acumulando limitações que antes não precisariam enfrentar para sempre.",
+      "visual": "Espelho em casa: o MESMO rosto envelhece continuamente (fios grisalhos → branco, rugas, postura) com relógio acelerando, calendário virando, janela/abajur mudando de época; ele toca a borda do espelho e olha para a câmera; relógio → roda."
+    },
+    {
+      "scene_id": "05",
+      "fala_id": "c05_nascimentos",
+      "inicio_s": 33.36,
+      "fim_s": 41.88,
+      "locucao_exata": "E enquanto ninguém partisse, novas crianças continuariam nascendo. Com o passar das gerações, a população poderia crescer enormemente.",
+      "visual": "Família sai da casa baixa com carrinho de bebê (rodas girando) e criança de mãos dadas; câmera sobe; prédios se constroem andar por andar, surge linha de transporte e pedestres; árvore da praça como âncora; 'GERAÇÕES'."
+    },
+    {
+      "scene_id": "06",
+      "fala_id": "c06_recursos",
+      "inicio_s": 41.88,
+      "fim_s": 52.31,
+      "locucao_exata": "Dependendo dos nascimentos e dos recursos disponíveis, faltariam moradias, alimentos e espaço. As cidades precisariam ser completamente reorganizadas.",
+      "visual": "Mesma praça/árvore com a cidade adensada: transporte lotado em camadas, fila avançando no serviço público, entrega de alimentos na ciclovia, mercado descarregando, guindaste, horta vertical; painel 'DEMANDA POR RECURSOS (ilustrativa)' sem números."
+    },
+    {
+      "scene_id": "07",
+      "fala_id": "c07_medicina",
+      "inicio_s": 52.31,
+      "fim_s": 61.71,
+      "locucao_exata": "A medicina também mudaria. Sem a morte, salvar vidas teria outro significado: aliviar sofrimento e preservar a saúde por muito mais tempo.",
+      "visual": "Hospital do futuro próximo: porta automática, protagonista idoso recebido por fisioterapeuta, outro paciente em movimentos assistidos, médica no monitor; agenda de turnos vira transição."
+    },
+    {
+      "scene_id": "08",
+      "fala_id": "c08_regras",
+      "inicio_s": 61.71,
+      "fim_s": 70.88,
+      "locucao_exata": "Governos teriam de rever aposentadorias, trabalho, leis e distribuição de recursos. Tudo foi pensado para uma vida com duração limitada.",
+      "visual": "Reunião em mesa redonda com representantes de várias idades e painéis de ícones (aposentadoria, trabalho, moradia, saúde) sem estatísticas → mesa do protagonista em três épocas/ocupações com luz da janela mudando."
+    },
+    {
+      "scene_id": "09",
+      "fala_id": "c09_conflitos",
+      "inicio_s": 70.88,
+      "fim_s": 80.22,
+      "locucao_exata": "E a imortalidade não acabaria automaticamente com a violência. Conflitos e injustiças poderiam se tornar ainda mais difíceis de resolver.",
+      "visual": "Praça dividida por barreira baixa: dois grupos discutindo acesso a serviços (sem armas/agressão), mediadores e documento entregue na mesa de negociação; protagonista observa com mãos fechadas."
+    },
+    {
+      "scene_id": "10",
+      "fala_id": "c10_seculos",
+      "inicio_s": 80.22,
+      "fim_s": 89.38,
+      "locucao_exata": "Agora pensa em viver centenas de anos. Você veria cidades desaparecerem, tecnologias mudarem e o mundo se transformar inúmeras vezes.",
+      "visual": "Protagonista mais velho na janela grande: time-lapse com dias/noites e estações, prédios antigos descendo e novos subindo, bonde → trilho elevado, árvore crescendo; reflexo do rosto no vidro (fascínio + cansaço)."
+    },
+    {
+      "scene_id": "11",
+      "fala_id": "c11_dilema",
+      "inicio_s": 89.38,
+      "fim_s": 97.5,
+      "locucao_exata": "Para alguns, seria uma oportunidade incrível. Para outros, viver sem poder escolher um fim talvez se transformasse em sofrimento.",
+      "visual": "Travelling por duas trajetórias: aprendiz na oficina com jovens e viajando de trem (parallax) → pessoa isolada no apartamento azul-lilás olhando a cidade, cortina ao vento."
+    },
+    {
+      "scene_id": "12",
+      "fala_id": "c12_pergunta",
+      "inicio_s": 97.5,
+      "fim_s": 107.3,
+      "locucao_exata": "No começo, todo mundo comemoraria. Mas depois de séculos, será que viver para sempre ainda pareceria um presente?",
+      "visual": "Protagonista de cabelo quase branco no terraço, mão aperta o parapeito; pôr do sol → noite estrelada; câmera recua revelando a cidade imensa com a árvore/praça original; 'VIDA ETERNA: PRESENTE OU PRISÃO?'; luz verde no céu fecha o loop com o monitor."
+    }
+  ]
+}
