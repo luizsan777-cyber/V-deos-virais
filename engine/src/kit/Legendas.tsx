@@ -68,13 +68,13 @@ export const Legendas: React.FC<{ estilo?: keyof typeof LEGENDA_ESTILOS | Estilo
       style={{
         position: "absolute", left: 70 * k, right: 150 * k, top: yc, transform: `translateY(-50%) scale(${0.75 + 0.25 * entra})`,
         opacity: clamp01(entra * 1.5) * sai, display: "flex", flexWrap: "wrap", justifyContent: "center", alignItems: "baseline",
-        columnGap: 18 * k, rowGap: 0, textAlign: "center", lineHeight: 1.08,
+        columnGap: 30 * k, rowGap: 0, textAlign: "center", lineHeight: 1.08,
       }}
     >
       {b.palavras.map((p, i) => {
         const pi = T.fr(p.ini), pf = T.fr(p.fim);
         const ativa = f >= pi && f < pf + 2;
-        const pop = ativa ? 1 + 0.12 * (1 - eout(ramp(f, pi, pi + 6))) : 1;
+        const pop = ativa ? 1 + 0.08 * (1 - eout(ramp(f, pi, pi + 6))) : 1;
         const dita = f >= pi;
         const cor = p.destaque ? E.destaque : E.cor;
         return (

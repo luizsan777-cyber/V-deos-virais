@@ -303,6 +303,64 @@ def sfx_estatica(d=0.6):
     return norm(z * np.minimum(1, (d - t) / 0.1), 0.4)
 
 
+def sfx_papel(d=0.6):
+    """folhas de papel sendo mexidas / pasta abrindo."""
+    t = t_(d)
+    z = bp_rapido(ruido(d), 3500, 1.2) * (0.4 + 0.6 * np.abs(np.sin(2 * np.pi * 7 * t))) * np.sin(np.pi * t / d)
+    return norm(z, 0.5)
+
+
+def sfx_carimbo(d=0.5):
+    """carimbo batendo na mesa: golpe grave + estalo de madeira."""
+    t = t_(d)
+    z = seno(90 * np.exp(-t * 18) + 55, d) * env(len(t), 0.001, 0.18, 5) + lp_rapido(ruido(d), 1800) * env(len(t), 0.0005, 0.04, 6) * 0.7
+    return norm(reverb(z, 0.4, 0.12), 0.85)
+
+
+def sfx_obturador(d=0.35):
+    """obturador de câmera fotográfica antiga (dois cliques)."""
+    out = np.zeros(int(d * SR), np.float32)
+    for o in (0.0, 0.09):
+        tt = t_(0.05)
+        z = hp_rapido(ruido(0.05), 2500) * env(len(tt), 0.0005, 0.015, 6)
+        i = int(o * SR)
+        out[i:i + len(z)] += z
+    return norm(out, 0.6)
+
+
+def sfx_maquina(d=1.2):
+    """máquina de escrever: teclas irregulares (determinístico)."""
+    out = np.zeros(int(d * SR), np.float32)
+    k, tpos = 0, 0.0
+    while tpos < d - 0.05:
+        tt = t_(0.03)
+        z = hp_rapido(ruido(0.03), 1800) * env(len(tt), 0.0005, 0.01, 6) + seno(320, 0.03) * env(len(tt), 0.0005, 0.012, 6) * 0.4
+        i = int(tpos * SR)
+        out[i:i + len(z)] += z[: len(out) - i]
+        tpos += 0.07 + 0.05 * ((k * 7919) % 13) / 13
+        k += 1
+    return norm(out, 0.5)
+
+
+def sfx_gaveta(d=0.9):
+    """gaveta de arquivo de metal deslizando e batendo."""
+    t = t_(d)
+    desliza = bp_rapido(ruido(d), 900, 2) * np.minimum(1, t / 0.1) * (t < 0.6)
+    batida = np.zeros_like(desliza)
+    i = int(0.6 * SR)
+    b = (seno(180, 0.3) + seno(410, 0.3) * 0.5) * env(int(0.3 * SR), 0.001, 0.15, 5)
+    batida[i:i + len(b)] += b[: len(batida) - i]
+    return norm(reverb(desliza * 0.6 + batida, 0.6, 0.2), 0.7)
+
+
+def sfx_metal(d=2.5):
+    """batida metálica grave e longa (porta de cofre / fim)."""
+    t = t_(d)
+    z = sum(seno(f, d) * np.exp(-t * (2.2 + k)) * a for k, (f, a) in enumerate([(62, 1.0), (151, 0.5), (263, 0.35), (419, 0.2)]))
+    z += lp_rapido(ruido(d), 2500) * env(len(t), 0.0005, 0.05, 6) * 0.6
+    return norm(reverb(z, 2.4, 0.35, 3000), 0.95)
+
+
 SFX = {k[4:]: v for k, v in globals().items() if k.startswith("sfx_")}
 
 

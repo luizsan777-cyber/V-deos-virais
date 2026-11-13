@@ -1,0 +1,431 @@
+{
+  "titulo": "Arquivos Proibidos — Ep. 01: 10 descobertas que governos tentaram esconder",
+  "autor_roteiro": "João (roteiro original enviado pelo usuário em 13/11/2026)",
+  "motor": "remotion",
+  "modo": "2d",
+  "estilo": "dossie-noir (arquivos secretos, preto/cinza/vermelho, papel envelhecido)",
+  "perfil": "suspense",
+  "voz": {
+    "motor": "kokoro",
+    "voz": "pm_santa"
+  },
+  "musica": {
+    "humor": "suspense",
+    "volume_db": -23,
+    "automacao": [
+      {
+        "em": "t:0",
+        "db": -14
+      },
+      {
+        "em": "gancho2",
+        "db": -6
+      },
+      {
+        "em": "mkultra",
+        "db": -4
+      },
+      {
+        "em": "watergate",
+        "db": -1
+      },
+      {
+        "em": "paperclip",
+        "db": 0
+      },
+      {
+        "em": "misterio",
+        "db": -9
+      },
+      {
+        "em": "proximo",
+        "db": -6
+      },
+      {
+        "em": "coragem",
+        "db": -8
+      },
+      {
+        "em": "coragem:fim",
+        "db": -12
+      },
+      {
+        "em": "coragem:fim+0.25",
+        "db": -80
+      }
+    ]
+  },
+  "legenda": "impacto",
+  "fontes": [
+    "MKUltra: Senado dos EUA — Comitê Church (1975–76) e audiência 'Project MKULTRA' (1977).",
+    "Tuskegee (1932–1972): CDC — 'The U.S. Public Health Service Untreated Syphilis Study at Tuskegee'.",
+    "Guatemala (1946–1948): Presidential Commission for the Study of Bioethical Issues, 'Ethically Impossible' (2011).",
+    "COINTELPRO (1956–1971): Comitê Church, Livro III (1976); documentos levados do escritório do FBI em Media, Pensilvânia (1971).",
+    "Abertura de cartas da CIA (HTLINGUAL, 1952–1973, sobretudo correspondência EUA–URSS): Comissão Rockefeller (1975) e Comitê Church.",
+    "Documentos do Pentágono (1971): National Archives — Pentagon Papers (liberados integralmente em 2011).",
+    "Irã 1953: documentos da CIA desclassificados em 2013 (National Security Archive) e FRUS 1951–1954, Irã (2017).",
+    "Vigilância NSA (2013): reportagens do The Guardian e Washington Post com documentos revelados por Edward Snowden.",
+    "Watergate: renúncia de Richard Nixon em 9 de agosto de 1974 (National Archives).",
+    "Operação Paperclip (1945–1959): National Archives (Records of the Joint Intelligence Objectives Agency)."
+  ],
+  "falas": [
+    {
+      "id": "gancho",
+      "texto": "E se eu te dissesse que algumas das histórias mais assustadoras do mundo não são teorias da conspiração… mas fatos comprovados?",
+      "velocidade": 1.12,
+      "pausa": 0.22
+    },
+    {
+      "id": "gancho2",
+      "texto": "Existem documentos secretos, experiências humanas e operações que governos tentaram manter escondidas. E a número 10 vai te deixar pensando!",
+      "velocidade": 1.15,
+      "pausa": 0.45
+    },
+    {
+      "id": "mkultra",
+      "texto": "A CIA realizou experimentos secretos com drogas, incluindo LSD, para investigar técnicas de controle mental. Algumas pessoas foram usadas sem saber o que estava acontecendo.",
+      "tts": "A Cía realizou experimentos secretos com drogas, incluindo éle ésse dê, para investigar técnicas de controle mental. Algumas pessoas foram usadas sem saber o que estava acontecendo.",
+      "velocidade": 1.2,
+      "pausa": 0.22
+    },
+    {
+      "id": "tuskegee",
+      "texto": "Durante 40 anos, homens negros com sífilis foram observados sem receber tratamento adequado, mesmo depois da descoberta da penicilina.",
+      "velocidade": 1.18,
+      "pausa": 0.22
+    },
+    {
+      "id": "guatemala",
+      "texto": "Entre 1946 e 1948, pesquisadores ligados ao governo americano expuseram pessoas na Guatemala a infecções sexualmente transmissíveis em experimentos sem consentimento adequado.",
+      "velocidade": 1.24,
+      "pausa": 0.22
+    },
+    {
+      "id": "cointelpro",
+      "texto": "O FBI infiltrou organizações, provocou conflitos internos e tentou desacreditar grupos políticos e ativistas. Tudo isso veio à tona após documentos secretos serem roubados e divulgados.",
+      "tts": "O éfe bê í infiltrou organizações, provocou conflitos internos e tentou desacreditar grupos políticos e ativistas. Tudo isso veio à tona após documentos secretos serem roubados e divulgados.",
+      "velocidade": 1.26,
+      "pausa": 0.22
+    },
+    {
+      "id": "cartas",
+      "texto": "A CIA manteve uma operação secreta para interceptar e fotografar correspondências enviadas por cidadãos americanos. Uma prática que acabou revelada em investigações oficiais.",
+      "tts": "A Cía manteve uma operação secreta para interceptar e fotografar correspondências enviadas por cidadãos americanos. Uma prática que acabou revelada em investigações oficiais.",
+      "velocidade": 1.26,
+      "pausa": 0.22
+    },
+    {
+      "id": "pentagono",
+      "texto": "Documentos secretos revelaram que o governo americano havia escondido informações importantes sobre a Guerra do Vietnã. A divulgação provocou um escândalo nacional.",
+      "velocidade": 1.27,
+      "pausa": 0.22
+    },
+    {
+      "id": "ira",
+      "texto": "Documentos desclassificados confirmaram o envolvimento da CIA e do serviço secreto britânico na derrubada do primeiro-ministro iraniano Mohammad Mossadegh.",
+      "tts": "Documentos desclassificados confirmaram o envolvimento da Cía e do serviço secreto britânico na derrubada do primeiro-ministro iraniano Mohammad Mossadék.",
+      "velocidade": 1.27,
+      "pausa": 0.22
+    },
+    {
+      "id": "vigilancia",
+      "texto": "Em 2013, Edward Snowden revelou documentos sobre programas de vigilância em larga escala conduzidos pela inteligência americana.",
+      "tts": "Em 2013, Édward Isnôuden revelou documentos sobre programas de vigilância em larga escala conduzidos pela inteligência americana.",
+      "velocidade": 1.28,
+      "pausa": 0.22
+    },
+    {
+      "id": "watergate",
+      "texto": "Um esquema de espionagem política e uma tentativa de encobrir o caso levaram à renúncia do presidente Richard Nixon, em 1974.",
+      "tts": "Um esquema de espionagem política e uma tentativa de encobrir o caso levaram à renúncia do presidente Rítchard Níxon, em 1974.",
+      "velocidade": 1.28,
+      "pausa": 0.22
+    },
+    {
+      "id": "paperclip",
+      "texto": "Após a Segunda Guerra Mundial, os Estados Unidos recrutaram secretamente cientistas alemães, incluindo especialistas ligados ao regime nazista, para trabalhar em projetos americanos.",
+      "velocidade": 1.3,
+      "pausa": 0.45
+    },
+    {
+      "id": "misterio",
+      "texto": "Mas existe um detalhe que quase ninguém percebeu… Esses dez casos são apenas a ponta do iceberg.",
+      "velocidade": 1.05,
+      "pausa": 0.5
+    },
+    {
+      "id": "misterio2",
+      "texto": "Existem outros arquivos, outras histórias… e algumas delas continuam cercadas de perguntas sem resposta.",
+      "velocidade": 1.05,
+      "pausa": 0.5
+    },
+    {
+      "id": "proximo",
+      "texto": "No próximo episódio, vamos abrir um arquivo que talvez nunca devesse ter sido revelado…",
+      "velocidade": 1.05,
+      "pausa": 0.5
+    },
+    {
+      "id": "coragem",
+      "texto": "Você teria coragem de descobrir?",
+      "velocidade": 0.98,
+      "pausa": 0.22
+    }
+  ],
+  "destaques": [
+    "assustadoras",
+    "fatos",
+    "comprovados",
+    "secretos",
+    "10",
+    "CIA",
+    "LSD",
+    "mental",
+    "40",
+    "penicilina",
+    "Guatemala",
+    "consentimento",
+    "FBI",
+    "roubados",
+    "fotografar",
+    "Vietnã",
+    "escândalo",
+    "Mossadegh",
+    "2013",
+    "Snowden",
+    "Nixon",
+    "1974",
+    "nazista",
+    "iceberg",
+    "coragem"
+  ],
+  "sfx": [
+    {
+      "som": "gaveta",
+      "em": "t:0.12"
+    },
+    {
+      "som": "papel",
+      "em": "t:0.4"
+    },
+    {
+      "som": "carimbo",
+      "em": "t:0.6"
+    },
+    {
+      "som": "carimbo",
+      "em": "palavra:fatos-0.08"
+    },
+    {
+      "som": "riser",
+      "em": "gancho2+1.0",
+      "vol": -6
+    },
+    {
+      "som": "papel",
+      "em": "palavra:documentos#1"
+    },
+    {
+      "som": "pop",
+      "em": "palavra:experiências",
+      "vol": -4
+    },
+    {
+      "som": "papel",
+      "em": "palavra:operações"
+    },
+    {
+      "som": "impacto",
+      "em": "palavra:10",
+      "vol": -4
+    },
+    {
+      "som": "papel",
+      "em": "mkultra-0.2"
+    },
+    {
+      "som": "maquina",
+      "em": "mkultra+0.15",
+      "vol": -6
+    },
+    {
+      "som": "carimbo",
+      "em": "palavra:mental-0.07"
+    },
+    {
+      "som": "papel",
+      "em": "tuskegee-0.2"
+    },
+    {
+      "som": "maquina",
+      "em": "tuskegee+0.15",
+      "vol": -6
+    },
+    {
+      "som": "carimbo",
+      "em": "palavra:tratamento-0.07"
+    },
+    {
+      "som": "papel",
+      "em": "guatemala-0.2"
+    },
+    {
+      "som": "maquina",
+      "em": "guatemala+0.15",
+      "vol": -6
+    },
+    {
+      "som": "carimbo",
+      "em": "palavra:consentimento-0.07"
+    },
+    {
+      "som": "papel",
+      "em": "cointelpro-0.2"
+    },
+    {
+      "som": "maquina",
+      "em": "cointelpro+0.15",
+      "vol": -6
+    },
+    {
+      "som": "carimbo",
+      "em": "palavra:roubados-0.07"
+    },
+    {
+      "som": "papel",
+      "em": "cartas-0.2"
+    },
+    {
+      "som": "maquina",
+      "em": "cartas+0.15",
+      "vol": -6
+    },
+    {
+      "som": "carimbo",
+      "em": "palavra:interceptar-0.07"
+    },
+    {
+      "som": "papel",
+      "em": "pentagono-0.2"
+    },
+    {
+      "som": "maquina",
+      "em": "pentagono+0.15",
+      "vol": -6
+    },
+    {
+      "som": "carimbo",
+      "em": "palavra:secretos#4-0.07"
+    },
+    {
+      "som": "papel",
+      "em": "ira-0.2"
+    },
+    {
+      "som": "maquina",
+      "em": "ira+0.15",
+      "vol": -6
+    },
+    {
+      "som": "carimbo",
+      "em": "palavra:desclassificados-0.07"
+    },
+    {
+      "som": "papel",
+      "em": "vigilancia-0.2"
+    },
+    {
+      "som": "maquina",
+      "em": "vigilancia+0.15",
+      "vol": -6
+    },
+    {
+      "som": "carimbo",
+      "em": "palavra:revelou-0.07"
+    },
+    {
+      "som": "papel",
+      "em": "watergate-0.2"
+    },
+    {
+      "som": "maquina",
+      "em": "watergate+0.15",
+      "vol": -6
+    },
+    {
+      "som": "carimbo",
+      "em": "palavra:renúncia-0.07"
+    },
+    {
+      "som": "papel",
+      "em": "paperclip-0.2"
+    },
+    {
+      "som": "maquina",
+      "em": "paperclip+0.15",
+      "vol": -6
+    },
+    {
+      "som": "carimbo",
+      "em": "palavra:recrutaram-0.07"
+    },
+    {
+      "som": "obturador",
+      "em": "palavra:fotografar-0.05"
+    },
+    {
+      "som": "obturador",
+      "em": "palavra:fotografar+0.42"
+    },
+    {
+      "som": "obturador",
+      "em": "palavra:fotografar+0.95"
+    },
+    {
+      "som": "desce",
+      "em": "palavra:divulgação",
+      "vol": -6
+    },
+    {
+      "som": "swoosh_sobe",
+      "em": "palavra:projetos-0.2",
+      "vol": -4
+    },
+    {
+      "som": "trovao",
+      "em": "palavra:projetos",
+      "vol": -12
+    },
+    {
+      "som": "coracao",
+      "em": "misterio"
+    },
+    {
+      "som": "coracao",
+      "em": "palavra:iceberg"
+    },
+    {
+      "som": "vento",
+      "em": "misterio2",
+      "vol": -10
+    },
+    {
+      "som": "riser",
+      "em": "palavra:episódio",
+      "vol": -6
+    },
+    {
+      "som": "carimbo",
+      "em": "palavra:revelado-0.07"
+    },
+    {
+      "som": "papel",
+      "em": "palavra:coragem"
+    },
+    {
+      "som": "metal",
+      "em": "coragem:fim+0.3"
+    }
+  ],
+  "fim_s": 4.2
+}
