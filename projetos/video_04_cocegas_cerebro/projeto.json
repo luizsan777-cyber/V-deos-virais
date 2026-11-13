@@ -1,0 +1,386 @@
+{
+  "titulo": "Por que você não consegue fazer cócegas em si mesmo?",
+  "id_producao": "video_04_cocegas_cerebro",
+  "motor": "remotion",
+  "modo": "2d",
+  "estilo": "neuro-2d-vivo (amarelo/azul/verde/laranja; cérebro roxo-magenta; impulsos ciano/laranja)",
+  "perfil": "ciencia",
+  "voz": {
+    "motor": "kokoro",
+    "voz": "pm_alex",
+    "velocidade": 1.0
+  },
+  "musica": {
+    "humor": "alegre",
+    "volume_db": -27,
+    "automacao": [
+      {
+        "em": "t:0",
+        "db": 0
+      },
+      {
+        "em": "c03_comando",
+        "db": -2
+      },
+      {
+        "em": "c07_outra",
+        "db": 0
+      },
+      {
+        "em": "c09_atraso",
+        "db": -2
+      },
+      {
+        "em": "c12_tentou",
+        "db": 0
+      },
+      {
+        "em": "c12_tentou:fim+2.6",
+        "db": -14
+      }
+    ]
+  },
+  "legenda": "impacto",
+  "fontes": [
+    "Blakemore, Wolpert & Frith (1998/1999/2000) — atenuação sensorial de toque autogerado; previsão a partir de cópia do comando motor; participação do cerebelo; atraso entre movimento e toque aumenta a sensação (sem números neste vídeo)."
+  ],
+  "destaques": [
+    "cócegas",
+    "pele",
+    "cérebro",
+    "previsão",
+    "prever",
+    "cerebelo",
+    "reduzir",
+    "surpresa",
+    "atraso",
+    "ambiente",
+    "previsões",
+    "esperando"
+  ],
+  "falas": [
+    {
+      "id": "c01_desafio",
+      "texto": "Já percebeu que outra pessoa consegue fazer você rir de cócegas, mas sua própria mão quase nunca consegue?",
+      "pausa": 0.75
+    },
+    {
+      "id": "c02_pele",
+      "texto": "O curioso é que a sua pele continua funcionando normalmente. Então por que o mesmo toque parece tão diferente?",
+      "pausa": 0.75
+    },
+    {
+      "id": "c03_comando",
+      "texto": "A resposta começa antes do toque. Quando você decide mover a mão, seu cérebro já prepara o movimento.",
+      "pausa": 0.75
+    },
+    {
+      "id": "c04_previsao",
+      "texto": "Junto com esse comando, o sistema nervoso produz informações que ajudam a prever a sensação que o movimento vai causar.",
+      "pausa": 0.75
+    },
+    {
+      "id": "c05_cerebelo",
+      "texto": "O cerebelo participa dessa previsão. Ele ajuda o cérebro a antecipar onde, quando e como o próprio toque deve acontecer.",
+      "pausa": 0.75
+    },
+    {
+      "id": "c06_atenuacao",
+      "texto": "Quando a sensação corresponde à previsão, o cérebro pode reduzir sua intensidade percebida. Por isso, a cócega fica muito mais fraca.",
+      "pausa": 0.75
+    },
+    {
+      "id": "c07_outra",
+      "texto": "Quando outra pessoa toca você, seu cérebro não possui o mesmo comando motor para prever exatamente aquele contato.",
+      "pausa": 0.75
+    },
+    {
+      "id": "c08_surpresa",
+      "texto": "Essa diferença torna o toque externo mais surpreendente. E a surpresa ajuda a explicar por que ele provoca uma reação maior.",
+      "pausa": 0.75
+    },
+    {
+      "id": "c09_atraso",
+      "texto": "Pesquisadores descobriram algo interessante: quando existe um pequeno atraso entre seu movimento e o toque produzido, a sensação pode aumentar.",
+      "pausa": 0.75
+    },
+    {
+      "id": "c10_serve",
+      "texto": "Esse mecanismo ajuda o cérebro a distinguir sensações causadas por seus movimentos daquelas que vêm do ambiente ao redor.",
+      "pausa": 0.75
+    },
+    {
+      "id": "c11_cotidiano",
+      "texto": "Você faz previsões assim o tempo inteiro, sem perceber. É uma das formas de organizar as informações que chegam ao cérebro.",
+      "pausa": 0.75
+    },
+    {
+      "id": "c12_tentou",
+      "texto": "Ou seja, sua mão tenta te surpreender, mas seu cérebro já estava esperando. Agora me diz: você acabou de tentar fazer cócegas?",
+      "pausa": 0.75
+    }
+  ],
+  "sfx": [
+    {
+      "som": "papel",
+      "em": "t:1.4",
+      "vol": -16
+    },
+    {
+      "som": "papel",
+      "em": "t:1.9",
+      "vol": -16
+    },
+    {
+      "som": "swoosh_sobe",
+      "em": "t:3.0",
+      "vol": -14
+    },
+    {
+      "som": "pop",
+      "em": "t:4.55",
+      "vol": -8
+    },
+    {
+      "som": "brilho",
+      "em": "t:4.7",
+      "vol": -12
+    },
+    {
+      "som": "pop",
+      "em": "palavra:consegue#2",
+      "vol": -10
+    },
+    {
+      "som": "whoosh",
+      "em": "c02_pele-0.25",
+      "vol": -12
+    },
+    {
+      "som": "pop",
+      "em": "c02_pele+0.6",
+      "vol": -12
+    },
+    {
+      "som": "pop",
+      "em": "c02_pele+0.75",
+      "vol": -14
+    },
+    {
+      "som": "pop",
+      "em": "c02_pele+0.9",
+      "vol": -14
+    },
+    {
+      "som": "pop",
+      "em": "palavra:Então+0.6",
+      "vol": -12
+    },
+    {
+      "som": "pop",
+      "em": "palavra:Então+0.75",
+      "vol": -14
+    },
+    {
+      "som": "pop",
+      "em": "palavra:Então+0.9",
+      "vol": -14
+    },
+    {
+      "som": "swoosh_sobe",
+      "em": "c03_comando-0.2",
+      "vol": -12
+    },
+    {
+      "som": "whoosh",
+      "em": "palavra:decide",
+      "vol": -12
+    },
+    {
+      "som": "swoosh_sobe",
+      "em": "palavra:prepara",
+      "vol": -14
+    },
+    {
+      "som": "ding",
+      "em": "palavra:comando",
+      "vol": -14
+    },
+    {
+      "som": "brilho",
+      "em": "palavra:prever",
+      "vol": -12
+    },
+    {
+      "som": "magia",
+      "em": "palavra:cerebelo",
+      "vol": -12
+    },
+    {
+      "som": "whoosh",
+      "em": "palavra:Ele-0.2",
+      "vol": -12
+    },
+    {
+      "som": "clique",
+      "em": "palavra:onde",
+      "vol": -12
+    },
+    {
+      "som": "clique",
+      "em": "palavra:quando",
+      "vol": -12
+    },
+    {
+      "som": "clique",
+      "em": "palavra:como",
+      "vol": -12
+    },
+    {
+      "som": "ding",
+      "em": "palavra:acontecer+0.2",
+      "vol": -14
+    },
+    {
+      "som": "desce",
+      "em": "palavra:reduzir",
+      "vol": -12
+    },
+    {
+      "som": "whoosh",
+      "em": "palavra:Por-0.3",
+      "vol": -12
+    },
+    {
+      "som": "pop",
+      "em": "palavra:cócega",
+      "vol": -14
+    },
+    {
+      "som": "whoosh",
+      "em": "c07_outra-0.25",
+      "vol": -12
+    },
+    {
+      "som": "pop",
+      "em": "palavra:motor-0.2",
+      "vol": -6
+    },
+    {
+      "som": "brilho",
+      "em": "palavra:motor",
+      "vol": -10
+    },
+    {
+      "som": "pop",
+      "em": "c08_surpresa",
+      "vol": -8
+    },
+    {
+      "som": "swoosh_sobe",
+      "em": "palavra:surpresa",
+      "vol": -10
+    },
+    {
+      "som": "magia",
+      "em": "palavra:reação",
+      "vol": -12
+    },
+    {
+      "som": "whoosh",
+      "em": "c09_atraso-0.25",
+      "vol": -12
+    },
+    {
+      "som": "clique",
+      "em": "c09_atraso+0.7",
+      "vol": -8
+    },
+    {
+      "som": "pop",
+      "em": "c09_atraso+1.0",
+      "vol": -10
+    },
+    {
+      "som": "clique",
+      "em": "palavra:atraso-0.1",
+      "vol": -8
+    },
+    {
+      "som": "pop",
+      "em": "palavra:atraso+1.2",
+      "vol": -8
+    },
+    {
+      "som": "ding",
+      "em": "palavra:aumentar",
+      "vol": -14
+    },
+    {
+      "som": "vento",
+      "em": "c10_serve-0.2",
+      "vol": -14
+    },
+    {
+      "som": "vento",
+      "em": "palavra:ambiente-1.3",
+      "vol": -12
+    },
+    {
+      "som": "pop",
+      "em": "palavra:ambiente",
+      "vol": -10
+    },
+    {
+      "som": "whoosh",
+      "em": "c11_cotidiano-0.25",
+      "vol": -12
+    },
+    {
+      "som": "ding",
+      "em": "palavra:faz",
+      "vol": -14
+    },
+    {
+      "som": "clique",
+      "em": "palavra:perceber",
+      "vol": -12
+    },
+    {
+      "som": "gaveta",
+      "em": "palavra:formas",
+      "vol": -16
+    },
+    {
+      "som": "papel",
+      "em": "palavra:informações",
+      "vol": -14
+    },
+    {
+      "som": "whoosh",
+      "em": "c12_tentou-0.25",
+      "vol": -12
+    },
+    {
+      "som": "pop",
+      "em": "palavra:mão",
+      "vol": -12
+    },
+    {
+      "som": "brilho",
+      "em": "palavra:esperando",
+      "vol": -12
+    },
+    {
+      "som": "pop",
+      "em": "palavra:Agora",
+      "vol": -10
+    },
+    {
+      "som": "magia",
+      "em": "c12_tentou:fim+0.15",
+      "vol": -10
+    }
+  ],
+  "fim_s": 3.0
+}

@@ -1,0 +1,109 @@
+{
+  "id_producao": "video_04_cocegas_cerebro",
+  "roteiro": "pacote_3_videos_codex/VIDEO_04_COCEGAS.md",
+  "personagens": [
+    "protagonista (co04-prot: cabelo preto curto, camiseta amarela, calça azul, tênis branco)",
+    "amigo (co04-amigo: camiseta verde, cabelo castanho, calça cinza)",
+    "participante do laboratório (roupa lilás)"
+  ],
+  "voz": "kokoro pm_alex 1,0 (natural)",
+  "duracao_s": 96.465,
+  "cenas": [
+    {
+      "scene_id": "01",
+      "fala_id": "c01_desafio",
+      "inicio_s": 0,
+      "fim_s": 7.01,
+      "locucao_exata": "Já percebeu que outra pessoa consegue fazer você rir de cócegas, mas sua própria mão quase nunca consegue?",
+      "visual": "Sala (sofá azul, almofadas, planta, janela à direita): protagonista de camiseta amarela olha a mão, tenta cócegas na própria lateral e ergue a sobrancelha; amigo de camiseta verde entra pela esquerda, pede permissão com gesto, toca de leve; protagonista ri e se afasta; 'POR QUÊ?'."
+    },
+    {
+      "scene_id": "02",
+      "fala_id": "c02_pele",
+      "inicio_s": 7.01,
+      "fim_s": 14.3,
+      "locucao_exata": "O curioso é que a sua pele continua funcionando normalmente. Então por que o mesmo toque parece tão diferente?",
+      "visual": "Close do dedo tocando a camiseta → corte 2D da pele com sensores ilustrativos acendendo e pulsos subindo pelas fibras; primeiro a própria mão, depois a mão do amigo — os dois ativam a pele; 'A PELE SENTE'."
+    },
+    {
+      "scene_id": "03",
+      "fala_id": "c03_comando",
+      "inicio_s": 14.3,
+      "fim_s": 21.21,
+      "locucao_exata": "A resposta começa antes do toque. Quando você decide mover a mão, seu cérebro já prepara o movimento.",
+      "visual": "Cabeça em perfil fica transparente; cérebro roxo com faixa motora em destaque; trajeto laranja do cérebro ao ombro, braço e mão enquanto a mão vai até a lateral."
+    },
+    {
+      "scene_id": "04",
+      "fala_id": "c04_previsao",
+      "inicio_s": 21.21,
+      "fim_s": 28.98,
+      "locucao_exata": "Junto com esse comando, o sistema nervoso produz informações que ajudam a prever a sensação que o movimento vai causar.",
+      "visual": "Cérebro 2D com dois trajetos: laranja (comando, para o braço) e azul (previsão, na rede); quadro com a mão em movimento; cerebelo começa a brilhar; 'MOVIMENTO' / 'PREVISÃO'."
+    },
+    {
+      "scene_id": "05",
+      "fala_id": "c05_cerebelo",
+      "inicio_s": 28.98,
+      "fim_s": 36.51,
+      "locucao_exata": "O cerebelo participa dessa previsão. Ele ajuda o cérebro a antecipar onde, quando e como o próprio toque deve acontecer.",
+      "visual": "Perfil com cerebelo lilás ligado por linhas finas a outras áreas (rede); corte para braço/mão: mão azul de previsão chega um pouco antes da mão real e some no contato; ícones onde (mira), quando (relógio), como (contato)."
+    },
+    {
+      "scene_id": "06",
+      "fala_id": "c06_atenuacao",
+      "inicio_s": 36.51,
+      "fim_s": 45.25,
+      "locucao_exata": "Quando a sensação corresponde à previsão, o cérebro pode reduzir sua intensidade percebida. Por isso, a cócega fica muito mais fraca.",
+      "visual": "Cérebro com faixa somatossensorial; onda do toque próprio diminui de amplitude sem sumir; quadro 'ESTÍMULO' × 'SENSAÇÃO PERCEBIDA' (<2 s); de volta ao sofá: autocócega com sorriso pequeno/confusão."
+    },
+    {
+      "scene_id": "07",
+      "fala_id": "c07_outra",
+      "inicio_s": 45.25,
+      "fim_s": 52.54,
+      "locucao_exata": "Quando outra pessoa toca você, seu cérebro não possui o mesmo comando motor para prever exatamente aquele contato.",
+      "visual": "Mesmo eixo do sofá: amigo faz gesto e pausa, protagonista expectante sem saber quando; toque rápido e consentido; transparência da pele com pulsos mais chamativos."
+    },
+    {
+      "scene_id": "08",
+      "fala_id": "c08_surpresa",
+      "inicio_s": 52.54,
+      "fim_s": 60.65,
+      "locucao_exata": "Essa diferença torna o toque externo mais surpreendente. E a surpresa ajuda a explicar por que ele provoca uma reação maior.",
+      "visual": "Protagonista ri e torce o tronco, amigo recolhe a mão; cérebro com duas trajetórias e respostas: menor (própria mão) e mais marcante (outra pessoa) como tendência; 'SURPRESA'."
+    },
+    {
+      "scene_id": "09",
+      "fala_id": "c09_atraso",
+      "inicio_s": 60.65,
+      "fim_s": 69.64,
+      "locucao_exata": "Pesquisadores descobriram algo interessante: quando existe um pequeno atraso entre seu movimento e o toque produzido, a sensação pode aumentar.",
+      "visual": "Laboratório: participante de roupa lilás move a alavanca; dispositivo toca sem atraso e depois com atraso (relógio esquemático, sem milissegundos); quadro com previsão e toque alinhados × desalinhados."
+    },
+    {
+      "scene_id": "10",
+      "fala_id": "c10_serve",
+      "inicio_s": 69.64,
+      "fim_s": 77.72,
+      "locucao_exata": "Esse mecanismo ajuda o cérebro a distinguir sensações causadas por seus movimentos daquelas que vêm do ambiente ao redor.",
+      "visual": "Parque: protagonista caminha, a manga toca o braço a cada passo ('MEU MOVIMENTO'); folha se solta, viaja e encosta no braço, ele para e olha ('AMBIENTE')."
+    },
+    {
+      "scene_id": "11",
+      "fala_id": "c11_cotidiano",
+      "inicio_s": 77.72,
+      "fim_s": 85.62,
+      "locucao_exata": "Você faz previsões assim o tempo inteiro, sem perceber. É uma das formas de organizar as informações que chegam ao cérebro.",
+      "visual": "Casa: pega o copo d'água (o copo segue a mão), apoia a palma na mesa, abre a porta pela dobradiça e ajusta a gola; contorno azul discreto = previsão em cada gesto."
+    },
+    {
+      "scene_id": "12",
+      "fala_id": "c12_tentou",
+      "inicio_s": 85.62,
+      "fim_s": 96.465,
+      "locucao_exata": "Ou seja, sua mão tenta te surpreender, mas seu cérebro já estava esperando. Agora me diz: você acabou de tentar fazer cócegas?",
+      "visual": "Mesmo sofá do início (amigo sentado ao lado, sem interferir): olha a mão, tenta de novo, ergue as sobrancelhas, olha para a câmera e faz gesto de pergunta; 'VOCÊ TENTOU? 😂'."
+    }
+  ]
+}

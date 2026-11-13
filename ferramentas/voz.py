@@ -266,9 +266,9 @@ def tempos_palavras(texto: str, audio: np.ndarray, t0: float) -> list[dict]:
         prev = dur * acum / tot
         cand = [(abs((s0 + s1) / 2 - prev), k) for k, (s0, s1) in enumerate(sil) if k not in usados and s0 > ini]
         cand = [c for c in cand if c[0] < max(0.35, dur * 0.18)]
-        # o trecho precisa ter pelo menos ~45% da duração prevista pelas sílabas (evita colar 2 palavras num micro-silêncio)
+        # o trecho precisa ter pelo menos ~60% da duração prevista pelas sílabas (evita colar 2 palavras num micro-silêncio)
         esperado = dur * sum(peso(w) for w in g) / tot
-        cand = [c for c in cand if sil[c[1]][0] - ini >= 0.45 * esperado]
+        cand = [c for c in cand if sil[c[1]][0] - ini >= 0.6 * esperado]
         if cand:
             _, k = min(cand)
             usados.add(k)
