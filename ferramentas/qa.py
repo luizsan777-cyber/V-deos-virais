@@ -20,7 +20,7 @@ def sh(cmd: list[str]) -> str:
     return r.stdout + r.stderr
 
 
-def verificar(mp4: Path, tempos_json: Path, folha: Path, esperado_altura: int = 1920) -> bool:
+def verificar(mp4: Path, tempos_json: Path, folha: Path, esperado_altura: int = 1920, pretos_ok: list | None = None) -> bool:
     info = json.loads(sh(["ffprobe", "-v", "error", "-show_streams", "-show_format", "-of", "json", str(mp4)]))
     v = next(s for s in info["streams"] if s["codec_type"] == "video")
     a = next((s for s in info["streams"] if s["codec_type"] == "audio"), None)
@@ -48,8 +48,13 @@ def verificar(mp4: Path, tempos_json: Path, folha: Path, esperado_altura: int = 
     # quadros pretos
     bd = sh(["ffmpeg", "-hide_banner", "-i", str(mp4), "-vf", "blackdetect=d=0.15:pix_th=0.06", "-an", "-f", "null", "-"])
     pretos = re.findall(r"black_start:([\d.]+) black_end:([\d.]+)", bd)
-    if pretos:
-        problemas.append(f"trechos pretos: {pretos}")
+    # pretos intencionais declarados no projeto.json ("pretos_intencionais": [[ini, fim], ...]) viram aviso
+    ok = pretos_ok or []
+    acidentais = [p for p in pretos if not any(float(p[0]) >= a - 0.1 and float(p[1]) <= b + 0.1 for a, b in ok)]
+    if acidentais:
+        problemas.append(f"trechos pretos: {acidentais}")
+    if len(acidentais) < len(pretos):
+        avisos.append(f"pretos intencionais (roteiro): {[p for p in pretos if p not in acidentais]}")
     # congelamentos (animação parada >= 0.7 s)
     fz = sh(["ffmpeg", "-hide_banner", "-i", str(mp4), "-vf", "freezedetect=n=0.0008:d=0.7", "-an", "-f", "null", "-"])
     congel = re.findall(r"freeze_start: ([\d.]+)", fz)

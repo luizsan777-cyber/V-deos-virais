@@ -96,7 +96,8 @@ def main() -> None:
                "-c:a", "aac", "-b:a", "192k", "-ar", "48000", "-movflags", "+faststart", "-t", dur, str(final)])
     if "qa" in etapas:
         import qa
-        ok = qa.verificar(final, build / "tempos.json", saida / f"{slug}_qa.jpg", esperado_altura=int(1920 * float(args.escala)))
+        pretos_ok = json.loads((projeto / "projeto.json").read_text(encoding="utf-8")).get("pretos_intencionais")
+        ok = qa.verificar(final, build / "tempos.json", saida / f"{slug}_qa.jpg", esperado_altura=int(1920 * float(args.escala)), pretos_ok=pretos_ok)
         if not ok:
             sys.exit(2)
     print(f"\n✅ {final} ({time.time() - t0:.0f}s)")

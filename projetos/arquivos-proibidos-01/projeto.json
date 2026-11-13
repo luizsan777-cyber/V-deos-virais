@@ -427,5 +427,15 @@
       "em": "coragem:fim+0.3"
     }
   ],
-  "fim_s": 4.2
+  "fim_s": 4.2,
+  "pretos_intencionais": [
+    [
+      0,
+      0.4
+    ],
+    [
+      130.8,
+      131.5
+    ]
+  ]
 }
