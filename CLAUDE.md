@@ -24,3 +24,5 @@ Siga a skill `video-viral` (`.claude/skills/video-viral/SKILL.md`). Ela chama `r
   projetos existentes (`projetos/teste-*` precisam continuar compilando).
 - Nunca versionar áudio de voz pessoal (`vozes/` está no .gitignore; use o secret `VOZ_REFERENCIA_B64`).
 - `referencias/terceiros/` é material de leitura (MIT), não usar como skill ativa.
+- HyperFrames é motor OPCIONAL (skill `hyperframes-video`): sempre com `HYPERFRAMES_NO_TELEMETRY=1 DO_NOT_TRACK=1`;
+  nunca `publish`/`share`/`cloud`/recursos Pro ou HeyGen sem autorização (são externos/pagos).

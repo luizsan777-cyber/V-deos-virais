@@ -1,0 +1,9 @@
+{
+  "name": "vve-hyperframes-experimento",
+  "private": true,
+  "description": "Ambiente isolado de teste do HyperFrames como motor visual opcional da Viral Video Engine (não substitui o Remotion).",
+  "devDependencies": {
+    "esbuild": "0.25.9",
+    "hyperframes": "0.9.41"
+  }
+}

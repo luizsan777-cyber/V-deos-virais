@@ -27,3 +27,12 @@ private_audio/
 *.webm
 # Kit 2D extraido pode ser reconstruido do ZIP de origem
 .claude/skills/cartoon-audio-short/kit/
+# Experimento HyperFrames: gerados (reconstruídos por experimentos/hyperframes/produzir_hf.sh)
+experimentos/**/node_modules/
+experimentos/**/renders/
+experimentos/**/.hyperframes/
+experimentos/**/vve/build/
+experimentos/**/assets/lib/vve-kit.js
+experimentos/**/assets/tempos.js
+# exceção: efeitos sonoros que fazem parte da skill oficial media-use (HyperFrames, licença Pixabay)
+!.claude/skills/media-use/audio/assets/sfx/*.mp3

@@ -90,3 +90,10 @@ cartoon em cards desenhados num mundo 3D com tinta, profundidade de campo e câm
 - Regras do kit que **não** valem aqui: narração em inglês e "sem legendas". Aqui: narração pt-BR (Kokoro) e
   legendas pt-BR. Mix padrão = ducking do projeto; a regra do kit (música a 50 % da voz) é opcional: `"mix": "nivel50"`.
 - Não interrompa renderizações em andamento; o render de quadros retoma de onde parou (`RESUME`).
+
+
+## Motor opcional HyperFrames (validado em 13/11/2026)
+
+Para motion design rápido (celulares, cards, legendas) com render ~10× mais rápido e edição posterior no Studio do
+HyperFrames, veja a skill `hyperframes-video` (`experimentos/hyperframes/`). Usa a mesma voz, trilha, personagens e QA.
+O Remotion continua sendo o motor padrão.

@@ -72,3 +72,10 @@ Use `"motor": "cartoon"` no `projeto.json`: o kit desenha os quadros (three.js +
 Remotion aplica as legendas pt-BR e exporta. Preparação: `python scripts/bootstrap_cartoon.py` e
 `python scripts/check_environment.py`. As peças que faltavam no ZIP (three.js r160, `toon.ts`, `mix.py`) estão em
 `.claude/skills/cartoon-audio-short/kit-extra/` (MIT) e são aplicadas pelo bootstrap sem alterar o ZIP.
+
+
+## Motor opcional: HyperFrames (experimento validado)
+
+`experimentos/hyperframes/` — HTML + GSAP renderizado em MP4 pelo HyperFrames (Apache-2.0), com a mesma narração pt-BR,
+os mesmos personagens e o mesmo QA. Um comando: `bash experimentos/hyperframes/produzir_hf.sh experimentos/hyperframes/teste-alerta`.
+Detalhes e comparação com o Remotion: `docs/HYPERFRAMES.md`; skill: `hyperframes-video`.

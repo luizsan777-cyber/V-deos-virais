@@ -1,0 +1,25 @@
+{
+  "titulo": "O alerta que tira o sossego",
+  "motor": "hyperframes",
+  "modo": "2d",
+  "estilo": "sala-tarde-cartoon (teste HyperFrames)",
+  "perfil": "curiosidades",
+  "voz": { "motor": "kokoro", "voz": "pm_alex" },
+  "musica": { "humor": "alegre", "volume_db": -24 },
+  "fontes": ["Ficção original de humor; sem afirmações factuais."],
+  "falas": [
+    { "id": "calma", "texto": "Você tá de boa, e o celular apita." },
+    { "id": "alerta", "texto": "Alerta: sua mãe visualizou e não respondeu." },
+    { "id": "fim", "texto": "Pronto. Acabou o sossego." }
+  ],
+  "destaques": ["apita", "mãe", "visualizou", "sossego"],
+  "sfx": [
+    { "som": "vibracao", "em": "palavra:celular" },
+    { "som": "notificacao", "em": "palavra:apita" },
+    { "som": "whoosh", "em": "alerta-0.15" },
+    { "som": "impacto", "em": "palavra:mãe", "vol": -8 },
+    { "som": "desce", "em": "palavra:Pronto" },
+    { "som": "pop", "em": "palavra:sossego" }
+  ],
+  "fim_s": 1.42
+}
