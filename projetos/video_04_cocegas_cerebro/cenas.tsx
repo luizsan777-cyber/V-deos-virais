@@ -109,7 +109,7 @@ export const Cena02: C = ({ inicio, fim }) => {
         <text x={1260} y={1060} textAnchor="end" fontFamily="Montserrat" fontWeight={900} fontSize={30} fill="#fff6e0" opacity={0.8}>→ sinais seguem pelo braço</text>
         <rect x={-200} y={-400} width={1500} height={2600} fill="#2a1f45" opacity={sobe * 0.6} />
       </Camera>
-      <Tela><Tag f={lf} em={P("pele") - 2} ate={P("pele") + 60} t="A PELE SENTE" y={1380} tam={64} fundo={CIANO} /></Tela>
+      <Tela><Tag f={lf} em={P("pele") - 2} ate={P("pele") + 60} t="A PELE SENTE" y={250} tam={64} fundo={CIANO} /></Tela>
     </AbsoluteFill>
   );
 };
