@@ -1,0 +1,343 @@
+{
+  "titulo": "O que acontece no seu cérebro quando você prende a respiração?",
+  "motor": "remotion",
+  "modo": "2d",
+  "estilo": "anatomia-2d-sala-creme (corpo humano por dentro, cortes 2D)",
+  "perfil": "ciencia",
+  "voz": {
+    "motor": "kokoro",
+    "voz": "pm_alex",
+    "velocidade": 1.0
+  },
+  "musica": {
+    "humor": "curioso",
+    "volume_db": -24,
+    "automacao": [
+      {
+        "em": "t:0",
+        "db": -3
+      },
+      {
+        "em": "gas",
+        "db": 0
+      },
+      {
+        "em": "vontade",
+        "db": -2
+      },
+      {
+        "em": "perigo-0.3",
+        "db": -9
+      },
+      {
+        "em": "revelacao:fim",
+        "db": -8
+      },
+      {
+        "em": "final",
+        "db": -1
+      },
+      {
+        "em": "final:fim",
+        "db": 0
+      }
+    ]
+  },
+  "legenda": "impacto",
+  "fontes": [
+    "StatPearls — Physiology, Respiratory Drive (NBK482414)",
+    "StatPearls (NBK554620)",
+    "PMC12354527",
+    "ver fontes.md"
+  ],
+  "falas": [
+    {
+      "id": "gancho",
+      "texto": "Seu cérebro percebe quando você para de respirar.",
+      "pausa": 0.45
+    },
+    {
+      "id": "gas",
+      "texto": "Mas o aviso não começa exatamente quando falta oxigênio. Existe outro gás mudando dentro de você, e ele tem um papel enorme.",
+      "pausa": 0.45
+    },
+    {
+      "id": "co2",
+      "texto": "Enquanto você segura o ar, suas células continuam trabalhando, gastando oxigênio e produzindo gás carbônico. Esse gás vai se acumulando no sangue.",
+      "pausa": 0.45
+    },
+    {
+      "id": "alerta",
+      "texto": "Com mais gás carbônico, a acidez muda. Sensores do corpo detectam essa diferença e ajudam a aumentar a vontade de respirar.",
+      "pausa": 0.45
+    },
+    {
+      "id": "tronco",
+      "texto": "Uma parte importante desse controle fica no tronco encefálico. Ele ajuda a manter a respiração funcionando até quando você nem está pensando nela.",
+      "pausa": 0.45
+    },
+    {
+      "id": "vontade",
+      "texto": "É por isso que o desconforto vai crescendo. O peito parece pedir ar, você fica mais atento à respiração e segurar começa a ficar difícil.",
+      "pausa": 0.45
+    },
+    {
+      "id": "diafragma",
+      "texto": "Se a pessoa insiste, podem surgir movimentos involuntários dos músculos respiratórios. É o corpo tentando retomar o ritmo que normalmente funciona sozinho.",
+      "pausa": 0.45
+    },
+    {
+      "id": "perigo",
+      "texto": "Enquanto isso, o oxigênio também diminui. E ignorar os avisos pode ser perigoso: em condições extremas, a pessoa pode perder a consciência.",
+      "pausa": 0.45
+    },
+    {
+      "id": "revelacao",
+      "texto": "E tem um detalhe importante: a vontade de respirar não é um relógio de segurança. O oxigênio pode ficar perigosamente baixo mesmo sem um aviso forte.",
+      "pausa": 0.45
+    },
+    {
+      "id": "final",
+      "texto": "Então, quando você respira normalmente, existe um sistema inteiro trabalhando sem parar. Seu cérebro não está te atrapalhando. Ele está ajudando a manter você vivo. Impressionante, né?",
+      "pausa": 0.45
+    }
+  ],
+  "destaques": [
+    "cérebro",
+    "oxigênio",
+    "gás",
+    "carbônico",
+    "acidez",
+    "Sensores",
+    "tronco",
+    "encefálico",
+    "diafragma",
+    "perigoso",
+    "consciência",
+    "relógio",
+    "vivo"
+  ],
+  "sfx": [
+    {
+      "som": "coracao",
+      "em": "t:0.05",
+      "vol": -10
+    },
+    {
+      "som": "coracao",
+      "em": "gancho+1.4",
+      "vol": -12
+    },
+    {
+      "som": "brilho",
+      "em": "palavra:percebe",
+      "vol": -6
+    },
+    {
+      "som": "whoosh",
+      "em": "gas-0.2",
+      "vol": -6
+    },
+    {
+      "som": "swoosh_sobe",
+      "em": "palavra:Existe-0.1",
+      "vol": -8
+    },
+    {
+      "som": "magia",
+      "em": "palavra:outro",
+      "vol": -8
+    },
+    {
+      "som": "whoosh",
+      "em": "co2-0.2",
+      "vol": -6
+    },
+    {
+      "som": "brilho",
+      "em": "palavra:acumulando",
+      "vol": -8
+    },
+    {
+      "som": "whoosh",
+      "em": "alerta-0.2",
+      "vol": -6
+    },
+    {
+      "som": "pop",
+      "em": "palavra:mais",
+      "vol": -6
+    },
+    {
+      "som": "radar",
+      "em": "palavra:Sensores-0.05",
+      "vol": -8
+    },
+    {
+      "som": "pop",
+      "em": "palavra:acidez",
+      "vol": -6
+    },
+    {
+      "som": "ding",
+      "em": "palavra:detectam",
+      "vol": -8
+    },
+    {
+      "som": "pop",
+      "em": "palavra:vontade#1",
+      "vol": -6
+    },
+    {
+      "som": "whoosh",
+      "em": "tronco-0.2",
+      "vol": -6
+    },
+    {
+      "som": "brilho",
+      "em": "palavra:tronco",
+      "vol": -6
+    },
+    {
+      "som": "swoosh_sobe",
+      "em": "palavra:pensando-0.2",
+      "vol": -9
+    },
+    {
+      "som": "whoosh",
+      "em": "vontade-0.2",
+      "vol": -6
+    },
+    {
+      "som": "coracao",
+      "em": "vontade+0.6",
+      "vol": -12
+    },
+    {
+      "som": "coracao",
+      "em": "vontade+1.9",
+      "vol": -12
+    },
+    {
+      "som": "coracao",
+      "em": "vontade+3.1",
+      "vol": -12
+    },
+    {
+      "som": "coracao",
+      "em": "vontade+4.2",
+      "vol": -12
+    },
+    {
+      "som": "coracao",
+      "em": "vontade+5.3",
+      "vol": -12
+    },
+    {
+      "som": "coracao",
+      "em": "vontade+6.3",
+      "vol": -12
+    },
+    {
+      "som": "coracao",
+      "em": "vontade+7.2",
+      "vol": -12
+    },
+    {
+      "som": "coracao",
+      "em": "vontade+8.1",
+      "vol": -12
+    },
+    {
+      "som": "whoosh",
+      "em": "diafragma-0.2",
+      "vol": -6
+    },
+    {
+      "som": "clique",
+      "em": "palavra:involuntários+0.00",
+      "vol": -10
+    },
+    {
+      "som": "clique",
+      "em": "palavra:involuntários+0.87",
+      "vol": -10
+    },
+    {
+      "som": "clique",
+      "em": "palavra:involuntários+1.74",
+      "vol": -10
+    },
+    {
+      "som": "clique",
+      "em": "palavra:involuntários+2.61",
+      "vol": -10
+    },
+    {
+      "som": "clique",
+      "em": "palavra:involuntários+3.48",
+      "vol": -10
+    },
+    {
+      "som": "whoosh",
+      "em": "perigo-0.2",
+      "vol": -6
+    },
+    {
+      "som": "desce",
+      "em": "palavra:diminui",
+      "vol": -9
+    },
+    {
+      "som": "impacto",
+      "em": "palavra:perigoso",
+      "vol": -10
+    },
+    {
+      "som": "ondas",
+      "em": "palavra:extremas-0.1",
+      "vol": -8
+    },
+    {
+      "som": "whoosh",
+      "em": "revelacao-0.2",
+      "vol": -6
+    },
+    {
+      "som": "swoosh_sobe",
+      "em": "palavra:relógio",
+      "vol": -9
+    },
+    {
+      "som": "desce",
+      "em": "palavra:perigosamente",
+      "vol": -10
+    },
+    {
+      "som": "pop",
+      "em": "palavra:baixo",
+      "vol": -6
+    },
+    {
+      "som": "brilho",
+      "em": "palavra:aviso",
+      "vol": -8
+    },
+    {
+      "som": "whoosh",
+      "em": "final-0.2",
+      "vol": -8
+    },
+    {
+      "som": "brilho",
+      "em": "palavra:sistema",
+      "vol": -8
+    },
+    {
+      "som": "magia",
+      "em": "palavra:Impressionante",
+      "vol": -6
+    }
+  ],
+  "fim_s": 2.6
+}

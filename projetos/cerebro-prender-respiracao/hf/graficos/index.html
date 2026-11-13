@@ -1,0 +1,87 @@
+<!doctype html>
+<!--
+  EP.02 cena 9 — dois gráficos SEPARADOS e ILUSTRATIVOS (sem números, sem eixo de tempo em segundos):
+  (1) impulso de respirar  (2) oxigênio disponível. Mensagem: a sensação NÃO mede o oxigênio.
+  Renderizado como sequência PNG transparente e composto pelo Remotion (OverlayHF "cerebro-graficos").
+  Tempos locais da cena (s): detalhe 0.8 · vontade 2.13 · relógio 3.63 · oxigênio 5.3 · perigosamente 6.67 · aviso 8.57 · fim 9.63
+-->
+<html lang="pt-BR" data-resolution="portrait">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="assets/gsap.min.js"></script>
+    <style>
+      @font-face { font-family: "Anton"; src: url("assets/anton.woff2") format("woff2"); }
+      @font-face { font-family: "Montserrat"; src: url("assets/montserrat900.woff2") format("woff2"); font-weight: 900; }
+      html, body { margin: 0; width: 1080px; height: 1920px; overflow: hidden; background: transparent; }
+      #root { position: relative; width: 1080px; height: 1920px; overflow: hidden; }
+      #g { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="9.63" data-width="1080" data-height="1920">
+      <div id="g" class="clip" data-start="0" data-duration="9.63" data-track-index="0" data-track-kind="graphics">
+        <svg viewBox="0 0 1080 1920" width="1080" height="1920" data-layout-allow-overflow>
+          <!-- gráfico 1: impulso de respirar -->
+          <g id="g1" opacity="0">
+            <rect x="60" y="230" width="960" height="380" rx="28" fill="#ffffff" stroke="#1a1424" stroke-width="7" />
+            <text x="96" y="290" font-family="Anton" font-size="46" fill="#1a1424">IMPULSO DE RESPIRAR</text>
+            <text x="984" y="290" text-anchor="end" font-family="Montserrat" font-weight="900" font-size="26" fill="#8a7f99">sensação</text>
+            <line x1="110" y1="560" x2="980" y2="560" stroke="#1a1424" stroke-width="5" />
+            <line x1="110" y1="560" x2="110" y2="320" stroke="#1a1424" stroke-width="5" />
+            <line x1="110" y1="360" x2="980" y2="360" stroke="#e4572e" stroke-width="4" stroke-dasharray="14 10" />
+            <text x="975" y="350" text-anchor="end" font-family="Montserrat" font-weight="900" font-size="24" fill="#e4572e">aviso forte</text>
+            <path id="l1" d="M 110,540 C 330,535 520,505 700,460 C 800,436 890,420 975,410" fill="none" stroke="#ff8c32" stroke-width="12" stroke-linecap="round" stroke-dasharray="1000" stroke-dashoffset="1000" />
+            <circle id="p1" cx="975" cy="410" r="14" fill="#ff8c32" stroke="#1a1424" stroke-width="4" opacity="0" />
+          </g>
+          <!-- gráfico 2: oxigênio disponível -->
+          <g id="g2" opacity="0">
+            <rect x="60" y="650" width="960" height="380" rx="28" fill="#ffffff" stroke="#1a1424" stroke-width="7" />
+            <text x="96" y="710" font-family="Anton" font-size="46" fill="#1a1424">OXIGÊNIO DISPONÍVEL</text>
+            <text x="984" y="710" text-anchor="end" font-family="Montserrat" font-weight="900" font-size="26" fill="#8a7f99">medição</text>
+            <rect id="risco" x="112" y="900" width="866" height="78" fill="#ff4d4d" opacity="0" />
+            <text id="riscoT" x="975" y="958" text-anchor="end" font-family="Montserrat" font-weight="900" font-size="26" fill="#9b1111" opacity="0">zona de risco</text>
+            <line x1="110" y1="980" x2="980" y2="980" stroke="#1a1424" stroke-width="5" />
+            <line x1="110" y1="980" x2="110" y2="740" stroke="#1a1424" stroke-width="5" />
+            <path id="l2" d="M 110,770 C 330,775 520,800 700,850 C 800,880 890,915 975,935" fill="none" stroke="#5fc8ff" stroke-width="12" stroke-linecap="round" stroke-dasharray="1000" stroke-dashoffset="1000" />
+            <circle id="p2" cx="975" cy="935" r="14" fill="#5fc8ff" stroke="#1a1424" stroke-width="4" opacity="0" />
+          </g>
+          <text id="ilus" x="540" y="1066" text-anchor="middle" font-family="Montserrat" font-weight="900" font-size="26" fill="#6b5f7a" opacity="0">(gráficos ilustrativos, sem escala)</text>
+          <!-- lupa sobre a diferença entre as duas curvas no final -->
+          <g id="lupa" opacity="0">
+            <line id="ponte" x1="975" y1="420" x2="975" y2="925" stroke="#1a1424" stroke-width="6" stroke-dasharray="12 10" />
+            <circle id="lente" cx="975" cy="665" r="78" fill="#fff8b0" fill-opacity="0.35" stroke="#1a1424" stroke-width="12" />
+            <line id="cabo" x1="920" y1="720" x2="860" y2="790" stroke="#1a1424" stroke-width="22" stroke-linecap="round" />
+            <rect x="620" y="630" width="240" height="64" rx="16" fill="#ffd23f" stroke="#1a1424" stroke-width="6" />
+            <text x="740" y="676" text-anchor="middle" font-family="Anton" font-size="44" fill="#1a1424">DIFERENÇA</text>
+          </g>
+          <!-- faixa principal -->
+          <g id="faixa" opacity="0">
+            <rect x="70" y="1110" width="940" height="110" rx="24" fill="#1a1424" />
+            <text x="540" y="1186" text-anchor="middle" font-family="Anton" font-size="62" fill="#ffd23f">SENSAÇÃO ≠ MEDIÇÃO DE OXIGÊNIO</text>
+          </g>
+        </svg>
+      </div>
+    </div>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      tl.to("#g1", { opacity: 1, duration: 0.35 }, 0.7);
+      tl.to("#l1", { attr: { "stroke-dashoffset": 0 }, duration: 2.6, ease: "power1.inOut" }, 1.0);
+      tl.to("#p1", { opacity: 1, duration: 0.2 }, 3.5);
+      tl.to("#faixa", { opacity: 1, duration: 0.3 }, 3.55);
+      tl.to("#g2", { opacity: 1, duration: 0.35 }, 4.9);
+      tl.to("#l2", { attr: { "stroke-dashoffset": 0 }, duration: 2.2, ease: "power1.inOut" }, 5.2);
+      tl.to("#p2", { opacity: 1, duration: 0.2 }, 7.3);
+      tl.to("#risco", { opacity: 0.22, duration: 0.4 }, 6.6);
+      tl.to("#riscoT", { opacity: 1, duration: 0.4 }, 6.7);
+      tl.to("#ilus", { opacity: 1, duration: 0.4 }, 5.0);
+      // lupa entra e "procura" a diferença entre as curvas
+      tl.to("#lupa", { opacity: 1, duration: 0.3 }, 7.5);
+      tl.fromTo("#lente", { attr: { cy: 520 } }, { attr: { cy: 665 }, duration: 0.6, ease: "back.out(2)" }, 7.5);
+      tl.fromTo("#cabo", { attr: { y1: 575, y2: 645 } }, { attr: { y1: 720, y2: 790 }, duration: 0.6, ease: "back.out(2)" }, 7.5);
+      tl.to("#lente", { attr: { r: 90 }, duration: 0.35, yoyo: true, repeat: 3, ease: "sine.inOut" }, 8.2);
+      tl.to("#g", { opacity: 0, duration: 0.25 }, 9.36);
+      window.__timelines = window.__timelines || {};
+      window.__timelines["main"] = tl;
+    </script>
+  </body>

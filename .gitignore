@@ -36,3 +36,6 @@ experimentos/**/assets/lib/vve-kit.js
 experimentos/**/assets/tempos.js
 # exceção: efeitos sonoros que fazem parte da skill oficial media-use (HyperFrames, licença Pixabay)
 !.claude/skills/media-use/audio/assets/sfx/*.mp3
+# overlays HyperFrames renderizados (reconstruídos a partir de projetos/*/hf/)
+engine/public/hf/
+projetos/**/.hyperframes/

@@ -8,3 +8,4 @@
 | 2026-11-12 | teste-cartoon-vigia | 2d (motor cartoon) | cards cartoon em mundo 3D com tinta (ponte romana) | impacto | kokoro pm_alex / curiosidades | alegre |
 | 2026-11-13 | terceira-guerra-mundial | 2d (remotion) | crise-global-cartoon-2d: celulares/notificações, globo didático, oceano noturno, quarto do Leo | impacto | kokoro pm_alex / documentario (1,06; escalada 0,98) | tensao + automação |
 | 2026-11-13 | arquivos-proibidos-01 | 2d (remotion) | dossie-noir: pastas, carimbos, papel envelhecido, ilustrações em painel (roteiro do João) | terror (Anton) | kokoro pm_santa / suspense (ritmo crescente 1,12→1,30) | suspense + automação, silêncio final |
+| 2026-11-13 | cerebro-prender-respiracao | 2d (remotion + overlays hyperframes) | anatomia-2d: sala creme com sofá azul, cortes 2D (cérebro lateral, tórax, vaso sanguíneo, carótida), raio-X circular, gráficos ilustrativos | impacto | kokoro pm_alex / ciencia (1,0 natural) | curioso + automação (baixa no risco) |

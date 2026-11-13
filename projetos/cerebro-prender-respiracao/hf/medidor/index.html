@@ -1,0 +1,75 @@
+<!doctype html>
+<!--
+  EP.02 cena 6 — medidor ILUSTRATIVO do impulso de respirar (sem números, sem tempo, sem cronômetro).
+  Renderizado como sequência PNG transparente e composto pelo Remotion (OverlayHF "cerebro-medidor").
+  Tempos locais da cena (s): desconforto 1.5 · peito 3.03 · atento 5.2 · difícil 8.0 · fim 8.7
+-->
+<html lang="pt-BR" data-resolution="portrait">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="assets/gsap.min.js"></script>
+    <style>
+      @font-face { font-family: "Anton"; src: url("assets/anton.woff2") format("woff2"); }
+      @font-face { font-family: "Montserrat"; src: url("assets/montserrat900.woff2") format("woff2"); font-weight: 900; }
+      html, body { margin: 0; width: 1080px; height: 1920px; overflow: hidden; background: transparent; }
+      #root { position: relative; width: 1080px; height: 1920px; overflow: hidden; }
+      #medidor { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="8.7" data-width="1080" data-height="1920">
+      <div id="medidor" class="clip" data-start="0" data-duration="8.7" data-track-index="0" data-track-kind="graphics">
+        <svg viewBox="0 0 1080 1920" width="1080" height="1920" data-layout-allow-overflow>
+          <defs>
+            <linearGradient id="grad" x1="0" y1="1" x2="0" y2="0">
+              <stop offset="0" stop-color="#5fd38a" /><stop offset="0.5" stop-color="#ffd23f" /><stop offset="1" stop-color="#ff7a2f" />
+            </linearGradient>
+            <clipPath id="tubo"><rect x="78" y="470" width="120" height="640" rx="60" /></clipPath>
+          </defs>
+          <g id="card" opacity="0">
+            <rect x="34" y="320" width="208" height="890" rx="34" fill="#1a1424" opacity="0.88" />
+            <rect x="34" y="320" width="208" height="890" rx="34" fill="none" stroke="#ffd23f" stroke-width="5" />
+            <text x="138" y="380" text-anchor="middle" font-family="Anton" font-size="40" fill="#ffffff">VONTADE</text>
+            <text x="138" y="425" text-anchor="middle" font-family="Anton" font-size="40" fill="#ffffff">DE RESPIRAR</text>
+            <rect x="78" y="470" width="120" height="640" rx="60" fill="#2c2440" />
+            <g clip-path="url(#tubo)">
+              <rect id="nivel" x="78" y="1110" width="120" height="640" fill="url(#grad)" />
+              <rect id="brilho" x="92" y="1110" width="22" height="600" rx="11" fill="#ffffff" opacity="0.35" />
+            </g>
+            <rect x="78" y="470" width="120" height="640" rx="60" fill="none" stroke="#ffffff" stroke-width="6" />
+            <text x="138" y="1165" text-anchor="middle" font-family="Montserrat" font-weight="900" font-size="28" fill="#cfc6e6">ilustrativo</text>
+          </g>
+          <g id="setas" opacity="0">
+            <path id="s1" d="M 118,1040 L 138,1012 L 158,1040" fill="none" stroke="#1a1424" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" />
+            <path id="s2" d="M 118,1080 L 138,1052 L 158,1080" fill="none" stroke="#1a1424" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" />
+          </g>
+          <g id="tag" opacity="0">
+            <rect x="34" y="236" width="300" height="64" rx="18" fill="#ff7a2f" stroke="#1a1424" stroke-width="5" />
+            <text x="184" y="281" text-anchor="middle" font-family="Anton" font-size="38" fill="#1a1424">DESCONFORTO ↑</text>
+          </g>
+        </svg>
+      </div>
+    </div>
+    <script>
+      // nível do tubo: y do topo (1110 = vazio, 470 = cheio). Sobe em ondas, nunca chega a "estourar".
+      const tl = gsap.timeline({ paused: true });
+      tl.to("#card", { opacity: 1, duration: 0.35, ease: "power2.out" }, 0.15);
+      tl.fromTo("#nivel", { attr: { y: 1110 } }, { attr: { y: 990 }, duration: 1.2, ease: "power1.inOut" }, 0.3);
+      tl.to("#nivel", { attr: { y: 860 }, duration: 1.4, ease: "power2.inOut" }, 1.5);
+      tl.to("#tag", { opacity: 1, duration: 0.3 }, 1.6);
+      tl.to("#nivel", { attr: { y: 720 }, duration: 1.6, ease: "power2.inOut" }, 3.0);
+      tl.to("#nivel", { attr: { y: 600 }, duration: 2.2, ease: "power2.inOut" }, 5.1);
+      tl.to("#nivel", { attr: { y: 545 }, duration: 0.9, ease: "power2.out" }, 7.4);
+      tl.fromTo("#brilho", { attr: { y: 1110 } }, { attr: { y: 560 }, duration: 8.2, ease: "power1.inOut" }, 0.3);
+      // setas pulsando para cima dentro do tubo
+      tl.to("#setas", { opacity: 1, duration: 0.3 }, 1.5);
+      for (let k = 0; k < 8; k++) {
+        tl.fromTo("#s1", { attr: { transform: "translate(0 30)" } }, { attr: { transform: "translate(0 -30)" }, duration: 0.8, ease: "none" }, 1.5 + k * 0.8);
+        tl.fromTo("#s2", { attr: { transform: "translate(0 30)" } }, { attr: { transform: "translate(0 -30)" }, duration: 0.8, ease: "none" }, 1.5 + k * 0.8);
+      }
+      tl.to(["#card", "#setas", "#tag"], { opacity: 0, duration: 0.3 }, 8.35);
+      window.__timelines = window.__timelines || {};
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
