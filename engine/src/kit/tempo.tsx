@@ -1,5 +1,6 @@
 // Contexto de tempo: liga a animação à narração (tempos.json gerado por ferramentas/voz.py).
 import React, { createContext, useContext } from "react";
+import { useCurrentFrame } from "remotion";
 
 export type Palavra = { w: string; ini: number; fim: number; fala: string; destaque: boolean };
 export type Fala = { id: string; texto: string; ini: number; fim: number };
@@ -58,4 +59,16 @@ export const useTempos = () => {
     falando: (f: number, id?: string) =>
       t.falas.some((a) => (!id || a.id === id) && f >= fr(a.ini) && f < fr(a.fim)),
   };
+};
+
+/** Tempo local de uma cena: lf = frame desde o início; P(palavra, n) = frame local da n-ésima ocorrência a partir do início. */
+export const useCena = (inicio: number) => {
+  const f = useCurrentFrame();
+  const T = useTempos();
+  const P = (w: string, n = 1) => {
+    let c = 0;
+    for (const p of T.raw.palavras) if (T.fr(p.ini) >= inicio && limpa(p.w) === limpa(w) && ++c === n) return T.fr(p.ini) - inicio;
+    throw new Error(`palavra '${w}' não existe depois do frame ${inicio}`);
+  };
+  return { lf: f - inicio, f, T, P };
 };

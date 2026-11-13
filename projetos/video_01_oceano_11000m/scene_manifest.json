@@ -1,0 +1,108 @@
+{
+  "id_producao": "video_01_oceano_11000m",
+  "roteiro": "pacote_3_videos_codex/VIDEO_01_OCEANO.md",
+  "personagens": [
+    "mergulhador (rig lateral oc01-merg, roupa vermelha/cinza, nadadeiras amarelas, máscara transparente)",
+    "pesquisador (roupa azul) no submersível"
+  ],
+  "voz": "kokoro pm_alex 1,0 (natural)",
+  "duracao_s": 102.74,
+  "cenas": [
+    {
+      "scene_id": "01",
+      "fala_id": "c01_abertura",
+      "inicio_s": 0,
+      "fim_s": 7.21,
+      "locucao_exata": "Onze mil metros abaixo da superfície. Se você aparecesse lá sem proteção, o que aconteceria com seu corpo?",
+      "visual": "Close frontal do mergulhador meio submerso (máscara, microbolhas, olhos para baixo) → recuo revelando ondas/horizonte/sol → mergulho com régua 0–50 m, bolhas e feixes de sol; letreiro '11.000 METROS' (<4 s)."
+    },
+    {
+      "scene_id": "02",
+      "fala_id": "c02_pressao",
+      "inicio_s": 7.21,
+      "fim_s": 16.03,
+      "locucao_exata": "A cada dez metros de descida, a pressão aumenta aproximadamente uma atmosfera. E isso começa a fazer diferença muito antes do fundo.",
+      "visual": "Mergulhador lateral em pernada (turquesa); régua 0/10/20/30 m com marcador; setas de pressão de todos os lados aumentam com a profundidade; mão ajusta a máscara; câmera vai à régua e volta ao rosto/ouvido."
+    },
+    {
+      "scene_id": "03",
+      "fala_id": "c03_ouvidos",
+      "inicio_s": 16.03,
+      "fim_s": 24.67,
+      "locucao_exata": "Se a pressão não fosse equalizada, seus ouvidos poderiam sofrer lesões. Os espaços cheios de ar são especialmente vulneráveis.",
+      "visual": "Corte 2D do ouvido (canal, tímpano, ouvido médio com AR, tuba auditiva); setas azuis entram; tímpano curva sutilmente; alerta amarelo aparece e some; quadro lateral do mergulhador com mão na máscara (gesto ilustrativo); traços viram raios de luz."
+    },
+    {
+      "scene_id": "04",
+      "fala_id": "c04_luz",
+      "inicio_s": 24.67,
+      "fim_s": 32.05,
+      "locucao_exata": "Agora imagine continuar descendo. A luz do Sol desaparece, a água fica gelada, e o oceano parece não ter fim.",
+      "visual": "Descida acompanhada: azul-claro → azul-marinho → quase preto (nunca preto chapado); feixes de sol encurtam; bioluminescência distante sem espécie; mão aciona a lanterna (clique) e o cone revela partículas; 'SIMULAÇÃO EXPLICATIVA'."
+    },
+    {
+      "scene_id": "05",
+      "fala_id": "c05_pulmoes",
+      "inicio_s": 32.05,
+      "fim_s": 40.82,
+      "locucao_exata": "Os pulmões também possuem ar. Sem condições adequadas de pressão e respiração, o risco de lesões graves aumenta rapidamente.",
+      "visual": "Roupa fica translúcida e revela costelas, diafragma e pulmões em ciclo respiratório lento; gráfico SEPARADO de bolha de gás perdendo volume com setas ('modelo simplificado do gás')."
+    },
+    {
+      "scene_id": "06",
+      "fala_id": "c06_lata",
+      "inicio_s": 40.82,
+      "fim_s": 49.27,
+      "locucao_exata": "Mas existe um detalhe importante: seu corpo não é uma lata vazia. Grande parte dos tecidos contém água, que quase não se comprime.",
+      "visual": "Experimento: recipiente de AR comprime muito, recipiente de ÁGUA quase nada; silhueta humana com cavidades de GÁS (amarelo) e TECIDOS RICOS EM ÁGUA (azul). Corpo não vira lata amassada."
+    },
+    {
+      "scene_id": "07",
+      "fala_id": "c07_fundo",
+      "inicio_s": 49.27,
+      "fim_s": 56.83,
+      "locucao_exata": "Na região mais profunda do oceano, a pressão chega a aproximadamente mil e cem atmosferas. É um ambiente extremo.",
+      "visual": "Descida pela coluna com régua 0–11.000 m acelerando com suavidade; paredes da fossa; fundo da Fossa das Marianas com sedimento levantando e feixe de veículo distante; '≈ 1.100 ATM — aproximadamente'."
+    },
+    {
+      "scene_id": "08",
+      "fala_id": "c08_corpo",
+      "inicio_s": 56.83,
+      "fim_s": 64.48,
+      "locucao_exata": "Lá embaixo, o problema não é só o peso da água. Os espaços gasosos e a falta de proteção tornam a situação mortal.",
+      "visual": "Silhueta 2D translúcida com setas por todos os lados; destaques em sequência: ouvidos/seios da face → pulmões → tecidos com água; ícones de alerta pequenos; panorâmica de cima para baixo."
+    },
+    {
+      "scene_id": "09",
+      "fala_id": "c09_submersivel",
+      "inicio_s": 64.48,
+      "fim_s": 73.16,
+      "locucao_exata": "Por isso, explorar grandes profundidades exige veículos especiais, construídos para resistir à diferença gigantesca de pressão.",
+      "visual": "Submersível didático (sem modelo real) desliza da direita para a esquerda: hélices giram, braço articulado, farol; corte transversal da esfera de pressão com setas e pesquisador (roupa azul) mexendo nos controles; luzes do painel piscam."
+    },
+    {
+      "scene_id": "10",
+      "fala_id": "c10_vida",
+      "inicio_s": 73.16,
+      "fim_s": 82.9,
+      "locucao_exata": "E o mais impressionante é que existem organismos adaptados a ambientes profundos, onde um ser humano não conseguiria sobreviver desprotegido.",
+      "visual": "Paisagem bentônica no farol: anfípodes andando e levantando sedimento, um some atrás de uma dobra do terreno; close ilustrativo 'vida adaptada à pressão'. Sem peixes de outras zonas."
+    },
+    {
+      "scene_id": "11",
+      "fala_id": "c11_limite",
+      "inicio_s": 82.9,
+      "fim_s": 92.56,
+      "locucao_exata": "Sem equipamentos e condições apropriadas, uma pessoa não sobreviveria à descida. Os problemas fatais aconteceriam muito antes dos onze mil metros.",
+      "visual": "Câmera sobe do fundo; coluna 0–11.000 m; trajetória do mergulhador sem proteção termina limpa muito antes do fundo (sem corpo caindo), ícone some; linha do submersível chega ao fundo."
+    },
+    {
+      "scene_id": "12",
+      "fala_id": "c12_final",
+      "inicio_s": 92.56,
+      "fim_s": 102.74,
+      "locucao_exata": "O oceano guarda ambientes que nosso corpo não foi feito para enfrentar. E pensar que ainda conhecemos tão pouco desse mundo.",
+      "visual": "Plano aberto do fundo escuro, submersível como ponto de luz; câmera recua e sobe; sedimentos passam perto da lente; 'VOCÊ DESCERIA ATÉ LÁ?' após a narração."
+    }
+  ]
+}

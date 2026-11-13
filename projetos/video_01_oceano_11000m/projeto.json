@@ -1,0 +1,368 @@
+{
+  "titulo": "O que aconteceria com seu corpo a 11 mil metros de profundidade?",
+  "id_producao": "video_01_oceano_11000m",
+  "motor": "remotion",
+  "modo": "2d",
+  "estilo": "oceano-2d-camadas (superfície turquesa → abismo azul-marinho, régua de profundidade)",
+  "perfil": "ciencia",
+  "voz": {
+    "motor": "kokoro",
+    "voz": "pm_alex",
+    "velocidade": 1.0
+  },
+  "musica": {
+    "humor": "suspense",
+    "volume_db": -25,
+    "automacao": [
+      {
+        "em": "t:0",
+        "db": -2
+      },
+      {
+        "em": "c04_luz",
+        "db": 0
+      },
+      {
+        "em": "c07_fundo",
+        "db": 2
+      },
+      {
+        "em": "c08_corpo:fim",
+        "db": 0
+      },
+      {
+        "em": "c10_vida",
+        "db": -1
+      },
+      {
+        "em": "c12_final",
+        "db": -2
+      },
+      {
+        "em": "c12_final:fim+2.5",
+        "db": -14
+      }
+    ]
+  },
+  "legenda": "impacto",
+  "fontes": [
+    "NOAA Ocean Service — pressão aumenta ~1 atm a cada 10 m (oceanservice.noaa.gov/facts/pressure.html)",
+    "NOAA — Challenger Deep ~10.900–11.000 m; pressão > 1.000 atm (ordem de grandeza ~1.100 atm)",
+    "Barotrauma de mergulho (ouvido médio, seios da face, pulmões): espaços gasosos são os vulneráveis (Lei de Boyle)",
+    "Anfípodes e fauna hadal em fossas (estudos de expedições na Fossa das Marianas)"
+  ],
+  "destaques": [
+    "pressão",
+    "atmosfera",
+    "ouvidos",
+    "ar",
+    "pulmões",
+    "água",
+    "atmosferas",
+    "gasosos",
+    "veículos",
+    "organismos",
+    "onze",
+    "mil"
+  ],
+  "falas": [
+    {
+      "id": "c01_abertura",
+      "texto": "Onze mil metros abaixo da superfície. Se você aparecesse lá sem proteção, o que aconteceria com seu corpo?",
+      "pausa": 0.9
+    },
+    {
+      "id": "c02_pressao",
+      "texto": "A cada dez metros de descida, a pressão aumenta aproximadamente uma atmosfera. E isso começa a fazer diferença muito antes do fundo.",
+      "pausa": 0.9
+    },
+    {
+      "id": "c03_ouvidos",
+      "texto": "Se a pressão não fosse equalizada, seus ouvidos poderiam sofrer lesões. Os espaços cheios de ar são especialmente vulneráveis.",
+      "pausa": 0.9
+    },
+    {
+      "id": "c04_luz",
+      "texto": "Agora imagine continuar descendo. A luz do Sol desaparece, a água fica gelada, e o oceano parece não ter fim.",
+      "pausa": 0.9
+    },
+    {
+      "id": "c05_pulmoes",
+      "texto": "Os pulmões também possuem ar. Sem condições adequadas de pressão e respiração, o risco de lesões graves aumenta rapidamente.",
+      "pausa": 0.9
+    },
+    {
+      "id": "c06_lata",
+      "texto": "Mas existe um detalhe importante: seu corpo não é uma lata vazia. Grande parte dos tecidos contém água, que quase não se comprime.",
+      "pausa": 0.9
+    },
+    {
+      "id": "c07_fundo",
+      "texto": "Na região mais profunda do oceano, a pressão chega a aproximadamente mil e cem atmosferas. É um ambiente extremo.",
+      "pausa": 0.9
+    },
+    {
+      "id": "c08_corpo",
+      "texto": "Lá embaixo, o problema não é só o peso da água. Os espaços gasosos e a falta de proteção tornam a situação mortal.",
+      "pausa": 0.9
+    },
+    {
+      "id": "c09_submersivel",
+      "texto": "Por isso, explorar grandes profundidades exige veículos especiais, construídos para resistir à diferença gigantesca de pressão.",
+      "pausa": 0.9
+    },
+    {
+      "id": "c10_vida",
+      "texto": "E o mais impressionante é que existem organismos adaptados a ambientes profundos, onde um ser humano não conseguiria sobreviver desprotegido.",
+      "pausa": 0.9
+    },
+    {
+      "id": "c11_limite",
+      "texto": "Sem equipamentos e condições apropriadas, uma pessoa não sobreviveria à descida. Os problemas fatais aconteceriam muito antes dos onze mil metros.",
+      "pausa": 0.9
+    },
+    {
+      "id": "c12_final",
+      "texto": "O oceano guarda ambientes que nosso corpo não foi feito para enfrentar. E pensar que ainda conhecemos tão pouco desse mundo.",
+      "pausa": 0.9
+    }
+  ],
+  "sfx": [
+    {
+      "som": "impacto",
+      "em": "palavra:Onze-0.05",
+      "vol": -6
+    },
+    {
+      "som": "ondas",
+      "em": "t:0.1",
+      "vol": -10
+    },
+    {
+      "som": "pop",
+      "em": "t:1.2",
+      "vol": -14
+    },
+    {
+      "som": "whoosh",
+      "em": "t:1.6",
+      "vol": -8
+    },
+    {
+      "som": "ondas",
+      "em": "t:2.4",
+      "vol": -12
+    },
+    {
+      "som": "swoosh_sobe",
+      "em": "t:3.7",
+      "vol": -12
+    },
+    {
+      "som": "pop",
+      "em": "t:4.3",
+      "vol": -14
+    },
+    {
+      "som": "whoosh",
+      "em": "c02_pressao-0.2",
+      "vol": -10
+    },
+    {
+      "som": "radar",
+      "em": "c02_pressao+0.8",
+      "vol": -16
+    },
+    {
+      "som": "radar",
+      "em": "c02_pressao+2.6",
+      "vol": -16
+    },
+    {
+      "som": "radar",
+      "em": "c02_pressao+4.4",
+      "vol": -16
+    },
+    {
+      "som": "radar",
+      "em": "c02_pressao+6.2",
+      "vol": -16
+    },
+    {
+      "som": "whoosh",
+      "em": "c03_ouvidos-0.2",
+      "vol": -10
+    },
+    {
+      "som": "drone",
+      "em": "palavra:lesões-0.3",
+      "vol": -12
+    },
+    {
+      "som": "ding",
+      "em": "palavra:espaços",
+      "vol": -14
+    },
+    {
+      "som": "swoosh_sobe",
+      "em": "c04_luz-0.2",
+      "vol": -12
+    },
+    {
+      "som": "desce",
+      "em": "palavra:desaparece",
+      "vol": -12
+    },
+    {
+      "som": "clique",
+      "em": "palavra:gelada+0.13",
+      "vol": -6
+    },
+    {
+      "som": "pop",
+      "em": "palavra:oceano",
+      "vol": -16
+    },
+    {
+      "som": "whoosh",
+      "em": "c05_pulmoes-0.2",
+      "vol": -10
+    },
+    {
+      "som": "coracao",
+      "em": "palavra:pulmões",
+      "vol": -14
+    },
+    {
+      "som": "coracao",
+      "em": "palavra:possuem",
+      "vol": -14
+    },
+    {
+      "som": "coracao",
+      "em": "palavra:pressão",
+      "vol": -14
+    },
+    {
+      "som": "coracao",
+      "em": "palavra:risco",
+      "vol": -14
+    },
+    {
+      "som": "whoosh",
+      "em": "c06_lata-0.2",
+      "vol": -10
+    },
+    {
+      "som": "metal",
+      "em": "palavra:lata",
+      "vol": -14
+    },
+    {
+      "som": "pop",
+      "em": "palavra:água",
+      "vol": -10
+    },
+    {
+      "som": "riser",
+      "em": "c07_fundo-0.3",
+      "vol": -12
+    },
+    {
+      "som": "desce",
+      "em": "palavra:profunda",
+      "vol": -10
+    },
+    {
+      "som": "impacto",
+      "em": "palavra:mil-0.1",
+      "vol": -8
+    },
+    {
+      "som": "radar",
+      "em": "palavra:extremo",
+      "vol": -14
+    },
+    {
+      "som": "whoosh",
+      "em": "c08_corpo-0.2",
+      "vol": -10
+    },
+    {
+      "som": "brilho",
+      "em": "palavra:gasosos",
+      "vol": -12
+    },
+    {
+      "som": "brilho",
+      "em": "palavra:proteção",
+      "vol": -12
+    },
+    {
+      "som": "drone",
+      "em": "c09_submersivel-0.2",
+      "vol": -12
+    },
+    {
+      "som": "whoosh",
+      "em": "palavra:construídos-0.2",
+      "vol": -12
+    },
+    {
+      "som": "ding",
+      "em": "palavra:resistir",
+      "vol": -14
+    },
+    {
+      "som": "clique",
+      "em": "palavra:gigantesca",
+      "vol": -14
+    },
+    {
+      "som": "swoosh_sobe",
+      "em": "c10_vida-0.2",
+      "vol": -12
+    },
+    {
+      "som": "magia",
+      "em": "palavra:organismos",
+      "vol": -14
+    },
+    {
+      "som": "pop",
+      "em": "palavra:adaptados",
+      "vol": -12
+    },
+    {
+      "som": "desce",
+      "em": "c11_limite-0.2",
+      "vol": -12
+    },
+    {
+      "som": "clique",
+      "em": "palavra:descida+0.1",
+      "vol": -10
+    },
+    {
+      "som": "radar",
+      "em": "palavra:antes",
+      "vol": -14
+    },
+    {
+      "som": "whoosh",
+      "em": "c12_final-0.3",
+      "vol": -12
+    },
+    {
+      "som": "ondas",
+      "em": "palavra:pensar",
+      "vol": -16
+    },
+    {
+      "som": "brilho",
+      "em": "c12_final:fim+0.25",
+      "vol": -10
+    }
+  ],
+  "fim_s": 3.0
+}
