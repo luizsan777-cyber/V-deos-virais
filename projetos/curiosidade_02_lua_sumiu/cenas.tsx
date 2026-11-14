@@ -260,7 +260,7 @@ export const Cena07: C = ({ inicio, fim }) => {
       </Camera>
       <Tela>
         <SeloCanal f={lf} em={P("dias")} t="DIA" x={800} y={500} tam={70} fundo="#ffd24a" />
-        <SeloCanal f={lf} em={P("noites") - 2} t="NOITE" x={280} y={1460} tam={70} fundo="#3b4a8a" cor="#ffffff" />
+        <SeloCanal f={lf} em={P("noites") - 2} t="NOITE" x={280} y={1640} tam={70} fundo="#3b4a8a" cor="#ffffff" />
       </Tela>
     </AbsoluteFill>
   );
