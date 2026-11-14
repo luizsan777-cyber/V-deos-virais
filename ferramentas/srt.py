@@ -45,7 +45,10 @@ def gerar(proj: Path, destino: Path | None = None) -> Path:
     out = []
     for n, b in enumerate(blocos, 1):
         txt = " ".join(a["w"] for a in b)
-        out.append(f"{n}\n{ts(b[0]['ini'])} --> {ts(b[-1]['fim'] + 0.15)}\n{linhas(txt)}\n")
+        fim = b[-1]["fim"] + 0.15
+        if n < len(blocos):
+            fim = min(fim, blocos[n][0]["ini"] - 0.02)  # sem sobreposição com o bloco seguinte
+        out.append(f"{n}\n{ts(b[0]['ini'])} --> {ts(fim)}\n{linhas(txt)}\n")
     destino = destino or proj / f"{proj.name}.srt"
     destino.write_text("\n".join(out), encoding="utf-8")
     return destino
