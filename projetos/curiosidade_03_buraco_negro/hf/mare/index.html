@@ -1,0 +1,55 @@
+<!doctype html>
+<!-- CURIOSIDADE 03 · cena 6 — display da cabine: forças de maré (diferença de gravidade entre pés e cabeça).
+     Setas crescem aos poucos (sem choque instantâneo), sem malha de borracha. PNG transparente → OverlayHyperFrames "cur03-mare".
+     Tempos locais (s): diferença 1.27 · corpo 3.97 · conforme 5.1 · extrema 8.13 · fim 9.03 -->
+<html lang="pt-BR" data-resolution="portrait">
+<head>
+<meta charset="UTF-8" /><meta name="viewport" content="width=1080, height=1920" />
+<script src="assets/gsap.min.js"></script>
+<style>
+@font-face { font-family: "Anton"; src: url("assets/anton.woff2") format("woff2"); }
+@font-face { font-family: "Montserrat"; src: url("assets/montserrat900.woff2") format("woff2"); font-weight: 900; }
+html, body { margin: 0; width: 1080px; height: 1920px; overflow: hidden; background: transparent; }
+#root { position: relative; width: 1080px; height: 1920px; overflow: hidden; }
+#g { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; }
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="main" data-start="0" data-duration="9.03" data-width="1080" data-height="1920">
+<div id="g" class="clip" data-start="0" data-duration="9.03" data-track-index="0" data-track-kind="graphics">
+<svg viewBox="0 0 1080 1920" width="1080" height="1920" data-layout-allow-overflow>
+  <g id="painel" opacity="0">
+    <rect x="440" y="300" width="600" height="980" rx="34" fill="#0d1a24" stroke="#7fd6ff" stroke-width="8"/>
+    <text x="740" y="380" text-anchor="middle" font-family="Anton" font-size="48" fill="#ffffff">DIFERENÇA DE GRAVIDADE</text>
+    <text x="740" y="1250" text-anchor="middle" font-family="Montserrat" font-weight="900" font-size="26" fill="#9fb6dd">ilustrativo · sem escala</text>
+    <!-- figura estilizada -->
+    <circle cx="740" cy="520" r="44" fill="#ffd2b0" stroke="#10121f" stroke-width="6"/>
+    <rect x="700" y="570" width="80" height="250" rx="34" fill="#e8ecf2" stroke="#10121f" stroke-width="6"/>
+    <rect x="705" y="810" width="30" height="190" rx="14" fill="#cfd6e0" stroke="#10121f" stroke-width="6"/>
+    <rect x="745" y="810" width="30" height="190" rx="14" fill="#cfd6e0" stroke="#10121f" stroke-width="6"/>
+    <text x="560" y="530" text-anchor="middle" font-family="Montserrat" font-weight="900" font-size="28" fill="#7fd6ff">cabeça</text>
+    <text x="560" y="1010" text-anchor="middle" font-family="Montserrat" font-weight="900" font-size="28" fill="#ffb27a">pés</text>
+    <text x="740" y="1210" text-anchor="middle" font-family="Montserrat" font-weight="900" font-size="28" fill="#ffb27a">↓ buraco negro</text>
+  </g>
+  <!-- setas (comprimento animado) -->
+  <line id="sCab" x1="900" y1="500" x2="900" y2="540" stroke="#7fd6ff" stroke-width="16" stroke-linecap="round" opacity="0"/>
+  <line id="sPe" x1="900" y1="960" x2="900" y2="1010" stroke="#ff8c42" stroke-width="22" stroke-linecap="round" opacity="0"/>
+  <text id="mais" x="960" y="1160" text-anchor="middle" font-family="Montserrat" font-weight="900" font-size="28" fill="#ffb27a" opacity="0">puxão maior</text>
+</svg>
+</div>
+</div>
+<script>
+const tl = gsap.timeline({ paused: true });
+tl.to("#painel", { opacity: 1, duration: 0.4 }, 0.3);
+tl.to(["#sCab", "#sPe"], { opacity: 1, duration: 0.3 }, 1.3);
+tl.to("#sCab", { attr: { y2: 580 }, duration: 2.5, ease: "power1.inOut" }, 2.0);
+tl.to("#sPe", { attr: { y2: 1080 }, duration: 2.5, ease: "power1.inOut" }, 2.0);
+tl.to("#sCab", { attr: { y2: 600 }, duration: 3.0, ease: "power1.in" }, 5.1);
+tl.to("#sPe", { attr: { y2: 1150 }, duration: 3.0, ease: "power1.in" }, 5.1);
+tl.to("#mais", { opacity: 1, duration: 0.3 }, 6.0);
+tl.to("#g", { opacity: 0, duration: 0.3 }, 8.7);
+window.__timelines = window.__timelines || {};
+window.__timelines["main"] = tl;
+</script>
+</body>
+</html>

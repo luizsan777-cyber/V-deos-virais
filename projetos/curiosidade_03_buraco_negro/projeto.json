@@ -1,0 +1,221 @@
+{
+  "titulo": "E se você caísse em um buraco negro?",
+  "id_producao": "curiosidade_03_buraco_negro",
+  "canal": "Contos depois da meia Noite",
+  "motor": "remotion",
+  "modo": "2d",
+  "estilo": "2d-familia-3a-guerra (Personagem kit, contorno claro, camadas)",
+  "perfil": "curiosidades",
+  "voz": {
+    "motor": "kokoro",
+    "voz": "pm_alex",
+    "velocidade": 0.95
+  },
+  "musica": {
+    "humor": "ciencia",
+    "volume_db": -26,
+    "automacao": [
+      {
+        "em": "t:0",
+        "db": 0
+      },
+      {
+        "em": "c06",
+        "db": -2
+      },
+      {
+        "em": "c09",
+        "db": 0
+      },
+      {
+        "em": "c09:fim+1.2",
+        "db": -12
+      }
+    ]
+  },
+  "legenda": "impacto",
+  "fontes": [
+    "https://science.nasa.gov/universe/black-holes/new-nasa-black-hole-visualization-takes-viewers-beyond-the-brink/",
+    "https://science.nasa.gov/universe/black-holes/anatomy/",
+    "https://imagine.gsfc.nasa.gov/educators/blackholes/imagine/page8.html"
+  ],
+  "destaques": [
+    "buraco",
+    "negro",
+    "supermassivo",
+    "aspirador",
+    "horizonte",
+    "eventos",
+    "luz",
+    "parede",
+    "gravidade",
+    "espaguetificação",
+    "centro",
+    "coragem"
+  ],
+  "falas": [
+    {
+      "id": "c01",
+      "texto": "Você está caindo em direção a um buraco negro. O estranho é que, ao atravessar o ponto sem volta, talvez não exista nenhuma parede pra bater.",
+      "pausa": 0.6
+    },
+    {
+      "id": "c02",
+      "texto": "Imagine um buraco negro supermassivo, isolado e sem um disco quente ao redor. Assim fica mais fácil acompanhar a viagem.",
+      "pausa": 0.6
+    },
+    {
+      "id": "c03",
+      "texto": "Ele não é um aspirador que puxa tudo de longe. Mas, chegando perto o bastante, escapar pode se tornar impossível.",
+      "pausa": 0.6
+    },
+    {
+      "id": "c04",
+      "texto": "A fronteira desse ponto sem volta é chamada de horizonte de eventos. Depois dela, nem mesmo a luz consegue escapar para fora.",
+      "pausa": 0.6
+    },
+    {
+      "id": "c05",
+      "texto": "O horizonte não é uma parede. Num buraco negro supermassivo, você poderia atravessá-lo sem sentir um impacto repentino exatamente naquela fronteira.",
+      "pausa": 0.6
+    },
+    {
+      "id": "c06",
+      "texto": "O problema vem da diferença de gravidade entre uma parte do seu corpo e outra. Conforme você cai, essa diferença pode ficar extrema.",
+      "pausa": 0.6
+    },
+    {
+      "id": "c07",
+      "texto": "Esse alongamento tem até nome: espaguetificação. A distância em que isso acontece depende do tamanho do buraco negro e da trajetória.",
+      "pausa": 0.6
+    },
+    {
+      "id": "c08",
+      "texto": "E o que existe no centro? Nossas teorias ainda têm limites para descrever completamente o que acontece ali. A ciência continua investigando.",
+      "pausa": 0.6
+    },
+    {
+      "id": "c09",
+      "texto": "Uma viagem dessas mostra como a gravidade pode ser surpreendente. Você teria coragem de chegar perto?",
+      "pausa": 0.6
+    }
+  ],
+  "sfx": [
+    {
+      "som": "drone",
+      "em": "t:0.1",
+      "vol": -18
+    },
+    {
+      "som": "radar",
+      "em": "palavra:buraco",
+      "vol": -16
+    },
+    {
+      "som": "brilho",
+      "em": "palavra:ponto",
+      "vol": -14
+    },
+    {
+      "som": "whoosh",
+      "em": "c02-0.2",
+      "vol": -14
+    },
+    {
+      "som": "clique",
+      "em": "palavra:Assim",
+      "vol": -14
+    },
+    {
+      "som": "ding",
+      "em": "palavra:supermassivo",
+      "vol": -16
+    },
+    {
+      "som": "swoosh_sobe",
+      "em": "c03-0.2",
+      "vol": -14
+    },
+    {
+      "som": "desce",
+      "em": "palavra:impossível",
+      "vol": -14
+    },
+    {
+      "som": "whoosh",
+      "em": "c04-0.2",
+      "vol": -14
+    },
+    {
+      "som": "magia",
+      "em": "palavra:horizonte",
+      "vol": -12
+    },
+    {
+      "som": "clique",
+      "em": "palavra:Depois",
+      "vol": -14
+    },
+    {
+      "som": "drone",
+      "em": "c05",
+      "vol": -18
+    },
+    {
+      "som": "whoosh",
+      "em": "palavra:parede",
+      "vol": -14
+    },
+    {
+      "som": "brilho",
+      "em": "palavra:fronteira",
+      "vol": -14
+    },
+    {
+      "som": "radar",
+      "em": "c06",
+      "vol": -16
+    },
+    {
+      "som": "riser",
+      "em": "palavra:Conforme",
+      "vol": -16
+    },
+    {
+      "som": "swoosh_sobe",
+      "em": "palavra:espaguetificação",
+      "vol": -12
+    },
+    {
+      "som": "pop",
+      "em": "palavra:distância",
+      "vol": -14
+    },
+    {
+      "som": "whoosh",
+      "em": "c08-0.2",
+      "vol": -14
+    },
+    {
+      "som": "magia",
+      "em": "palavra:centro",
+      "vol": -12
+    },
+    {
+      "som": "clique",
+      "em": "palavra:ciência",
+      "vol": -14
+    },
+    {
+      "som": "swoosh_sobe",
+      "em": "c09-0.2",
+      "vol": -14
+    },
+    {
+      "som": "brilho",
+      "em": "palavra:coragem",
+      "vol": -12
+    }
+  ],
+  "fim_s": 1.4
+}

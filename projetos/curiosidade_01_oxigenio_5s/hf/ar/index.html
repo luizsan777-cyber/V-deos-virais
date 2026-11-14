@@ -1,0 +1,63 @@
+<!doctype html>
+<!-- CURIOSIDADE 01 · cena 3 — "um quinto do ar" (5 blocos, o azul some) + medidor de pressão SEM números.
+     Renderizado pelo HyperFrames como PNG transparente e composto pelo Remotion (OverlayHyperFrames "cur01-ar").
+     Tempos locais (s): quinto 2.33 · sumisse 4.97 · pressão 6.33 · cairia 7.37 · fim 8.23 -->
+<html lang="pt-BR" data-resolution="portrait">
+<head>
+<meta charset="UTF-8" /><meta name="viewport" content="width=1080, height=1920" />
+<script src="assets/gsap.min.js"></script>
+<style>
+@font-face { font-family: "Anton"; src: url("assets/anton.woff2") format("woff2"); }
+@font-face { font-family: "Montserrat"; src: url("assets/montserrat900.woff2") format("woff2"); font-weight: 900; }
+html, body { margin: 0; width: 1080px; height: 1920px; overflow: hidden; background: transparent; }
+#root { position: relative; width: 1080px; height: 1920px; overflow: hidden; }
+#g { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; }
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="main" data-start="0" data-duration="8.23" data-width="1080" data-height="1920">
+<div id="g" class="clip" data-start="0" data-duration="8.23" data-track-index="0" data-track-kind="graphics">
+<svg viewBox="0 0 1080 1920" width="1080" height="1920" data-layout-allow-overflow>
+  <g id="painel" opacity="0">
+    <rect x="70" y="250" width="940" height="560" rx="34" fill="#fff8e6" stroke="#10121f" stroke-width="8"/>
+    <text x="540" y="340" text-anchor="middle" font-family="Anton" font-size="64" fill="#10121f">O AR QUE RESPIRAMOS</text>
+    <g id="blocos">
+      <rect id="b0" x="130" y="400" width="160" height="220" rx="18" fill="#4fb4ff" stroke="#10121f" stroke-width="7"/>
+      <rect x="300" y="400" width="160" height="220" rx="18" fill="#c9ced6" stroke="#10121f" stroke-width="7"/>
+      <rect x="470" y="400" width="160" height="220" rx="18" fill="#c9ced6" stroke="#10121f" stroke-width="7"/>
+      <rect x="640" y="400" width="160" height="220" rx="18" fill="#c9ced6" stroke="#10121f" stroke-width="7"/>
+      <rect x="810" y="400" width="160" height="220" rx="18" fill="#c9ced6" stroke="#10121f" stroke-width="7"/>
+    </g>
+    <text id="t0" x="210" y="530" text-anchor="middle" font-family="Anton" font-size="56" fill="#10121f">O₂</text>
+    <text x="635" y="530" text-anchor="middle" font-family="Montserrat" font-weight="900" font-size="34" fill="#4a5060">outros gases</text>
+    <text id="quinto" x="540" y="720" text-anchor="middle" font-family="Montserrat" font-weight="900" font-size="40" fill="#10121f" opacity="0">≈ 1 de cada 5 partes</text>
+    <rect id="destaque" x="118" y="388" width="184" height="244" rx="24" fill="none" stroke="#ffd60a" stroke-width="10" opacity="0"/>
+  </g>
+  <g id="medidor" opacity="0">
+    <rect x="240" y="880" width="600" height="420" rx="34" fill="#fff8e6" stroke="#10121f" stroke-width="8"/>
+    <text x="540" y="960" text-anchor="middle" font-family="Anton" font-size="54" fill="#10121f">PRESSÃO DO AR</text>
+    <path d="M 340,1220 A 200,200 0 0 1 740,1220" fill="none" stroke="#c9ced6" stroke-width="34" stroke-linecap="round"/>
+    <path d="M 340,1220 A 200,200 0 0 1 440,1047" fill="none" stroke="#ff9a2e" stroke-width="34" stroke-linecap="round"/>
+    <path d="M 640,1047 A 200,200 0 0 1 740,1220" fill="none" stroke="#4fb4ff" stroke-width="34" stroke-linecap="round"/>
+    <line id="ponteiro" x1="540" y1="1220" x2="540" y2="1050" stroke="#10121f" stroke-width="14" stroke-linecap="round"/>
+    <circle cx="540" cy="1220" r="22" fill="#10121f"/>
+    <text x="540" y="1280" text-anchor="middle" font-family="Montserrat" font-weight="900" font-size="30" fill="#4a5060">ilustrativo · sem escala</text>
+  </g>
+</svg>
+</div>
+</div>
+<script>
+const tl = gsap.timeline({ paused: true });
+tl.to("#painel", { opacity: 1, duration: 0.4 }, 0.2);
+tl.to("#destaque", { opacity: 1, duration: 0.3 }, 2.2);
+tl.to("#quinto", { opacity: 1, duration: 0.3 }, 2.3);
+tl.to(["#b0", "#t0"], { opacity: 0.08, duration: 0.8, ease: "power2.in" }, 4.9);
+tl.to("#destaque", { opacity: 0, duration: 0.5 }, 5.3);
+tl.to("#medidor", { opacity: 1, duration: 0.4 }, 5.6);
+tl.fromTo("#ponteiro", { attr: { x2: 640, y2: 1070 } }, { attr: { x2: 440, y2: 1070 }, duration: 1.2, ease: "power2.inOut" }, 6.2);
+tl.to(["#painel", "#medidor"], { opacity: 0, duration: 0.4 }, 7.6);
+window.__timelines = window.__timelines || {};
+window.__timelines["main"] = tl;
+</script>
+</body>
+</html>

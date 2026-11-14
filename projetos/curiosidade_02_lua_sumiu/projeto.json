@@ -1,0 +1,240 @@
+{
+  "titulo": "E se a Lua desaparecesse de repente?",
+  "id_producao": "curiosidade_02_lua_sumiu",
+  "canal": "Contos depois da meia Noite",
+  "motor": "remotion",
+  "modo": "2d",
+  "estilo": "2d-familia-3a-guerra (Personagem kit, contorno claro, camadas)",
+  "perfil": "curiosidades",
+  "voz": {
+    "motor": "kokoro",
+    "voz": "pm_alex",
+    "velocidade": 0.95
+  },
+  "musica": {
+    "humor": "curioso",
+    "volume_db": -26,
+    "automacao": [
+      {
+        "em": "t:0",
+        "db": 0
+      },
+      {
+        "em": "c08",
+        "db": -2
+      },
+      {
+        "em": "c09",
+        "db": 0
+      },
+      {
+        "em": "c09:fim+1.2",
+        "db": -12
+      }
+    ]
+  },
+  "legenda": "impacto",
+  "fontes": [
+    "https://science.nasa.gov/moon/tides/",
+    "https://www.nasa.gov/mission_pages/LRO/news/lro-laser.html",
+    "https://spaceplace.nasa.gov/moon-tides/en/"
+  ],
+  "destaques": [
+    "Lua",
+    "mar",
+    "segundo",
+    "estrelas",
+    "gravidade",
+    "marés",
+    "Sol",
+    "girar",
+    "inclinação",
+    "clima",
+    "luar"
+  ],
+  "falas": [
+    {
+      "id": "c01",
+      "texto": "Você olha pro céu e, de repente, a Lua sumiu. A noite ficaria diferente… mas a mudança mais curiosa aconteceria no mar.",
+      "pausa": 0.6
+    },
+    {
+      "id": "c02",
+      "texto": "Vamos imaginar que ela simplesmente desapareceu, sem bater em nada. A Terra perceberia a mudança depois de pouco mais de um segundo.",
+      "pausa": 0.6
+    },
+    {
+      "id": "c03",
+      "texto": "Sem o luar, as noites ficariam mais escuras, principalmente longe das luzes da cidade. Em compensação, seria mais fácil observar as estrelas.",
+      "pausa": 0.6
+    },
+    {
+      "id": "c04",
+      "texto": "A Lua também puxa a água dos oceanos com sua gravidade. Essa força ajuda a criar o movimento das marés que conhecemos.",
+      "pausa": 0.6
+    },
+    {
+      "id": "c05",
+      "texto": "Sem a Lua, as marés mudariam bastante. Mas elas não desapareceriam: o Sol também exerce força sobre os oceanos.",
+      "pausa": 0.6
+    },
+    {
+      "id": "c06",
+      "texto": "Em muitas regiões, a mudança afetaria animais e ambientes costeiros que dependem do ritmo das marés.",
+      "pausa": 0.6
+    },
+    {
+      "id": "c07",
+      "texto": "E não: a Terra não pararia de girar no mesmo instante. Os dias continuariam acontecendo, assim como as noites.",
+      "pausa": 0.6
+    },
+    {
+      "id": "c08",
+      "texto": "Em períodos muito longos, a ausência da Lua também poderia alterar a estabilidade da inclinação da Terra e influenciar o clima. Mas isso não aconteceria de um dia pro outro.",
+      "pausa": 0.6
+    },
+    {
+      "id": "c09",
+      "texto": "Ela parece só uma luz bonita no céu, mas ajuda a moldar o planeta. Você sentiria mais falta do luar ou das noites de Lua cheia?",
+      "pausa": 0.6
+    }
+  ],
+  "sfx": [
+    {
+      "som": "vento",
+      "em": "t:0.1",
+      "vol": -18
+    },
+    {
+      "som": "magia",
+      "em": "palavra:sumiu-0.1",
+      "vol": -12
+    },
+    {
+      "som": "ondas",
+      "em": "palavra:mar-0.3",
+      "vol": -14
+    },
+    {
+      "som": "swoosh_sobe",
+      "em": "c02-0.2",
+      "vol": -14
+    },
+    {
+      "som": "brilho",
+      "em": "palavra:desapareceu",
+      "vol": -14
+    },
+    {
+      "som": "radar",
+      "em": "c02+5.2",
+      "vol": -14
+    },
+    {
+      "som": "ding",
+      "em": "c02+6.5",
+      "vol": -12
+    },
+    {
+      "som": "whoosh",
+      "em": "c03-0.2",
+      "vol": -14
+    },
+    {
+      "som": "brilho",
+      "em": "palavra:estrelas",
+      "vol": -12
+    },
+    {
+      "som": "whoosh",
+      "em": "c04-0.2",
+      "vol": -14
+    },
+    {
+      "som": "swoosh_sobe",
+      "em": "palavra:puxa",
+      "vol": -14
+    },
+    {
+      "som": "ondas",
+      "em": "palavra:marés",
+      "vol": -14
+    },
+    {
+      "som": "whoosh",
+      "em": "c05-0.2",
+      "vol": -14
+    },
+    {
+      "som": "brilho",
+      "em": "palavra:Sol",
+      "vol": -12
+    },
+    {
+      "som": "ondas",
+      "em": "palavra:oceanos",
+      "vol": -16
+    },
+    {
+      "som": "ondas",
+      "em": "c06",
+      "vol": -14
+    },
+    {
+      "som": "pop",
+      "em": "palavra:animais",
+      "vol": -12
+    },
+    {
+      "som": "pop",
+      "em": "palavra:costeiros",
+      "vol": -14
+    },
+    {
+      "som": "whoosh",
+      "em": "c07-0.2",
+      "vol": -14
+    },
+    {
+      "som": "ding",
+      "em": "palavra:dias",
+      "vol": -14
+    },
+    {
+      "som": "ding",
+      "em": "palavra:noites",
+      "vol": -16
+    },
+    {
+      "som": "whoosh",
+      "em": "c08-0.2",
+      "vol": -14
+    },
+    {
+      "som": "papel",
+      "em": "palavra:longos",
+      "vol": -14
+    },
+    {
+      "som": "papel",
+      "em": "palavra:clima",
+      "vol": -14
+    },
+    {
+      "som": "swoosh_sobe",
+      "em": "c09-0.2",
+      "vol": -14
+    },
+    {
+      "som": "ondas",
+      "em": "palavra:Você",
+      "vol": -16
+    },
+    {
+      "som": "magia",
+      "em": "c09:fim+0.1",
+      "vol": -12
+    }
+  ],
+  "fim_s": 1.4
+}

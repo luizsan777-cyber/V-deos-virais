@@ -1,0 +1,65 @@
+<!doctype html>
+<!-- CURIOSIDADE 04 · cena 6 — balança comparativa ILUSTRATIVA (avião grande × grupo de passageiros), sem números,
+     e setas de sustentação que continuam ativas. PNG transparente → OverlayHyperFrames "cur04-balanca".
+     Tempos locais (s): massas 1.6 · condições 2.4 · desliga 4.1 · sustentação 4.8 · fim 5.83 -->
+<html lang="pt-BR" data-resolution="portrait">
+<head>
+<meta charset="UTF-8" /><meta name="viewport" content="width=1080, height=1920" />
+<script src="assets/gsap.min.js"></script>
+<style>
+@font-face { font-family: "Anton"; src: url("assets/anton.woff2") format("woff2"); }
+@font-face { font-family: "Montserrat"; src: url("assets/montserrat900.woff2") format("woff2"); font-weight: 900; }
+html, body { margin: 0; width: 1080px; height: 1920px; overflow: hidden; background: transparent; }
+#root { position: relative; width: 1080px; height: 1920px; overflow: hidden; }
+#g { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; }
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="main" data-start="0" data-duration="5.83" data-width="1080" data-height="1920">
+<div id="g" class="clip" data-start="0" data-duration="5.83" data-track-index="0" data-track-kind="graphics">
+<svg viewBox="0 0 1080 1920" width="1080" height="1920" data-layout-allow-overflow>
+  <g id="painel" opacity="0">
+    <rect x="80" y="230" width="920" height="760" rx="34" fill="#fff8e6" stroke="#10121f" stroke-width="8"/>
+    <text x="540" y="320" text-anchor="middle" font-family="Anton" font-size="56" fill="#10121f">MASSAS (ILUSTRATIVO)</text>
+    <path d="M 540,860 L 470,960 L 610,960 Z" fill="#8a96a8" stroke="#10121f" stroke-width="6"/>
+    <g id="braco">
+      <rect x="180" y="540" width="720" height="22" rx="10" fill="#5a6070" stroke="#10121f" stroke-width="5"/>
+      <line x1="540" y1="560" x2="540" y2="860" stroke="#5a6070" stroke-width="14"/>
+      <!-- prato esquerdo: avião -->
+      <line x1="250" y1="560" x2="250" y2="660" stroke="#10121f" stroke-width="4"/>
+      <path d="M 150,660 L 350,660 L 330,690 L 170,690 Z" fill="#c9d2dc" stroke="#10121f" stroke-width="5"/>
+      <path d="M 160,640 C 160,610 200,600 240,600 L 320,600 C 350,600 360,620 360,630 C 360,645 345,650 320,650 L 180,650 C 165,650 160,645 160,640 Z" fill="#f4f6fa" stroke="#10121f" stroke-width="5"/>
+      <path d="M 170,620 L 150,580 L 175,580 L 200,615 Z" fill="#2f6fd6" stroke="#10121f" stroke-width="4"/>
+      <text x="250" y="740" text-anchor="middle" font-family="Montserrat" font-weight="900" font-size="30" fill="#10121f">avião</text>
+      <!-- prato direito: passageiros -->
+      <line x1="830" y1="560" x2="830" y2="660" stroke="#10121f" stroke-width="4"/>
+      <path d="M 730,660 L 930,660 L 910,690 L 750,690 Z" fill="#c9d2dc" stroke="#10121f" stroke-width="5"/>
+      <circle cx="790" cy="618" r="14" fill="#c68e66" stroke="#10121f" stroke-width="3"/><rect x="778" y="632" width="24" height="26" rx="8" fill="#262b38"/>
+      <circle cx="830" cy="618" r="14" fill="#f0c8a0" stroke="#10121f" stroke-width="3"/><rect x="818" y="632" width="24" height="26" rx="8" fill="#e4572e"/>
+      <circle cx="870" cy="618" r="14" fill="#8d5a3b" stroke="#10121f" stroke-width="3"/><rect x="858" y="632" width="24" height="26" rx="8" fill="#ffcf3f"/>
+      <text x="830" y="740" text-anchor="middle" font-family="Montserrat" font-weight="900" font-size="30" fill="#10121f">passageiros</text>
+    </g>
+    <text x="540" y="1040" text-anchor="middle" font-family="Montserrat" font-weight="900" font-size="28" fill="#10121f" opacity="0">sem valores reais</text>
+  </g>
+  <g id="sust" opacity="0">
+    <rect x="300" y="1060" width="480" height="80" rx="18" fill="#2fbf71" stroke="#10121f" stroke-width="6"/>
+    <text x="540" y="1114" text-anchor="middle" font-family="Anton" font-size="44" fill="#10121f">SUSTENTAÇÃO SEGUE</text>
+    <g id="s1"><line x1="420" y1="1330" x2="420" y2="1240" stroke="#2fbf71" stroke-width="14" stroke-linecap="round"/><path d="M 400,1250 L 420,1215 L 440,1250 Z" fill="#2fbf71"/></g>
+    <g id="s2"><line x1="540" y1="1330" x2="540" y2="1240" stroke="#2fbf71" stroke-width="14" stroke-linecap="round"/><path d="M 520,1250 L 540,1215 L 560,1250 Z" fill="#2fbf71"/></g>
+    <g id="s3"><line x1="660" y1="1330" x2="660" y2="1240" stroke="#2fbf71" stroke-width="14" stroke-linecap="round"/><path d="M 640,1250 L 660,1215 L 680,1250 Z" fill="#2fbf71"/></g>
+  </g>
+</svg>
+</div>
+</div>
+<script>
+const tl = gsap.timeline({ paused: true });
+tl.to("#painel", { opacity: 1, duration: 0.4 }, 0.1);
+tl.fromTo("#braco", { rotation: 0, svgOrigin: "540 551" }, { rotation: -6, svgOrigin: "540 551", duration: 1.2, ease: "back.out(1.4)" }, 1.4);
+tl.to("#sust", { opacity: 1, duration: 0.4 }, 3.9);
+tl.fromTo(["#s1", "#s2", "#s3"], { y: 10 }, { y: -10, duration: 0.6, yoyo: true, repeat: 2, ease: "sine.inOut" }, 4.0);
+tl.to("#g", { opacity: 0, duration: 0.25 }, 5.55);
+window.__timelines = window.__timelines || {};
+window.__timelines["main"] = tl;
+</script>
+</body>
+</html>

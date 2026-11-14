@@ -1,0 +1,209 @@
+{
+  "titulo": "E se todos no avião pulassem ao mesmo tempo?",
+  "id_producao": "curiosidade_04_aviao_pulo",
+  "canal": "Contos depois da meia Noite",
+  "motor": "remotion",
+  "modo": "2d",
+  "estilo": "2d-familia-3a-guerra (Personagem kit, contorno claro, camadas)",
+  "perfil": "curiosidades",
+  "voz": {
+    "motor": "kokoro",
+    "voz": "pm_alex",
+    "velocidade": 0.95
+  },
+  "musica": {
+    "humor": "alegre",
+    "volume_db": -27,
+    "automacao": [
+      {
+        "em": "t:0",
+        "db": 0
+      },
+      {
+        "em": "c08",
+        "db": -3
+      },
+      {
+        "em": "c09",
+        "db": 0
+      },
+      {
+        "em": "c09:fim+1.2",
+        "db": -12
+      }
+    ]
+  },
+  "legenda": "impacto",
+  "fontes": [
+    "https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/newtons-laws-of-motion/",
+    "https://www.faa.gov/travelers/fly_safe/seat_belts"
+  ],
+  "destaques": [
+    "avião",
+    "pulasse",
+    "juntos",
+    "frente",
+    "cabine",
+    "empurram",
+    "reage",
+    "sustentação",
+    "forças",
+    "cinto",
+    "tripulação"
+  ],
+  "falas": [
+    {
+      "id": "c01",
+      "texto": "E se todo mundo em um avião pulasse ao mesmo tempo? O avião cairia ou todo mundo continuaria acompanhando o voo?",
+      "pausa": 0.6
+    },
+    {
+      "id": "c02",
+      "texto": "Num voo tranquilo, o avião, o ar da cabine e os passageiros já viajam juntos.",
+      "pausa": 0.6
+    },
+    {
+      "id": "c03",
+      "texto": "Ao saltar, a pessoa continua se movendo pra frente. O avião não vai embora debaixo dos seus pés.",
+      "pausa": 0.6
+    },
+    {
+      "id": "c04",
+      "texto": "O ar dentro da cabine também acompanha o movimento do avião. Nesse exemplo simplificado, a pessoa tenderia a voltar perto do ponto de onde saiu.",
+      "pausa": 0.6
+    },
+    {
+      "id": "c05",
+      "texto": "Mas tem um detalhe: pra pular, as pessoas empurram o piso pra baixo. O avião também sente esse empurrão e reage um pouquinho.",
+      "pausa": 0.6
+    },
+    {
+      "id": "c06",
+      "texto": "O movimento depende das massas e das condições do voo. Isso não desliga a sustentação.",
+      "pausa": 0.6
+    },
+    {
+      "id": "c07",
+      "texto": "Ao pousar no piso, as pessoas empurram o avião novamente. As forças mudam durante o salto e a aterrissagem.",
+      "pausa": 0.6
+    },
+    {
+      "id": "c08",
+      "texto": "Na vida real, não faça esse teste. Fique sentado quando o sinal de cinto estiver ligado e siga as orientações da tripulação.",
+      "pausa": 0.6
+    },
+    {
+      "id": "c09",
+      "texto": "Tudo ali já viajava junto antes do pulo. Você imaginava essa resposta?",
+      "pausa": 0.6
+    }
+  ],
+  "sfx": [
+    {
+      "som": "vento",
+      "em": "t:0.1",
+      "vol": -20
+    },
+    {
+      "som": "pop",
+      "em": "palavra:cairia",
+      "vol": -10
+    },
+    {
+      "som": "pop",
+      "em": "palavra:continuaria",
+      "vol": -10
+    },
+    {
+      "som": "whoosh",
+      "em": "c01:fim+0.1",
+      "vol": -14
+    },
+    {
+      "som": "vento",
+      "em": "c02",
+      "vol": -18
+    },
+    {
+      "som": "swoosh_sobe",
+      "em": "palavra:juntos",
+      "vol": -14
+    },
+    {
+      "som": "pop",
+      "em": "palavra:saltar",
+      "vol": -12
+    },
+    {
+      "som": "pop",
+      "em": "palavra:avião#3",
+      "vol": -12
+    },
+    {
+      "som": "whoosh",
+      "em": "c04-0.2",
+      "vol": -14
+    },
+    {
+      "som": "pop",
+      "em": "palavra:voltar",
+      "vol": -12
+    },
+    {
+      "som": "clique",
+      "em": "palavra:empurram",
+      "vol": -12
+    },
+    {
+      "som": "ding",
+      "em": "palavra:reage",
+      "vol": -14
+    },
+    {
+      "som": "swoosh_sobe",
+      "em": "c06-0.2",
+      "vol": -14
+    },
+    {
+      "som": "clique",
+      "em": "palavra:massas",
+      "vol": -14
+    },
+    {
+      "som": "vento",
+      "em": "palavra:sustentação",
+      "vol": -14
+    },
+    {
+      "som": "pop",
+      "em": "palavra:pousar",
+      "vol": -12
+    },
+    {
+      "som": "clique",
+      "em": "palavra:forças",
+      "vol": -14
+    },
+    {
+      "som": "ding",
+      "em": "palavra:sinal",
+      "vol": -8
+    },
+    {
+      "som": "clique",
+      "em": "palavra:cinto",
+      "vol": -10
+    },
+    {
+      "som": "whoosh",
+      "em": "palavra:Você-0.3",
+      "vol": -14
+    },
+    {
+      "som": "brilho",
+      "em": "c09:fim+0.1",
+      "vol": -12
+    }
+  ],
+  "fim_s": 1.4
+}

@@ -1,0 +1,221 @@
+{
+  "titulo": "E se o oxigênio do ar sumisse por 5 segundos?",
+  "id_producao": "curiosidade_01_oxigenio_5s",
+  "canal": "Contos depois da meia Noite",
+  "motor": "remotion",
+  "modo": "2d",
+  "estilo": "2d-familia-3a-guerra (Personagem kit, contorno claro, camadas)",
+  "perfil": "curiosidades",
+  "voz": {
+    "motor": "kokoro",
+    "voz": "pm_alex",
+    "velocidade": 0.95
+  },
+  "musica": {
+    "humor": "curioso",
+    "volume_db": -26,
+    "automacao": [
+      {
+        "em": "t:0",
+        "db": 0
+      },
+      {
+        "em": "c06",
+        "db": -3
+      },
+      {
+        "em": "c08",
+        "db": 0
+      },
+      {
+        "em": "c08:fim+1.2",
+        "db": -12
+      }
+    ]
+  },
+  "legenda": "impacto",
+  "fontes": [
+    "https://www.ndbc.noaa.gov/education/pressure.shtml",
+    "https://gml.noaa.gov/education/carbon_toolkit/basics.html"
+  ],
+  "destaques": [
+    "oxigênio",
+    "cinco",
+    "segundos",
+    "água",
+    "corpo",
+    "quinto",
+    "pressão",
+    "ouvidos",
+    "chama",
+    "fogo",
+    "perigosa",
+    "riscos",
+    "invisível"
+  ],
+  "falas": [
+    {
+      "id": "c01",
+      "texto": "E se, por apenas cinco segundos, o oxigênio do ar desaparecesse? Seu primeiro problema talvez não fosse prender a respiração.",
+      "pausa": 0.6
+    },
+    {
+      "id": "c02",
+      "texto": "Calma: nessa hipótese, só o oxigênio que está no ar some. A água e o oxigênio que já faz parte do seu corpo continuam ali.",
+      "pausa": 0.6
+    },
+    {
+      "id": "c03",
+      "texto": "O oxigênio representa mais ou menos um quinto do ar que respiramos. Se essa parte sumisse de repente, a pressão do ar também cairia.",
+      "pausa": 0.6
+    },
+    {
+      "id": "c04",
+      "texto": "Seus ouvidos poderiam sentir uma mudança brusca, parecida com a pressão que incomoda em uma viagem de avião, mas o efeito dependeria das condições.",
+      "pausa": 0.6
+    },
+    {
+      "id": "c05",
+      "texto": "E olha a chama do fogão: sem o oxigênio do ar, o fogo que depende dele não consegue continuar queimando normalmente.",
+      "pausa": 0.6
+    },
+    {
+      "id": "c06",
+      "texto": "Isso não significa que todo mundo cairia na mesma hora. A reação do corpo dependeria de vários fatores, e a falta de oxigênio pode ser perigosa.",
+      "pausa": 0.6
+    },
+    {
+      "id": "c07",
+      "texto": "Quando os cinco segundos terminassem, o oxigênio voltaria. Só que uma mudança tão rápida também poderia trazer outros riscos.",
+      "pausa": 0.6
+    },
+    {
+      "id": "c08",
+      "texto": "É uma situação imaginária. Mas ela mostra como um gás invisível participa de coisas que parecem normais o tempo todo. Qual outra coisa você acha que sentiria falta?",
+      "pausa": 0.6
+    }
+  ],
+  "sfx": [
+    {
+      "som": "vento",
+      "em": "t:0.1",
+      "vol": -16
+    },
+    {
+      "som": "clique",
+      "em": "palavra:desaparecesse+0.3",
+      "vol": -8
+    },
+    {
+      "som": "pop",
+      "em": "palavra:cinco",
+      "vol": -12
+    },
+    {
+      "som": "whoosh",
+      "em": "c02-0.2",
+      "vol": -14
+    },
+    {
+      "som": "pop",
+      "em": "palavra:some",
+      "vol": -12
+    },
+    {
+      "som": "ding",
+      "em": "palavra:água",
+      "vol": -14
+    },
+    {
+      "som": "swoosh_sobe",
+      "em": "c03-0.2",
+      "vol": -14
+    },
+    {
+      "som": "pop",
+      "em": "palavra:quinto",
+      "vol": -10
+    },
+    {
+      "som": "desce",
+      "em": "palavra:pressão",
+      "vol": -12
+    },
+    {
+      "som": "pop",
+      "em": "palavra:ouvidos",
+      "vol": -14
+    },
+    {
+      "som": "clique",
+      "em": "palavra:brusca",
+      "vol": -12
+    },
+    {
+      "som": "whoosh",
+      "em": "c05-0.2",
+      "vol": -14
+    },
+    {
+      "som": "vento",
+      "em": "palavra:sem",
+      "vol": -12
+    },
+    {
+      "som": "brilho",
+      "em": "palavra:queimando",
+      "vol": -14
+    },
+    {
+      "som": "whoosh",
+      "em": "c06-0.2",
+      "vol": -14
+    },
+    {
+      "som": "clique",
+      "em": "palavra:significa",
+      "vol": -14
+    },
+    {
+      "som": "clique",
+      "em": "palavra:reação",
+      "vol": -14
+    },
+    {
+      "som": "clique",
+      "em": "palavra:fatores",
+      "vol": -14
+    },
+    {
+      "som": "clique",
+      "em": "palavra:terminassem",
+      "vol": -10
+    },
+    {
+      "som": "brilho",
+      "em": "palavra:voltaria",
+      "vol": -10
+    },
+    {
+      "som": "vento",
+      "em": "palavra:voltaria",
+      "vol": -16
+    },
+    {
+      "som": "swoosh_sobe",
+      "em": "c08-0.2",
+      "vol": -14
+    },
+    {
+      "som": "magia",
+      "em": "palavra:invisível",
+      "vol": -12
+    },
+    {
+      "som": "pop",
+      "em": "palavra:Qual",
+      "vol": -10
+    }
+  ],
+  "fim_s": 1.4
+}
