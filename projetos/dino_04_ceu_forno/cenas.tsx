@@ -118,7 +118,7 @@ export const Cena05: C = ({ inicio, fim }) => {
   const dur = fim - inicio;
   const a = eout(ramp(lf, P("Alguns") - 6, P("Alguns") + 8)), b = eout(ramp(lf, P("Outros") - 6, P("Outros") + 8));
   const painel = (x: number, y: number, e: number, fogo: boolean, rot: string, cor: string) => (
-    <g transform={`translate(${x} ${y + (1 - e) * 1200})`}>
+    <g transform={`translate(${x + (fogo ? -1 : 1) * (1 - e) * 1200} ${y}) scale(0.75)`}>
       <clipPath id={`d4p${fogo ? 1 : 0}`}><rect x={-440} y={-280} width={880} height={560} rx={28} /></clipPath>
       <g clipPath={`url(#d4p${fogo ? 1 : 0})`}>
         <rect x={-440} y={-280} width={880} height={560} fill={fogo ? "#5a1a1a" : "#ffb070"} />
@@ -140,8 +140,8 @@ export const Cena05: C = ({ inicio, fim }) => {
       <Tela>
         <rect width={W} height={H} fill="#1a1446" />
         <text x={540} y={250} textAnchor="middle" fontFamily="Anton" fontSize={130} fill="#ffd23f" opacity={clamp01(ramp(lf, 4, 14)) * (1 - a * 0.6)}>?</text>
-        {painel(540, 640, a, true, "HIPÓTESE 1: INCÊNDIOS ENORMES", "#ff7a2a")}
-        {painel(540, 1270 - 40, b, false, "HIPÓTESE 2: PULSO CURTO", "#7fd6ff")}
+        {painel(540, 540, a, true, "HIPÓTESE 1: INCÊNDIOS ENORMES", "#ff7a2a")}
+        {painel(540, 1040, b, false, "HIPÓTESE 2: PULSO CURTO", "#7fd6ff")}
       </Tela>
       <Tela><SeloCanal f={lf} em={P("discordam") - 4} ate={P("Alguns") - 4} t="OS CIENTISTAS DISCORDAM" y={420} tam={60} fundo="#c9b8ff" /></Tela>
     </AbsoluteFill>
