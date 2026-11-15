@@ -1,0 +1,191 @@
+{
+  "titulo": "Os primeiros minutos depois do impacto",
+  "id_producao": "dino_02_cratera",
+  "serie": "O dia em que os dinossauros morreram (5 shorts)",
+  "inspiracao_referencia": "2:40–3:50 (o clarão, o corte do solo mostrando a cratera de 100 km, a crosta fluindo como líquido, a 'montanha temporária')",
+  "motor": "remotion",
+  "modo": "2d",
+  "estilo": "cretaceo-2d-vivo (cores saturadas, camadas com parallax, comparações de escala, cortes didáticos)",
+  "perfil": "curiosidades",
+  "voz": {
+    "motor": "kokoro",
+    "voz": "pm_alex",
+    "velocidade": 0.95
+  },
+  "musica": {
+    "humor": "tensao",
+    "volume_db": -27,
+    "automacao": [
+      {
+        "em": "t:0",
+        "db": 0
+      },
+      {
+        "em": "c06",
+        "db": -3
+      },
+      {
+        "em": "c08",
+        "db": -1
+      },
+      {
+        "em": "c08:fim+1.2",
+        "db": -12
+      }
+    ]
+  },
+  "legenda": "impacto",
+  "fontes": [
+    "Morgan et al. 2016, Science 354:878 — The formation of peak rings in large impact craters (doi 10.1126/science.aah6561)",
+    "Imperial College London — Extinction day: https://www.imperial.ac.uk/stories/extinction-day",
+    "Energia ~100 teratoneladas de TNT (estimativa citada em várias fontes)"
+  ],
+  "destaques": [
+    "impossível",
+    "vaporizou",
+    "bilhões",
+    "cem",
+    "quilômetros",
+    "líquidas",
+    "Everest",
+    "anel",
+    "2016",
+    "Chicxulub",
+    "minutos"
+  ],
+  "falas": [
+    {
+      "id": "c01",
+      "texto": "O asteroide que acabou com a era dos dinossauros acabou de bater na Terra. E o que aconteceu nos minutos seguintes parece impossível.",
+      "pausa": 0.6
+    },
+    {
+      "id": "c02",
+      "texto": "No choque, a rocha espacial praticamente deixou de existir. Ela se vaporizou junto com uma parte enorme do chão, liberando uma energia bilhões de vezes maior que a de uma bomba atômica.",
+      "pausa": 0.6
+    },
+    {
+      "id": "c03",
+      "texto": "Em poucos segundos, abriu um buraco com cerca de cem quilômetros de largura e dezenas de quilômetros de profundidade.",
+      "pausa": 0.6
+    },
+    {
+      "id": "c04",
+      "texto": "E aqui vem a parte mais estranha: as rochas profundas se comportaram como se fossem líquidas. O centro da cratera subiu e formou, por instantes, uma montanha mais alta que o Everest.",
+      "pausa": 0.6
+    },
+    {
+      "id": "c05",
+      "texto": "Essa montanha não aguentou o próprio peso. Desabou para os lados e deixou um anel de montanhas no meio da cratera, que ainda está lá, enterrado.",
+      "pausa": 0.6
+    },
+    {
+      "id": "c06",
+      "texto": "Sabemos disso porque, em 2016, cientistas perfuraram esse anel e encontraram rochas que estavam a quilômetros de profundidade e foram empurradas para cima em minutos.",
+      "pausa": 0.6
+    },
+    {
+      "id": "c07",
+      "texto": "No fim, sobrou uma cratera com cerca de cento e oitenta quilômetros de largura: a cratera de Chicxulub, escondida hoje debaixo do México e do mar.",
+      "pausa": 0.6
+    },
+    {
+      "id": "c08",
+      "texto": "Tudo isso levou poucos minutos. E o resto do planeta ainda nem sabia o que estava por vir.",
+      "pausa": 0.6
+    }
+  ],
+  "sfx": [
+    {
+      "som": "riser",
+      "em": "t:0.5",
+      "vol": -14
+    },
+    {
+      "som": "impacto",
+      "em": "palavra:bater-0.05",
+      "vol": -4
+    },
+    {
+      "som": "trovao",
+      "em": "palavra:bater+0.1",
+      "vol": -8
+    },
+    {
+      "som": "vento",
+      "em": "c02",
+      "vol": -12
+    },
+    {
+      "som": "magia",
+      "em": "palavra:energia",
+      "vol": -14
+    },
+    {
+      "som": "pop",
+      "em": "palavra:bilhões",
+      "vol": -10
+    },
+    {
+      "som": "desce",
+      "em": "c03",
+      "vol": -12
+    },
+    {
+      "som": "radar",
+      "em": "palavra:cem",
+      "vol": -16
+    },
+    {
+      "som": "drone",
+      "em": "c04",
+      "vol": -16
+    },
+    {
+      "som": "swoosh_sobe",
+      "em": "palavra:subiu",
+      "vol": -10
+    },
+    {
+      "som": "impacto",
+      "em": "palavra:Desabou",
+      "vol": -12
+    },
+    {
+      "som": "pop",
+      "em": "palavra:anel",
+      "vol": -12
+    },
+    {
+      "som": "maquina",
+      "em": "palavra:perfuraram",
+      "vol": -16
+    },
+    {
+      "som": "ding",
+      "em": "palavra:rochas",
+      "vol": -14
+    },
+    {
+      "som": "whoosh",
+      "em": "c07-0.2",
+      "vol": -14
+    },
+    {
+      "som": "pop",
+      "em": "palavra:Chicxulub",
+      "vol": -10
+    },
+    {
+      "som": "vento",
+      "em": "c08",
+      "vol": -16
+    },
+    {
+      "som": "brilho",
+      "em": "c08:fim+0.1",
+      "vol": -12
+    }
+  ],
+  "fim_s": 1.4
+}

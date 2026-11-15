@@ -1,0 +1,210 @@
+{
+  "titulo": "O dia em que o céu virou um forno",
+  "id_producao": "dino_04_ceu_forno",
+  "serie": "O dia em que os dinossauros morreram (5 shorts)",
+  "inspiracao_referencia": "5:20–6:45 (destroços reentrando, o calor do céu, as duas hipóteses de temperatura, incêndios)",
+  "motor": "remotion",
+  "modo": "2d",
+  "estilo": "cretaceo-2d-vivo (cores saturadas, camadas com parallax, comparações de escala, cortes didáticos)",
+  "perfil": "curiosidades",
+  "voz": {
+    "motor": "kokoro",
+    "voz": "pm_alex",
+    "velocidade": 0.95
+  },
+  "musica": {
+    "humor": "tensao",
+    "volume_db": -27,
+    "automacao": [
+      {
+        "em": "t:0",
+        "db": 0
+      },
+      {
+        "em": "c05",
+        "db": -3
+      },
+      {
+        "em": "c07",
+        "db": -1
+      },
+      {
+        "em": "c08:fim+1.2",
+        "db": -12
+      }
+    ]
+  },
+  "legenda": "impacto",
+  "fontes": [
+    "Robertson et al. (pulso térmico e incêndios globais) e críticas de Belcher et al.: https://news.agu.org/press-release/chicxulub-impact-dust-set-the-dinosaurs-world-on-fire/ ; https://www.universetoday.com/articles/it-looks-like-an-asteroid-strike-cant-cause-a-worldwide-dinosaur-killing-firestorm",
+    "Morgan, Artemieva et al. (pulsos térmicos dependem da direção) — citado na mesma cobertura",
+    "Sobrevivência maior de animais pequenos/que se abrigam: padrão amplamente aceito na literatura K-Pg"
+  ],
+  "destaques": [
+    "céu",
+    "atmosfera",
+    "estrela",
+    "cadente",
+    "bilhões",
+    "calor",
+    "forno",
+    "discordam",
+    "fuligem",
+    "América",
+    "Norte",
+    "terra",
+    "água",
+    "toca",
+    "esconder"
+  ],
+  "falas": [
+    {
+      "id": "c01",
+      "texto": "Depois do impacto, o perigo não veio só do chão. Ele caiu do céu.",
+      "pausa": 0.6
+    },
+    {
+      "id": "c02",
+      "texto": "Uma quantidade enorme de rocha derretida e poeira foi lançada para fora da atmosfera. E boa parte disso voltou.",
+      "pausa": 0.6
+    },
+    {
+      "id": "c03",
+      "texto": "Ao reentrar, cada fragmento virava uma pequena estrela cadente. Agora imagina bilhões delas ao mesmo tempo, espalhadas pelo céu.",
+      "pausa": 0.6
+    },
+    {
+      "id": "c04",
+      "texto": "Esse atrito pode ter aquecido o céu e mandado uma onda de calor para a superfície, como a porta de um forno aberta.",
+      "pausa": 0.6
+    },
+    {
+      "id": "c05",
+      "texto": "Quanto calor, e por quanto tempo? Aqui os cientistas discordam. Alguns modelos indicam calor suficiente para começar incêndios em áreas enormes. Outros dizem que o pulso foi curto demais para queimar plantas vivas em todo lugar.",
+      "pausa": 0.6
+    },
+    {
+      "id": "c06",
+      "texto": "O que se sabe é que existe fuligem na camada de rocha daquele dia, e que os sinais mais fortes de incêndio vêm da América do Norte.",
+      "pausa": 0.6
+    },
+    {
+      "id": "c07",
+      "texto": "Para muitos animais, a diferença entre viver e morrer pode ter sido simples: estar debaixo da terra, dentro da água ou escondido numa toca.",
+      "pausa": 0.6
+    },
+    {
+      "id": "c08",
+      "texto": "Por isso, bichos pequenos que se abrigavam tiveram mais chance. Os grandes dinossauros não tinham onde se esconder.",
+      "pausa": 0.6
+    }
+  ],
+  "sfx": [
+    {
+      "som": "vento",
+      "em": "t:0.1",
+      "vol": -16
+    },
+    {
+      "som": "desce",
+      "em": "palavra:caiu",
+      "vol": -10
+    },
+    {
+      "som": "swoosh_sobe",
+      "em": "c02-0.1",
+      "vol": -12
+    },
+    {
+      "som": "whoosh",
+      "em": "palavra:voltou",
+      "vol": -12
+    },
+    {
+      "som": "riser",
+      "em": "c03",
+      "vol": -16
+    },
+    {
+      "som": "brilho",
+      "em": "palavra:estrela",
+      "vol": -12
+    },
+    {
+      "som": "whoosh",
+      "em": "palavra:bilhões",
+      "vol": -12
+    },
+    {
+      "som": "vento",
+      "em": "c04",
+      "vol": -12
+    },
+    {
+      "som": "drone",
+      "em": "palavra:calor",
+      "vol": -16
+    },
+    {
+      "som": "pop",
+      "em": "palavra:forno",
+      "vol": -10
+    },
+    {
+      "som": "pop",
+      "em": "palavra:Alguns",
+      "vol": -12
+    },
+    {
+      "som": "pop",
+      "em": "palavra:Outros",
+      "vol": -12
+    },
+    {
+      "som": "papel",
+      "em": "c06",
+      "vol": -14
+    },
+    {
+      "som": "ding",
+      "em": "palavra:fuligem",
+      "vol": -14
+    },
+    {
+      "som": "radar",
+      "em": "palavra:América",
+      "vol": -16
+    },
+    {
+      "som": "whoosh",
+      "em": "c07-0.2",
+      "vol": -14
+    },
+    {
+      "som": "pop",
+      "em": "palavra:terra",
+      "vol": -12
+    },
+    {
+      "som": "ondas",
+      "em": "palavra:água",
+      "vol": -14
+    },
+    {
+      "som": "pop",
+      "em": "palavra:toca",
+      "vol": -12
+    },
+    {
+      "som": "drone",
+      "em": "c08",
+      "vol": -16
+    },
+    {
+      "som": "impacto",
+      "em": "palavra:esconder",
+      "vol": -14
+    }
+  ],
+  "fim_s": 1.4
+}

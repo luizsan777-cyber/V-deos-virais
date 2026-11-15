@@ -1,0 +1,197 @@
+{
+  "titulo": "A onda que deu a volta ao mundo",
+  "id_producao": "dino_03_tsunami",
+  "serie": "O dia em que os dinossauros morreram (5 shorts)",
+  "inspiracao_referencia": "3:50–5:20 (o terremoto global, as erupções na Índia, o anel de tsunami e '15 horas após o impacto')",
+  "motor": "remotion",
+  "modo": "2d",
+  "estilo": "cretaceo-2d-vivo (cores saturadas, camadas com parallax, comparações de escala, cortes didáticos)",
+  "perfil": "curiosidades",
+  "voz": {
+    "motor": "kokoro",
+    "voz": "pm_alex",
+    "velocidade": 0.95
+  },
+  "musica": {
+    "humor": "tensao",
+    "volume_db": -27,
+    "automacao": [
+      {
+        "em": "t:0",
+        "db": 0
+      },
+      {
+        "em": "c07",
+        "db": -3
+      },
+      {
+        "em": "c08",
+        "db": -2
+      },
+      {
+        "em": "c08:fim+1.2",
+        "db": -12
+      }
+    ]
+  },
+  "legenda": "impacto",
+  "fontes": [
+    "Range et al. 2022, AGU Advances — The Chicxulub Impact Produced a Powerful Global Tsunami (doi 10.1029/2021AV000627); https://news.agu.org/press-release/end-cretaceous-asteroid-caused-massive-global-tsunami-peaking-at-a-mile-high ; https://news.umich.edu/dinosaur-killing-asteroid-triggered-global-tsunami-that-scoured-seafloor-thousands-of-miles-from-impact-site",
+    "Richards et al. 2015, GSA Bulletin (Deccan × impacto, hipótese): https://news.berkeley.edu/2015/04/30/did-dinosaur-killing-asteroid-trigger-largest-lava-flows-on-earth",
+    "Burj Khalifa 828 m"
+  ],
+  "destaques": [
+    "maremoto",
+    "2022",
+    "onda",
+    "quilômetro",
+    "meio",
+    "dobro",
+    "cem",
+    "metros",
+    "dois",
+    "dias",
+    "dez",
+    "magnitude",
+    "nove",
+    "Índia",
+    "hipótese",
+    "sedimento",
+    "rastro"
+  ],
+  "falas": [
+    {
+      "id": "c01",
+      "texto": "Quando o asteroide caiu no mar, a água foi empurrada para longe com uma força que nenhum maremoto da história humana chegou perto de ter.",
+      "pausa": 0.6
+    },
+    {
+      "id": "c02",
+      "texto": "Uma simulação publicada em 2022 calculou que, dez minutos depois do impacto, uma onda de cerca de um quilômetro e meio de altura avançava em todas as direções.",
+      "pausa": 0.6
+    },
+    {
+      "id": "c03",
+      "texto": "Um quilômetro e meio. É quase o dobro do prédio mais alto do mundo.",
+      "pausa": 0.6
+    },
+    {
+      "id": "c04",
+      "texto": "Dentro do golfo, as ondas em mar aberto passavam de cem metros. E elas não pararam por ali.",
+      "pausa": 0.6
+    },
+    {
+      "id": "c05",
+      "texto": "Em menos de dois dias, o maremoto já tinha chegado à maior parte dos litorais do planeta, com ondas que podiam passar de dez metros no Atlântico Norte e na costa pacífica da América do Sul.",
+      "pausa": 0.6
+    },
+    {
+      "id": "c06",
+      "texto": "Ao mesmo tempo, o chão tremia. O impacto provocou um abalo comparável a um terremoto de magnitude nove ou mais, sentido no mundo inteiro.",
+      "pausa": 0.6
+    },
+    {
+      "id": "c07",
+      "texto": "Alguns cientistas suspeitam que esse tremor tenha acelerado erupções gigantes de lava na Índia. Mas isso ainda é uma hipótese em debate.",
+      "pausa": 0.6
+    },
+    {
+      "id": "c08",
+      "texto": "E as marcas ficaram. Em vários pontos do fundo do oceano, camadas de sedimento revirado ainda guardam o rastro dessa onda.",
+      "pausa": 0.6
+    }
+  ],
+  "sfx": [
+    {
+      "som": "ondas",
+      "em": "t:0.1",
+      "vol": -10
+    },
+    {
+      "som": "whoosh",
+      "em": "palavra:empurrada",
+      "vol": -10
+    },
+    {
+      "som": "swoosh_sobe",
+      "em": "c02-0.2",
+      "vol": -14
+    },
+    {
+      "som": "radar",
+      "em": "palavra:simulação",
+      "vol": -16
+    },
+    {
+      "som": "ondas",
+      "em": "palavra:onda",
+      "vol": -8
+    },
+    {
+      "som": "trovao",
+      "em": "palavra:altura",
+      "vol": -14
+    },
+    {
+      "som": "pop",
+      "em": "palavra:dobro",
+      "vol": -10
+    },
+    {
+      "som": "ondas",
+      "em": "c04",
+      "vol": -10
+    },
+    {
+      "som": "whoosh",
+      "em": "c05-0.2",
+      "vol": -14
+    },
+    {
+      "som": "radar",
+      "em": "palavra:Atlântico",
+      "vol": -16
+    },
+    {
+      "som": "radar",
+      "em": "palavra:pacífica",
+      "vol": -16
+    },
+    {
+      "som": "trovao",
+      "em": "palavra:chão",
+      "vol": -8
+    },
+    {
+      "som": "impacto",
+      "em": "palavra:tremia",
+      "vol": -10
+    },
+    {
+      "som": "vibracao",
+      "em": "palavra:magnitude",
+      "vol": -12
+    },
+    {
+      "som": "drone",
+      "em": "c07",
+      "vol": -16
+    },
+    {
+      "som": "pop",
+      "em": "palavra:hipótese",
+      "vol": -12
+    },
+    {
+      "som": "ondas",
+      "em": "c08",
+      "vol": -18
+    },
+    {
+      "som": "brilho",
+      "em": "palavra:rastro",
+      "vol": -12
+    }
+  ],
+  "fim_s": 1.4
+}

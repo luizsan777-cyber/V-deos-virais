@@ -1,0 +1,198 @@
+{
+  "titulo": "O ponto de luz que os dinossauros viram no céu",
+  "id_producao": "dino_01_estrela",
+  "serie": "O dia em que os dinossauros morreram (5 shorts)",
+  "inspiracao_referencia": "1:20–2:30 (a 'nova estrela' no céu, a comparação de tamanho com o Everest, a travessia da atmosfera)",
+  "motor": "remotion",
+  "modo": "2d",
+  "estilo": "cretaceo-2d-vivo (cores saturadas, camadas com parallax, comparações de escala, cortes didáticos)",
+  "perfil": "curiosidades",
+  "voz": {
+    "motor": "kokoro",
+    "voz": "pm_alex",
+    "velocidade": 0.95
+  },
+  "musica": {
+    "humor": "curioso",
+    "volume_db": -26,
+    "automacao": [
+      {
+        "em": "t:0",
+        "db": 0
+      },
+      {
+        "em": "c06",
+        "db": 2
+      },
+      {
+        "em": "c08",
+        "db": -2
+      },
+      {
+        "em": "c08:fim+1.2",
+        "db": -12
+      }
+    ]
+  },
+  "legenda": "impacto",
+  "fontes": [
+    "Imperial College London — Extinction day: https://www.imperial.ac.uk/stories/extinction-day",
+    "NASA/JPL e literatura geral: impactor ~10 km, 12–20 km/s (faixa de estimativas)",
+    "Everest 8.849 m (medição 2020, China/Nepal)"
+  ],
+  "destaques": [
+    "tiranossauro",
+    "ponto",
+    "luz",
+    "dez",
+    "quilômetros",
+    "reconstrução",
+    "Everest",
+    "segundo",
+    "atmosfera",
+    "fogo",
+    "Iucatã",
+    "dinossauros",
+    "história"
+  ],
+  "falas": [
+    {
+      "id": "c01",
+      "texto": "Sessenta e seis milhões de anos atrás, um tiranossauro levanta a cabeça e vê algo estranho no céu: um ponto de luz que não estava ali antes.",
+      "pausa": 0.6
+    },
+    {
+      "id": "c02",
+      "texto": "Era uma rocha espacial com uns dez quilômetros de largura, vindo em direção à Terra. Quando exatamente ela começou a aparecer no céu, ninguém sabe. O que você vê aqui é uma reconstrução.",
+      "pausa": 0.6
+    },
+    {
+      "id": "c03",
+      "texto": "Um objeto desse tamanho, refletindo a luz do Sol, poderia ficar visível por um tempo antes da chegada, crescendo devagar, noite após noite.",
+      "pausa": 0.6
+    },
+    {
+      "id": "c04",
+      "texto": "Pra ter ideia do tamanho: o monte Everest tem menos de nove quilômetros de altura. Essa rocha era maior que a montanha mais alta do planeta.",
+      "pausa": 0.6
+    },
+    {
+      "id": "c05",
+      "texto": "E ela vinha rápido demais. As estimativas ficam entre doze e vinte quilômetros por segundo. Mesmo no cálculo mais lento, ela cruzaria o Brasil de ponta a ponta em uns seis minutos.",
+      "pausa": 0.6
+    },
+    {
+      "id": "c06",
+      "texto": "Nessa velocidade, a atmosfera inteira foi atravessada em poucos segundos. O ar na frente da rocha foi esmagado e esquentou tanto que ela virou uma bola de fogo.",
+      "pausa": 0.6
+    },
+    {
+      "id": "c07",
+      "texto": "O alvo era um mar raso, onde hoje fica a península de Iucatã, no México. Para os dinossauros, o céu inteiro se acendeu.",
+      "pausa": 0.6
+    },
+    {
+      "id": "c08",
+      "texto": "Eles não tinham como entender o que estava acontecendo. Mas nós sabemos: aquele ponto de luz ia mudar a história da vida na Terra para sempre.",
+      "pausa": 0.6
+    }
+  ],
+  "sfx": [
+    {
+      "som": "vento",
+      "em": "t:0.1",
+      "vol": -18
+    },
+    {
+      "som": "brilho",
+      "em": "palavra:ponto",
+      "vol": -10
+    },
+    {
+      "som": "swoosh_sobe",
+      "em": "c02-0.2",
+      "vol": -14
+    },
+    {
+      "som": "radar",
+      "em": "palavra:largura",
+      "vol": -16
+    },
+    {
+      "som": "pop",
+      "em": "palavra:ninguém",
+      "vol": -12
+    },
+    {
+      "som": "whoosh",
+      "em": "c03-0.2",
+      "vol": -14
+    },
+    {
+      "som": "brilho",
+      "em": "palavra:noite#1",
+      "vol": -14
+    },
+    {
+      "som": "whoosh",
+      "em": "c04-0.2",
+      "vol": -14
+    },
+    {
+      "som": "pop",
+      "em": "palavra:Everest",
+      "vol": -10
+    },
+    {
+      "som": "impacto",
+      "em": "palavra:maior",
+      "vol": -14
+    },
+    {
+      "som": "whoosh",
+      "em": "c05-0.2",
+      "vol": -12
+    },
+    {
+      "som": "swoosh_sobe",
+      "em": "palavra:cruzaria",
+      "vol": -12
+    },
+    {
+      "som": "riser",
+      "em": "c06-0.2",
+      "vol": -12
+    },
+    {
+      "som": "vento",
+      "em": "palavra:esmagado",
+      "vol": -12
+    },
+    {
+      "som": "impacto",
+      "em": "palavra:fogo",
+      "vol": -10
+    },
+    {
+      "som": "radar",
+      "em": "palavra:península",
+      "vol": -16
+    },
+    {
+      "som": "trovao",
+      "em": "palavra:acendeu",
+      "vol": -10
+    },
+    {
+      "som": "drone",
+      "em": "c08",
+      "vol": -18
+    },
+    {
+      "som": "magia",
+      "em": "c08:fim+0.1",
+      "vol": -12
+    }
+  ],
+  "fim_s": 1.4
+}

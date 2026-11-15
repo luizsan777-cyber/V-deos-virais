@@ -1,0 +1,214 @@
+{
+  "titulo": "O inverno que mudou a vida na Terra",
+  "id_producao": "dino_05_inverno",
+  "serie": "O dia em que os dinossauros morreram (5 shorts)",
+  "inspiracao_referencia": "6:45–8:55 (o planeta no escuro, o plâncton, '75%', os sobreviventes: aves e mamíferos)",
+  "motor": "remotion",
+  "modo": "2d",
+  "estilo": "cretaceo-2d-vivo (cores saturadas, camadas com parallax, comparações de escala, cortes didáticos)",
+  "perfil": "curiosidades",
+  "voz": {
+    "motor": "kokoro",
+    "voz": "pm_alex",
+    "velocidade": 0.95
+  },
+  "musica": {
+    "humor": "curioso",
+    "volume_db": -26,
+    "automacao": [
+      {
+        "em": "t:0",
+        "db": -3
+      },
+      {
+        "em": "c06",
+        "db": -3
+      },
+      {
+        "em": "c07",
+        "db": 0
+      },
+      {
+        "em": "c09:fim+1.2",
+        "db": -12
+      }
+    ]
+  },
+  "legenda": "impacto",
+  "fontes": [
+    "Senel et al. 2023, Nature Geoscience 16:1033 — Chicxulub impact winter sustained by fine silicate dust: https://astro.oma.be/en/dust-played-a-major-role-in-dinosaur-demise",
+    "Imperial College London — Extinction day (≈75% das espécies): https://www.imperial.ac.uk/stories/extinction-day",
+    "Aves como dinossauros sobreviventes; extinção de amonites e répteis marinhos (consenso paleontológico)"
+  ],
+  "destaques": [
+    "anos",
+    "atmosfera",
+    "2023",
+    "fotossíntese",
+    "dois",
+    "cadeia",
+    "plâncton",
+    "amonites",
+    "três",
+    "quartos",
+    "aves",
+    "mamíferos",
+    "nós",
+    "dinossauro"
+  ],
+  "falas": [
+    {
+      "id": "c01",
+      "texto": "O impacto durou segundos. Mas o que acabou com a maior parte da vida veio depois, e durou anos.",
+      "pausa": 0.6
+    },
+    {
+      "id": "c02",
+      "texto": "Poeira finíssima, fuligem dos incêndios e gases de enxofre subiram até o alto da atmosfera e se espalharam pelo planeta inteiro.",
+      "pausa": 0.6
+    },
+    {
+      "id": "c03",
+      "texto": "A luz do Sol quase não chegava ao chão. Um estudo de 2023 estimou que a fotossíntese pode ter ficado praticamente parada por cerca de dois anos.",
+      "pausa": 0.6
+    },
+    {
+      "id": "c04",
+      "texto": "Sem plantas crescendo, os herbívoros ficaram sem comida. Sem herbívoros, os predadores também. A cadeia alimentar desabou de baixo para cima.",
+      "pausa": 0.6
+    },
+    {
+      "id": "c05",
+      "texto": "No mar aconteceu algo parecido. O plâncton despencou, e grupos famosos, como as amonites e os grandes répteis marinhos, desapareceram.",
+      "pausa": 0.6
+    },
+    {
+      "id": "c06",
+      "texto": "No total, cerca de três quartos das espécies da Terra foram extintas.",
+      "pausa": 0.6
+    },
+    {
+      "id": "c07",
+      "texto": "Mas nem todo dinossauro morreu. Uma linhagem de pequenos dinossauros com penas e bico sobreviveu: as aves.",
+      "pausa": 0.6
+    },
+    {
+      "id": "c08",
+      "texto": "Ao lado delas, pequenos mamíferos aproveitaram o mundo vazio. Milhões de anos depois, um desses grupos deu origem a nós.",
+      "pausa": 0.6
+    },
+    {
+      "id": "c09",
+      "texto": "Então, da próxima vez que um passarinho pousar na sua janela, lembra: você está olhando para um dinossauro que sobreviveu ao fim do mundo.",
+      "pausa": 0.6
+    }
+  ],
+  "sfx": [
+    {
+      "som": "vento",
+      "em": "t:0.1",
+      "vol": -16
+    },
+    {
+      "som": "papel",
+      "em": "palavra:anos",
+      "vol": -12
+    },
+    {
+      "som": "swoosh_sobe",
+      "em": "c02-0.1",
+      "vol": -14
+    },
+    {
+      "som": "pop",
+      "em": "palavra:Poeira",
+      "vol": -12
+    },
+    {
+      "som": "pop",
+      "em": "palavra:fuligem",
+      "vol": -12
+    },
+    {
+      "som": "pop",
+      "em": "palavra:enxofre",
+      "vol": -12
+    },
+    {
+      "som": "drone",
+      "em": "palavra:espalharam",
+      "vol": -16
+    },
+    {
+      "som": "desce",
+      "em": "c03",
+      "vol": -14
+    },
+    {
+      "som": "radar",
+      "em": "palavra:estudo",
+      "vol": -16
+    },
+    {
+      "som": "ding",
+      "em": "palavra:dois",
+      "vol": -14
+    },
+    {
+      "som": "impacto",
+      "em": "palavra:desabou",
+      "vol": -12
+    },
+    {
+      "som": "ondas",
+      "em": "c05",
+      "vol": -16
+    },
+    {
+      "som": "desce",
+      "em": "palavra:despencou",
+      "vol": -12
+    },
+    {
+      "som": "pop",
+      "em": "palavra:três",
+      "vol": -10
+    },
+    {
+      "som": "magia",
+      "em": "c07",
+      "vol": -12
+    },
+    {
+      "som": "brilho",
+      "em": "palavra:aves",
+      "vol": -10
+    },
+    {
+      "som": "swoosh_sobe",
+      "em": "palavra:Milhões",
+      "vol": -14
+    },
+    {
+      "som": "pop",
+      "em": "palavra:nós",
+      "vol": -10
+    },
+    {
+      "som": "whoosh",
+      "em": "c09-0.2",
+      "vol": -14
+    },
+    {
+      "som": "ding",
+      "em": "palavra:passarinho",
+      "vol": -14
+    },
+    {
+      "som": "brilho",
+      "em": "c09:fim+0.1",
+      "vol": -10
+    }
+  ],
+  "fim_s": 1.4
+}
