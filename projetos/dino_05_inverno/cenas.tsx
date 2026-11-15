@@ -48,7 +48,7 @@ export const Cena01: C = ({ inicio, fim }) => {
         <Selva f={lf} cx={100} fogo={0.6} cinza={anos * 0.7} id="d5s1" />
         <Cinzas f={lf} n={60} op={anos * 0.8} seed="d5a" />
         <Calendario x={820} y={560} s={eout(anos)} t={lf * 0.08 * anos} />
-        <Dino tipo="hadro" x={380} y={1700} s={0.85} f={lf} cabeca={-10} medo={0.5} seed={31} />
+        <Dino tipo="hadro" x={330} y={1800} s={0.8} f={lf} cabeca={-10} medo={0.5} seed={31} />
       </Camera>
       <Tela><CartaoTempo f={lf} em={4} ate={P("Mas") - 4} t="SEGUNDOS" y={260} cor="#ff9a3a" /><CartaoTempo f={lf} em={P("anos") - 4} ate={dur + 10} t="ANOS" y={260} cor="#c9d6ff" /></Tela>
     </AbsoluteFill>
@@ -143,10 +143,10 @@ export const Cena05: C = ({ inicio, fim }) => {
         {Array.from({ length: 120 }, (_, i) => <circle key={i} cx={rnd(`d5k${i}`) * 1200 - 60 + Math.sin(lf * 0.03 + i) * 10} cy={rnd(`d5ky${i}`) * 900 + 150} r={3 + rnd(`d5kr${i}`) * 3} fill="#7dffcf" opacity={plancton * 0.8} />)}
         <Amonite x={330} y={1000} s={1.2} f={lf} op={1 - some} />
         <Amonite x={180} y={1150} s={0.7} f={lf + 20} op={1 - some} />
-        <ReptilMarinho x={600} y={1350} s={0.9} f={lf} op={1 - some} />
+        <ReptilMarinho x={600} y={1150} s={0.9} f={lf} op={1 - some} />
         <rect x={-1000} y={1700} width={3000} height={500} fill="#2a2238" />
         <text x={330} y={880} textAnchor="middle" fontFamily="Montserrat" fontWeight={900} fontSize={32} fill="#fff" opacity={clamp01(ramp(lf, P("amonites") - 4, P("amonites") + 6)) * (1 - some)}>amonites</text>
-        <text x={640} y={1500} textAnchor="middle" fontFamily="Montserrat" fontWeight={900} fontSize={32} fill="#fff" opacity={clamp01(ramp(lf, P("répteis") - 4, P("répteis") + 6)) * (1 - some)}>grandes répteis marinhos</text>
+        <text x={640} y={1290} textAnchor="middle" fontFamily="Montserrat" fontWeight={900} fontSize={32} fill="#fff" opacity={clamp01(ramp(lf, P("répteis") - 4, P("répteis") + 6)) * (1 - some)}>grandes répteis marinhos</text>
       </Camera>
       <Tela><SeloCanal f={lf} em={P("plâncton") - 4} ate={P("grupos") - 2} t="PLÂNCTON DESPENCOU" y={300} tam={60} fundo="#7dffcf" /></Tela>
     </AbsoluteFill>
