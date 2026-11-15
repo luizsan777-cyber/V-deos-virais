@@ -94,7 +94,7 @@ export const Cena03: C = ({ inicio, fim }) => {
 export const Cena04: C = ({ inicio, fim }) => {
   const { lf, P } = useCena(inicio);
   const dur = fim - inicio;
-  const pxkm = 80, base = 1500;
+  const pxkm = 62, base = 1500;
   const ev = eout(ramp(lf, P("Everest") - 6, P("Everest") + 10));
   const ast = eout(ramp(lf, P("Essa") - 6, P("Essa") + 12));
   return (
@@ -103,10 +103,10 @@ export const Cena04: C = ({ inicio, fim }) => {
         <CeuCretaceo topo="#7fd0ff" base="#e8f6ff" id="d1esc" f={lf} />
         <Nuvens f={lf} y={200} n={4} op={0.7} seed="esc" />
         <rect x={-1000} y={base} width={3000} height={800} fill="#6fbf5a" />
+        <g opacity={ev}><Everest x={330} base={base} h={8.85 * pxkm * ev} /></g>
         <Regua x={110} base={base} px_km={pxkm} ate={10} />
-        <g opacity={ev}><Everest x={360} base={base} h={8.85 * pxkm * ev} /></g>
-        <g opacity={ast}><Asteroide x={790} y={base - 5 * pxkm} r={5 * pxkm * ast} f={0} /><text x={790} y={base - 10 * pxkm - 30} textAnchor="middle" fontFamily="Montserrat" fontWeight={900} fontSize={36} fill={TINTA}>asteroide (~10 km)</text></g>
-        <text x={360} y={base + 70} textAnchor="middle" fontFamily="Montserrat" fontWeight={900} fontSize={30} fill={TINTA} opacity={ev}>8,8 km</text>
+        <g opacity={ast}><Asteroide x={770} y={base - 5 * pxkm} r={5 * pxkm * ast} f={0} /><text x={770} y={base - 10 * pxkm - 30} textAnchor="middle" fontFamily="Montserrat" fontWeight={900} fontSize={36} fill={TINTA}>asteroide (~10 km)</text></g>
+        <text x={330} y={base + 70} textAnchor="middle" fontFamily="Montserrat" fontWeight={900} fontSize={30} fill={TINTA} opacity={ev}>8,8 km</text>
       </Camera>
       <Tela><SeloCanal f={lf} em={P("maior") - 2} t="MAIOR QUE O EVEREST" y={300} tam={66} /></Tela>
     </AbsoluteFill>
@@ -154,7 +154,7 @@ export const Cena06: C = ({ inicio, fim }) => {
       <Camera inicio={inicio} chaves={[[0, 560, 900, 1.0], [P("ar"), ax, ay, 1.8], [dur, ax, ay, 2.1]]} deriva={0}>
         <CeuCretaceo topo="#0b0826" base="#7fd0ff" id="d1atm" estrelas={0.6} f={lf} />
         {[[1500, "#5fb0e8"], [1650, "#79c27a"]].map(([y, c], i) => <rect key={i} x={-1000} y={y as number} width={3000} height={600} fill={c as string} />)}
-        {[200, 600, 1000, 1400].map((y, i) => <g key={i}><line x1={-200} y1={y} x2={1300} y2={y} stroke="#ffffff" strokeWidth={3} strokeDasharray="12 14" opacity={0.4} /><text x={60} y={y - 10} fontFamily="Montserrat" fontWeight={900} fontSize={28} fill="#ffffff" opacity={0.75}>{["100 km", "60 km", "30 km", "solo"][i]}</text></g>)}
+        {[200, 600, 1000, 1400].map((y, i) => <g key={i}><line x1={-200} y1={y} x2={1300} y2={y} stroke="#ffffff" strokeWidth={3} strokeDasharray="12 14" opacity={0.4} /><text x={ax + 270} y={y - 10} textAnchor="end" fontFamily="Montserrat" fontWeight={900} fontSize={28} fill="#ffffff" opacity={0.75}>{["100 km", "60 km", "30 km", "solo"][i]}</text></g>)}
         <ellipse cx={ax + 30} cy={ay + 30} rx={120 * brasa} ry={70 * brasa} fill="#fff1b8" opacity={0.6 * brasa} transform={`rotate(-40 ${ax + 30} ${ay + 30})`} />
         <Asteroide x={ax} y={ay} r={60} f={lf} brasa={brasa} rastro={0.3 + brasa * 0.7} ang={-50} />
       </Camera>
@@ -175,9 +175,8 @@ export const Cena07: C = ({ inicio, fim }) => {
         <Camera inicio={inicio} chaves={[[0, 540, 960, 0.95], [corte, 540, 920, 1.25]]} deriva={0}>
           <CeuCretaceo topo="#0b0826" base="#1a1446" id="d1map" estrelas={1} f={lf} />
           <Globo cx={540} cy={960} r={420} lon0={-90 + (1 - eio(ramp(lf, 0, 60))) * 60} lat0={18} id="d1g" alertas={pin > 0 ? [{ ll: [-89.5, 21.4], cor: "#ff4d4d", inicio: inicio + P("península") - 6, tamanho: 1.4 }] : []} />
-          <text x={540} y={1460} textAnchor="middle" fontFamily="Montserrat" fontWeight={900} fontSize={34} fill="#ffffff" opacity={pin}>Iucatã, México (continentes de hoje)</text>
         </Camera>
-        <Tela><text x={540} y={1650} textAnchor="middle" fontFamily="Montserrat" fontWeight={900} fontSize={28} fill="#d6f0ff" opacity={0.85}>há 66 milhões de anos era um mar raso</text></Tela>
+        <Tela><text x={540} y={1590} textAnchor="middle" fontFamily="Montserrat" fontWeight={900} fontSize={34} fill="#ffffff" opacity={pin}>Iucatã, México (continentes de hoje)</text><text x={540} y={1660} textAnchor="middle" fontFamily="Montserrat" fontWeight={900} fontSize={28} fill="#d6f0ff" opacity={0.85}>há 66 milhões de anos era um mar raso</text></Tela>
       </AbsoluteFill>
     );
   }
