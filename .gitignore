@@ -39,3 +39,7 @@ experimentos/**/assets/tempos.js
 # overlays HyperFrames renderizados (reconstruídos a partir de projetos/*/hf/)
 engine/public/hf/
 projetos/**/.hyperframes/
+
+# rea-video: vídeos de referência de terceiros e relatórios de análise ficam só locais (não versionar)
+referencias/videos/
+referencias/analises/
