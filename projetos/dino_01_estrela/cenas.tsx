@@ -177,7 +177,7 @@ export const Cena07: C = ({ inicio, fim }) => {
           <Globo cx={540} cy={960} r={420} lon0={-90 + (1 - eio(ramp(lf, 0, 60))) * 60} lat0={18} id="d1g" alertas={pin > 0 ? [{ ll: [-89.5, 21.4], cor: "#ff4d4d", inicio: inicio + P("península") - 6, tamanho: 1.4 }] : []} />
           <text x={540} y={1460} textAnchor="middle" fontFamily="Montserrat" fontWeight={900} fontSize={34} fill="#ffffff" opacity={pin}>Iucatã, México (continentes de hoje)</text>
         </Camera>
-        <Tela><text x={540} y={1560} textAnchor="middle" fontFamily="Montserrat" fontWeight={900} fontSize={28} fill="#d6f0ff" opacity={0.85}>há 66 milhões de anos era um mar raso</text></Tela>
+        <Tela><text x={540} y={1650} textAnchor="middle" fontFamily="Montserrat" fontWeight={900} fontSize={28} fill="#d6f0ff" opacity={0.85}>há 66 milhões de anos era um mar raso</text></Tela>
       </AbsoluteFill>
     );
   }
