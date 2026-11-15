@@ -137,9 +137,9 @@ export const Cena05: C = ({ inicio, fim }) => {
         <Globo cx={540} cy={960} r={430} lon0={-60 + Math.sin(lf * 0.01) * 6} lat0={10} id="d3g5"
           alertas={[{ ll: origem, cor: "#ff4d4d", inicio: inicio }, { ll: at, cor: "#7fd6ff", inicio: inicio + P("Atlântico") - 4 }, { ll: pac, cor: "#7fd6ff", inicio: inicio + P("pacífica") - 4 }]}
           rotas={[{ de: origem, para: at, cor: "#7fd6ff", inicio: inicio + P("maremoto") - 4, dur: 40, tracejada: true }, { de: origem, para: pac, cor: "#7fd6ff", inicio: inicio + P("maremoto"), dur: 40, tracejada: true }]} />
-        <text x={540} y={1470} textAnchor="middle" fontFamily="Montserrat" fontWeight={900} fontSize={28} fill="#d6f0ff">continentes de hoje, para referência</text>
       </Camera>
       <Tela>
+        <text x={540} y={1640} textAnchor="middle" fontFamily="Montserrat" fontWeight={900} fontSize={30} fill="#d6f0ff">continentes de hoje, para referência</text>
         <CartaoTempo f={lf} em={P("dois") - 4} ate={dur + 10} t="+48 HORAS" y={260} />
         <SeloCanal f={lf} em={P("dez") - 4} t="ONDAS DE MAIS DE 10 m" y={420} tam={56} fundo="#7fd6ff" />
       </Tela>
