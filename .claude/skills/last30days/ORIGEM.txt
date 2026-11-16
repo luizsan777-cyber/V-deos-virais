@@ -1,0 +1,4 @@
+Origem: https://github.com/mvanhorn/last30days-skill (MIT)
+Versão: 4.2.1, commit 4f29089 (2026-11-16)
+Instalada sem a pasta assets/ (imagens e áudio de exemplo do README, não usados pela skill).
+Cookies de navegador: desligados (padrão; nenhum navegador neste ambiente).
