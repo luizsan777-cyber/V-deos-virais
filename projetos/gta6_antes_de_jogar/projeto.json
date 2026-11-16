@@ -1,0 +1,165 @@
+{
+ "titulo": "GTA 6: faça isso antes de jogar",
+ "id_producao": "gta6_antes_de_jogar",
+ "canal": "canal de GTA (separado do canal de curiosidades)",
+ "motor": "remotion",
+ "modo": "2d",
+ "estilo": "gta-hibrido: avatar 2D do canal + screenshots e trailer oficiais da Rockstar em molduras animadas",
+ "perfil": "curiosidades",
+ "voz": {
+  "motor": "kokoro",
+  "voz": "pm_alex",
+  "velocidade": 0.95
+ },
+ "musica": {
+  "humor": "epico",
+  "volume_db": -27,
+  "automacao": [
+   {
+    "em": "t:0",
+    "db": 0
+   },
+   {
+    "em": "c05",
+    "db": 1
+   },
+   {
+    "em": "c08",
+    "db": -2
+   },
+   {
+    "em": "c08:fim+1.2",
+    "db": -12
+   }
+  ]
+ },
+ "legenda": "impacto",
+ "fontes": [
+  "Rockstar Games — página oficial GTA VI (\"Coming November 19, 2026\"; pre-load 10/11/2026), consultada em 16/11/2026: https://www.rockstargames.com/VI",
+  "Rockstar Games — mídia oficial (screenshots ZIP e Launch Trailer): https://www.rockstargames.com/VI/media",
+  "Cobertura do anúncio de pré-carregamento e lançamento 19/11: https://www.videogameschronicle.com/news/rockstar-details-grand-theft-auto-6-pre-load-date-and-time-and-file-size/",
+  "Opções de acessibilidade do GTA 6 não publicadas oficialmente até 16/11/2026 (por isso a fala diz 'se tiver')"
+ ],
+ "destaques": [
+  "primeiro",
+  "modo",
+  "jogo",
+  "brilho",
+  "HDR",
+  "terceiro",
+  "legendas",
+  "explora",
+  "calma",
+  "spoiler",
+  "primeira"
+ ],
+ "sfx": [
+  {
+   "som": "swoosh_sobe",
+   "em": "t:0.05",
+   "vol": -14
+  },
+  {
+   "som": "impacto",
+   "em": "palavra:19",
+   "vol": -16
+  },
+  {
+   "som": "whoosh",
+   "em": "c02-0.2",
+   "vol": -14
+  },
+  {
+   "som": "clique",
+   "em": "palavra:controle",
+   "vol": -10
+  },
+  {
+   "som": "whoosh",
+   "em": "c03-0.2",
+   "vol": -14
+  },
+  {
+   "som": "clique",
+   "em": "palavra:calibra",
+   "vol": -12
+  },
+  {
+   "som": "whoosh",
+   "em": "c04-0.2",
+   "vol": -14
+  },
+  {
+   "som": "pop",
+   "em": "palavra:legendas",
+   "vol": -12
+  },
+  {
+   "som": "swoosh_sobe",
+   "em": "c05-0.2",
+   "vol": -14
+  },
+  {
+   "som": "whoosh",
+   "em": "c06-0.2",
+   "vol": -15
+  },
+  {
+   "som": "alarme",
+   "em": "palavra:spoiler",
+   "vol": -22
+  },
+  {
+   "som": "ding",
+   "em": "c08",
+   "vol": -14
+  }
+ ],
+ "falas": [
+  {
+   "id": "c01",
+   "texto": "GTA 6 chega dia 19! Mas antes de sair acelerando por Vice City, faz essas coisas pra aproveitar melhor o jogo desde o começo.",
+   "pausa": 0.55,
+   "tts": "gê tê á seis chega dia dezenove! Mas antes de sair acelerando por Vaice Cíti, faz essas coisas pra aproveitar melhor o jogo desde o começo."
+  },
+  {
+   "id": "c02",
+   "texto": "Primeiro: dá uma olhada nas configurações de imagem da sua TV. Se ela tiver o Modo Jogo, vale ativar: ele pode reduzir o atraso entre o comando no controle e a ação na tela.",
+   "pausa": 0.55,
+   "tts": "Primeiro: dá uma olhada nas configurações de imagem da sua tevê. Se ela tiver o Modo Jogo, vale ativar: ele pode reduzir o atraso entre o comando no controle e a ação na tela."
+  },
+  {
+   "id": "c03",
+   "texto": "Agora confere o brilho e, se sua TV tiver HDR, calibra essa opção no console. Uma imagem escura demais pode esconder detalhes; clara demais pode apagar as cores.",
+   "pausa": 0.55,
+   "tts": "Agora confere o brilho e, se sua tevê tiver agá dê érre, calibra essa opção no console. Uma imagem escura demais pode esconder detalhes; clara demais pode apagar as cores."
+  },
+  {
+   "id": "c04",
+   "texto": "Terceiro: abre as opções de áudio e acessibilidade e ajusta o que estiver disponível pro seu jeito de jogar. Se tiver legendas, tamanho de texto ou volume das falas, isso pode fazer diferença pra acompanhar a história.",
+   "pausa": 0.55
+  },
+  {
+   "id": "c05",
+   "texto": "E uma dica pras primeiras horas: não sai correndo só atrás de missão.",
+   "pausa": 0.55
+  },
+  {
+   "id": "c06",
+   "texto": "Explora a cidade, presta atenção no ambiente e experimenta os controles com calma. Você vai se acostumando com o mundo e pode encontrar detalhes que passariam despercebidos.",
+   "pausa": 0.55
+  },
+  {
+   "id": "c07",
+   "texto": "Por último, evita spoiler: se quiser descobrir a história sozinho, toma cuidado com vídeos e comentários nas redes.",
+   "pausa": 0.55,
+   "tts": "Por último, evita spóiler: se quiser descobrir a história sozinho, toma cuidado com vídeos e comentários nas redes."
+  },
+  {
+   "id": "c08",
+   "texto": "Agora me conta: qual vai ser a primeira coisa que você vai fazer quando entrar no GTA 6?",
+   "pausa": 0.55,
+   "tts": "Agora me conta: qual vai ser a primeira coisa que você vai fazer quando entrar no gê tê á seis?"
+  }
+ ]
+}

@@ -43,3 +43,6 @@ projetos/**/.hyperframes/
 # rea-video: vídeos de referência de terceiros e relatórios de análise ficam só locais (não versionar)
 referencias/videos/
 referencias/analises/
+
+# GTA 6: material oficial da Rockstar baixado localmente (não versionar)
+engine/public/gta/
