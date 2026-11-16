@@ -408,6 +408,8 @@ def hat(d=0.05):
 
 
 def musica(humor: str, dur: float) -> np.ndarray:
+    if humor == "synthwave":
+        return musica_synthwave(dur)
     escala, raiz, bpm = ESCALAS.get(humor, ESCALAS["curioso"])
     beat = 60 / bpm
     n = int(dur * SR) + SR
@@ -467,6 +469,68 @@ def musica(humor: str, dur: float) -> np.ndarray:
     out = reverb(out, 2.4, 0.3, 5000)[: int(dur * SR)]
     t = t_(dur)
     out *= np.minimum(1, np.minimum(t / 0.4, (dur - t) / 1.2 + 1e-3))
+    return norm(out, 0.8)
+
+
+def musica_synthwave(dur: float, raiz: int = 57, bpm: float = 100) -> np.ndarray:
+    """Trilha original estilo synthwave anos 80 (composição própria do projeto, livre de direitos):
+    lá menor, 4 acordes (i-VI-III-VII), bumbo 4/4, caixa com reverb 'gated', baixo em oitavas, pad e arpejo com eco."""
+    beat = 60 / bpm
+    n = int(dur * SR) + SR
+    out = np.zeros(n, np.float32)
+    acordes = [[0, 3, 7], [-4, 0, 3], [3, 7, 10], [-2, 2, 5]]  # Am  F  C  G
+    compasso = beat * 4
+
+    def soma(x, t0, g=1.0):
+        o = int(t0 * SR)
+        if o < n:
+            out[o:o + len(x)] += (x[: n - o] * g).astype(np.float32)
+
+    def caixa():
+        d = 0.5
+        t = t_(d)
+        corpo = seno(185 * np.exp(-t * 8) + 150, d) * env(len(t), 0.001, 0.08, 6) * 0.5
+        chiado = bp_rapido(ruido(d), 1800, 0.8) * env(len(t), 0.001, 0.18, 4)
+        x = corpo + chiado
+        return reverb(x, 0.9, 0.45, 6000)[: int(0.42 * SR)] * np.linspace(1, 0, int(0.42 * SR)) ** 0.3
+
+    def baixo(m, d):
+        t = t_(d)
+        x = saw(mtof(m), d) + 0.6 * saw(mtof(m) * 1.003, d)
+        x = lp_rapido(x, 700)
+        return x * env(len(t), 0.003, d * 0.8, 3)
+
+    def arp(m, d):
+        t = t_(d)
+        x = lp_rapido(saw(mtof(m), d) + saw(mtof(m) * 1.006, d), 2600)
+        return x * env(len(t), 0.002, d * 0.5, 5)
+
+    sn = caixa()
+    i = 0
+    while i * compasso < dur + 1:
+        ac = acordes[i % 4]
+        t0 = i * compasso
+        # pad largo (duas oitavas, desafinado)
+        p = pad([raiz + a for a in ac] + [raiz + ac[0] + 12], compasso + 1.0, 1400)
+        soma(p, t0, 0.42)
+        for b in range(8):  # baixo em colcheias, oitava alternada
+            m = raiz - 24 + ac[0] + (12 if b % 2 else 0)
+            soma(baixo(m, beat / 2 * 0.95), t0 + b * beat / 2, 0.30)
+        for b in range(4):  # bumbo 4/4 e caixa nos tempos 2 e 4
+            soma(kick(), t0 + b * beat, 0.55)
+            if b % 2 == 1:
+                soma(sn, t0 + b * beat, 0.40)
+            soma(hat(), t0 + b * beat + beat / 2, 0.9)
+        notas = [ac[0], ac[1], ac[2], ac[1] + 12 if ac[1] + 12 < 24 else ac[1]]
+        for k in range(16):  # arpejo em semicolcheias + eco de colcheia pontuada
+            m = raiz + 12 + notas[k % 4]
+            x = arp(m, beat / 4 * 0.9)
+            soma(x, t0 + k * beat / 4, 0.10)
+            soma(x, t0 + k * beat / 4 + beat * 0.75, 0.045)
+        i += 1
+    out = reverb(out, 1.8, 0.22, 7000)[: int(dur * SR)]
+    t = t_(dur)
+    out *= np.minimum(1, np.minimum(t / 0.3, (dur - t) / 1.5 + 1e-3))
     return norm(out, 0.8)
 
 

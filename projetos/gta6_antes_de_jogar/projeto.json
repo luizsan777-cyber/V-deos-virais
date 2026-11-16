@@ -17,8 +17,8 @@
   "velocidade": 1.0
  },
  "musica": {
-  "humor": "epico",
-  "volume_db": -27,
+  "humor": "synthwave",
+  "volume_db": -24,
   "automacao": [
    {
     "em": "t:0",
@@ -36,7 +36,8 @@
     "em": "c08:fim+1.2",
     "db": -12
    }
-  ]
+  ],
+  "info": "trilha original synthwave gerada por ferramentas/audio.py (musica_synthwave); sem música de terceiros"
  },
  "legenda": "impacto",
  "fontes": [
