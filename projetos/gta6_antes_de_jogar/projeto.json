@@ -18,7 +18,7 @@
  },
  "musica": {
   "humor": "synthwave",
-  "volume_db": -24,
+  "volume_db": -18,
   "automacao": [
    {
     "em": "t:0",
