@@ -7,9 +7,14 @@
  "estilo": "gta-hibrido: avatar 2D do canal + screenshots e trailer oficiais da Rockstar em molduras animadas",
  "perfil": "curiosidades",
  "voz": {
-  "motor": "kokoro",
-  "voz": "pm_alex",
-  "velocidade": 0.95
+  "motor": "chatterbox_ptbr",
+  "voz": "/home/user/ferramentas-externas/chatterbox-ptbr/ref/piper_cadu_ref.wav",
+  "referencia_info": "voz sintética Piper pt_BR-cadu-medium (dataset CC0), frase informal de referência; ver docs/CHATTERBOX_PTBR.md",
+  "exageracao": 0.55,
+  "cfg": 0.45,
+  "temperatura": 0.8,
+  "semente": 7,
+  "velocidade": 1.0
  },
  "musica": {
   "humor": "epico",
@@ -120,19 +125,22 @@
    "id": "c01",
    "texto": "GTA 6 chega dia 19! Mas antes de sair acelerando por Vice City, faz essas coisas pra aproveitar melhor o jogo desde o começo.",
    "pausa": 0.55,
-   "tts": "gê tê á seis chega dia dezenove! Mas antes de sair acelerando por Vaice Cíti, faz essas coisas pra aproveitar melhor o jogo desde o começo."
+   "tts": "gê tê á seis chega dia dezenove! Mas antes de sair acelerando por Vaice Cíti, faz essas coisas pra aproveitar melhor o jogo desde o começo.",
+   "tts_chatterbox": "GTA 6 chega dia 19! Mas antes de sair acelerando por Vaice Síti, faz essas coisas pra aproveitar melhor o jogo desde o começo."
   },
   {
    "id": "c02",
    "texto": "Primeiro: dá uma olhada nas configurações de imagem da sua TV. Se ela tiver o Modo Jogo, vale ativar: ele pode reduzir o atraso entre o comando no controle e a ação na tela.",
    "pausa": 0.55,
-   "tts": "Primeiro: dá uma olhada nas configurações de imagem da sua tevê. Se ela tiver o Modo Jogo, vale ativar: ele pode reduzir o atraso entre o comando no controle e a ação na tela."
+   "tts": "Primeiro: dá uma olhada nas configurações de imagem da sua tevê. Se ela tiver o Modo Jogo, vale ativar: ele pode reduzir o atraso entre o comando no controle e a ação na tela.",
+   "tts_chatterbox": "Primeiro: dá uma olhada nas configurações de imagem da sua tevê. Se ela tiver o Modo Jogo, vale ativar: ele pode reduzir o atraso entre o comando no controle e a ação na tela."
   },
   {
    "id": "c03",
    "texto": "Agora confere o brilho e, se sua TV tiver HDR, calibra essa opção no console. Uma imagem escura demais pode esconder detalhes; clara demais pode apagar as cores.",
    "pausa": 0.55,
-   "tts": "Agora confere o brilho e, se sua tevê tiver agá dê érre, calibra essa opção no console. Uma imagem escura demais pode esconder detalhes; clara demais pode apagar as cores."
+   "tts": "Agora confere o brilho e, se sua tevê tiver agá dê érre, calibra essa opção no console. Uma imagem escura demais pode esconder detalhes; clara demais pode apagar as cores.",
+   "tts_chatterbox": "Agora confere o brilho e, se sua tevê tiver agá dê érre, calibra essa opção no console. Uma imagem escura demais pode esconder detalhes; clara demais pode apagar as cores."
   },
   {
    "id": "c04",
@@ -153,7 +161,8 @@
    "id": "c07",
    "texto": "Por último, evita spoiler: se quiser descobrir a história sozinho, toma cuidado com vídeos e comentários nas redes.",
    "pausa": 0.55,
-   "tts": "Por último, evita spóiler: se quiser descobrir a história sozinho, toma cuidado com vídeos e comentários nas redes."
+   "tts": "Por último, evita spóiler: se quiser descobrir a história sozinho, toma cuidado com vídeos e comentários nas redes.",
+   "tts_chatterbox": "Por último, evita spóiler: se quiser descobrir a história sozinho, toma cuidado com vídeos e comentários nas redes."
   },
   {
    "id": "c08",
@@ -161,5 +170,10 @@
    "pausa": 0.55,
    "tts": "Agora me conta: qual vai ser a primeira coisa que você vai fazer quando entrar no gê tê á seis?"
   }
- ]
+ ],
+ "voz_anterior": {
+  "motor": "kokoro",
+  "voz": "pm_alex",
+  "velocidade": 0.95
+ }
 }

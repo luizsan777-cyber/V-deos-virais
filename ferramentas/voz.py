@@ -201,6 +201,53 @@ class MotorChatterbox:
         return acelerar(a, self.vel)
 
 
+class MotorChatterboxPTBR:
+    """Chatterbox Multilingual PT-BR (finetune brasileiro, MIT) num processo separado (Python 3.11 + torch).
+
+    Configuração em projeto.json -> voz: {"motor": "chatterbox_ptbr", "voz": "<áudio de referência autorizado>",
+    "exageracao": 0.55, "cfg": 0.45, "temperatura": 0.8, "semente": 7, "velocidade": 1.0}.
+    Usa o campo "tts_chatterbox" de cada fala, se existir; senão o "texto" (o campo "tts" é ajuste do Kokoro).
+    """
+    nome = "chatterbox_ptbr"
+    campo_tts = "tts_chatterbox"
+
+    def __init__(self, voz: str | None, perfil: dict):
+        cfg = perfil.get("_voz_cfg", {})
+        py = os.environ.get("CHATTERBOX_PTBR_PY", "/home/user/ferramentas-externas/venv-chatterbox/bin/python")
+        if not Path(py).exists():
+            raise SystemExit("Chatterbox PT-BR não instalado nesta máquina (ver docs/CHATTERBOX_PTBR.md).")
+        self.ref = voz if voz and Path(voz).exists() else None
+        if voz and not self.ref:
+            raise SystemExit(f"Áudio de referência não encontrado: {voz}")
+        self.par = {"exag": cfg.get("exageracao", 0.55), "cfg": cfg.get("cfg", 0.45),
+                    "temp": cfg.get("temperatura", 0.8), "seed": cfg.get("semente", 7), "ref": self.ref}
+        self.vel = perfil["velocidade"]
+        srv = Path(__file__).parent / "chatterbox_ptbr_servidor.py"
+        self.p = subprocess.Popen([py, str(srv)], stdin=subprocess.PIPE, stdout=subprocess.PIPE, text=True, bufsize=1)
+        while True:
+            l = self.p.stdout.readline()
+            if not l:
+                raise SystemExit("O servidor do Chatterbox PT-BR terminou sem carregar o modelo.")
+            if l.startswith("pronto"):
+                break
+        self.td = tempfile.mkdtemp()
+        self.n = 0
+
+    def falar(self, texto: str) -> np.ndarray:
+        self.n += 1
+        out = str(Path(self.td) / f"f{self.n}.wav")
+        self.p.stdin.write(json.dumps({**self.par, "texto": texto, "saida": out}, ensure_ascii=False) + "\n")
+        self.p.stdin.flush()
+        while True:
+            l = self.p.stdout.readline()
+            if not l:
+                raise SystemExit("O servidor do Chatterbox PT-BR parou durante a geração.")
+            if l.startswith("ok "):
+                break
+        a, sr = sf.read(out, dtype="float32")
+        return acelerar(reamostrar(a, sr), self.vel)
+
+
 class MotorQwen3:
     nome = "qwen3"
 
@@ -219,7 +266,7 @@ class MotorQwen3:
         return acelerar(reamostrar(np.asarray(wavs[0], dtype=np.float32), sr), self.vel)
 
 
-MOTORES = {c.nome: c for c in (MotorKokoro, MotorPiper, MotorEdge, MotorChatterbox, MotorQwen3)}
+MOTORES = {c.nome: c for c in (MotorKokoro, MotorPiper, MotorEdge, MotorChatterbox, MotorChatterboxPTBR, MotorQwen3)}
 
 
 def acelerar(a: np.ndarray, fator: float) -> np.ndarray:
@@ -348,6 +395,7 @@ def gerar(projeto_dir: Path) -> dict:
     cfg = proj.get("voz", {})
     if "velocidade" in cfg:
         perfil["velocidade"] = cfg["velocidade"]
+    perfil["_voz_cfg"] = cfg
     motor_nome = os.environ.get("VOZ_MOTOR") or cfg.get("motor", "kokoro")
     voz = os.environ.get("VOZ_NOME") or cfg.get("voz")
     if motor_nome != cfg.get("motor", "kokoro") and not os.environ.get("VOZ_NOME"):
@@ -364,11 +412,17 @@ def gerar(projeto_dir: Path) -> dict:
     falas, palavras = [], []
     destaques = {limpar(d) for d in proj.get("destaques", [])}
     for i, fala in enumerate(proj["falas"]):
-        texto_tts = normalizar(fala.get("tts", fala["texto"]))
+        campo = getattr(motor, "campo_tts", None)  # motor com campo próprio não herda o ajuste "tts" do Kokoro
+        texto_tts = normalizar(fala.get(campo, fala["texto"]) if campo else fala.get("tts", fala["texto"]))
         vel0 = getattr(motor, "vel", None)
         if "velocidade" in fala and vel0 is not None:  # ritmo próprio desta fala (ex.: trecho mais sério)
             motor.vel = fala["velocidade"]
+        par0 = dict(getattr(motor, "par", {}))
+        if "semente" in fala and hasattr(motor, "par"):  # tomada escolhida para esta fala (Chatterbox)
+            motor.par["seed"] = fala["semente"]
         a = aparar(motor.falar(texto_tts))
+        if hasattr(motor, "par"):
+            motor.par = par0
         if vel0 is not None:
             motor.vel = vel0
         a = limitar_pausas(a, perfil.get("pausa_max_interna", 0.32))
