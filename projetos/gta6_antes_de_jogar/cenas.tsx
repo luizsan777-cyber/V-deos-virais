@@ -149,7 +149,7 @@ export const Cena01: C = ({ inicio, fim }) => {
       <Cam lf={lf} chaves={[[0, 540, 900, 1.12], [mas, 540, 960, 1.0], [dur, 540, 960, 1.03]]}>
         <FundoNeon f={lf} id="g1" />
         <Moldura ini={inicio} x={40} y={190} w={1000} h={880} lf={lf} dur={dur} entra={-14} rot={-1.5} credito={TRAILER} zoom={[1.08, 1.2]} pan={[20, 0]}
-          midias={[{ de: 0, m: { tipo: "clipe", src: "gta/k4.mp4", rate: 0.75 } }, { de: 70, m: { tipo: "clipe", src: "gta/k3.mp4", rate: 0.85 } }, { de: 190, m: { tipo: "clipe", src: "gta/k1.mp4", rate: 1.12 } }]} />
+          midias={[{ de: 0, m: { tipo: "clipe", src: "gta/k4.mp4", rate: 0.52 } }, { de: 70, m: { tipo: "clipe", src: "gta/k3.mp4", rate: 0.85 } }, { de: 190, m: { tipo: "clipe", src: "gta/k1.mp4", rate: 0.88 } }]} />
         <Svg>
           <Avatar id="g1-av" x={300} y={2130} escala={1.1} pose={pose} f={lf} dir={1}
             expr={exprEm(lf, [[0, "empolgado"], [mas - 2, "desconfiado"], [P("aproveitar"), "feliz"]])}
@@ -210,7 +210,7 @@ export const Cena02: C = ({ inicio, fim }) => {
         <FundoNeon f={lf} noite={0.8} id="g2" />
         <Svg><rect y={1180} width={W} height={740} fill="#1a0c33" opacity={0.6} /><TV x={tx} y={ty} w={tw} h={th} /></Svg>
         <Moldura ini={inicio} x={tx} y={ty} w={tw} h={th} lf={lf} dur={dur} borda={0} cor="#00000000" credito={TRAILER} zoom={[1.02, 1.1]}
-          midias={[{ de: 0, m: { tipo: "clipe", src: "gta/k5.mp4", rate: 0.6 } }, { de: 95, m: { tipo: "clipe", src: "gta/k3.mp4", rate: 0.42 } }]}>
+          midias={[{ de: 0, m: { tipo: "clipe", src: "gta/k5.mp4", rate: 0.6 } }, { de: 95, m: { tipo: "clipe", src: "gta/k3.mp4", rate: 0.38 } }]}>
           {/* menu genérico da TV (desenho próprio, sem marca) */}
           <div style={{ position: "absolute", right: 24, top: 70, width: 330, padding: 18, borderRadius: 18, background: "rgba(8,10,20,0.88)", border: `3px solid ${CIANO}`, opacity: osd, transform: `translateX(${(1 - osd) * 60}px)`, fontFamily: "Montserrat", fontWeight: 900, color: "#fff", fontSize: 24 }}>
             <div style={{ fontSize: 18, opacity: 0.7, marginBottom: 10 }}>IMAGEM (ILUSTRATIVO)</div>
@@ -329,7 +329,7 @@ export const Cena05: C = ({ inicio, fim }) => {
       <Cam lf={lf} chaves={[[0, 540, 960, 1.0], [nao, 540, 975, 1.03], [freia, 540, 990, 1.06], [dur, 540, 990, 1.07]]}>
         <FundoNeon f={lf * (corre ? 3 : 1)} noite={0.3} id="g5" />
         <Moldura ini={inicio} x={60} y={230} w={960} h={760} lf={lf} dur={dur} rot={1.5} cor={AMARELO} credito={TRAILER} zoom={[1.05, 1.15]}
-          midias={[{ de: 0, m: { tipo: "clipe", src: "gta/k6.mp4", rate: 0.35 } }]} />
+          midias={[{ de: 0, m: { tipo: "clipe", src: "gta/k6.mp4", rate: 0.32 } }]} />
         <Svg>
           {/* placa de missão que fica pra trás */}
           {lf >= nao - 4 && (
@@ -449,7 +449,7 @@ export const Cena08: C = ({ inicio, fim }) => {
       <Cam lf={lf} chaves={[[0, 540, 900, 1.1], [q, 540, 960, 1.0], [dur, 540, 960, 1.04]]}>
         <FundoNeon f={lf} id="g8" />
         <Moldura ini={inicio} x={60} y={230} w={960} h={660} lf={lf} dur={dur} rot={1} cor={ROSA} credito={TRAILER} zoom={[1.04, 1.16]}
-          midias={[{ de: 0, m: { tipo: "clipe", src: "gta/k8.mp4", rate: 0.5 } }, { de: 100, m: { tipo: "foto", src: "gta/Jason_and_Lucia_16.jpg" } }]} />
+          midias={[{ de: 0, m: { tipo: "clipe", src: "gta/k8.mp4", rate: 0.5 } }, { de: 68, m: { tipo: "foto", src: "gta/Jason_and_Lucia_16.jpg" } }]} />
         <Svg>
           <Avatar id="g8-av" x={780} y={2130} escala={1.05} dir={-1} pose={pose} f={lf} expr={exprEm(lf, [[0, "sereno"], [q, "empolgado"]])} itemE={MAO_CONTROLE(1, 0)} />
         </Svg>

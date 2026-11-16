@@ -9,13 +9,13 @@ Fonte: https://media-rockstargames-com.akamaized.net/VI/downloads/videos/GTAVI_L
 
 | Arquivo | Trecho do trailer | Onde aparece |
 |---|---|---|
-| k4 | 0:26,5–0:28,3 (casal no conversível) | abertura |
-| k3 | 0:19,0–0:22,9 (lowrider, iguana, carro vermelho) | abertura e TV (Modo Jogo) |
+| k4 | 0:26,5–0:27,8 (casal no conversível) | abertura |
+| k3 | 0:19,0–0:22,4 (lowrider, iguana, carro vermelho) | abertura e TV (Modo Jogo) |
 | k1 | 0:03,0–0:06,6 (estrada e placa "The Keys") | abertura |
 | k5 | 0:47,0–0:48,9 (rua de Vice City) | TV (Modo Jogo) e "explore" |
 | k6 | 0:49,0–0:50,8 (moto sobre o trem) | primeiras horas |
 | k7 | 0:55,4–0:57,0 (avião sobre a praia) | "explore" |
-| k8 | 1:07,4–1:09,1 (pôr do sol na varanda) | encerramento |
+| k8 | 1:07,1–1:08,5 (pôr do sol na varanda) | encerramento |
 
 ## Imagens oficiais (pacote GTAVI_Screenshots.zip)
 Fonte: https://media-rockstargames-com.akamaized.net/VI/downloads/screenshots/GTAVI_Screenshots.zip

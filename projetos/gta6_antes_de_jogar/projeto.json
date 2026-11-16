@@ -133,19 +133,22 @@
    "texto": "Primeiro: dá uma olhada nas configurações de imagem da sua TV. Se ela tiver o Modo Jogo, vale ativar: ele pode reduzir o atraso entre o comando no controle e a ação na tela.",
    "pausa": 0.55,
    "tts": "Primeiro: dá uma olhada nas configurações de imagem da sua tevê. Se ela tiver o Modo Jogo, vale ativar: ele pode reduzir o atraso entre o comando no controle e a ação na tela.",
-   "tts_chatterbox": "Primeiro: dá uma olhada nas configurações de imagem da sua tevê. Se ela tiver o Modo Jogo, vale ativar: ele pode reduzir o atraso entre o comando no controle e a ação na tela."
+   "tts_chatterbox": "Primeiro: dá uma olhada nas configurações de imagem da sua tevê. Se ela tiver o Modo Jogo, vale ativar: ele pode reduzir o atraso entre o comando no controle e a ação na tela.",
+   "semente": 11
   },
   {
    "id": "c03",
    "texto": "Agora confere o brilho e, se sua TV tiver HDR, calibra essa opção no console. Uma imagem escura demais pode esconder detalhes; clara demais pode apagar as cores.",
    "pausa": 0.55,
    "tts": "Agora confere o brilho e, se sua tevê tiver agá dê érre, calibra essa opção no console. Uma imagem escura demais pode esconder detalhes; clara demais pode apagar as cores.",
-   "tts_chatterbox": "Agora confere o brilho e, se sua tevê tiver agá dê érre, calibra essa opção no console. Uma imagem escura demais pode esconder detalhes; clara demais pode apagar as cores."
+   "tts_chatterbox": "Agora confere o brilho e, se sua tevê tiver agá dê érre, calibra essa opção no console. Uma imagem escura demais pode esconder detalhes; clara demais pode apagar as cores.",
+   "semente": 11
   },
   {
    "id": "c04",
    "texto": "Terceiro: abre as opções de áudio e acessibilidade e ajusta o que estiver disponível pro seu jeito de jogar. Se tiver legendas, tamanho de texto ou volume das falas, isso pode fazer diferença pra acompanhar a história.",
-   "pausa": 0.55
+   "pausa": 0.55,
+   "semente": 21
   },
   {
    "id": "c05",
@@ -155,20 +158,23 @@
   {
    "id": "c06",
    "texto": "Explora a cidade, presta atenção no ambiente e experimenta os controles com calma. Você vai se acostumando com o mundo e pode encontrar detalhes que passariam despercebidos.",
-   "pausa": 0.55
+   "pausa": 0.55,
+   "semente": 11
   },
   {
    "id": "c07",
    "texto": "Por último, evita spoiler: se quiser descobrir a história sozinho, toma cuidado com vídeos e comentários nas redes.",
    "pausa": 0.55,
    "tts": "Por último, evita spóiler: se quiser descobrir a história sozinho, toma cuidado com vídeos e comentários nas redes.",
-   "tts_chatterbox": "Por último, evita spóiler: se quiser descobrir a história sozinho, toma cuidado com vídeos e comentários nas redes."
+   "tts_chatterbox": "Por último, evita spóiler: se quiser descobrir a história sozinho, toma cuidado com vídeos e comentários nas redes.",
+   "semente": 33
   },
   {
    "id": "c08",
    "texto": "Agora me conta: qual vai ser a primeira coisa que você vai fazer quando entrar no GTA 6?",
    "pausa": 0.55,
-   "tts": "Agora me conta: qual vai ser a primeira coisa que você vai fazer quando entrar no gê tê á seis?"
+   "tts": "Agora me conta: qual vai ser a primeira coisa que você vai fazer quando entrar no gê tê á seis?",
+   "semente": 11
   }
  ],
  "voz_anterior": {
