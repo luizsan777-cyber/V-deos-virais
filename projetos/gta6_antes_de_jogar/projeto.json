@@ -7,17 +7,12 @@
  "estilo": "gta-hibrido: avatar 2D do canal + screenshots e trailer oficiais da Rockstar em molduras animadas",
  "perfil": "curiosidades",
  "voz": {
-  "motor": "chatterbox_ptbr",
-  "voz": "/home/user/ferramentas-externas/chatterbox-ptbr/ref/piper_cadu_ref.wav",
-  "referencia_info": "voz sintética Piper pt_BR-cadu-medium (dataset CC0), frase informal de referência; ver docs/CHATTERBOX_PTBR.md",
-  "exageracao": 0.55,
-  "cfg": 0.45,
-  "temperatura": 0.8,
-  "semente": 7,
-  "velocidade": 1.0
+  "motor": "kokoro",
+  "voz": "pm_alex",
+  "velocidade": 0.95
  },
  "musica": {
-  "humor": "synthwave",
+  "humor": "synthwave_animado",
   "volume_db": -18,
   "automacao": [
    {
@@ -37,11 +32,11 @@
     "db": -12
    }
   ],
-  "info": "trilha original synthwave gerada por ferramentas/audio.py (musica_synthwave); sem música de terceiros"
+  "info": "trilha original 'synthwave_animado' (118 bpm) gerada por ferramentas/audio.py, composição própria do projeto; sem música de terceiros"
  },
  "legenda": "impacto",
  "fontes": [
-  "Rockstar Games — página oficial GTA VI (\"Coming November 19, 2026\"; pre-load 10/11/2026), consultada em 16/11/2026: https://www.rockstargames.com/VI",
+  "Rockstar Games — página oficial GTA VI (em 16/11/2026: \"Coming November 19, 2026\"; pre-load 10/11/2026). Vídeo preparado para publicação a partir de 19/11/2026: https://www.rockstargames.com/VI",
   "Rockstar Games — mídia oficial (screenshots ZIP e Launch Trailer): https://www.rockstargames.com/VI/media",
   "Cobertura do anúncio de pré-carregamento e lançamento 19/11: https://www.videogameschronicle.com/news/rockstar-details-grand-theft-auto-6-pre-load-date-and-time-and-file-size/",
   "Opções de acessibilidade do GTA 6 não publicadas oficialmente até 16/11/2026 (por isso a fala diz 'se tiver')"
@@ -67,8 +62,8 @@
   },
   {
    "som": "impacto",
-   "em": "palavra:19",
-   "vol": -16
+   "em": "palavra:lançou",
+   "vol": -14
   },
   {
    "som": "whoosh",
@@ -124,32 +119,26 @@
  "falas": [
   {
    "id": "c01",
-   "texto": "GTA 6 chega dia 19! Mas antes de sair acelerando por Vice City, faz essas coisas pra aproveitar melhor o jogo desde o começo.",
+   "texto": "GTA 6 finalmente lançou! Mas antes de sair explorando Vice City, faz isso pra aproveitar melhor o jogo desde o começo!",
    "pausa": 0.55,
-   "tts": "gê tê á seis chega dia dezenove! Mas antes de sair acelerando por Vaice Cíti, faz essas coisas pra aproveitar melhor o jogo desde o começo.",
-   "tts_chatterbox": "GTA 6 chega dia 19! Mas antes de sair acelerando por Vaice Síti, faz essas coisas pra aproveitar melhor o jogo desde o começo."
+   "tts": "gê tê á seis finalmente lançou! Mas antes de sair explorando Vaice Cíti, faz isso pra aproveitar melhor o jogo desde o começo!"
   },
   {
    "id": "c02",
    "texto": "Primeiro: dá uma olhada nas configurações de imagem da sua TV. Se ela tiver o Modo Jogo, vale ativar: ele pode reduzir o atraso entre o comando no controle e a ação na tela.",
    "pausa": 0.55,
-   "tts": "Primeiro: dá uma olhada nas configurações de imagem da sua tevê. Se ela tiver o Modo Jogo, vale ativar: ele pode reduzir o atraso entre o comando no controle e a ação na tela.",
-   "tts_chatterbox": "Primeiro: dá uma olhada nas configurações de imagem da sua tevê. Se ela tiver o Modo Jogo, vale ativar: ele pode reduzir o atraso entre o comando no controle e a ação na tela.",
-   "semente": 11
+   "tts": "Primeiro: dá uma olhada nas configurações de imagem da sua tevê. Se ela tiver o Modo Jogo, vale ativar: ele pode reduzir o atraso entre o comando no controle e a ação na tela."
   },
   {
    "id": "c03",
    "texto": "Agora confere o brilho e, se sua TV tiver HDR, calibra essa opção no console. Uma imagem escura demais pode esconder detalhes; clara demais pode apagar as cores.",
    "pausa": 0.55,
-   "tts": "Agora confere o brilho e, se sua tevê tiver agá dê érre, calibra essa opção no console. Uma imagem escura demais pode esconder detalhes; clara demais pode apagar as cores.",
-   "tts_chatterbox": "Agora confere o brilho e, se sua tevê tiver agá dê érre, calibra essa opção no console. Uma imagem escura demais pode esconder detalhes; clara demais pode apagar as cores.",
-   "semente": 11
+   "tts": "Agora confere o brilho e, se sua tevê tiver agá dê érre, calibra essa opção no console. Uma imagem escura demais pode esconder detalhes; clara demais pode apagar as cores."
   },
   {
    "id": "c04",
    "texto": "Terceiro: abre as opções de áudio e acessibilidade e ajusta o que estiver disponível pro seu jeito de jogar. Se tiver legendas, tamanho de texto ou volume das falas, isso pode fazer diferença pra acompanhar a história.",
-   "pausa": 0.55,
-   "semente": 21
+   "pausa": 0.55
   },
   {
    "id": "c05",
@@ -159,28 +148,30 @@
   {
    "id": "c06",
    "texto": "Explora a cidade, presta atenção no ambiente e experimenta os controles com calma. Você vai se acostumando com o mundo e pode encontrar detalhes que passariam despercebidos.",
-   "pausa": 0.55,
-   "semente": 11
+   "pausa": 0.55
   },
   {
    "id": "c07",
    "texto": "Por último, evita spoiler: se quiser descobrir a história sozinho, toma cuidado com vídeos e comentários nas redes.",
    "pausa": 0.55,
-   "tts": "Por último, evita spóiler: se quiser descobrir a história sozinho, toma cuidado com vídeos e comentários nas redes.",
-   "tts_chatterbox": "Por último, evita spóiler: se quiser descobrir a história sozinho, toma cuidado com vídeos e comentários nas redes.",
-   "semente": 33
+   "tts": "Por último, evita spóiler: se quiser descobrir a história sozinho, toma cuidado com vídeos e comentários nas redes."
   },
   {
    "id": "c08",
    "texto": "Agora me conta: qual vai ser a primeira coisa que você vai fazer quando entrar no GTA 6?",
    "pausa": 0.55,
-   "tts": "Agora me conta: qual vai ser a primeira coisa que você vai fazer quando entrar no gê tê á seis?",
-   "semente": 11
+   "tts": "Agora me conta: qual vai ser a primeira coisa que você vai fazer quando entrar no gê tê á seis?"
   }
  ],
- "voz_anterior": {
-  "motor": "kokoro",
-  "voz": "pm_alex",
-  "velocidade": 0.95
- }
+ "voz_teste_chatterbox": {
+  "motor": "chatterbox_ptbr",
+  "voz": "/home/user/ferramentas-externas/chatterbox-ptbr/ref/piper_cadu_ref.wav",
+  "referencia_info": "voz sintética Piper pt_BR-cadu-medium (dataset CC0), frase informal de referência; ver docs/CHATTERBOX_PTBR.md",
+  "exageracao": 0.55,
+  "cfg": 0.45,
+  "temperatura": 0.8,
+  "semente": 7,
+  "velocidade": 1.0
+ },
+ "publicacao": "Versão pós-lançamento: só publicar a partir de 19/11/2026, depois de conferir que o lançamento aconteceu."
 }

@@ -410,6 +410,8 @@ def hat(d=0.05):
 def musica(humor: str, dur: float) -> np.ndarray:
     if humor == "synthwave":
         return musica_synthwave(dur)
+    if humor == "synthwave_animado":
+        return musica_synthwave(dur, bpm=118, energia=True)
     escala, raiz, bpm = ESCALAS.get(humor, ESCALAS["curioso"])
     beat = 60 / bpm
     n = int(dur * SR) + SR
@@ -472,7 +474,7 @@ def musica(humor: str, dur: float) -> np.ndarray:
     return norm(out, 0.8)
 
 
-def musica_synthwave(dur: float, raiz: int = 57, bpm: float = 100) -> np.ndarray:
+def musica_synthwave(dur: float, raiz: int = 57, bpm: float = 100, energia: bool = False) -> np.ndarray:
     """Trilha original estilo synthwave anos 80 (composição própria do projeto, livre de direitos):
     lá menor, 4 acordes (i-VI-III-VII), bumbo 4/4, caixa com reverb 'gated', baixo em oitavas, pad e arpejo com eco."""
     beat = 60 / bpm
@@ -513,14 +515,20 @@ def musica_synthwave(dur: float, raiz: int = 57, bpm: float = 100) -> np.ndarray
         # pad largo (duas oitavas, desafinado)
         p = pad([raiz + a for a in ac] + [raiz + ac[0] + 12], compasso + 1.0, 1400)
         soma(p, t0, 0.42)
-        for b in range(8):  # baixo em colcheias, oitava alternada
+        nb = 16 if energia else 8  # versão animada: baixo em semicolcheias
+        for b in range(nb):  # baixo pulsante, oitava alternada
             m = raiz - 24 + ac[0] + (12 if b % 2 else 0)
-            soma(baixo(m, beat / 2 * 0.95), t0 + b * beat / 2, 0.30)
+            soma(baixo(m, beat * 4 / nb * 0.95), t0 + b * beat * 4 / nb, 0.30 if not energia else (0.30 if b % 4 == 0 else 0.22))
         for b in range(4):  # bumbo 4/4 e caixa nos tempos 2 e 4
             soma(kick(), t0 + b * beat, 0.55)
             if b % 2 == 1:
                 soma(sn, t0 + b * beat, 0.40)
             soma(hat(), t0 + b * beat + beat / 2, 0.9)
+            if energia:  # chimbal aberto no contratempo + palmas no 2 e 4
+                soma(hp_rapido(ruido(0.18), 6500) * env(int(0.18 * SR), 0.001, 0.12, 3) * 0.22, t0 + b * beat + beat / 2, 1.0)
+                soma(hat(), t0 + b * beat + beat / 4, 0.5); soma(hat(), t0 + b * beat + 3 * beat / 4, 0.5)
+                if b % 2 == 1:
+                    soma(bp_rapido(ruido(0.2), 1500, 1.2) * env(int(0.2 * SR), 0.001, 0.09, 4) * 0.5, t0 + b * beat + 0.012, 1.0)
         notas = [ac[0], ac[1], ac[2], ac[1] + 12 if ac[1] + 12 < 24 else ac[1]]
         for k in range(16):  # arpejo em semicolcheias + eco de colcheia pontuada
             m = raiz + 12 + notas[k % 4]
@@ -530,7 +538,8 @@ def musica_synthwave(dur: float, raiz: int = 57, bpm: float = 100) -> np.ndarray
         i += 1
     out = reverb(out, 1.8, 0.22, 7000)[: int(dur * SR)]
     t = t_(dur)
-    out *= np.minimum(1, np.minimum(t / 0.3, (dur - t) / 1.5 + 1e-3))
+    ent, sai = (1.0, 2.0) if energia else (0.3, 1.5)
+    out *= np.minimum(1, np.minimum(t / ent, (dur - t) / sai + 1e-3))
     return norm(out, 0.8)
 
 

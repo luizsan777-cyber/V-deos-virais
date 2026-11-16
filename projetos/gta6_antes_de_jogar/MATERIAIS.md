@@ -10,9 +10,9 @@ Fonte: https://media-rockstargames-com.akamaized.net/VI/downloads/videos/GTAVI_L
 | Arquivo | Trecho do trailer | Onde aparece |
 |---|---|---|
 | k4 | 0:26,5–0:27,8 (casal no conversível) | abertura |
-| k3 | 0:19,0–0:22,4 (lowrider, iguana, carro vermelho) | abertura e TV (Modo Jogo) |
-| k1 | 0:03,0–0:06,6 (estrada e placa "The Keys") | abertura |
-| k5 | 0:47,0–0:48,9 (rua de Vice City) | TV (Modo Jogo) e "explore" |
+| k3 | 0:21,25–0:22,4 (iguana atravessando a rua) | abertura |
+| k1 | 0:03,0–0:06,6 (estrada e placa "The Keys") | abertura e TV (Modo Jogo) |
+| k5 | 0:47,0–0:48,9 (rua de Vice City) | abertura, TV (Modo Jogo) e "explore" |
 | k6 | 0:49,0–0:50,8 (moto sobre o trem) | primeiras horas |
 | k7 | 0:55,4–0:57,0 (avião sobre a praia) | "explore" |
 | k8 | 1:07,1–1:08,5 (pôr do sol na varanda) | encerramento |
@@ -25,7 +25,7 @@ Fonte: https://media-rockstargames-com.akamaized.net/VI/downloads/screenshots/GT
 | Places/Vice City/Vice_City_10.jpg | brilho e HDR (o brilho foi alterado por nós, com aviso "comparação ilustrativa") |
 | People/Lucia Caminos/Lucia_Caminos_09.jpg | áudio e acessibilidade |
 | Places/Leonida Keys/Leonida_Keys_01.jpg | "explore" |
-| Places/Grassrivers/Grassrivers_04.jpg | "explore" |
+| Places/Grassrivers/Grassrivers_05.jpg | "explore" |
 | Places/Mount Kalaga National Park/Mount_Kalaga_National_Park_06.jpg | "explore" |
 | Places/Vice City/Vice_City_27.jpg | spoilers (desfocada no início) |
 | People/Jason and Lucia/Jason_and_Lucia_16.jpg | encerramento |

@@ -142,28 +142,40 @@ export const Cena01: C = ({ inicio, fim }) => {
   const { lf, P } = useCena(inicio);
   const dur = fim - inicio;
   const mas = P("Mas");
+  const lan = P("lançou");
   const pose = lf < mas - 4 ? segurando(lf, 1) : misturaPose(segurando(lf, 1), espera(lf, 1), eio(ramp(lf, mas - 4, mas + 6)));
-  const dia = P("19");
+  // abertura com energia: soco de câmera no 1º quadro + pulso no tempo da trilha (118 bpm ≈ 15,25 quadros)
+  const soco = 1 + 0.28 * (1 - eout(ramp(lf, 0, 10)));
+  const fb = 30 * 60 / 118;
+  const pulso = 1 + 0.025 * Math.exp(-((lf % fb) / 4)) * (lf < mas + 30 ? 1 : 0.4);
+  const treme = lf >= lan && lf < lan + 8 ? Math.sin(lf * 2.7) * 10 * (1 - (lf - lan) / 8) : 0;
+  const est = eback(ramp(lf, lan - 2, lan + 8));
   return (
     <AbsoluteFill>
-      <Cam lf={lf} chaves={[[0, 540, 900, 1.12], [mas, 540, 960, 1.0], [dur, 540, 960, 1.03]]}>
-        <FundoNeon f={lf} id="g1" />
-        <Moldura ini={inicio} x={40} y={190} w={1000} h={880} lf={lf} dur={dur} entra={-14} rot={-1.5} credito={TRAILER} zoom={[1.08, 1.2]} pan={[20, 0]}
-          midias={[{ de: 0, m: { tipo: "clipe", src: "gta/k4.mp4", rate: 0.52 } }, { de: 70, m: { tipo: "clipe", src: "gta/k3.mp4", rate: 0.85 } }, { de: 190, m: { tipo: "clipe", src: "gta/k1.mp4", rate: 0.88 } }]} />
-        <Svg>
-          <Avatar id="g1-av" x={300} y={2130} escala={1.1} pose={pose} f={lf} dir={1}
-            expr={exprEm(lf, [[0, "empolgado"], [mas - 2, "desconfiado"], [P("aproveitar"), "feliz"]])}
-            itemD={MAO_CONTROLE(lf < mas ? 1 : 0, Math.abs(Math.sin(lf * 0.5)) * (lf < mas ? 1 : 0))} />
-          {/* data no canto: carimbo */}
-          {lf >= dia - 2 && (
-            <g transform={`translate(830 1135) rotate(${-8 + wobble(lf, 3, 0.4) * 2}) scale(${eback(ramp(lf, dia - 2, dia + 8))})`}>
-              <rect x={-150} y={-70} width={300} height={140} rx={24} fill={AMARELO} stroke={TINTA} strokeWidth={8} />
-              <text y={-12} textAnchor="middle" fontFamily="Montserrat" fontWeight={900} fontSize={30} fill={TINTA}>LANÇAMENTO</text>
-              <text y={48} textAnchor="middle" fontFamily="Anton" fontSize={64} fill={TINTA}>19/11</text>
-            </g>
-          )}
-        </Svg>
-      </Cam>
+      <AbsoluteFill style={{ transform: `translate(${treme}px, ${treme * 0.6}px) scale(${soco * pulso})`, transformOrigin: "540px 700px" }}>
+        <Cam lf={lf} chaves={[[0, 540, 900, 1.12], [mas, 540, 960, 1.0], [dur, 540, 960, 1.03]]}>
+          <FundoNeon f={lf * 2} id="g1" />
+          <Moldura ini={inicio} x={40} y={190} w={1000} h={880} lf={lf} dur={dur} entra={-14} rot={-1.5} credito={TRAILER} zoom={[1.08, 1.2]} pan={[20, 0]}
+            midias={[{ de: 0, m: { tipo: "clipe", src: "gta/k4.mp4", rate: 0.6 } }, { de: 45, m: { tipo: "clipe", src: "gta/k3.mp4", rate: 0.72 } }, { de: 92, m: { tipo: "clipe", src: "gta/k5.mp4", rate: 1.0 } }, { de: 148, m: { tipo: "clipe", src: "gta/k1.mp4", rate: 1.0 } }]} />
+          <Svg>
+            {/* explosão de neon no "lançou" */}
+            {lf >= lan - 2 && lf < lan + 26 && Array.from({ length: 18 }, (_, i) => {
+              const a = (i / 18) * Math.PI * 2, r = 60 + eout(ramp(lf, lan - 2, lan + 22)) * 420;
+              return <line key={i} x1={830 + Math.cos(a) * r * 0.55} y1={1135 + Math.sin(a) * r * 0.55} x2={830 + Math.cos(a) * r} y2={1135 + Math.sin(a) * r} stroke={[ROSA, CIANO, AMARELO][i % 3]} strokeWidth={10} strokeLinecap="round" opacity={1 - ramp(lf, lan + 8, lan + 26)} />;
+            })}
+            <Avatar id="g1-av" x={300} y={2130} escala={1.1} pose={pose} f={lf} dir={1}
+              expr={exprEm(lf, [[0, "empolgado"], [mas - 2, "desconfiado"], [P("aproveitar"), "feliz"]])}
+              itemD={MAO_CONTROLE(lf < mas ? 1 : 0, Math.abs(Math.sin(lf * 0.5)) * (lf < mas ? 1 : 0))} />
+            {lf >= lan - 2 && (
+              <g transform={`translate(830 1135) rotate(${-8 + wobble(lf, 3, 0.4) * 2}) scale(${est})`}>
+                <rect x={-170} y={-74} width={340} height={148} rx={24} fill={AMARELO} stroke={TINTA} strokeWidth={8} />
+                <text y={-14} textAnchor="middle" fontFamily="Montserrat" fontWeight={900} fontSize={32} fill={TINTA}>GTA 6</text>
+                <text y={50} textAnchor="middle" fontFamily="Anton" fontSize={66} fill={TINTA}>JÁ LANÇOU!</text>
+              </g>
+            )}
+          </Svg>
+        </Cam>
+      </AbsoluteFill>
       <Svg><SeloCanal f={lf} em={mas - 4} t="ANTES DE JOGAR, FAÇA ISSO!" y={140} tam={64} /></Svg>
     </AbsoluteFill>
   );
@@ -210,7 +222,7 @@ export const Cena02: C = ({ inicio, fim }) => {
         <FundoNeon f={lf} noite={0.8} id="g2" />
         <Svg><rect y={1180} width={W} height={740} fill="#1a0c33" opacity={0.6} /><TV x={tx} y={ty} w={tw} h={th} /></Svg>
         <Moldura ini={inicio} x={tx} y={ty} w={tw} h={th} lf={lf} dur={dur} borda={0} cor="#00000000" credito={TRAILER} zoom={[1.02, 1.1]}
-          midias={[{ de: 0, m: { tipo: "clipe", src: "gta/k5.mp4", rate: 0.6 } }, { de: 95, m: { tipo: "clipe", src: "gta/k3.mp4", rate: 0.38 } }]}>
+          midias={[{ de: 0, m: { tipo: "clipe", src: "gta/k5.mp4", rate: 0.6 } }, { de: 95, m: { tipo: "clipe", src: "gta/k1.mp4", rate: 0.46 } }]}>
           {/* menu genérico da TV (desenho próprio, sem marca) */}
           <div style={{ position: "absolute", right: 24, top: 70, width: 330, padding: 18, borderRadius: 18, background: "rgba(8,10,20,0.88)", border: `3px solid ${CIANO}`, opacity: osd, transform: `translateX(${(1 - osd) * 60}px)`, fontFamily: "Montserrat", fontWeight: 900, color: "#fff", fontSize: 24 }}>
             <div style={{ fontSize: 18, opacity: 0.7, marginBottom: 10 }}>IMAGEM (ILUSTRATIVO)</div>
@@ -352,7 +364,7 @@ export const Cena05: C = ({ inicio, fim }) => {
 const LUGARES: { src: Midia; nome: string }[] = [
   { src: { tipo: "clipe", src: "gta/k5.mp4", rate: 0.5 }, nome: "VICE CITY" },
   { src: { tipo: "foto", src: "gta/Leonida_Keys_01.jpg" }, nome: "LEONIDA KEYS" },
-  { src: { tipo: "foto", src: "gta/Grassrivers_04.jpg" }, nome: "GRASSRIVERS" },
+  { src: { tipo: "foto", src: "gta/Grassrivers_05.jpg" }, nome: "GRASSRIVERS" },
   { src: { tipo: "foto", src: "gta/Mount_Kalaga_National_Park_06.jpg" }, nome: "MOUNT KALAGA" },
   { src: { tipo: "clipe", src: "gta/k7.mp4", rate: 0.45 }, nome: "VICE CITY" },
 ];
