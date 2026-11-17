@@ -248,6 +248,47 @@ class MotorChatterboxPTBR:
         return acelerar(reamostrar(a, sr), self.vel)
 
 
+class MotorQwen3Local:
+    """Qwen3-TTS local num processo separado (Python 3.11 + torch CPU), modelo baixado em disco.
+
+    projeto.json -> voz: {"motor": "qwen3_local", "voz": "aiden", "instrucao": "...", "semente": 1, "velocidade": 1.0}.
+    Cada fala pode ter "instrucao" e "semente" próprias (tom e tomada escolhida).
+    """
+    nome = "qwen3_local"
+
+    def __init__(self, voz: str | None, perfil: dict):
+        cfg = perfil.get("_voz_cfg", {})
+        py = os.environ.get("QWEN3_PY", "/home/user/ferramentas-externas/venv-qwen3/bin/python")
+        if not Path(py).exists():
+            raise SystemExit("Qwen3-TTS local não instalado nesta máquina (ver docs/QWEN3_LOCAL.md).")
+        self.par = {"voz": voz or "aiden", "instrucao": cfg.get("instrucao", ""), "seed": cfg.get("semente", 1)}
+        self.vel = perfil["velocidade"]
+        srv = Path(__file__).parent / "qwen3_servidor.py"
+        self.p = subprocess.Popen([py, str(srv)], stdin=subprocess.PIPE, stdout=subprocess.PIPE, text=True, bufsize=1)
+        while True:
+            l = self.p.stdout.readline()
+            if not l:
+                raise SystemExit("O servidor do Qwen3-TTS terminou sem carregar o modelo.")
+            if l.startswith("pronto"):
+                break
+        self.td = tempfile.mkdtemp()
+        self.n = 0
+
+    def falar(self, texto: str) -> np.ndarray:
+        self.n += 1
+        out = str(Path(self.td) / f"f{self.n}.wav")
+        self.p.stdin.write(json.dumps({**self.par, "texto": texto, "saida": out}, ensure_ascii=False) + "\n")
+        self.p.stdin.flush()
+        while True:
+            l = self.p.stdout.readline()
+            if not l:
+                raise SystemExit("O servidor do Qwen3-TTS parou durante a geração.")
+            if l.startswith("ok "):
+                break
+        a, sr = sf.read(out, dtype="float32")
+        return acelerar(reamostrar(a, sr), self.vel)
+
+
 class MotorQwen3:
     nome = "qwen3"
 
@@ -266,7 +307,7 @@ class MotorQwen3:
         return acelerar(reamostrar(np.asarray(wavs[0], dtype=np.float32), sr), self.vel)
 
 
-MOTORES = {c.nome: c for c in (MotorKokoro, MotorPiper, MotorEdge, MotorChatterbox, MotorChatterboxPTBR, MotorQwen3)}
+MOTORES = {c.nome: c for c in (MotorKokoro, MotorPiper, MotorEdge, MotorChatterbox, MotorChatterboxPTBR, MotorQwen3, MotorQwen3Local)}
 
 
 def acelerar(a: np.ndarray, fator: float) -> np.ndarray:
@@ -418,9 +459,14 @@ def gerar(projeto_dir: Path) -> dict:
         if "velocidade" in fala and vel0 is not None:  # ritmo próprio desta fala (ex.: trecho mais sério)
             motor.vel = fala["velocidade"]
         par0 = dict(getattr(motor, "par", {}))
-        if "semente" in fala and hasattr(motor, "par"):  # tomada escolhida para esta fala (Chatterbox)
+        if "semente" in fala and hasattr(motor, "par"):  # tomada escolhida para esta fala
             motor.par["seed"] = fala["semente"]
-        a = aparar(motor.falar(texto_tts))
+        if "instrucao" in fala and hasattr(motor, "par") and "instrucao" in motor.par:  # tom desta fala (Qwen3)
+            motor.par["instrucao"] = fala["instrucao"]
+        if fala.get("audio_fixo"):  # tomada já aprovada pelo usuário: usa o arquivo exatamente como está
+            a = aparar(ler_audio(fala["audio_fixo"]))
+        else:
+            a = aparar(motor.falar(texto_tts))
         if hasattr(motor, "par"):
             motor.par = par0
         if vel0 is not None:

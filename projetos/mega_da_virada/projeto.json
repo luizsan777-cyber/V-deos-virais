@@ -1,0 +1,194 @@
+{
+ "titulo": "Como funciona a Mega da Virada?",
+ "id_producao": "mega_da_virada",
+ "canal": "curiosidades",
+ "motor": "remotion",
+ "modo": "2d",
+ "estilo": "2d-familia-canal: avatar do canal, sala colorida, cartões e globo ilustrados",
+ "perfil": "curiosidades",
+ "voz": {
+  "motor": "qwen3_local",
+  "voz": "aiden",
+  "instrucao": "Fale em português do Brasil, como um jovem narrador brasileiro contando uma curiosidade para um amigo: tom natural, leve e curioso, sem pressa e sem parecer leitura formal.",
+  "semente": 1,
+  "velocidade": 1.0,
+  "info": "Teste deste vídeo: Qwen3-TTS 0.6B CustomVoice (Apache-2.0), voz Aiden; abertura = tomada aprovada pelo usuário. Narração padrão do projeto (Kokoro pm_alex) não foi alterada."
+ },
+ "musica": {
+  "humor": "alegre",
+  "volume_db": -20,
+  "automacao": [
+   {
+    "em": "t:0",
+    "db": -3
+   },
+   {
+    "em": "c02",
+    "db": 0
+   },
+   {
+    "em": "c04",
+    "db": -3
+   },
+   {
+    "em": "c05",
+    "db": 0
+   },
+   {
+    "em": "c08:fim+1.0",
+    "db": -12
+   }
+  ]
+ },
+ "legenda": "impacto",
+ "fontes": [
+  "Probabilidade da aposta simples (6 dezenas entre 60): C(60,6) = 50.063.860 combinações",
+  "Mega da Virada não acumula; prêmio passa para 5 e depois 4 acertos: https://www.infomoney.com.br/?p=3141721",
+  "Divisão do prêmio entre ganhadores: https://olhardigital.com.br/2024/12/30/internet-e-redes-sociais/mega-da-virada-como-e-feita-a-divisao-do-premio/"
+ ],
+ "destaques": [
+  "ganhei",
+  "milhão",
+  "virada",
+  "seis",
+  "difícil",
+  "cinquenta",
+  "milhões",
+  "grão",
+  "dividido",
+  "acumula",
+  "cinco",
+  "quatro",
+  "você"
+ ],
+ "sfx": [
+  {
+   "som": "impacto",
+   "em": "t:0.02",
+   "vol": -20
+  },
+  {
+   "som": "magia",
+   "em": "t:0.3",
+   "vol": -22
+  },
+  {
+   "som": "whoosh",
+   "em": "c02-0.2",
+   "vol": -14
+  },
+  {
+   "som": "ding",
+   "em": "palavra:virada",
+   "vol": -16
+  },
+  {
+   "som": "whoosh",
+   "em": "c03-0.2",
+   "vol": -15
+  },
+  {
+   "som": "pop",
+   "em": "palavra:seis",
+   "vol": -12
+  },
+  {
+   "som": "swoosh_sobe",
+   "em": "c04-0.2",
+   "vol": -15
+  },
+  {
+   "som": "desce",
+   "em": "palavra:cinquenta",
+   "vol": -14
+  },
+  {
+   "som": "whoosh",
+   "em": "c05-0.2",
+   "vol": -15
+  },
+  {
+   "som": "brilho",
+   "em": "palavra:único",
+   "vol": -14
+  },
+  {
+   "som": "whoosh",
+   "em": "c06-0.2",
+   "vol": -15
+  },
+  {
+   "som": "carimbo",
+   "em": "palavra:dividido",
+   "vol": -12
+  },
+  {
+   "som": "whoosh",
+   "em": "c07-0.2",
+   "vol": -15
+  },
+  {
+   "som": "clique",
+   "em": "palavra:cinco",
+   "vol": -12
+  },
+  {
+   "som": "clique",
+   "em": "palavra:quatro",
+   "vol": -12
+  },
+  {
+   "som": "swoosh_sobe",
+   "em": "c08-0.2",
+   "vol": -15
+  }
+ ],
+ "falas": [
+  {
+   "id": "c01",
+   "texto": "Ganhei um milhão de reais sem fazer nada!",
+   "audio_fixo": "/home/user/ferramentas-externas/qwen3-modelos/aprovados/mega_abertura_aiden_grito.wav",
+   "pausa": 0.45
+  },
+  {
+   "id": "c02",
+   "texto": "Essa é a frase que muita gente sonha em falar no dia mais aleatório possível! Agora imagina isso acontecer bem na virada do ano…",
+   "instrucao": "Fale em português do Brasil, tom leve e divertido de quem conta um segredo para um amigo, ainda animado mas mais calmo, com uma pequena pausa antes de 'na virada do ano'.",
+   "pausa": 0.5
+  },
+  {
+   "id": "c03",
+   "texto": "Na Mega da Virada, milhões de pessoas escolhem seus números e torcem para acertar as seis dezenas sorteadas.",
+   "pausa": 0.5
+  },
+  {
+   "id": "c04",
+   "texto": "Só que tem um detalhe: ganhar o prêmio principal é muito mais difícil do que parece. Numa aposta simples, a chance de acertar os seis números é de uma em mais de cinquenta milhões!",
+   "instrucao": "Fale em português do Brasil, como um jovem narrador brasileiro contando uma curiosidade para um amigo: tom natural, leve e curioso, sem pressa e sem parecer leitura formal. Faça uma pequena pausa depois de 'detalhe' e dê ênfase em 'muito mais difícil' e em 'uma em mais de cinquenta milhões', com surpresa, sem gritar.",
+   "pausa": 0.5
+  },
+  {
+   "id": "c05",
+   "texto": "É como escolher um único grão em uma montanha com cinquenta milhões de grãos… e torcer para pegar exatamente o certo.",
+   "instrucao": "Fale em português do Brasil, como um jovem narrador brasileiro contando uma curiosidade para um amigo: tom natural, leve e curioso, sem pressa e sem parecer leitura formal. Tom de surpresa e curiosidade, com uma pequena pausa antes de 'e torcer'.",
+   "pausa": 0.5
+  },
+  {
+   "id": "c06",
+   "texto": "E mesmo se você acertar os seis, pode não levar tudo sozinho: se outras apostas também vencerem, o prêmio é dividido.",
+   "pausa": 0.5
+  },
+  {
+   "id": "c07",
+   "texto": "Na Mega da Virada, o prêmio principal não acumula para o próximo sorteio. Se ninguém acertar seis, ele passa para quem acertou cinco e, se necessário, para quem acertou quatro.",
+   "instrucao": "Fale em português do Brasil, como um jovem narrador brasileiro contando uma curiosidade para um amigo: tom natural, leve e curioso, sem pressa e sem parecer leitura formal. Tom claro e explicativo.",
+   "pausa": 0.5
+  },
+  {
+   "id": "c08",
+   "texto": "E você? Se ganhasse, qual seria a primeira coisa que faria?",
+   "instrucao": "Fale em português do Brasil, como um jovem narrador brasileiro contando uma curiosidade para um amigo: tom natural, leve e curioso, sem pressa e sem parecer leitura formal. Tom caloroso, fazendo uma pergunta direta ao espectador.",
+   "pausa": 0.5
+  }
+ ]
+}
