@@ -10,7 +10,7 @@ import { Cena01, Cena02, Cena03, Cena04, Cena05, Cena06, Cena07, Cena08 } from "
 
 const ORDEM = ['c01', 'c02', 'c03', 'c04', 'c05', 'c06', 'c07', 'c08'];
 const CENAS = [Cena01, Cena02, Cena03, Cena04, Cena05, Cena06, Cena07, Cena08];
-const YLEG = [0.78, 0.78, 0.86, 0.78, 0.66, 0.86, 0.86, 0.78];
+const YLEG = [0.78, 0.78, 0.80, 0.78, 0.66, 0.80, 0.80, 0.78];
 const HF_CENA = -1, HF_NOME = ""; // sobreposição renderizada pelo HyperFrames (ver hf/)
 
 export default function Video() {

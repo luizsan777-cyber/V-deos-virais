@@ -119,7 +119,7 @@ export const Cena01: C = ({ inicio, fim }) => {
   const titulo = eback(ramp(lf, 18, 30));
   return (
     <AbsoluteFill style={{ backgroundColor: "#ffb733" }}>
-      <Camera inicio={inicio} chaves={[[0, 540, 640, 2.6], [12, 540, 700, 2.3], [26, 540, 900, 1.35], [dur, 540, 960, 1.25]]} deriva={0}>
+      <Camera inicio={inicio} chaves={[[0, 540, 1150, 2.4], [12, 540, 1120, 2.1], [26, 540, 900, 1.35], [dur, 540, 960, 1.25]]} deriva={0}>
         <defs><radialGradient id="mg1" cx="0.5" cy="0.45" r="0.7"><stop offset="0" stopColor="#fff3b0" /><stop offset="0.6" stopColor="#ffcc33" /><stop offset="1" stopColor="#ff8a3d" /></radialGradient></defs>
         <rect x={-600} y={-400} width={2300} height={2800} fill="url(#mg1)" />
         {Array.from({ length: 18 }, (_, i) => <path key={i} d={`M 540,900 L ${540 + Math.cos((i / 18) * Math.PI * 2 + lf * 0.01) * 2000},${900 + Math.sin((i / 18) * Math.PI * 2 + lf * 0.01) * 2000} L ${540 + Math.cos(((i + 0.5) / 18) * Math.PI * 2 + lf * 0.01) * 2000},${900 + Math.sin(((i + 0.5) / 18) * Math.PI * 2 + lf * 0.01) * 2000} Z`} fill="#fff" opacity={0.18} />)}
@@ -150,7 +150,7 @@ export const Cena02: C = ({ inicio, fim }) => {
   const pose: Pose = { ...sentado(lf, 2), olhar: lf < vir - 20 ? [0.9, -0.6] : [0, -0.2], cabecaIncl: lf < vir - 20 ? -6 : 4 };
   return (
     <AbsoluteFill>
-      <Camera inicio={inicio} chaves={[[0, 540, 1150, 1.15], [vir - 25, 700, 900, 1.3], [vir, 540, 900, 1.15], [dur, 540, 960, 1.05]]} deriva={0}>
+      <Camera inicio={inicio} chaves={[[0, 540, 1150, 1.15], [vir - 25, 700, 1150, 1.25], [vir, 540, 1150, 1.12], [dur, 540, 1150, 1.05]]} deriva={0}>
         <Sala f={lf} tv={<TelaContagem f={lf} n={n} />} />
         <Avatar id="mg-av2" x={540} y={1760} escala={1.05} pose={pose} f={lf} boca={T.boca(f)}
           expr={exprEm(lf, [[0, "surpreso"], [10, "feliz"], [vir - 20, "pensativo"], [vir, "empolgado"]])} />
@@ -229,7 +229,7 @@ export const Cena04: C = ({ inicio, fim }) => {
   const { lf, P, T, f } = useCena(inicio);
   const dur = fim - inicio;
   const dificil = P("difícil"), chance = P("chance"), cinq = P("cinquenta");
-  const num = eout(ramp(lf, chance, cinq + 20));
+  const num = eout(ramp(lf, chance - 6, cinq - 2)); // chega ao valor exato junto da fala e fica parado
   const valor = Math.round(lerp(1, 50063860, num));
   const multidao = clamp01(ramp(lf, cinq + 4, cinq + 20));
   const pose: Pose = lf < dificil ? { ...parado(lf, 4), bracoE: [30, 120], frenteE: true, maoE: "punho", cabecaIncl: -4 } : surpreso(lf, 4);
@@ -377,8 +377,8 @@ export const Cena08: C = ({ inicio, fim }) => {
   const pose: Pose = olhaCam ? { ...apontando(lf, 95, 8), olhar: [0, 0] } : pensando(lf, 8);
   return (
     <AbsoluteFill>
-      <Camera inicio={inicio} chaves={[[0, 540, 1000, 1.05], [se, 540, 1150, 1.25], [dur, 540, 1180, 1.3]]} deriva={0}>
-        <Sala f={lf} tv={<TelaContagem f={lf} n={0} />} calendario={0.5} />
+      <Camera inicio={inicio} chaves={[[0, 540, 1000, 1.05], [dur, 540, 1000, 1.1]]} deriva={0}>
+        <Sala f={lf} tv={<TelaContagem f={lf} n={0} />} calendario={0} />
         <Avatar id="mg-av8" x={540} y={1760} escala={1.05} pose={pose} f={lf} boca={T.boca(f)} expr={exprEm(lf, [[0, "pensativo"], [se, "feliz"]])} />
       </Camera>
       <Tela>

@@ -154,41 +154,48 @@
    "id": "c02",
    "texto": "Essa é a frase que muita gente sonha em falar no dia mais aleatório possível! Agora imagina isso acontecer bem na virada do ano…",
    "instrucao": "Fale em português do Brasil, tom leve e divertido de quem conta um segredo para um amigo, ainda animado mas mais calmo, com uma pequena pausa antes de 'na virada do ano'.",
-   "pausa": 0.5
+   "pausa": 0.5,
+   "semente": 2
   },
   {
    "id": "c03",
    "texto": "Na Mega da Virada, milhões de pessoas escolhem seus números e torcem para acertar as seis dezenas sorteadas.",
-   "pausa": 0.5
+   "pausa": 0.5,
+   "semente": 2
   },
   {
    "id": "c04",
    "texto": "Só que tem um detalhe: ganhar o prêmio principal é muito mais difícil do que parece. Numa aposta simples, a chance de acertar os seis números é de uma em mais de cinquenta milhões!",
    "instrucao": "Fale em português do Brasil, como um jovem narrador brasileiro contando uma curiosidade para um amigo: tom natural, leve e curioso, sem pressa e sem parecer leitura formal. Faça uma pequena pausa depois de 'detalhe' e dê ênfase em 'muito mais difícil' e em 'uma em mais de cinquenta milhões', com surpresa, sem gritar.",
-   "pausa": 0.5
+   "pausa": 0.5,
+   "semente": 2
   },
   {
    "id": "c05",
    "texto": "É como escolher um único grão em uma montanha com cinquenta milhões de grãos… e torcer para pegar exatamente o certo.",
    "instrucao": "Fale em português do Brasil, como um jovem narrador brasileiro contando uma curiosidade para um amigo: tom natural, leve e curioso, sem pressa e sem parecer leitura formal. Tom de surpresa e curiosidade, com uma pequena pausa antes de 'e torcer'.",
-   "pausa": 0.5
+   "pausa": 0.5,
+   "semente": 1
   },
   {
    "id": "c06",
    "texto": "E mesmo se você acertar os seis, pode não levar tudo sozinho: se outras apostas também vencerem, o prêmio é dividido.",
-   "pausa": 0.5
+   "pausa": 0.5,
+   "semente": 3
   },
   {
    "id": "c07",
    "texto": "Na Mega da Virada, o prêmio principal não acumula para o próximo sorteio. Se ninguém acertar seis, ele passa para quem acertou cinco e, se necessário, para quem acertou quatro.",
    "instrucao": "Fale em português do Brasil, como um jovem narrador brasileiro contando uma curiosidade para um amigo: tom natural, leve e curioso, sem pressa e sem parecer leitura formal. Tom claro e explicativo.",
-   "pausa": 0.5
+   "pausa": 0.5,
+   "semente": 2
   },
   {
    "id": "c08",
    "texto": "E você? Se ganhasse, qual seria a primeira coisa que faria?",
    "instrucao": "Fale em português do Brasil, como um jovem narrador brasileiro contando uma curiosidade para um amigo: tom natural, leve e curioso, sem pressa e sem parecer leitura formal. Tom caloroso, fazendo uma pergunta direta ao espectador.",
-   "pausa": 0.5
+   "pausa": 0.5,
+   "semente": 1
   }
  ]
 }
