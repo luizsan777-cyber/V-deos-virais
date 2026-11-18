@@ -424,6 +424,8 @@ def hat(d=0.05):
 
 
 def musica(humor: str, dur: float) -> np.ndarray:
+    if humor.startswith("classica_"):
+        return musica_classica(humor.split("_", 1)[1], dur)
     if humor == "reflexao":
         return musica_reflexao(dur)
     if humor == "synthwave":
@@ -600,6 +602,73 @@ def musica_reflexao(dur: float, raiz: int = 57, bpm: float = 66) -> np.ndarray:
     out = reverb(out, 3.0, 0.4, 4000)[: int(dur * SR)]
     t = t_(dur)
     out *= np.minimum(1, np.minimum(t / 2.0, (dur - t) / 3.0 + 1e-3))
+    return norm(out, 0.8)
+
+
+def cordas(m: float, d: float) -> np.ndarray:
+    """Naipe de cordas sintetizado: serras desafinadas, filtro suave, vibrato e ataque lento."""
+    t = t_(d)
+    f = mtof(m) * (1 + 0.004 * np.sin(2 * np.pi * 5.2 * t))
+    x = sum(saw(f * (1 + det), d, fase=k * 0.37) for k, det in enumerate((-0.006, 0.0, 0.007))) / 3
+    x = lp_rapido(x.astype(np.float32), 2200)
+    env_ = np.minimum(1, t / 0.35) * np.minimum(1, (d - t) / 0.4 + 1e-3)
+    return (x * env_ * 0.6).astype(np.float32)
+
+
+# Peças em DOMÍNIO PÚBLICO (composições antigas), em interpretação PRÓPRIA sintetizada aqui (sem gravação de terceiros).
+# Cada evento: (início em batidas, nota MIDI, duração em batidas, instrumento "p" piano / "c" cordas).
+def _bach_preludio_do():
+    """J. S. Bach (1685–1750), Prelúdio em Dó maior BWV 846 — compassos 1–3 (semicolcheias)."""
+    ev = []
+    for b, (baixo, pad) in enumerate([((60, 64), (67, 72, 76)), ((60, 62), (69, 74, 77)), ((59, 62), (67, 74, 77))]):
+        for meio in range(2):
+            t0 = b * 4 + meio * 2
+            ev += [(t0, baixo[0], 2, "p"), (t0 + 0.25, baixo[1], 1.75, "p")]
+            for k, n in enumerate(pad + pad):
+                ev.append((t0 + 0.5 + k * 0.25, n, 0.6, "p"))
+    return ev, 0.62  # segundos por batida (semínima)
+
+
+def _pachelbel_canone():
+    """J. Pachelbel (1653–1706), Cânone em Ré — baixo, harmonia em cordas e a voz superior conhecida."""
+    acordes = [(50, [62, 66, 69]), (45, [61, 64, 69]), (47, [62, 66, 71]), (42, [61, 66, 69]), (43, [62, 67, 71]), (38, [62, 66, 69])]
+    melodia = [78, 76, 74, 73, 71, 69]
+    ev = []
+    for i, (b, ac) in enumerate(acordes):
+        t0 = i * 2
+        ev.append((t0, b, 2.2, "c"))
+        ev += [(t0, n, 2.2, "c") for n in ac]
+        ev.append((t0 + 0.02, melodia[i], 1.9, "p"))
+    return ev, 0.45
+
+
+def _satie_gymnopedie():
+    """E. Satie (1866–1925), Gymnopédie nº 1 (1888) — acompanhamento em 3/4 e início da melodia."""
+    ev = []
+    comp = [(43, [59, 62, 66]), (38, [57, 61, 66]), (43, [59, 62, 66]), (38, [57, 61, 66])]
+    for i, (b, ac) in enumerate(comp):
+        t0 = i * 3
+        ev.append((t0, b, 3, "p"))
+        ev += [(t0 + 1, n, 2, "p") for n in ac]
+    mel = [(1, 78, 1), (2, 81, 1), (3, 79, 1), (4, 78, 1), (5, 73, 1), (6, 71, 1), (7, 73, 1), (8, 74, 1), (9, 69, 3)]
+    ev += [(t, n, d, "p") for t, n, d in mel]
+    return ev, 0.5
+
+
+def musica_classica(peca: str, dur: float) -> np.ndarray:
+    ev, spb = {"bach": _bach_preludio_do, "canon": _pachelbel_canone, "satie": _satie_gymnopedie}[peca]()
+    n = int(dur * SR) + SR
+    out = np.zeros(n, np.float32)
+    for tb, m, db, inst in ev:
+        t0 = tb * spb
+        if t0 >= dur:
+            continue
+        x = piano(m, max(1.2, db * spb + 1.0)) * (0.5 if m >= 72 else 0.42) if inst == "p" else cordas(m, db * spb + 0.3) * 0.33
+        o = int(t0 * SR)
+        out[o:o + len(x)] += x[: n - o]
+    out = reverb(out, 2.4, 0.35, 5000)[: int(dur * SR)]
+    t = t_(dur)
+    out *= np.minimum(1, np.minimum(t / 0.25, (dur - t) / 1.2 + 1e-3))  # entra no 1º quadro e sai sem corte brusco
     return norm(out, 0.8)
 
 

@@ -1,0 +1,29 @@
+{
+  "motor": "remotion",
+  "modo": "2d",
+  "perfil": "biblico",
+  "voz": {
+    "motor": "kokoro",
+    "voz": "pm_alex",
+    "velocidade": 0.95,
+    "info": "voz configurada nos vídeos (Kokoro pm_alex 0,95)"
+  },
+  "legenda": "custom",
+  "inicio_s": 0.05,
+  "fim_s": 1.223,
+  "destaques": [],
+  "sfx": [],
+  "titulo": "Jesus ainda te chamaria pelo nome",
+  "arquivo": "02_Jesus_Te_Chamaria_Pelo_Nome.mp4",
+  "falas": [
+    {
+      "id": "c01",
+      "texto": "Mesmo depois de tudo, Jesus ainda te chamaria pelo nome."
+    }
+  ],
+  "musica": {
+    "humor": "classica_canon",
+    "volume_db": -2
+  },
+  "id_producao": "short02_chamaria_pelo_nome"
+}

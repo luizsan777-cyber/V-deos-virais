@@ -1,0 +1,47 @@
+{
+  "motor": "remotion",
+  "modo": "2d",
+  "perfil": "biblico",
+  "voz": {
+    "motor": "kokoro",
+    "voz": "pm_alex",
+    "velocidade": 0.95,
+    "info": "voz configurada nos vídeos (Kokoro pm_alex 0,95)"
+  },
+  "legenda": "custom",
+  "inicio_s": 0.05,
+  "fim_s": 0.293,
+  "destaques": [],
+  "sfx": [
+    {
+      "som": "chuva",
+      "em": "t:0",
+      "vol": -30
+    }
+  ],
+  "titulo": "Jesus não desistiu de você",
+  "arquivo": "01_Jesus_Nao_Desistiu_De_Voce.mp4",
+  "falas": [
+    {
+      "id": "c01a",
+      "texto": "Antes de desistir,",
+      "tts": "Antes de desistir.",
+      "pausa": 0.04
+    },
+    {
+      "id": "c01b",
+      "texto": "escuta:",
+      "tts": "Escuta.",
+      "pausa": 0.1
+    },
+    {
+      "id": "c02",
+      "texto": "Jesus não desistiu de você."
+    }
+  ],
+  "musica": {
+    "humor": "classica_bach",
+    "volume_db": -3
+  },
+  "id_producao": "short01_jesus_nao_desistiu"
+}

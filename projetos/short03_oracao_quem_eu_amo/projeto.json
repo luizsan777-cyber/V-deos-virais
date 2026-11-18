@@ -1,0 +1,29 @@
+{
+  "motor": "remotion",
+  "modo": "2d",
+  "perfil": "biblico",
+  "voz": {
+    "motor": "kokoro",
+    "voz": "pm_alex",
+    "velocidade": 0.95,
+    "info": "voz configurada nos vídeos (Kokoro pm_alex 0,95)"
+  },
+  "legenda": "custom",
+  "inicio_s": 0.05,
+  "fim_s": 1.723,
+  "destaques": [],
+  "sfx": [],
+  "titulo": "Uma oração por quem você ama",
+  "arquivo": "03_Oracao_Por_Quem_Eu_Amo.mp4",
+  "falas": [
+    {
+      "id": "c01",
+      "texto": "Jesus, cuida de quem eu amo, mesmo quando está longe."
+    }
+  ],
+  "musica": {
+    "humor": "classica_satie",
+    "volume_db": 2
+  },
+  "id_producao": "short03_oracao_quem_eu_amo"
+}
