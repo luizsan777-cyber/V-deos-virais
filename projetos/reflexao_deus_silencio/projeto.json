@@ -1,0 +1,202 @@
+{
+ "titulo": "Você sente que Deus está em silêncio?",
+ "id_producao": "reflexao_deus_silencio",
+ "canal": "curiosidades",
+ "motor": "remotion",
+ "modo": "2d",
+ "estilo": "2d-familia-canal: quarto à noite com chuva → amanhecer, luz quente, personagens do kit",
+ "perfil": "biblico",
+ "voz": {
+  "motor": "kokoro",
+  "voz": "pm_alex",
+  "velocidade": 0.95,
+  "info": "mesma voz configurada nos vídeos (Kokoro pm_alex 0,95); perfil biblico só para pausas mais serenas"
+ },
+ "musica": {
+  "humor": "reflexao",
+  "volume_db": -16,
+  "automacao": [
+   {
+    "em": "t:0",
+    "db": -6
+   },
+   {
+    "em": "c03a",
+    "db": -8
+   },
+   {
+    "em": "c04a",
+    "db": -4
+   },
+   {
+    "em": "c06a",
+    "db": -1
+   },
+   {
+    "em": "c07",
+    "db": -3
+   },
+   {
+    "em": "c09a",
+    "db": 0
+   },
+   {
+    "em": "c11:fim+0.8",
+    "db": -14
+   }
+  ]
+ },
+ "legenda": "impacto",
+ "fim_s": 2.2,
+ "fontes": [
+  "Mateus 11:28 (NVI): \"Venham a mim, todos os que estão cansados e sobrecarregados, e eu lhes darei descanso.\""
+ ],
+ "destaques": [
+  "Deus",
+  "ouvindo",
+  "força",
+  "direção",
+  "silêncio",
+  "esqueceu",
+  "sozinho",
+  "cuidado",
+  "abraço",
+  "coragem",
+  "descanso",
+  "respirar",
+  "fica",
+  "comigo",
+  "paz",
+  "esperança"
+ ],
+ "sfx": [
+  {
+   "som": "chuva",
+   "em": "t:0",
+   "vol": -22
+  },
+  {
+   "som": "brilho",
+   "em": "c04a",
+   "vol": -18
+  },
+  {
+   "som": "brilho",
+   "em": "c07",
+   "vol": -20
+  },
+  {
+   "som": "ding",
+   "em": "c11",
+   "vol": -24
+  }
+ ],
+ "falas": [
+  {
+   "id": "c01a",
+   "texto": "Você já orou tanto por uma resposta...",
+   "pausa": 0.45
+  },
+  {
+   "id": "c01b",
+   "texto": "que começou a achar que Deus não estava te ouvindo?",
+   "pausa": 1.0
+  },
+  {
+   "id": "c02a",
+   "texto": "Você pede força, pede uma direção...",
+   "pausa": 0.5
+  },
+  {
+   "id": "c02b",
+   "texto": "mas os dias passam, e parece que nada muda.",
+   "pausa": 0.9
+  },
+  {
+   "id": "c03a",
+   "texto": "E, no meio desse silêncio, vem aquela pergunta que dói:",
+   "pausa": 0.55
+  },
+  {
+   "id": "c03b",
+   "texto": "Será que Ele se esqueceu de mim?",
+   "pausa": 1.3
+  },
+  {
+   "id": "c04a",
+   "texto": "Mas espera...",
+   "pausa": 0.6,
+   "tts": "Mas espera."
+  },
+  {
+   "id": "c04b",
+   "texto": "o silêncio que você sente não significa que você esteja sozinho.",
+   "pausa": 1.0
+  },
+  {
+   "id": "c05a",
+   "texto": "Às vezes, a gente procura uma resposta enorme...",
+   "pausa": 0.45
+  },
+  {
+   "id": "c05b",
+   "texto": "e não percebe o cuidado que chega nas pequenas coisas.",
+   "pausa": 0.9
+  },
+  {
+   "id": "c06a",
+   "texto": "Naquela conversa que te deu um alívio...",
+   "pausa": 0.4
+  },
+  {
+   "id": "c06b",
+   "texto": "naquele abraço que chegou na hora certa...",
+   "pausa": 0.4
+  },
+  {
+   "id": "c06c",
+   "texto": "ou naquela coragem que você nem sabia que ainda tinha para levantar mais um dia.",
+   "pausa": 1.0
+  },
+  {
+   "id": "c07",
+   "texto": "Jesus disse: Venham a mim, todos os que estão cansados e sobrecarregados, e eu lhes darei descanso.",
+   "pausa": 1.2
+  },
+  {
+   "id": "c08a",
+   "texto": "Talvez você ainda não tenha encontrado a resposta que espera.",
+   "pausa": 0.6
+  },
+  {
+   "id": "c08b",
+   "texto": "Mas pode respirar...",
+   "pausa": 0.6
+  },
+  {
+   "id": "c08c",
+   "texto": "você não precisa carregar tudo sozinho.",
+   "pausa": 1.1
+  },
+  {
+   "id": "c09a",
+   "texto": "E, se hoje estiver difícil até para orar, comece com uma frase simples:",
+   "pausa": 0.5
+  },
+  {
+   "id": "c09b",
+   "texto": "Jesus, fica comigo.",
+   "pausa": 1.2
+  },
+  {
+   "id": "c10",
+   "texto": "Que você encontre força e paz para dar o próximo passo.",
+   "pausa": 1.1
+  },
+  {
+   "id": "c11",
+   "texto": "Se essa mensagem falou com você, compartilhe com alguém que também precise de um pouco de esperança.",
+   "pausa": 0.5
+  }
+ ]
+}

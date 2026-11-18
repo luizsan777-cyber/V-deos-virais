@@ -361,6 +361,22 @@ def sfx_metal(d=2.5):
     return norm(reverb(z, 2.4, 0.35, 3000), 0.95)
 
 
+def sfx_chuva(d=42.0):
+    """Chuva leve e contínua (ruído filtrado + gotinhas), entra e sai suave."""
+    n = int(d * SR)
+    base = lp_rapido(hp_rapido(ruido(d), 500), 5200) * 0.22
+    t = np.arange(n) / SR
+    base *= (0.85 + 0.15 * np.sin(2 * np.pi * 0.07 * t)).astype(np.float32)
+    rng = np.random.default_rng(7)
+    gotas = np.zeros(n, np.float32)
+    for i in rng.integers(0, max(1, n - SR // 10), int(d * 14)):
+        g = bp_rapido(ruido(0.03), 2500 + rng.random() * 3000, 3.0) * env(int(0.03 * SR), 0.0005, 0.02, 6)
+        gotas[i:i + len(g)] += g[: n - i] * (0.15 + 0.25 * rng.random())
+    x = base + gotas
+    x *= np.minimum(1, np.minimum(t / 2.5, (d - t) / 4.0 + 1e-3)).astype(np.float32)
+    return norm(x, 0.7)
+
+
 SFX = {k[4:]: v for k, v in globals().items() if k.startswith("sfx_")}
 
 
@@ -408,6 +424,8 @@ def hat(d=0.05):
 
 
 def musica(humor: str, dur: float) -> np.ndarray:
+    if humor == "reflexao":
+        return musica_reflexao(dur)
     if humor == "synthwave":
         return musica_synthwave(dur)
     if humor == "synthwave_animado":
@@ -540,6 +558,48 @@ def musica_synthwave(dur: float, raiz: int = 57, bpm: float = 100, energia: bool
     t = t_(dur)
     ent, sai = (1.0, 2.0) if energia else (0.3, 1.5)
     out *= np.minimum(1, np.minimum(t / ent, (dur - t) / sai + 1e-3))
+    return norm(out, 0.8)
+
+
+def piano(m: float, d: float = 2.4) -> np.ndarray:
+    """Nota de piano sintetizada (harmônicos com decaimento, leve desafinação)."""
+    t = t_(d)
+    f = mtof(m)
+    x = np.zeros(len(t), np.float32)
+    for k, (a, dec) in enumerate([(1.0, 2.2), (0.45, 3.2), (0.22, 4.5), (0.12, 6.0), (0.06, 8.0)], start=1):
+        x += (a * np.sin(2 * np.pi * f * k * 1.0008 ** k * t) * np.exp(-t * dec)).astype(np.float32)
+    ataque = np.minimum(1, t / 0.006)
+    return (x * ataque * 0.5).astype(np.float32)
+
+
+def musica_reflexao(dur: float, raiz: int = 57, bpm: float = 66) -> np.ndarray:
+    """Trilha original suave para reflexão: piano em arpejo lento sobre pad (lá menor: Am F C G)."""
+    beat = 60 / bpm
+    n = int(dur * SR) + SR
+    out = np.zeros(n, np.float32)
+    acordes = [[0, 3, 7], [-4, 0, 3], [3, 7, 10], [-2, 2, 5]]
+    compasso = beat * 4
+
+    def soma(x, t0, g=1.0):
+        o = int(t0 * SR)
+        if o < n:
+            out[o:o + len(x)] += (x[: n - o] * g).astype(np.float32)
+
+    i = 0
+    while i * compasso < dur + 1:
+        ac = acordes[i % 4]
+        t0 = i * compasso
+        soma(pad([raiz - 12 + a for a in ac], compasso + 1.5, 900), t0, 0.28)
+        soma(piano(raiz - 24 + ac[0], 3.5), t0, 0.35)
+        padrao = [ac[0], ac[1] + 12, ac[2], ac[1] + 12, ac[0] + 12, ac[2], ac[1] + 12, ac[2] + 12]
+        for k, m in enumerate(padrao):
+            soma(piano(raiz + m - 12, 2.4), t0 + k * beat / 2, 0.22 if k % 2 == 0 else 0.16)
+        if i % 2 == 1:  # melodia simples e espaçada
+            soma(piano(raiz + 12 + ac[2], 3.0), t0 + beat * 2, 0.14)
+        i += 1
+    out = reverb(out, 3.0, 0.4, 4000)[: int(dur * SR)]
+    t = t_(dur)
+    out *= np.minimum(1, np.minimum(t / 2.0, (dur - t) / 3.0 + 1e-3))
     return norm(out, 0.8)
 
 
