@@ -51,3 +51,42 @@ Voz por fala (conversa); fala sem marcação = narração padrão do episódio:
 `python3 ferramentas/voz.py projetos/teste-vozes-herois` → `projetos/teste-vozes-herois/build/narracao.wav`.
 Em CPU, a primeira criação de cada referência é lenta; as seguintes reutilizam o arquivo.
 No GitHub Actions, o workflow *Renderizar vídeo* instala `qwen-tts` só quando o projeto usa vozes por personagem.
+
+## Sotaque brasileiro e fala informal (correção de 19/11)
+
+O primeiro teste soou com sotaque de Portugal. Correções:
+
+1. **Direção de voz** (`DIRECAO_PTBR`): pede sotaque brasileiro (São Paulo/Rio), "ti/di" como "tchi/dji", "e" final
+   como "i", "o" final como "u", vogais abertas, entonação brasileira, e proíbe sotaque de Portugal.
+2. **Texto de referência em português brasileiro informal** — a voz clonada herda o jeito de falar da referência:
+   "Ô, peraí, rapidinho. Cê tá ouvindo isso? Tem gente lá do outro lado da rua, de verdade. Fica tranquilo, tá?
+   Quando a luz da cidade acender de noite, a gente vai sacar quem chegou."
+3. **Escolha de ouvido**: `python3 ferramentas/vozes_herois_candidatos.py <pasta> dc/batman=Batman ... --tomadas 3`
+   gera 3 vozes por personagem; fixe a escolhida com `"vozes_herois": {"tomadas": {"dc/batman": 2}}`.
+
+### Escreva as falas dos personagens no informal brasileiro
+
+O texto da fala é o que é dito e o que vira legenda. Prefira as formas do dia a dia (base: gírias e reduções
+registradas em dicionários informais brasileiros):
+
+| formal | informal brasileiro |
+|---|---|
+| estou / está / estava | tô / tá / tava |
+| você / vocês | cê / vocês (use "cê" só em fala de personagem) |
+| espere aí / espera um pouco | peraí |
+| para | pra |
+| nós | a gente |
+| entender / perceber | sacar ("saquei") |
+| não estou nem aí | tô nem aí |
+| combinado / tudo certo | beleza / fechou |
+| vamos | bora |
+| interjeições | pô, ô, opa, nossa, caramba |
+
+Evite construções lusitanas: "estou a fazer" (use "tô fazendo"), "tu fazes" (use "você faz"), "fixe", "giro",
+"rapariga", "autocarro", "ecrã", "telemóvel".
+
+Fontes consultadas: [Dicio — gírias e expressões regionais](https://www.dicio.com.br/girias-e-expressoes-regionais-brasileiras/),
+[Toda Matéria — gírias de cada região](https://www.todamateria.com.br/girias-de-cada-regiao-do-brasil-dicionario-regionalista/),
+[CIEE — Brazilian Portuguese slang](https://www.ciee.org/go-abroad/college-study-abroad/blog/top-10-brazilian-portuguese-slang-words-phrases).
+O site dicionarioinformal.com.br está bloqueado na rede desta sessão (precisa ser liberado nas configurações de rede
+do ambiente para consulta direta).

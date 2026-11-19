@@ -29,10 +29,19 @@ import soundfile as sf
 MODELO_DESIGN = "Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign"
 MODELO_BASE = "Qwen/Qwen3-TTS-12Hz-1.7B-Base"
 IDIOMA = "Portuguese"
-DIRECAO_PTBR = "Original voice speaking native Brazilian Portuguese, natural and intelligible. "
+# Sotaque: o pacote original dizia só "native Brazilian Portuguese" e o resultado soou lusitano. A direção agora
+# descreve a pronúncia brasileira e proíbe a de Portugal, e o texto de referência é português brasileiro informal
+# (formas como "tô", "cê", "tá", "peraí", "sacar", "a gente") cheio de palavras em que o sotaque aparece:
+# "noite" (noitchi), "cidade"/"verdade" (cidadji), "de" (dji), "gente", "tranquilo".
+DIRECAO_PTBR = (
+    "Original voice. Speaks Brazilian Portuguese from Brazil with a clear Brazilian accent (São Paulo / Rio), "
+    "casual everyday Brazilian speech: 'ti' and 'di' pronounced 'tchi' and 'dji', unstressed final 'e' sounds "
+    "like 'i' and final 'o' like 'u', full open vowels, warm melodic Brazilian intonation. "
+    "Absolutely not a European Portuguese or Portugal accent. "
+)
 TEXTO_REFERENCIA = (
-    "É melhor esperar um instante. Ouvi passos do outro lado da rua. "
-    "Quando a luz acender, a gente vai saber quem chegou."
+    "Ô, peraí, rapidinho. Cê tá ouvindo isso? Tem gente lá do outro lado da rua, de verdade. "
+    "Fica tranquilo, tá? Quando a luz da cidade acender de noite, a gente vai sacar quem chegou."
 )
 AQUI = Path(__file__).parent
 CATALOGO = AQUI / "perfis_vozes_herois.json"
@@ -52,8 +61,15 @@ def carregar_perfis(cfg: dict) -> dict:
     return perfis
 
 
-def semente(id_voz: str) -> int:
-    return int(hashlib.sha256(id_voz.encode()).hexdigest()[:6], 16)
+def semente(id_voz: str, tomada: int = 1) -> int:
+    """Tomada 1 = semente-base do ID; tomadas 2, 3… geram outras vozes candidatas com a mesma descrição."""
+    return int(hashlib.sha256(id_voz.encode()).hexdigest()[:6], 16) + (tomada - 1) * 7919
+
+
+def caminho_referencia(pasta: Path, id_voz: str, direcao: str, tomada: int = 1) -> Path:
+    identidade = "\n".join((id_voz, MODELO_DESIGN, IDIOMA, TEXTO_REFERENCIA, direcao) + ((f"tomada {tomada}",) if tomada > 1 else ()))
+    marca = hashlib.sha256(identidade.encode()).hexdigest()[:18]
+    return pasta / f"{id_voz.replace('/', '_')}-{marca}.wav"
 
 
 class _Servidor:
@@ -76,9 +92,22 @@ class _Servidor:
                 return linha
 
     def pedir(self, **pedido) -> Path:
+        # um modelo de 1.7B por processo: ao trocar de etapa (design -> clone), reinicia o servidor para devolver
+        # toda a RAM do modelo anterior (com os dois carregados o processo passou de 13 GB e foi morto por falta de memória)
+        if getattr(self, "op", None) not in (None, pedido["op"]):
+            self.fechar()
+            self.__init__()
+        self.op = pedido["op"]
         self.p.stdin.write(json.dumps(pedido, ensure_ascii=False) + "\n")
         self.p.stdin.flush()
         return Path(self._esperar("ok ")[3:].strip())
+
+    def fechar(self):
+        self.p.stdin.close()
+        try:
+            self.p.wait(timeout=60)
+        except subprocess.TimeoutExpired:
+            self.p.kill()
 
 
 class VozesHerois:
@@ -87,6 +116,10 @@ class VozesHerois:
             raise ValueError("vozes_herois deve ser um objeto no projeto.json.")
         perfis = carregar_perfis(cfg)
         self.padrao = cfg.get("narrar_com", "narrador")
+        tomadas = cfg.get("tomadas", {})  # voz candidata escolhida de ouvido: {"dc/batman": 2}
+        if not isinstance(tomadas, dict) or any(not isinstance(v, int) or v < 1 for v in tomadas.values()):
+            raise ValueError("vozes_herois.tomadas deve mapear ID para número de tomada (1, 2, 3…).")
+        self.tomadas = {}
         self.reamostrar = reamostrar
         self._srv = None
         self.td = Path(tempfile.mkdtemp())
@@ -102,9 +135,8 @@ class VozesHerois:
         pendentes = {}
         for id_voz in ids:
             direcao = DIRECAO_PTBR + perfis[id_voz]["direcao"]
-            identidade = "\n".join((id_voz, MODELO_DESIGN, IDIOMA, TEXTO_REFERENCIA, direcao))
-            marca = hashlib.sha256(identidade.encode()).hexdigest()[:18]
-            caminho = pasta / f"{id_voz.replace('/', '_')}-{marca}.wav"
+            self.tomadas[id_voz] = tomadas.get(id_voz, 1)
+            caminho = caminho_referencia(pasta, id_voz, direcao, self.tomadas[id_voz])
             self.referencias[id_voz] = caminho
             self.direcoes[id_voz] = direcao
             if caminho.is_file() and sf.info(caminho).frames > 0:
@@ -133,7 +165,7 @@ class VozesHerois:
     def criar_referencias(self, pendentes):
         for id_voz, direcao in pendentes.items():
             print(f"[voz] criando referência sintética de {id_voz} (VoiceDesign)…", flush=True)
-            tmp = self.srv.pedir(op="design", texto=TEXTO_REFERENCIA, instrucao=direcao, seed=semente(id_voz),
+            tmp = self.srv.pedir(op="design", texto=TEXTO_REFERENCIA, instrucao=direcao, seed=semente(id_voz, self.tomadas[id_voz]),
                                  saida=str(self.td / f"ref_{id_voz.replace('/', '_')}.wav"))
             shutil.move(str(tmp), self.referencias[id_voz])
 
@@ -143,12 +175,13 @@ class VozesHerois:
         for id_voz, cam in self.referencias.items():
             man[id_voz] = {"arquivo": cam.name, "sha256": hashlib.sha256(cam.read_bytes()).hexdigest(),
                            "segundos": round(sf.info(cam).duration, 2), "direcao": self.direcoes[id_voz],
-                           "modelo_design": MODELO_DESIGN, "modelo_clone": MODELO_BASE, "semente": semente(id_voz)}
+                           "modelo_design": MODELO_DESIGN, "modelo_clone": MODELO_BASE, "tomada": self.tomadas[id_voz],
+                           "semente": semente(id_voz, self.tomadas[id_voz]), "texto_referencia": TEXTO_REFERENCIA}
         MANIFESTO.write_text(json.dumps(dict(sorted(man.items())), ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
 
     def falar(self, id_voz, texto, seed=None):
         self.n += 1
         out = self.srv.pedir(op="clone", texto=texto, ref_audio=str(self.referencias[id_voz]), ref_texto=TEXTO_REFERENCIA,
-                             seed=seed if seed is not None else semente(id_voz), saida=str(self.td / f"f{self.n}.wav"))
+                             seed=seed if seed is not None else semente(id_voz, self.tomadas[id_voz]), saida=str(self.td / f"f{self.n}.wav"))
         a, sr = sf.read(out, dtype="float32")
         return self.reamostrar(a if a.ndim == 1 else a.mean(1), sr)
