@@ -1,0 +1,14 @@
+{
+  "titulo": "Teste de áudio — vozes por personagem (Batman, Homem-Aranha, Mulher-Maravilha, Ghost-Spider)",
+  "perfil": "documentario",
+  "amostra_tecnica": true,
+  "inicio_s": 0.25,
+  "fim_s": 0.6,
+  "vozes_herois": {},
+  "falas": [
+    {"id": "a", "voz_personagem": "dc/batman", "texto": "A luz apagou. Espera. Escuta antes de abrir a porta.", "pausa": 0.35},
+    {"id": "b", "voz_personagem": "marvel/peter-parker", "texto": "Eu ia fazer isso. Só estava esperando você terminar de fazer suspense.", "pausa": 0.35},
+    {"id": "c", "voz_personagem": "dc/mulher-maravilha", "texto": "Eu fico com a passagem. Avisem quando encontrarem a saída.", "pausa": 0.35},
+    {"id": "d", "voz_personagem": "marvel/gwen-stacy", "texto": "Achei uma janela. E, dessa vez, eu trouxe a lanterna."}
+  ]
+}

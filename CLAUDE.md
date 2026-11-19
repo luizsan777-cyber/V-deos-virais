@@ -27,5 +27,7 @@ Siga a skill `video-viral` (`.claude/skills/video-viral/SKILL.md`). Ela chama `r
 - Heróis Marvel/DC em 2D: skill OPCIONAL `herois-2d`, só sob pedido (`/herois-2d ...`). Fichas e planejador em
   `.claude/skills/herois-2d/`; boneco articulado em `projetos/herois_2d_kit/Heroi.tsx` (mesmo tipo `Pose` do kit);
   amostras técnicas em `projetos/teste-herois-*`. Não substitui o estilo, o motor nem a voz padrão.
+- Vozes por personagem (Marvel/DC): OPCIONAL, só sob pedido, via `vozes_herois` no projeto.json
+  (ver `docs/VOZES_HEROIS.md`). Sem isso, a narração padrão do episódio fica intacta.
 - HyperFrames é motor OPCIONAL (skill `hyperframes-video`): sempre com `HYPERFRAMES_NO_TELEMETRY=1 DO_NOT_TRACK=1`;
   nunca `publish`/`share`/`cloud`/recursos Pro ou HeyGen sem autorização (são externos/pagos).

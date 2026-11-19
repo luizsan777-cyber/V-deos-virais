@@ -91,16 +91,24 @@ jobs:
           cd engine && npm ci --no-audit --no-fund && npx remotion browser ensure
 
       - name: Motores de voz pesados (só se escolhidos)
+        env:
+          PROJETO_VOZES: ${{ matrix.projeto }}
         run: |
+          # vozes por personagem (complemento Vozes Heróis): só se o projeto marcar falas com voz_personagem/narrar_com
+          HEROIS=$(python -c 'import json, os; from pathlib import Path; p = json.loads((Path("projetos") / os.environ["PROJETO_VOZES"] / "projeto.json").read_text()); c = p.get("vozes_herois"); print("sim" if isinstance(c, dict) and any(f.get("voz_personagem", c.get("narrar_com", "narrador")) != "narrador" for f in p["falas"]) else "nao")')
+          echo "Vozes por personagem: $HEROIS"
           M="${VOZ_MOTOR:-$(python -c "import json;print(json.load(open('projetos/${{ matrix.projeto }}/projeto.json')).get('voz',{}).get('motor','kokoro'))")}"
           echo "Motor: $M"
           if [ "$M" = "chatterbox" ]; then
             pip install -q torch==2.6.0 torchaudio==2.6.0 --index-url https://download.pytorch.org/whl/cpu
             pip install -q chatterbox-tts
           fi
-          if [ "$M" = "qwen3" ]; then
+          if [ "$M" = "qwen3" ] || [ "$HEROIS" = "sim" ]; then
             pip install -q torch torchaudio --index-url https://download.pytorch.org/whl/cpu
             pip install -q qwen-tts
+          fi
+          if [ "$HEROIS" = "sim" ]; then
+            echo "QWEN3_PY=$(command -v python)" >> "$GITHUB_ENV"
           fi
 
       - name: Motor cartoon (skill cartoon-audio-short), só se o projeto usar

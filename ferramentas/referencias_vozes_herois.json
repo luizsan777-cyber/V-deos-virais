@@ -1,0 +1,38 @@
+{
+ "dc/batman": {
+  "arquivo": "dc_batman-8d39893831b361d6fc.wav",
+  "sha256": "1cd0a99cca94e071967e0bcf2b47837693bfbc842d115f4b9b7a77e5a6c3100c",
+  "segundos": 8.08,
+  "direcao": "Original voice speaking native Brazilian Portuguese, natural and intelligible. Adult male, low baritone with a dry textured edge, contained, short pauses, clear diction, no whisper or growl",
+  "modelo_design": "Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign",
+  "modelo_clone": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
+  "semente": 12182389
+ },
+ "dc/mulher-maravilha": {
+  "arquivo": "dc_mulher-maravilha-66d5d1fa823dbbe6b4.wav",
+  "sha256": "5341d8ba7722a5ec107fae41823c6dad451b5ebf260121076eeca5b55ac3e7e9",
+  "segundos": 9.04,
+  "direcao": "Original voice speaking native Brazilian Portuguese, natural and intelligible. Adult female, rich lower mezzo, open steady resonance, firm consonants and warm authority",
+  "modelo_design": "Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign",
+  "modelo_clone": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
+  "semente": 6182003
+ },
+ "marvel/gwen-stacy": {
+  "arquivo": "marvel_gwen-stacy-a60e97d6d5109cdcc1.wav",
+  "sha256": "26bc00fd1512332c4d5030fa059f472304a8d3bd08a45a4dc73ec699656f222e",
+  "segundos": 8.0,
+  "direcao": "Original voice speaking native Brazilian Portuguese, natural and intelligible. Young adult female, airy bright alto, direct but lightly playful, clean consonants and supple phrasing",
+  "modelo_design": "Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign",
+  "modelo_clone": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
+  "semente": 4001702
+ },
+ "marvel/peter-parker": {
+  "arquivo": "marvel_peter-parker-211eeec4de6914b748.wav",
+  "sha256": "9f1bd3ce711cf91fafc233e84f484e762d4b16abd3984ec3fc25c26b713dc9de",
+  "segundos": 7.44,
+  "direcao": "Original voice speaking native Brazilian Portuguese, natural and intelligible. Young adult male, clear light tenor, conversational and curious, quick witty turns with a relaxed finish",
+  "modelo_design": "Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign",
+  "modelo_clone": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
+  "semente": 13999410
+ }
+}

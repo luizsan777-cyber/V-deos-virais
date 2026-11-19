@@ -1,0 +1,347 @@
+{
+  "marvel/peter-parker": {
+    "nome": "Homem-Aranha",
+    "versao": "Peter Parker, traje clássico dos quadrinhos",
+    "direcao": "Young adult male, clear light tenor, conversational and curious, quick witty turns with a relaxed finish"
+  },
+  "marvel/miles-morales": {
+    "nome": "Homem-Aranha",
+    "versao": "Miles Morales, traje preto e vermelho dos quadrinhos",
+    "direcao": "Young male, warm mid-tenor, gentle hesitation giving way to quiet confidence, rhythmic without rushing"
+  },
+  "marvel/gwen-stacy": {
+    "nome": "Ghost-Spider",
+    "versao": "Gwen Stacy, traje com capuz",
+    "direcao": "Young adult female, airy bright alto, direct but lightly playful, clean consonants and supple phrasing"
+  },
+  "marvel/miguel-ohara": {
+    "nome": "Homem-Aranha 2099",
+    "versao": "Miguel O’Hara, traje azul e vermelho",
+    "direcao": "Adult male, dark firm baritone, clipped consonants, tense restraint and deliberate short pauses"
+  },
+  "marvel/eddie-brock": {
+    "nome": "Venom",
+    "versao": "Eddie Brock, simbionte de traço clássico",
+    "direcao": "Adult male, rough low baritone, slightly breathy weight, measured sentences with dry irony"
+  },
+  "marvel/goblin-verde": {
+    "nome": "Duende Verde",
+    "versao": "Norman Osborn, traje clássico",
+    "direcao": "Mature male, wiry upper baritone, sly unstable pitch rises and a precise dry delivery"
+  },
+  "marvel/doutor-octopus": {
+    "nome": "Doutor Octopus",
+    "versao": "Otto Octavius, quadrinhos",
+    "direcao": "Mature male, rounded middle baritone, methodical phrasing, controlled irritation and crisp diction"
+  },
+  "marvel/homem-de-ferro": {
+    "nome": "Homem de Ferro",
+    "versao": "Tony Stark, armadura vermelha e dourada",
+    "direcao": "Adult male, bright cutting middle register, dry humor, quick clauses and lucid inflection"
+  },
+  "marvel/capitao-america": {
+    "nome": "Capitão América",
+    "versao": "Steve Rogers, traje inspirado nos quadrinhos clássicos",
+    "direcao": "Adult male, rounded steady baritone, direct plainspoken delivery, sincere and unhurried"
+  },
+  "marvel/sam-wilson": {
+    "nome": "Capitão América",
+    "versao": "Sam Wilson, traje com asas e escudo",
+    "direcao": "Adult male, warm open tenor, approachable confident speech, responsive rhythm with a gentle smile"
+  },
+  "marvel/thor": {
+    "nome": "Thor",
+    "versao": "Thor, traje clássico dos quadrinhos",
+    "direcao": "Adult male, resonant broad bass-baritone, open vowels, generous warmth and bold measured emphasis"
+  },
+  "marvel/loki": {
+    "nome": "Loki",
+    "versao": "Loki, quadrinhos com elmo de chifres",
+    "direcao": "Adult male, silky mid-low register, precise diction, quiet amusement and lightly musical phrasing"
+  },
+  "marvel/hulk": {
+    "nome": "Hulk",
+    "versao": "Bruce Banner, Hulk verde dos quadrinhos",
+    "direcao": "Adult male, very low chest voice, few strong syllables, heavy pauses and no continuous growling"
+  },
+  "marvel/viuva-negra": {
+    "nome": "Viúva Negra",
+    "versao": "Natasha Romanoff, traje preto dos quadrinhos",
+    "direcao": "Adult female, smoky low alto, dry matter-of-fact phrasing, close and controlled projection"
+  },
+  "marvel/gaviao-arqueiro": {
+    "nome": "Gavião Arqueiro",
+    "versao": "Clint Barton, visual roxo sem capuz",
+    "direcao": "Adult male, lightly raspy middle register, practical and amused, soft phrase endings"
+  },
+  "marvel/pantera-negra": {
+    "nome": "Pantera Negra",
+    "versao": "T’Challa, traje dos quadrinhos",
+    "direcao": "Adult male, composed deep baritone, elegant even pace, warmth and lucid consonants"
+  },
+  "marvel/doutor-estranho": {
+    "nome": "Doutor Estranho",
+    "versao": "Stephen Strange, visual com manto vermelho",
+    "direcao": "Mature male, resonant mid-low register, analytical cadence with a subtly skeptical edge"
+  },
+  "marvel/feiticeira-escarlate": {
+    "nome": "Feiticeira Escarlate",
+    "versao": "Wanda Maximoff, traje vermelho dos quadrinhos",
+    "direcao": "Adult female, dusky mezzo, intimate restraint with emotion rising gradually at the ends"
+  },
+  "marvel/capita-marvel": {
+    "nome": "Capitã Marvel",
+    "versao": "Carol Danvers, traje azul com faixa vermelha",
+    "direcao": "Adult female, firm open mezzo, clear forward sound, calm confidence with lively emphasis"
+  },
+  "marvel/ms-marvel": {
+    "nome": "Ms. Marvel",
+    "versao": "Kamala Khan, traje clássico dos quadrinhos",
+    "direcao": "Young female, bright natural soprano, excited bursts balanced with conversational breathing"
+  },
+  "marvel/demolidor": {
+    "nome": "Demolidor",
+    "versao": "Matt Murdock, traje vermelho clássico",
+    "direcao": "Adult male, focused mid-low voice, quiet earnest urgency, soft starts and firm stops"
+  },
+  "marvel/jessica-jones": {
+    "nome": "Jessica Jones",
+    "versao": "Jessica Jones, roupa civil investigativa",
+    "direcao": "Adult female, husky lower midrange, skeptical deadpan and dry short sentences"
+  },
+  "marvel/wolverine": {
+    "nome": "Wolverine",
+    "versao": "Logan, uniforme amarelo e azul clássico",
+    "direcao": "Mature male, rough compact low register, gravel on stressed words, blunt and clearly intelligible"
+  },
+  "marvel/tempestade": {
+    "nome": "Tempestade",
+    "versao": "Ororo Munroe, traje branco dos quadrinhos",
+    "direcao": "Mature female, spacious alto resonance, poised and warm, deliberate pauses and open vowels"
+  },
+  "marvel/ciclope": {
+    "nome": "Ciclope",
+    "versao": "Scott Summers, traje clássico azul e amarelo",
+    "direcao": "Adult male, focused medium tenor, orderly functional phrasing and contained tension"
+  },
+  "marvel/jean-grey": {
+    "nome": "Jean Grey",
+    "versao": "Jean Grey, traje Fênix verde e dourado",
+    "direcao": "Adult female, warm round mezzo, attentive and reassuring with fluid changes in intensity"
+  },
+  "marvel/magneto": {
+    "nome": "Magneto",
+    "versao": "Erik Lehnsherr, visual vermelho e roxo clássico",
+    "direcao": "Older male, dark focused baritone, precise rhetorical cadence, solemn with measured force"
+  },
+  "marvel/deadpool": {
+    "nome": "Deadpool",
+    "versao": "Wade Wilson, traje vermelho e preto dos quadrinhos",
+    "direcao": "Adult male, lively mid-high placement, wry side comments and changing emphasis, intelligible pace"
+  },
+  "marvel/rocket": {
+    "nome": "Rocket Raccoon",
+    "versao": "Rocket, Guardiões da Galáxia",
+    "direcao": "Adult male, narrow raspy tenor, restless bite and quick dry pauses without squeaking"
+  },
+  "marvel/groot": {
+    "nome": "Groot",
+    "versao": "Groot adulto, Guardiões da Galáxia",
+    "direcao": "Adult male, low rounded bass, warm grain and a patient rhythm with intelligible vowels"
+  },
+  "marvel/coisa": {
+    "nome": "Coisa",
+    "versao": "Ben Grimm, Quarteto Fantástico",
+    "direcao": "Mature male, broad gravelly baritone, grounded friendly phrasing with a little exasperation"
+  },
+  "marvel/mulher-invisivel": {
+    "nome": "Mulher Invisível",
+    "versao": "Sue Storm, Quarteto Fantástico",
+    "direcao": "Adult female, clear mid-low mezzo, patient precision and soft warmth with decisive endings"
+  },
+  "marvel/tocha-humana": {
+    "nome": "Tocha Humana",
+    "versao": "Johnny Storm, Quarteto Fantástico",
+    "direcao": "Young adult male, bright forward tenor, teasing energy and rhythmic lifts"
+  },
+  "marvel/senhor-fantastico": {
+    "nome": "Senhor Fantástico",
+    "versao": "Reed Richards, Quarteto Fantástico",
+    "direcao": "Adult male, clean rounded tenor, thoughtful technical diction and a lightly distracted cadence"
+  },
+  "marvel/doutor-destino": {
+    "nome": "Doutor Destino",
+    "versao": "Victor von Doom, armadura clássica",
+    "direcao": "Adult male, solemn low baritone, exact articulation and formal pacing without metallic distortion"
+  },
+  "marvel/thanos": {
+    "nome": "Thanos",
+    "versao": "Thanos, traje clássico dos quadrinhos",
+    "direcao": "Mature male, very low smooth bass, broad resonance, quiet certainty and long deliberate phrasing"
+  },
+  "dc/batman": {
+    "nome": "Batman",
+    "versao": "Bruce Wayne, direção 2D noir",
+    "direcao": "Adult male, low baritone with a dry textured edge, contained, short pauses, clear diction, no whisper or growl"
+  },
+  "dc/superman": {
+    "nome": "Superman",
+    "versao": "Clark Kent, traje clássico",
+    "direcao": "Adult male, warm open mid-baritone, reassuring brightness and confident unhurried phrasing"
+  },
+  "dc/supergirl": {
+    "nome": "Supergirl",
+    "versao": "Kara, traje com capa dos quadrinhos",
+    "direcao": "Young adult female, clear high mezzo, direct and hopeful, light lift at the end of clauses"
+  },
+  "dc/mulher-maravilha": {
+    "nome": "Mulher-Maravilha",
+    "versao": "Diana, visual clássico de quadrinhos",
+    "direcao": "Adult female, rich lower mezzo, open steady resonance, firm consonants and warm authority"
+  },
+  "dc/flash-barry": {
+    "nome": "Flash",
+    "versao": "Barry Allen, vermelho e dourado clássico",
+    "direcao": "Young adult male, clean middle tenor, curious and focused, light quick phrasing with breathing room"
+  },
+  "dc/flash-wally": {
+    "nome": "Flash",
+    "versao": "Wally West, variante vermelha dos quadrinhos",
+    "direcao": "Young adult male, brighter high tenor, playful pitch turns and friendly conversational energy"
+  },
+  "dc/lanterna-hal": {
+    "nome": "Lanterna Verde",
+    "versao": "Hal Jordan, traje da Tropa clássico",
+    "direcao": "Adult male, forward medium baritone, spirited confidence and a lightly cheeky edge"
+  },
+  "dc/lanterna-john": {
+    "nome": "Lanterna Verde",
+    "versao": "John Stewart, visual 2D de quadrinhos",
+    "direcao": "Adult male, grounded lower middle register, economical cadence, firm and composed"
+  },
+  "dc/aquaman": {
+    "nome": "Aquaman",
+    "versao": "Arthur Curry, traje clássico com escamas",
+    "direcao": "Adult male, broad textured bass-baritone, direct statements and easy relaxed warmth"
+  },
+  "dc/ciborgue": {
+    "nome": "Cyborg",
+    "versao": "Victor Stone, visual de quadrinhos",
+    "direcao": "Young adult male, rounded medium register, relaxed youthful clarity, lightly emphatic without effects"
+  },
+  "dc/shazam": {
+    "nome": "Shazam",
+    "versao": "Billy Batson transformado, visual clássico",
+    "direcao": "Adult male, full bright baritone, sincere youthful enthusiasm with audible smiles and grounded breath"
+  },
+  "dc/cacador-marte": {
+    "nome": "Caçador de Marte",
+    "versao": "J’onn J’onzz, visual clássico",
+    "direcao": "Adult male, smooth low bass, reflective pauses, gentle even energy and soft precise articulation"
+  },
+  "dc/asa-noturna": {
+    "nome": "Asa Noturna",
+    "versao": "Dick Grayson, traje preto e azul",
+    "direcao": "Young adult male, supple middle tenor, friendly and assured, neat transitions and gentle humor"
+  },
+  "dc/robin-damian": {
+    "nome": "Robin",
+    "versao": "Damian Wayne, traje com capuz",
+    "direcao": "Young male, lean mid-high register, precise consonants and impatient clipped phrasing"
+  },
+  "dc/batgirl-barbara": {
+    "nome": "Batgirl",
+    "versao": "Barbara Gordon, traje clássico",
+    "direcao": "Young adult female, clear forward mezzo, investigative curiosity, focused rhythm and bright vowels"
+  },
+  "dc/batwoman": {
+    "nome": "Batwoman",
+    "versao": "Kate Kane, traje preto e vermelho",
+    "direcao": "Adult female, cool dark alto, understated decisiveness and clipped clear endings"
+  },
+  "dc/mulher-gato": {
+    "nome": "Mulher-Gato",
+    "versao": "Selina Kyle, traje com costuras e óculos conforme referência",
+    "direcao": "Adult female, warm smoky mezzo, softly amused, deliberate consonants and agile pitch"
+  },
+  "dc/coringa": {
+    "nome": "Coringa",
+    "versao": "Coringa, traje clássico dos quadrinhos",
+    "direcao": "Adult male, agile sharp tenor, alternating quiet amusement and precise emphasis without shrieking"
+  },
+  "dc/harley-quinn": {
+    "nome": "Arlequina",
+    "versao": "Harley Quinn, traje clássico de boba da corte",
+    "direcao": "Adult female, bright bouncing high mezzo, quick changing emphasis and articulate comic timing"
+  },
+  "dc/hera-venenosa": {
+    "nome": "Hera Venenosa",
+    "versao": "Pamela Isley, visuais botânicos dos quadrinhos",
+    "direcao": "Adult female, smooth low alto, serene melodic pacing and restrained intensity"
+  },
+  "dc/bane": {
+    "nome": "Bane",
+    "versao": "Bane, direção de quadrinhos Knightfall",
+    "direcao": "Adult male, rounded heavy bass, patient firm diction with dense chest resonance, no filter"
+  },
+  "dc/charada": {
+    "nome": "Charada",
+    "versao": "Edward Nygma, terno verde de quadrinhos",
+    "direcao": "Adult male, clear high baritone, theatrical curiosity, crisp questions and pointed pauses"
+  },
+  "dc/arqueiro-verde": {
+    "nome": "Arqueiro Verde",
+    "versao": "Oliver Queen, traje com capuz",
+    "direcao": "Adult male, dry middle baritone, pragmatic informality and lightly sardonic inflection"
+  },
+  "dc/canario-negro": {
+    "nome": "Canário Negro",
+    "versao": "Dinah Lance, diretriz de quadrinhos",
+    "direcao": "Adult female, focused mid alto, assertive projection and a lightly smoky conversational tone"
+  },
+  "dc/zatanna": {
+    "nome": "Zatanna",
+    "versao": "Zatanna Zatara, traje de palco clássico",
+    "direcao": "Adult female, polished lyrical mezzo, deliberate playful timing and precise diction"
+  },
+  "dc/raven": {
+    "nome": "Ravena",
+    "versao": "Rachel Roth, direção dos Jovens Titãs",
+    "direcao": "Young adult female, muted deep alto, understated calm with short and even phrasing"
+  },
+  "dc/estelar": {
+    "nome": "Estelar",
+    "versao": "Koriand’r, quadrinhos dos Titãs",
+    "direcao": "Young adult female, warm bright mezzo with rounded vowels, curious expressive pacing"
+  },
+  "dc/mutano": {
+    "nome": "Mutano",
+    "versao": "Garfield Logan, Jovens Titãs",
+    "direcao": "Young male, light mid-high voice, nimble comic timing and easy familiar speech"
+  },
+  "dc/exterminador": {
+    "nome": "Exterminador",
+    "versao": "Slade Wilson, traje dos quadrinhos",
+    "direcao": "Mature male, dry weathered low register, clipped and methodical with quiet conviction"
+  },
+  "dc/lex-luthor": {
+    "nome": "Lex Luthor",
+    "versao": "Lex Luthor, direção com armadura de quadrinhos",
+    "direcao": "Adult male, smooth medium-low baritone, crisp calculated delivery and restrained self-assurance"
+  },
+  "dc/darkseid": {
+    "nome": "Darkseid",
+    "versao": "Darkseid, Apokolips dos quadrinhos",
+    "direcao": "Adult male, darkest bass register, minimal pitch movement, slow and imposing but intelligible"
+  },
+  "dc/senhor-destino": {
+    "nome": "Senhor Destino",
+    "versao": "Kent Nelson, elmo dourado clássico",
+    "direcao": "Mature male, airy resonant bass-baritone, careful open vowels and ceremonial rhythm without echo"
+  },
+  "dc/constantine": {
+    "nome": "John Constantine",
+    "versao": "John Constantine, visual dos quadrinhos",
+    "direcao": "Adult male, smoky mid-low register, sardonic informality, lean phrasing and dry breath"
+  }
+}

@@ -441,8 +441,17 @@ def gerar(projeto_dir: Path) -> dict:
     voz = os.environ.get("VOZ_NOME") or cfg.get("voz")
     if motor_nome != cfg.get("motor", "kokoro") and not os.environ.get("VOZ_NOME"):
         voz = None
-    print(f"[voz] motor={motor_nome} voz={voz or perfil['vozes'].get(motor_nome)} perfil={perfil_nome}", flush=True)
-    motor = MOTORES[motor_nome](voz, perfil)
+    # vozes por personagem (complemento Vozes Heróis): só quando o projeto tem "vozes_herois"
+    vozes_herois = None
+    if "vozes_herois" in proj:
+        from vozes_herois import VozesHerois
+        vozes_herois = VozesHerois(proj["vozes_herois"], proj["falas"], CACHE, reamostrar)
+    usar_narrador = vozes_herois is None or any(vozes_herois.id_da_fala(f) == "narrador" for f in proj["falas"])
+    if usar_narrador:
+        print(f"[voz] motor={motor_nome} voz={voz or perfil['vozes'].get(motor_nome)} perfil={perfil_nome}", flush=True)
+    if vozes_herois is not None and vozes_herois.referencias:
+        print(f"[voz] Qwen3 por personagem: {', '.join(vozes_herois.referencias)}", flush=True)
+    motor = MOTORES[motor_nome](voz, perfil) if usar_narrador else None
 
     build = projeto_dir / "build"
     build.mkdir(exist_ok=True)
@@ -453,24 +462,15 @@ def gerar(projeto_dir: Path) -> dict:
     falas, palavras = [], []
     destaques = {limpar(d) for d in proj.get("destaques", [])}
     for i, fala in enumerate(proj["falas"]):
-        campo = getattr(motor, "campo_tts", None)  # motor com campo próprio não herda o ajuste "tts" do Kokoro
-        texto_tts = normalizar(fala.get(campo, fala["texto"]) if campo else fala.get("tts", fala["texto"]))
-        vel0 = getattr(motor, "vel", None)
-        if "velocidade" in fala and vel0 is not None:  # ritmo próprio desta fala (ex.: trecho mais sério)
-            motor.vel = fala["velocidade"]
-        par0 = dict(getattr(motor, "par", {}))
-        if "semente" in fala and hasattr(motor, "par"):  # tomada escolhida para esta fala
-            motor.par["seed"] = fala["semente"]
-        if "instrucao" in fala and hasattr(motor, "par") and "instrucao" in motor.par:  # tom desta fala (Qwen3)
-            motor.par["instrucao"] = fala["instrucao"]
-        if fala.get("audio_fixo"):  # tomada já aprovada pelo usuário: usa o arquivo exatamente como está
-            a = aparar(ler_audio(fala["audio_fixo"]))
+        id_voz = vozes_herois.id_da_fala(fala) if vozes_herois is not None else "narrador"
+        if id_voz != "narrador":
+            if fala.get("audio_fixo"):
+                a = aparar(ler_audio(fala["audio_fixo"]))
+            else:
+                a = vozes_herois.falar(id_voz, normalizar(fala.get("tts_personagem", fala["texto"])), fala.get("semente"))
+                a = aparar(acelerar(a, fala["velocidade"]) if "velocidade" in fala else a)
         else:
-            a = aparar(motor.falar(texto_tts))
-        if hasattr(motor, "par"):
-            motor.par = par0
-        if vel0 is not None:
-            motor.vel = vel0
+            a = falar_narrador(motor, fala)
         a = limitar_pausas(a, perfil.get("pausa_max_interna", 0.32))
         pw = tempos_palavras(fala["texto"], a, t)
         for p in pw:
@@ -482,8 +482,35 @@ def gerar(projeto_dir: Path) -> dict:
         pausa = fala.get("pausa", perfil["pausa_entre_falas"]) if i < len(proj["falas"]) - 1 else cauda
         pedacos += [a, np.zeros(int(pausa * SR), np.float32)]
         t += dur + pausa
-        print(f"[voz] {fala['id']}: {dur:.2f}s", flush=True)
+        print(f"[voz] {fala['id']}{'' if id_voz == 'narrador' else ' [' + id_voz + ']'}: {dur:.2f}s", flush=True)
+    return finalizar(build, pedacos, falas, palavras, proj, motor_nome if usar_narrador else "qwen3-design", perfil_nome,
+                     {f["id"]: vozes_herois.id_da_fala(f) for f in proj["falas"]} if vozes_herois is not None and vozes_herois.referencias else None)
 
+
+def falar_narrador(motor, fala) -> np.ndarray:
+    """Narração padrão do episódio (mesmo código de antes do complemento de vozes por personagem)."""
+    campo = getattr(motor, "campo_tts", None)  # motor com campo próprio não herda o ajuste "tts" do Kokoro
+    texto_tts = normalizar(fala.get(campo, fala["texto"]) if campo else fala.get("tts", fala["texto"]))
+    vel0 = getattr(motor, "vel", None)
+    if "velocidade" in fala and vel0 is not None:  # ritmo próprio desta fala (ex.: trecho mais sério)
+        motor.vel = fala["velocidade"]
+    par0 = dict(getattr(motor, "par", {}))
+    if "semente" in fala and hasattr(motor, "par"):  # tomada escolhida para esta fala
+        motor.par["seed"] = fala["semente"]
+    if "instrucao" in fala and hasattr(motor, "par") and "instrucao" in motor.par:  # tom desta fala (Qwen3)
+        motor.par["instrucao"] = fala["instrucao"]
+    if fala.get("audio_fixo"):  # tomada já aprovada pelo usuário: usa o arquivo exatamente como está
+        a = aparar(ler_audio(fala["audio_fixo"]))
+    else:
+        a = aparar(motor.falar(texto_tts))
+    if hasattr(motor, "par"):
+        motor.par = par0
+    if vel0 is not None:
+        motor.vel = vel0
+    return a
+
+
+def finalizar(build: Path, pedacos, falas, palavras, proj, motor_nome, perfil_nome, vozes_por_fala=None) -> dict:
     voz_audio = np.concatenate(pedacos)
     pico = np.abs(voz_audio).max()
     if pico > 0:
@@ -497,6 +524,8 @@ def gerar(projeto_dir: Path) -> dict:
         "motor": motor_nome, "perfil": perfil_nome,
         "falas": falas, "palavras": palavras, "sfx": sfx, "boca": envelope_boca(voz_audio),
     }
+    if vozes_por_fala:
+        tempos["vozes_por_fala"] = vozes_por_fala
     (build / "tempos.json").write_text(json.dumps(tempos, ensure_ascii=False), encoding="utf-8")
     print(f"[voz] total {duracao:.2f}s, {len(palavras)} palavras", flush=True)
     return tempos
