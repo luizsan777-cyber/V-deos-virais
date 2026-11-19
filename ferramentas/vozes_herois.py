@@ -116,6 +116,10 @@ class VozesHerois:
             raise ValueError("vozes_herois deve ser um objeto no projeto.json.")
         perfis = carregar_perfis(cfg)
         self.padrao = cfg.get("narrar_com", "narrador")
+        # idioma das FALAS (a referência continua a mesma, em pt-BR): "Portuguese" (padrão), "Spanish", "English"…
+        self.idioma = cfg.get("idioma", IDIOMA)
+        if not isinstance(self.idioma, str) or not self.idioma.strip():
+            raise ValueError("vozes_herois.idioma deve ser um nome de idioma do Qwen3, ex.: \"Spanish\".")
         tomadas = cfg.get("tomadas", {})  # voz candidata escolhida de ouvido: {"dc/batman": 2}
         if not isinstance(tomadas, dict) or any(not isinstance(v, int) or v < 1 for v in tomadas.values()):
             raise ValueError("vozes_herois.tomadas deve mapear ID para número de tomada (1, 2, 3…).")
@@ -180,8 +184,18 @@ class VozesHerois:
         MANIFESTO.write_text(json.dumps(dict(sorted(man.items())), ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
 
     def falar(self, id_voz, texto, seed=None):
+        # cache: mesma referência + texto + semente + idioma = mesmo áudio (a síntese é determinística);
+        # assim mudar só pausas/cenas não exige sintetizar de novo
+        seed = seed if seed is not None else semente(id_voz, self.tomadas[id_voz])
+        chave = hashlib.sha256("\n".join((self.referencias[id_voz].name, texto, str(seed), self.idioma)).encode()).hexdigest()[:24]
+        cache = self.referencias[id_voz].parent.parent / "falas_herois" / f"{chave}.wav"
+        if cache.is_file():
+            a, sr = sf.read(cache, dtype="float32")
+            return self.reamostrar(a if a.ndim == 1 else a.mean(1), sr)
         self.n += 1
-        out = self.srv.pedir(op="clone", texto=texto, ref_audio=str(self.referencias[id_voz]), ref_texto=TEXTO_REFERENCIA,
-                             seed=seed if seed is not None else semente(id_voz, self.tomadas[id_voz]), saida=str(self.td / f"f{self.n}.wav"))
+        out = self.srv.pedir(op="clone", texto=texto, idioma=self.idioma, ref_audio=str(self.referencias[id_voz]), ref_texto=TEXTO_REFERENCIA,
+                             seed=seed, saida=str(self.td / f"f{self.n}.wav"))
+        cache.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copy2(out, cache)
         a, sr = sf.read(out, dtype="float32")
         return self.reamostrar(a if a.ndim == 1 else a.mean(1), sr)

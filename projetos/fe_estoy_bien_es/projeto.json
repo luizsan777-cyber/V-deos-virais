@@ -1,0 +1,181 @@
+{
+  "titulo": "Si este video te encontró en un día de 'estoy bien'",
+  "idioma_video": "es-419",
+  "modo": "2d",
+  "estilo": "cinematico-urbano-latam",
+  "perfil": "biblico",
+  "inicio_s": 0.7,
+  "fim_s": 3.8,
+  "voz": {
+    "motor": "kokoro",
+    "voz": "pm_alex"
+  },
+  "vozes_herois": {
+    "narrar_com": "marvel/peter-parker",
+    "tomadas": {
+      "marvel/peter-parker": 2
+    },
+    "idioma": "Spanish"
+  },
+  "fontes": [
+    "Mateo 11:28 — 'Venid a mí todos los que estáis trabajados y cargados, y yo os haré descansar.' (Reina-Valera 1960) https://www.biblegateway.com/passage/?search=Mateo%2011%3A28&version=RVR1960"
+  ],
+  "falas": [
+    {
+      "id": "f01",
+      "texto": "Si este video te encontró en uno de esos días en los que dices ‘estoy bien’ para que nadie pregunte…",
+      "pausa": 0.65,
+      "semente": 14007531
+    },
+    {
+      "id": "f02",
+      "texto": "Dios también te ve ahí.",
+      "pausa": 1.0,
+      "semente": 14007430
+    },
+    {
+      "id": "f03",
+      "texto": "En Bogotá, alguien vuelve a casa repasando un error del trabajo.",
+      "pausa": 0.55,
+      "semente": 14007531
+    },
+    {
+      "id": "f04",
+      "texto": "En Lima, alguien lleva días escribiendo un mensaje que no se atreve a enviar.",
+      "pausa": 0.75,
+      "semente": 14007632
+    },
+    {
+      "id": "f05",
+      "texto": "Y quizá tú, en otra ciudad, también tienes algo que te cuesta decir en voz alta.",
+      "pausa": 1.1,
+      "semente": 14007430
+    },
+    {
+      "id": "f06",
+      "texto": "Jesús invitó a acercarse a quienes estaban cansados y llevaban una carga pesada.",
+      "pausa": 0.55,
+      "semente": 14007733
+    },
+    {
+      "id": "f07",
+      "texto": "Si hoy solo te salen cuatro palabras, empieza por ahí:",
+      "pausa": 0.45,
+      "semente": 14007834
+    },
+    {
+      "id": "f08",
+      "texto": "‘Jesús, ya me cansé’.",
+      "pausa": 1.1,
+      "semente": 14007531
+    },
+    {
+      "id": "f09",
+      "texto": "Puedes hablarle desde ese lugar, sin esconder lo que te duele.",
+      "pausa": 1.2,
+      "semente": 14007733
+    },
+    {
+      "id": "f10",
+      "texto": "Tal vez mañana todavía tengas algo difícil que resolver.",
+      "pausa": 0.65,
+      "semente": 14007531
+    },
+    {
+      "id": "f11",
+      "texto": "Por hoy, un paso puede ser suficiente.",
+      "pausa": 0.45
+    },
+    {
+      "id": "f12",
+      "texto": "Descansa un rato.",
+      "pausa": 0.8,
+      "semente": 14007531,
+      "tts_personagem": "Descan sa un rato."
+    },
+    {
+      "id": "f13",
+      "texto": "O escribe a alguien de confianza: ‘¿Tienes un minuto para hablar?’.",
+      "pausa": 1.0,
+      "semente": 14007531
+    },
+    {
+      "id": "f14",
+      "texto": "Y si quieres orar antes de dormir, puedes decir:",
+      "pausa": 0.7
+    },
+    {
+      "id": "f15",
+      "texto": "‘Jesús, acompáñame mientras encuentro las palabras’.",
+      "semente": 14007430
+    }
+  ],
+  "musica": {
+    "humor": "reflexao",
+    "volume_db": -2,
+    "automacao": [
+      {
+        "em": "t:0",
+        "db": 0
+      },
+      {
+        "em": "f07:fim",
+        "db": 0
+      },
+      {
+        "em": "f08-0.3",
+        "db": -9
+      },
+      {
+        "em": "f09:fim",
+        "db": -9
+      },
+      {
+        "em": "f10-0.4",
+        "db": 0
+      },
+      {
+        "em": "f15-0.2",
+        "db": -3
+      },
+      {
+        "em": "f15:fim+3",
+        "db": -3
+      }
+    ]
+  },
+  "sfx": [
+    {
+      "som": "metro",
+      "em": "t:0",
+      "vol": -2,
+      "dur": 8.4
+    },
+    {
+      "som": "chuva",
+      "em": "f03-0.4",
+      "vol": -10,
+      "dur": 4.6
+    },
+    {
+      "som": "cidade",
+      "em": "f06-0.5",
+      "vol": -12,
+      "dur": 4.0
+    },
+    {
+      "som": "whoosh",
+      "em": "f13:fim+0.05",
+      "vol": -14
+    },
+    {
+      "som": "notificacao",
+      "em": "f13:fim+0.35",
+      "vol": -16
+    }
+  ],
+  "notas": [
+    "Voz: 'Spider-Man — opción 2' (vozes_herois marvel/peter-parker, tomada 2) clonada em espanhol; semente por fala escolhida pela transcrição em espanhol.",
+    "f12: tts_personagem 'Descan sa' só para a pronúncia (a referência pt-BR nasaliza o 'n'); a legenda mostra 'Descansa'."
+  ]
+}

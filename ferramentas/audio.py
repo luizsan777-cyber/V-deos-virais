@@ -377,6 +377,27 @@ def sfx_chuva(d=42.0):
     return norm(x, 0.7)
 
 
+def sfx_metro(d=10.0):
+    """Interior de metrô em movimento: ronco grave, batidas ritmadas dos trilhos e chiado leve; entra já audível."""
+    n = int(d * SR)
+    t = np.arange(n) / SR
+    ronco = lp_rapido(ruido(d), 160) * 0.9 * (0.8 + 0.2 * np.sin(2 * np.pi * 0.31 * t)).astype(np.float32)
+    ar = bp_rapido(ruido(d), 900, 0.7) * 0.18
+    chiado = seno(1850, d) * 0.012 * (0.5 + 0.5 * np.sin(2 * np.pi * 0.13 * t))
+    batidas = np.zeros(n, np.float32)
+    rng = np.random.default_rng(11)
+    tk = 0.35
+    while tk < d - 0.3:
+        for dt in (0.0, 0.11):  # par de rodas sobre a junta do trilho
+            i = int((tk + dt) * SR)
+            g = lp_rapido(ruido(0.07), 700) * env(int(0.07 * SR), 0.001, 0.05, 5) * (0.9 + 0.2 * rng.random())
+            batidas[i:i + len(g)] += g[: n - i]
+        tk += 1.15 + 0.1 * rng.random()
+    x = ronco + ar + chiado.astype(np.float32) + batidas * 1.4
+    x *= np.minimum(1, np.minimum(t / 0.15 + 0.35, (d - t) / 2.5 + 1e-3)).astype(np.float32)
+    return norm(x, 0.6)
+
+
 SFX = {k[4:]: v for k, v in globals().items() if k.startswith("sfx_")}
 
 
@@ -691,7 +712,7 @@ def gerar(projeto_dir: Path) -> Path:
     for s in tempos["sfx"]:
         if s["som"] not in SFX:
             raise SystemExit(f"Efeito '{s['som']}' não existe. Disponíveis: {', '.join(sorted(SFX))}")
-        x = SFX[s["som"]]() * 10 ** (s.get("vol", 0) / 20)
+        x = (SFX[s["som"]](s["dur"]) if "dur" in s else SFX[s["som"]]()) * 10 ** (s.get("vol", 0) / 20)  # "dur" opcional
         i = max(0, int(s["t"] * SR))
         pista[i:i + len(x)] += x[: len(pista) - i]
     pista = pista[: int(dur * SR)]

@@ -53,7 +53,7 @@ for linha in sys.stdin:
             m = usar("clone")
             if p["ref_audio"] not in prompts:
                 prompts[p["ref_audio"]] = m.create_voice_clone_prompt(ref_audio=p["ref_audio"], ref_text=p["ref_texto"])
-            wavs, sr = m.generate_voice_clone(text=p["texto"], language=IDIOMA, voice_clone_prompt=prompts[p["ref_audio"]])
+            wavs, sr = m.generate_voice_clone(text=p["texto"], language=p.get("idioma", IDIOMA), voice_clone_prompt=prompts[p["ref_audio"]])
         a = np.asarray(wavs[0], dtype=np.float32).reshape(-1)
         if not a.size or not np.isfinite(a).all() or not np.any(a):
             raise RuntimeError("o modelo devolveu áudio vazio ou inválido")

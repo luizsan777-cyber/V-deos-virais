@@ -467,7 +467,10 @@ def gerar(projeto_dir: Path) -> dict:
             if fala.get("audio_fixo"):
                 a = aparar(ler_audio(fala["audio_fixo"]))
             else:
-                a = vozes_herois.falar(id_voz, normalizar(fala.get("tts_personagem", fala["texto"])), fala.get("semente"))
+                txt = fala.get("tts_personagem", fala["texto"])
+                if vozes_herois.idioma == "Portuguese":  # o normalizador é de pt-BR; outro idioma vai como escrito
+                    txt = normalizar(txt)
+                a = vozes_herois.falar(id_voz, txt, fala.get("semente"))
                 a = aparar(acelerar(a, fala["velocidade"]) if "velocidade" in fala else a)
         else:
             a = falar_narrador(motor, fala)
@@ -517,8 +520,8 @@ def finalizar(build: Path, pedacos, falas, palavras, proj, motor_nome, perfil_no
         voz_audio = voz_audio / pico * 0.89
     sf.write(build / "narracao.wav", voz_audio, SR, subtype="PCM_16")
     duracao = len(voz_audio) / SR
-    sfx = [{"som": s["som"], "t": round(resolver_ref(s["em"], falas, palavras), 3), "vol": s.get("vol", 0)}
-           for s in proj.get("sfx", [])]
+    sfx = [{"som": s["som"], "t": round(resolver_ref(s["em"], falas, palavras), 3), "vol": s.get("vol", 0),
+            **({"dur": s["dur"]} if "dur" in s else {})} for s in proj.get("sfx", [])]
     tempos = {
         "fps": FPS, "duracao_s": round(duracao, 3), "frames": int(np.ceil(duracao * FPS)),
         "motor": motor_nome, "perfil": perfil_nome,

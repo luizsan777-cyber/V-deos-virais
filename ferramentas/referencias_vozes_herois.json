@@ -27,12 +27,14 @@
   "semente": 4001702
  },
  "marvel/peter-parker": {
-  "arquivo": "marvel_peter-parker-211eeec4de6914b748.wav",
-  "sha256": "9f1bd3ce711cf91fafc233e84f484e762d4b16abd3984ec3fc25c26b713dc9de",
-  "segundos": 7.44,
-  "direcao": "Original voice speaking native Brazilian Portuguese, natural and intelligible. Young adult male, clear light tenor, conversational and curious, quick witty turns with a relaxed finish",
+  "arquivo": "marvel_peter-parker-399e567bb7e799cd5c.wav",
+  "sha256": "038193b2397e7151df7eadfe4b7d471555e6aa5b20e84075e93ea0feaabc6b23",
+  "segundos": 10.72,
+  "direcao": "Original voice. Speaks Brazilian Portuguese from Brazil with a clear Brazilian accent (São Paulo / Rio), casual everyday Brazilian speech: 'ti' and 'di' pronounced 'tchi' and 'dji', unstressed final 'e' sounds like 'i' and final 'o' like 'u', full open vowels, warm melodic Brazilian intonation. Absolutely not a European Portuguese or Portugal accent. Young adult male, clear light tenor, conversational and curious, quick witty turns with a relaxed finish",
   "modelo_design": "Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign",
   "modelo_clone": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
-  "semente": 13999410
+  "tomada": 2,
+  "semente": 14007329,
+  "texto_referencia": "Ô, peraí, rapidinho. Cê tá ouvindo isso? Tem gente lá do outro lado da rua, de verdade. Fica tranquilo, tá? Quando a luz da cidade acender de noite, a gente vai sacar quem chegou."
  }
 }
