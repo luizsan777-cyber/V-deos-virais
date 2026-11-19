@@ -1,12 +1,14 @@
 {
  "dc/batman": {
-  "arquivo": "dc_batman-8d39893831b361d6fc.wav",
-  "sha256": "1cd0a99cca94e071967e0bcf2b47837693bfbc842d115f4b9b7a77e5a6c3100c",
-  "segundos": 8.08,
-  "direcao": "Original voice speaking native Brazilian Portuguese, natural and intelligible. Adult male, low baritone with a dry textured edge, contained, short pauses, clear diction, no whisper or growl",
+  "arquivo": "dc_batman-1dd5e4203dcde32f05.wav",
+  "sha256": "eb28b3b6f8313753d2a4f69ff0adc63bf1c16a74b2dd927af45d2f8e2f77544f",
+  "segundos": 15.28,
+  "direcao": "Original voice. Speaks Brazilian Portuguese from Brazil with a clear Brazilian accent (São Paulo / Rio), casual everyday Brazilian speech: 'ti' and 'di' pronounced 'tchi' and 'dji', unstressed final 'e' sounds like 'i' and final 'o' like 'u', full open vowels, warm melodic Brazilian intonation. Absolutely not a European Portuguese or Portugal accent. Adult male, low baritone with a dry textured edge, contained, short pauses, clear diction, no whisper or growl",
   "modelo_design": "Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign",
   "modelo_clone": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
-  "semente": 12182389
+  "tomada": 2,
+  "semente": 12190308,
+  "texto_referencia": "Ô, peraí, rapidinho. Cê tá ouvindo isso? Tem gente lá do outro lado da rua, de verdade. Fica tranquilo, tá? Quando a luz da cidade acender de noite, a gente vai sacar quem chegou."
  },
  "dc/mulher-maravilha": {
   "arquivo": "dc_mulher-maravilha-66d5d1fa823dbbe6b4.wav",
