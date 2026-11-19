@@ -1,0 +1,11 @@
+{
+  "id": "marvel/personagem-versao",
+  "nome": "Nome no episódio",
+  "versao": "Obra, identidade e variante visual",
+  "silhueta": "Proporções, contorno e elementos que identificam a versão",
+  "traje": "Cores, materiais, máscara, emblema e acessórios",
+  "gesto": "Uma ação corporal característica e como ela se resolve",
+  "fundo": "Ambiente, luz e contraste que favorecem o traje",
+  "movimento": "revelacao",
+  "fonte": "URL ou referência editorial da obra consultada"
+}

@@ -1,0 +1,20 @@
+{
+  "titulo": "Teste técnico Heróis 2D — Homem-Aranha (Peter Parker, traje clássico)",
+  "modo": "2d",
+  "estilo": "herois-2d",
+  "heroi": "marvel/peter-parker",
+  "amostra_tecnica": true,
+  "observacao": "Amostra técnica sem narração (4 s): valida poses e câmera do planejador da skill herois-2d. build/tempos.json é gerado em silêncio; não rodar a etapa voz.",
+  "voz": {
+    "motor": "kokoro",
+    "voz": "pm_alex"
+  },
+  "musica": {
+    "humor": "curioso",
+    "volume_db": -24
+  },
+  "falas": [],
+  "fontes": [
+    "https://www.marvel.com/characters"
+  ]
+}

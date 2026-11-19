@@ -1,0 +1,175 @@
+{
+  "personagem": {
+    "id": "marvel/peter-parker",
+    "nome": "Homem-Aranha",
+    "versao": "Peter Parker, traje clássico dos quadrinhos",
+    "silhueta": "Atlético e flexível, máscara integral com lentes brancas",
+    "traje": "Vermelho e azul, teias escuras e aranha no peito",
+    "gesto": "Comprime o corpo no ponto alto e estende as pernas no balanço",
+    "fundo": "Prédios em perspectiva, ciano separando o vermelho",
+    "movimento": "acrobacia",
+    "fonte": "https://www.marvel.com/characters"
+  },
+  "fps": 30,
+  "quadros": 120,
+  "mundo": [
+    1080,
+    1920
+  ],
+  "camera": [
+    [
+      0,
+      550,
+      990,
+      1.1,
+      0
+    ],
+    [
+      30,
+      520,
+      965,
+      1.04,
+      -2
+    ],
+    [
+      62,
+      620,
+      780,
+      1.02,
+      3
+    ],
+    [
+      89,
+      650,
+      990,
+      1.05,
+      1
+    ],
+    [
+      119,
+      605,
+      980,
+      1.13,
+      0
+    ]
+  ],
+  "poses": [
+    [
+      0,
+      {
+        "bracoE": [
+          10,
+          8
+        ],
+        "bracoD": [
+          10,
+          8
+        ],
+        "pernaE": [
+          4,
+          0
+        ],
+        "pernaD": [
+          4,
+          0
+        ]
+      }
+    ],
+    [
+      30,
+      {
+        "bracoE": [
+          30,
+          75
+        ],
+        "bracoD": [
+          10,
+          8
+        ],
+        "pernaE": [
+          4,
+          0
+        ],
+        "pernaD": [
+          20,
+          45
+        ],
+        "agachar": 40,
+        "tronco": 16
+      }
+    ],
+    [
+      62,
+      {
+        "bracoE": [
+          70,
+          48
+        ],
+        "bracoD": [
+          155,
+          16
+        ],
+        "pernaE": [
+          -25,
+          22
+        ],
+        "pernaD": [
+          35,
+          60
+        ],
+        "dx": 130,
+        "bob": -235,
+        "tronco": -16
+      }
+    ],
+    [
+      89,
+      {
+        "bracoE": [
+          46,
+          45
+        ],
+        "bracoD": [
+          10,
+          8
+        ],
+        "pernaE": [
+          20,
+          48
+        ],
+        "pernaD": [
+          12,
+          68
+        ],
+        "dx": 175,
+        "agachar": 54,
+        "tronco": 26
+      }
+    ],
+    [
+      119,
+      {
+        "bracoE": [
+          10,
+          8
+        ],
+        "bracoD": [
+          10,
+          8
+        ],
+        "pernaE": [
+          4,
+          0
+        ],
+        "pernaD": [
+          4,
+          0
+        ],
+        "dx": 175,
+        "agachar": 9,
+        "virar": 0.25
+      }
+    ]
+  ],
+  "movimento_secundario": "Acessório ou cabelo acompanha o arco com leve atraso. Aterrissagem termina nos pés."
+}

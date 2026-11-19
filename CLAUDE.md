@@ -24,5 +24,8 @@ Siga a skill `video-viral` (`.claude/skills/video-viral/SKILL.md`). Ela chama `r
   projetos existentes (`projetos/teste-*` precisam continuar compilando).
 - Nunca versionar áudio de voz pessoal (`vozes/` está no .gitignore; use o secret `VOZ_REFERENCIA_B64`).
 - `referencias/terceiros/` é material de leitura (MIT), não usar como skill ativa.
+- Heróis Marvel/DC em 2D: skill OPCIONAL `herois-2d`, só sob pedido (`/herois-2d ...`). Fichas e planejador em
+  `.claude/skills/herois-2d/`; boneco articulado em `projetos/herois_2d_kit/Heroi.tsx` (mesmo tipo `Pose` do kit);
+  amostras técnicas em `projetos/teste-herois-*`. Não substitui o estilo, o motor nem a voz padrão.
 - HyperFrames é motor OPCIONAL (skill `hyperframes-video`): sempre com `HYPERFRAMES_NO_TELEMETRY=1 DO_NOT_TRACK=1`;
   nunca `publish`/`share`/`cloud`/recursos Pro ou HeyGen sem autorização (são externos/pagos).

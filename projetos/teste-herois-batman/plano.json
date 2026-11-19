@@ -1,0 +1,183 @@
+{
+  "personagem": {
+    "id": "dc/batman",
+    "nome": "Batman",
+    "versao": "Bruce Wayne, direção 2D noir",
+    "silhueta": "Máscara com orelhas pontudas, mandíbula e capa ampla",
+    "traje": "Cinza e preto, emblema de morcego fixo para a versão",
+    "gesto": "Gira o olhar antes do corpo, capa reage após o giro",
+    "fundo": "Telhado de Gotham, borda azul e luz âmbar baixa",
+    "movimento": "furtivo",
+    "fonte": "https://www.dc.com/characters"
+  },
+  "fps": 30,
+  "quadros": 120,
+  "mundo": [
+    1080,
+    1920
+  ],
+  "camera": [
+    [
+      0,
+      525,
+      980,
+      1.03,
+      0
+    ],
+    [
+      30,
+      535,
+      950,
+      1.1,
+      0
+    ],
+    [
+      62,
+      605,
+      920,
+      1.18,
+      0
+    ],
+    [
+      89,
+      650,
+      870,
+      1.21,
+      0
+    ],
+    [
+      119,
+      650,
+      840,
+      1.28,
+      0
+    ]
+  ],
+  "poses": [
+    [
+      0,
+      {
+        "bracoE": [
+          10,
+          8
+        ],
+        "bracoD": [
+          10,
+          8
+        ],
+        "pernaE": [
+          4,
+          0
+        ],
+        "pernaD": [
+          4,
+          0
+        ],
+        "agachar": 15
+      }
+    ],
+    [
+      30,
+      {
+        "bracoE": [
+          10,
+          8
+        ],
+        "bracoD": [
+          10,
+          8
+        ],
+        "pernaE": [
+          4,
+          0
+        ],
+        "pernaD": [
+          4,
+          0
+        ],
+        "olhar": [
+          0.75,
+          0.05
+        ],
+        "cabecaIncl": 8,
+        "virar": 0.55
+      }
+    ],
+    [
+      62,
+      {
+        "bracoE": [
+          10,
+          8
+        ],
+        "bracoD": [
+          28,
+          60
+        ],
+        "pernaE": [
+          -17,
+          46
+        ],
+        "pernaD": [
+          35,
+          28
+        ],
+        "dx": 100,
+        "agachar": 30,
+        "tronco": 12
+      }
+    ],
+    [
+      89,
+      {
+        "bracoE": [
+          35,
+          32
+        ],
+        "bracoD": [
+          10,
+          8
+        ],
+        "pernaE": [
+          21,
+          21
+        ],
+        "pernaD": [
+          4,
+          0
+        ],
+        "dx": 160,
+        "agachar": 17,
+        "tronco": 5
+      }
+    ],
+    [
+      119,
+      {
+        "bracoE": [
+          10,
+          8
+        ],
+        "bracoD": [
+          10,
+          8
+        ],
+        "pernaE": [
+          4,
+          0
+        ],
+        "pernaD": [
+          4,
+          0
+        ],
+        "dx": 160,
+        "virar": 0.4,
+        "olhar": [
+          0.5,
+          0
+        ]
+      }
+    ]
+  ],
+  "movimento_secundario": "Capa ou roupa reage depois do giro. A luz revela primeiro o contorno, depois o rosto."
+}
