@@ -1,6 +1,6 @@
 import React from "react";
 import { AbsoluteFill, Composition } from "remotion";
-import { Video, tempos } from "./projeto.gen";
+import { Video, tempos, formato } from "./projeto.gen";
 import { TemposProvider, Tempos } from "./kit/tempo";
 import { carregarFontes } from "./kit/fontes";
 
@@ -16,5 +16,5 @@ const Base: React.FC = () => {
 };
 
 export const Root: React.FC = () => (
-  <Composition id="Video" component={Base} durationInFrames={(tempos as unknown as Tempos).frames} fps={30} width={1080} height={1920} />
+  <Composition id="Video" component={Base} durationInFrames={(tempos as unknown as Tempos).frames} fps={30} width={formato[0]} height={formato[1]} />
 );

@@ -27,14 +27,22 @@ ENGINE = RAIZ / "engine"
 sys.path.insert(0, str(Path(__file__).parent))
 
 
+def formato(projeto: Path) -> tuple[int, int]:
+    """Largura x altura do vídeo: projeto.json -> "formato": [1920, 1080]; padrão vertical 1080 x 1920."""
+    w, h = json.loads((projeto / "projeto.json").read_text(encoding="utf-8")).get("formato", [1080, 1920])
+    return int(w), int(h)
+
+
 def selecionar(projeto: Path) -> None:
     """Aponta o motor Remotion para o projeto (src/projeto.gen.ts)."""
     rel = Path("..", "..", projeto.relative_to(RAIZ)).as_posix()
+    w, h = formato(projeto)
     (ENGINE / "src" / "projeto.gen.ts").write_text(
         "// GERADO por ferramentas/produzir.py — não editar.\n"
         f'export {{ default as Video }} from "{rel}/Video";\n'
         f'import tempos from "{rel}/build/tempos.json";\n'
-        "export { tempos };\n",
+        "export { tempos };\n"
+        f"export const formato: [number, number] = [{w}, {h}];\n",
         encoding="utf-8",
     )
 
@@ -97,7 +105,9 @@ def main() -> None:
     if "qa" in etapas:
         import qa
         pretos_ok = json.loads((projeto / "projeto.json").read_text(encoding="utf-8")).get("pretos_intencionais")
-        ok = qa.verificar(final, build / "tempos.json", saida / f"{slug}_qa.jpg", esperado_altura=int(1920 * float(args.escala)), pretos_ok=pretos_ok)
+        w, h = formato(projeto)
+        ok = qa.verificar(final, build / "tempos.json", saida / f"{slug}_qa.jpg", esperado_altura=int(h * float(args.escala)), pretos_ok=pretos_ok,
+                          esperado_largura=int(w * float(args.escala)))
         if not ok:
             sys.exit(2)
     print(f"\n✅ {final} ({time.time() - t0:.0f}s)")

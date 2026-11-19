@@ -20,14 +20,15 @@ def sh(cmd: list[str]) -> str:
     return r.stdout + r.stderr
 
 
-def verificar(mp4: Path, tempos_json: Path, folha: Path, esperado_altura: int = 1920, pretos_ok: list | None = None) -> bool:
+def verificar(mp4: Path, tempos_json: Path, folha: Path, esperado_altura: int = 1920, pretos_ok: list | None = None,
+             esperado_largura: int | None = None) -> bool:
     info = json.loads(sh(["ffprobe", "-v", "error", "-show_streams", "-show_format", "-of", "json", str(mp4)]))
     v = next(s for s in info["streams"] if s["codec_type"] == "video")
     a = next((s for s in info["streams"] if s["codec_type"] == "audio"), None)
     tempos = json.loads(tempos_json.read_text(encoding="utf-8"))
     problemas, avisos = [], []
     alt = esperado_altura
-    larg = round(alt * 9 / 16)
+    larg = esperado_largura or round(alt * 9 / 16)
     if v["codec_name"] != "h264":
         problemas.append(f"codec de vídeo {v['codec_name']} (esperado h264)")
     if (v["width"], v["height"]) != (larg, alt):

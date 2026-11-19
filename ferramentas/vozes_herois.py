@@ -74,6 +74,7 @@ def caminho_referencia(pasta: Path, id_voz: str, direcao: str, tomada: int = 1) 
 
 class _Servidor:
     def __init__(self):
+        self.n_ped = 0
         py = os.environ.get("QWEN3_PY", "/home/user/ferramentas-externas/venv-qwen3/bin/python")
         if not Path(py).exists():
             raise SystemExit("Vozes por personagem: Qwen3-TTS local não instalado (QWEN3_PY). A voz NÃO foi trocada.")
@@ -94,10 +95,12 @@ class _Servidor:
     def pedir(self, **pedido) -> Path:
         # um modelo de 1.7B por processo: ao trocar de etapa (design -> clone), reinicia o servidor para devolver
         # toda a RAM do modelo anterior (com os dois carregados o processo passou de 13 GB e foi morto por falta de memória)
-        if getattr(self, "op", None) not in (None, pedido["op"]):
+        # a geração do Qwen3 acumula memória: reinicia a cada 6 pedidos (com o processo inteiro passou de 13 GB e caiu)
+        if getattr(self, "op", None) not in (None, pedido["op"]) or getattr(self, "n_ped", 0) >= 6:
             self.fechar()
             self.__init__()
         self.op = pedido["op"]
+        self.n_ped = getattr(self, "n_ped", 0) + 1
         self.p.stdin.write(json.dumps(pedido, ensure_ascii=False) + "\n")
         self.p.stdin.flush()
         return Path(self._esperar("ok ")[3:].strip())

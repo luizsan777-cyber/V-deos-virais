@@ -398,6 +398,78 @@ def sfx_metro(d=10.0):
     return norm(x, 0.6)
 
 
+def sfx_passos(d=1.6):
+    """passos molhados: batidas abafadas com respingo."""
+    n = int(d * SR); x = np.zeros(n, np.float32)
+    for k, t0 in enumerate(np.arange(0.05, d - 0.15, 0.38)):
+        i = int(t0 * SR)
+        g = lp_rapido(ruido(0.12), 400) * env(int(0.12 * SR), 0.002, 0.08, 4) * 1.4 + bp_rapido(ruido(0.12), 2600, 2.0) * env(int(0.12 * SR), 0.004, 0.06, 5) * 0.5
+        x[i:i + len(g)] += g[: n - i] * (0.85 + 0.15 * (k % 2))
+    return norm(x, 0.6)
+
+
+def sfx_faisca(d=0.9):
+    """faíscas elétricas: estalos curtos e chiado."""
+    n = int(d * SR); x = hp_rapido(ruido(d), 3000) * 0.25 * env(n, 0.002, d * 0.7, 3)
+    rng = np.random.default_rng(5)
+    for i in rng.integers(0, n - 2000, 18):
+        x[i:i + 600] += hp_rapido(ruido(600 / SR), 2000) * env(600, 0.0002, 0.006, 6)
+    return norm(x, 0.6)
+
+
+def sfx_gota(d=1.6):
+    """gotejo metálico: pingos com ressonância."""
+    n = int(d * SR); x = np.zeros(n, np.float32)
+    for k, t0 in enumerate([0.05, 0.62, 1.1]):
+        if t0 >= d - 0.3: break
+        i = int(t0 * SR); f = 1700 + 300 * k
+        g = (seno(f, 0.3) + 0.4 * seno(f * 2.7, 0.3)) * env(int(0.3 * SR), 0.0005, 0.22, 6)
+        x[i:i + len(g)] += g[: n - i]
+    return norm(x, 0.5)
+
+
+def sfx_estalo(d=1.2):
+    """estalo grave e seco (revelação)."""
+    t = t_(d)
+    x = lp_rapido(ruido(d), 900) * env(len(t), 0.001, 0.12, 5) * 1.2 + seno(55 * np.exp(-t * 3) + 30, d) * env(len(t), 0.002, 0.9, 3)
+    return norm(x, 0.8)
+
+
+def sfx_pulso(d=1.2):
+    """pulso metálico grave (radiografia / retorno)."""
+    t = t_(d)
+    x = (seno(70, d) + 0.35 * seno(140.5, d) + 0.15 * seno(612, d) * np.exp(-t * 6)) * env(len(t), 0.01, d * 0.8, 3)
+    return norm(x, 0.7)
+
+
+def sfx_abafado(d=0.6):
+    """microfone de celular abafado ao bater no chão."""
+    t = t_(d)
+    x = lp_rapido(ruido(d), 220) * env(len(t), 0.001, 0.2, 4) * 1.5 + seno(48, d) * env(len(t), 0.001, 0.3, 4)
+    return norm(x, 0.7)
+
+
+def sfx_motor(d=4.0):
+    """motor abafado de laboratório."""
+    t = t_(d)
+    x = (seno(50, d) * 0.6 + seno(100, d) * 0.3 + lp_rapido(ruido(d), 300) * 0.4) * (0.85 + 0.15 * np.sin(2 * np.pi * 0.5 * t))
+    return norm(x * np.minimum(1, np.minimum(t / 0.6, (d - t) / 0.8 + 1e-3)), 0.5)
+
+
+def sfx_radio(d=3.0):
+    """rádio distante dos anos 40: chiado com tom abafado."""
+    t = t_(d)
+    x = bp_rapido(ruido(d), 1500, 1.5) * 0.4 + bp_rapido(saw(220 + 30 * np.sin(2 * np.pi * 0.7 * t), d), 1200, 2.0) * 0.25
+    return norm(x * np.minimum(1, np.minimum(t / 0.4, (d - t) / 0.6 + 1e-3)), 0.4)
+
+
+def sfx_salto(d=2.2):
+    """movimento do salto: vento crescente + raspado metálico no fim (usado também ao contrário)."""
+    t = t_(d)
+    x = bp_rapido(ruido(d), 700, 0.6) * (t / d) ** 2 * 1.2 + hp_rapido(ruido(d), 4000) * np.clip((t - d + 0.35) / 0.35, 0, 1) * 0.5
+    return norm(x, 0.8)
+
+
 SFX = {k[4:]: v for k, v in globals().items() if k.startswith("sfx_")}
 
 
@@ -713,6 +785,10 @@ def gerar(projeto_dir: Path) -> Path:
         if s["som"] not in SFX:
             raise SystemExit(f"Efeito '{s['som']}' não existe. Disponíveis: {', '.join(sorted(SFX))}")
         x = (SFX[s["som"]](s["dur"]) if "dur" in s else SFX[s["som"]]()) * 10 ** (s.get("vol", 0) / 20)  # "dur" opcional
+        if s.get("reverso"):  # o mesmo som tocado de trás para frente
+            x = x[::-1].copy()
+        if "ate" in s:  # corte seco depois de N segundos (ex.: ambiente que para no congelamento)
+            x = x[: int(s["ate"] * SR)]
         i = max(0, int(s["t"] * SR))
         pista[i:i + len(x)] += x[: len(pista) - i]
     pista = pista[: int(dur * SR)]
@@ -722,6 +798,20 @@ def gerar(projeto_dir: Path) -> Path:
     if cfg_m.get("arquivo"):
         trilha = projeto_dir / cfg_m["arquivo"]
         ffmpeg("-stream_loop", "-1", "-i", str(trilha), "-t", f"{dur}", "-ac", "1", "-ar", str(SR), str(b / "musica.wav"))
+    elif cfg_m.get("blocos"):
+        # trilha por blocos: [{"de": ref, "humor": h, "db": 0}], troca com cruzamento de 1,2 s
+        sys.path.insert(0, str(Path(__file__).parent))
+        from voz import resolver_ref
+        bl = sorted((resolver_ref(x["de"], tempos["falas"], tempos["palavras"]), x["humor"], x.get("db", 0)) for x in cfg_m["blocos"])
+        n = int(dur * SR); tt = np.arange(n) / SR; mus = np.zeros(n, np.float32); cache = {}
+        for i, (t0, h, g) in enumerate(bl):
+            t1 = bl[i + 1][0] if i + 1 < len(bl) else dur + 2
+            if h not in cache:
+                cache[h] = musica(h, dur)[:n] if h != "nenhuma" else np.zeros(n, np.float32)
+            m = cache[h]; m = np.pad(m, (0, max(0, n - len(m))))[:n]
+            jan = np.clip((tt - t0) / 1.2 + 0.5, 0, 1) * np.clip((t1 - tt) / 1.2 + 0.5, 0, 1)
+            mus += m * jan.astype(np.float32) * 10 ** (g / 20)
+        sf.write(b / "musica.wav", mus, SR)
     else:
         sf.write(b / "musica.wav", musica(humor, dur), SR)
 

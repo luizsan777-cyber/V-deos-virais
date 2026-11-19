@@ -521,7 +521,7 @@ def finalizar(build: Path, pedacos, falas, palavras, proj, motor_nome, perfil_no
     sf.write(build / "narracao.wav", voz_audio, SR, subtype="PCM_16")
     duracao = len(voz_audio) / SR
     sfx = [{"som": s["som"], "t": round(resolver_ref(s["em"], falas, palavras), 3), "vol": s.get("vol", 0),
-            **({"dur": s["dur"]} if "dur" in s else {})} for s in proj.get("sfx", [])]
+            **{k: s[k] for k in ("dur", "reverso", "ate") if k in s}} for s in proj.get("sfx", [])]
     tempos = {
         "fps": FPS, "duracao_s": round(duracao, 3), "frames": int(np.ceil(duracao * FPS)),
         "motor": motor_nome, "perfil": perfil_nome,

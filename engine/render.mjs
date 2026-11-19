@@ -54,6 +54,8 @@ const main = async () => {
     serveUrl, composition: comp, codec: "h264", outputLocation: saida, muted: true, crf: 18, pixelFormat: "yuv420p",
     imageFormat: "jpeg", jpegQuality: 92, scale: escala, browserExecutable, chromiumOptions,
     concurrency: Number(opt("--concorrencia", String(Math.max(1, os.cpus().length)))),
+    // --faixa a-b: renderiza só os quadros a..b (inclusive), para refazer um trecho sem renderizar o vídeo todo
+    ...(opt("--faixa", "") ? { frameRange: opt("--faixa", "").split("-").map(Number) } : {}),
     onProgress: ({ progress }) => {
       const p = Math.floor(progress * 20);
       if (p !== ult) { ult = p; console.log(`[render] ${Math.round(progress * 100)}%`); }
